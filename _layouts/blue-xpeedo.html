@@ -54,7 +54,7 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
   </head>
 
   <body class="h-100">
-    <div id="app" class="h-100 d-flex flex-column">
+   <div id="app" class="h-100 d-flex flex-column">
       <div class="nav-container">
         <nav class="navbar navbar-expand-md navbar-light bg-light">
           <div class="container">
@@ -83,7 +83,7 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
                   <button
                     id="qsLoginBtn"
                     onclick="login()"
-                    class="btn btn-primary btn-margin auth-visible hidden"
+                    class="btn btn-primary btn-margin auth-invisible hidden"
                   >
                     Log in
                   </button>
@@ -91,7 +91,7 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
                 <!-- / Login button -->
 
                 <!-- Fullsize dropdown: show if authenticated -->
-                <li class="nav-item dropdown auth-invisible hidden">
+                <li class="nav-item dropdown auth-visible hidden">
                   <a
                     class="nav-link dropdown-toggle"
                     href="#"
@@ -144,7 +144,7 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
                 class="
                   navbar-nav
                   d-md-none
-                  auth-invisible
+                  auth-visible
                   hidden
                   justify-content-between
                 "
@@ -170,12 +170,12 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
                 </li>
                 <li>
                   <i class="fas fa-user mr-3"></i>
-                  <a href="/profile" class="route-link"><font color="black">Profile</font></a>
+                  <a href="/profile" class="route-link">Profile</a>
                 </li>
 
                 <li>
                   <i class="fas fa-power-off mr-3"></i>
-                  <a href="#" id="qsLogoutBtn" onclick="logout()"><font color="black">Log out</font></a>
+                  <a href="#" id="qsLogoutBtn" onclick="logout()">Log out</a>
                 </li>
               </ul>
             </div>
