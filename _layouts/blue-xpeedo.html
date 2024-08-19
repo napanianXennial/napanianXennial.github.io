@@ -189,8 +189,65 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
 	  <span class="auth-invisible">locked</span>
 	  <span class="auth-visible">unlocked</span>
 
+
+    <!-- Start Header Area -->
+    <header id="content-home" class="header style2 content-home">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand logo" href="index.html">
+                                <img class="primary-logo" src="assets/images/logo/white-logo.svg" alt="Logo" />
+                                <img class="alt-logo" src="assets/images/logo/logo2.svg" alt="Logo" />
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav me-auto">
+                                    <li class="nav-item">
+                                        <a class="page-scroll active" href="#hero-area">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#features">Features</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#explore">Explore</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#testimonials">Testimonials</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#download">Download</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#contact">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- navbar collapse -->
+                            <div class="button">
+                                <a href="#download" class="btn class="page-scroll"">Get Started</a>
+                            </div>
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- End Header Area -->
+
     <!-- Start Hero Area -->
-    <section id="hero-area" class="hero-area style2 auth-invisible">
+    <section id="hero-area" class="hero-area style2 auth-visible">
         <!-- Single Slider -->
         <div class="hero-inner style2">
             <div class="container">
@@ -222,7 +279,7 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
     <!--/ End Hero Area -->
 
     <!-- Start Clients Area -->
-    <section class="clients style2 section auth-visible">
+    <section class="clients style2 section auth-invisible">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -258,6 +315,345 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
     </section>
     <!-- /End Clients Area -->
 
+	
+	   <!-- Work Process Area -->
+    <section class="work-process section auth-invisible">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title style2">
+                        <span class="wow fadeInDown" data-wow-delay=".2s">Features</span>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">{{ page.features-heading }} </h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">{{ page.features-description }} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-12">
+                    <!-- Single Process -->
+                    <div class="single-process wow fadeInUp" data-wow-delay=".2s">
+                        <div class="icon">
+                            <div class="main-icon">
+                                <i class="lni lni-pencil"></i>
+                            </div>
+                            <span>01</span>
+                        </div>
+                        <h3>{{ page.feature-01 }}</h3>
+                        <p>{{ page.feature-description-01 }}</p>
+                    </div>
+                    <!-- End Single Process -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <!-- Single Process -->
+                    <div class="single-process wow fadeInUp" data-wow-delay=".4s">
+                        <div class="icon">
+                            <div class="main-icon">
+                                <i class="lni lni-layout"></i>
+                            </div>
+                            <span>02</span>
+                        </div>
+                        <h3>{{ page.feature-02 }}</h3>
+                        <p>{{ page.feature-description-02 }}</p>
+                    </div>
+                    <!-- End Single Process -->
+                </div>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <!-- Single Process -->
+                    <div class="single-process wow fadeInUp" data-wow-delay=".6s">
+                        <div class="icon">
+                            <div class="main-icon">
+                                <i class="lni lni-thunder-alt"></i>
+                            </div>
+                            <span>03</span>
+                        </div>
+                        <h3>{{ page.feature-03 }}</h3>
+                        <p>{{ page.feature-description-03 }}</p>
+                    </div>
+                    <!-- End Single Process -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Work Process Area -->
+	
+	    <!-- Start Achivement Area -->
+    <section class="our-achievement style2 section auth-invisible">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".2s">
+                        <i class="lni lni-user"></i>
+                        <h3 class="counter"><span id="secondo1" class="countup" cup-end="264">{{ page.number-01 }}</span></h3>
+                        <p>{{ page.number-description-01 }} </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".4s">
+                        <i class="lni lni-users"></i>
+                        <h3 class="counter"><span id="secondo2" class="countup" cup-end="100">{{ page.number-02 }}</span></h3>
+                        <p>{{ page.number-description-02 }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
+                        <i class="lni lni-code"></i>
+                        <h3 class="counter"><span id="secondo3" class="countup" cup-end="855">{{ page.number-03 }}</span></h3>
+                        <p>{{ page.number-description-03 }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
+                        <i class="lni lni-coffee-cup"></i>
+                        <h3 class="counter"><span id="secondo3" class="countup" cup-end="295">{{ page.number-04 }}</span></h3>
+                        <p>{{ page.number-description-04 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Achivement Area -->
+
+
+
+    <!-- Start Newsletter Area -->
+    <section class="newsletter-area style2 section auth-invisible">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-10 offset-lg-1 col-12">
+                    <div class="section-title">
+                        <span class="wow fadeInDown" data-wow-delay=".2s">Subscribe Now</span>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Subscribe to our newsletter to get<br> Update news
+                            on your inbox.</h2>
+                    </div>
+                    <!-- Start Newsletter Form -->
+                    <div class="subscribe-text wow fadeInUp" data-wow-delay=".2s">
+                        <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+                            <div class="row">
+                                <div class="col-lg-9 col-md-8 col-12">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <input name="Name" placeholder="Your Name" class="common-input"
+                                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Name'"
+                                                required="" type="text">
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <input name="Email" placeholder="Your Email" class="common-input"
+                                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email'"
+                                                required="" type="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-12">
+                                    <div class="button">
+                                        <button class="btn">Subscribe Now!</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- End Newsletter Form -->
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Start Contact Area -->
+    <section id="contact" class="contact-us style2 section auth-invisible">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title style2">
+                        <span class="wow fadeInDown" data-wow-delay=".2s">Contact {{ page.companyname }}</span>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Let’s cooperate!</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
+                            Ipsum available, but the majority have suffered alteration in some form.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-head">
+                <div class="inner-content">
+                    <div class="row">
+                        <div class="col-lg-8 col-12">
+                            <div class="form-main">
+                                <form class="form" method="post" action="assets/mail/mail.php">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <input name="name" type="text" placeholder="Your Name"
+                                                    required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <input name="subject" type="text" placeholder="Your Subject"
+                                                    required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <input name="email" type="email" placeholder="Your Email"
+                                                    required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <input name="phone" type="text" placeholder="Your Phone"
+                                                    required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group message">
+                                                <textarea name="message" placeholder="Your Message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group button style2">
+                                                <button type="submit" class="btn ">Send Message</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="contact-info">
+                                <div class="single-head">
+                                    <div class="single-info">
+                                        <i class="lni lni-map-marker"></i>
+                                        <ul>
+                                            <li><span>Location</span></li>
+                                            <li>{{ page.address }}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="single-info">
+                                        <i class="lni lni-phone"></i>
+                                        <ul>
+                                            <li><span>Call Us</span></li>
+                                            <li><a href="#">{{ page.phone }}</a></li>
+                                            <li><a href="#">{{ page.phone-01 }}</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="single-info">
+                                        <i class="lni lni-envelope"></i>
+                                        <ul>
+                                            <li><span>Mail Us</span></li>
+                                            <li><a href="mailto:{{ page.email-01 }}">{{ page.email-01 }}</a></li>
+                                            <li><a href="mailto:{{ page.email-02 }}">{{ page.email-02 }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End Contact Area -->
+
+    <!-- Start Footer Area -->
+    <footer class="footer style2">
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <!-- Single Widget -->
+                        <div class="f-about single-footer">
+                            <div class="logo">
+                                {{ page.companyname }}
+                            </div>
+                            <p>{{ page.tagline }}</p>
+                            <div class="footer-social">
+                                <ul>
+                                    <li><a href="#"><i class="lni lni-facebook-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-google"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-12">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <!-- Single Widget -->
+                                <div class="single-footer sm-custom-border f-link">
+                                    <h3>About Us</h3>
+                                    <ul>
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">Features</a></li>
+                                        <li><a href="#">Explore</a></li>
+                                        <li><a href="#">Testimonials</a></li>
+                                    </ul>
+                                </div>
+                                <!-- End Single Widget -->
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <!-- Single Widget -->
+                                <div class="single-footer sm-custom-border f-link">
+                                    <h3>Features</h3>
+                                    <ul>
+                                        <li><a href="#">{{ page.feature01 }}</a></li>
+                                        <li><a href="#">{{ page.feature02 }}</a></li>
+                                        <li><a href="#">{{ page.feature03 }}</a></li>
+                                        <li><a href="#">{{ page.feature04 }}</a></li>
+                                    </ul>
+                                </div>
+                                <!-- End Single Widget -->
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <!-- Single Widget -->
+                                <div class="single-footer md-custom-border sm-custom-border f-link">
+                                    <h3>Services</h3>
+                                    <ul>
+                                     <li><a href="#">{{ page.service01 }}</a></li>
+                                        <li><a href="#">{{ page.service02 }}</a></li>
+                                        <li><a href="#">{{ page.service03 }}</a></li>
+                                        <li><a href="#">{{ page.service04 }}</a></li>
+                                    </ul>
+                                </div>
+                                <!-- End Single Widget -->
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <!-- Single Widget -->
+                                <div class="single-footer md-custom-border sm-custom-border f-contact">
+                                    <h3>Contact Info</h3>
+                                    <ul>
+                                        <li><i class="lni lni-map-marker"></i> {{ page.address }}
+                                        </li>
+                                        <li><i class="lni lni-envelope"></i> {{ page.email }}</li>
+                                        <li><i class="lni lni-phone"></i> {{ page.phone }}</li>
+                                    </ul>
+                                </div>
+                                <!-- End Single Widget -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Footer Middle -->
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="left">
+                                <p>Designed and Developed by<a href="https://graygrids.com/" rel="nofollow"
+                                        target="_blank">GrayGrids</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Middle -->
+    </footer>
+    <!--/ End Footer Area -->
+
 
 
 
@@ -279,82 +675,7 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
               alt="JavaScript logo"
               width="75"
             />
-            <h1 class="mb-4">JavaScript Sample Project</h1>
-
-            <p class="lead">
-              This is a sample application that demonstrates an authentication
-              flow for an SPA, using plain JavaScript
-            </p>
-          </div>
-
-          <div class="next-steps">
-            <h2 class="my-5 text-center">What can I do next?</h2>
-
-            <div class="row">
-              <div class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/connections">
-                    <i class="fas fa-link"></i> Configure other identity
-                    providers
-                  </a>
-                </h6>
-                <p>
-                  Auth0 supports social providers as Facebook, Twitter,
-                  Instagram and 100+, Enterprise providers as Microsoft Office
-                  365, Google Apps, Azure, and more. You can also use any OAuth2
-                  Authorization Server.
-                </p>
-              </div>
-
-              <div class="col-md"></div>
-
-              <div class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/multifactor-authentication">
-                    <i class="fas fa-link"></i> Enable Multifactor
-                    Authentication
-                  </a>
-                </h6>
-                <p>
-                  Add an extra layer of security by enabling Multi-factor
-                  Authentication, requiring your users to provide more than one
-                  piece of identifying information. Push notifications,
-                  authenticator apps, SMS, and DUO Security are supported.
-                </p>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/anomaly-detection">
-                    <i class="fas fa-link"></i> Anomaly Detection
-                  </a>
-                </h6>
-                <p>
-                  Auth0 can detect anomalies and stop malicious attempts to
-                  access your application. Anomaly detection can alert you and
-                  your users of suspicious activity, as well as block further
-                  login attempts.
-                </p>
-              </div>
-
-              <div class="col-md"></div>
-
-              <div class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/rules">
-                    <i class="fas fa-link"></i> Learn About Rules
-                  </a>
-                </h6>
-                <p>
-                  Rules are JavaScript functions that execute when a user
-                  authenticates to your application. They run once the
-                  authentication process is complete, and you can use them to
-                  customize and extend Auth0's capabilities.
-                </p>
-              </div>
-            </div>
+            <h1 class="mb-4">Please log in to see more.</h1>
           </div>
         </div>
 
