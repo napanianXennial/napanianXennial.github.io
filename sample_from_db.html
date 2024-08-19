@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title> <!-- This will be dynamically updated -->
+
+    <!-- Script to fetch and use the front matter -->
+    <script>
+        async function loadFrontMatter() {
+            try {
+                const response = await fetch('http://localhost:5001/api/get-front-matter'); // Replace with your actual endpoint
+                const frontMatter = await response.json();
+
+                // Inject the front matter data as a JavaScript object into the global scope
+                window.frontMatter = frontMatter;
+
+                // Example: Use the front matter to set dynamic content
+                // Assuming you have functions or logic in place to update the layout
+                if (typeof setPageTitle === 'function') {
+                    setPageTitle(frontMatter.title || 'Default Title');
+                } else {
+                    document.title = frontMatter.title || 'Default Title'; // Update the document title
+                }
+
+                if (typeof setPageDescription === 'function') {
+                    setPageDescription(frontMatter.description || 'Default Description');
+                }
+
+                if (typeof setPageDate === 'function') {
+                    setPageDate(frontMatter.date || 'Default Date');
+                }
+
+                // Add more logic here to handle other front matter fields as needed
+            } catch (error) {
+                console.error('Error fetching front matter:', error);
+            }
+        }
+
+        // Load the front matter on page load
+        window.onload = loadFrontMatter;
+    </script>
+</head>
+<body>
+    <!-- Content can be dynamically updated by the script -->
+
+    <!-- Example elements that might be updated with front matter data -->
+    <div id="content">
+        <h1 id="title">Loading title...</h1>
+        <p id="description">Loading description...</p>
+        <p id="publish-date">Loading date...</p>
+    </div>
+
+    <!-- Your layout-specific JavaScript file that will use the frontMatter object -->
+</body>
+</html>
