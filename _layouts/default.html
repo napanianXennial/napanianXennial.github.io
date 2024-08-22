@@ -1,3 +1,34 @@
+{% for file in site.static_files %}
+  {% if file.path contains '/apps/' %}
+    <p>{{ file.path }}</p>
+  {% endif %}
+{% endfor %}
+
+<!-- Loop through pages -->
+{% for page in site.pages %}
+  {% if page.path contains '/apps/' %}
+    <p>{{ page.path }}</p>
+  {% endif %}
+{% endfor %}
+
+<!-- Loop through posts -->
+{% for post in site.posts %}
+  {% if post.path contains '/apps/' %}
+    <p>{{ post.path }}</p>
+  {% endif %}
+{% endfor %}
+
+<!-- Loop through collections (optional) -->
+{% for collection in site.collections %}
+  {% for document in collection.docs %}
+    {% if document.path contains '/apps/' %}
+      <p>{{ document.path }}</p>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+
+
 This is a navigation bar </br>
 This is a hero image </br>
 Content {{ content }} </br>
