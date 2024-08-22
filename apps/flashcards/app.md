@@ -1,5 +1,5 @@
 ---
-layout: video
+layout: default
 title:  "Flashcards!"
 blurb: "Test your knowledge of key concepts with these flashcards."
 ---
