@@ -4,7 +4,7 @@ title:  "Canopy MLR Assistant"
 blurb: "Accelerate and navigate your way through meetings."
 ---
       
-      
+      canopy
       <link
       rel="apple-touch-icon" href="./logo192.png" /><link rel="manifest"
       href="./manifest.json" /><title>React App</title><script defer="defer"
