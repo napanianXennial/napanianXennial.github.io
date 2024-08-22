@@ -8,7 +8,13 @@ This is the footer </br>
 </br>
 This is the chatbot </br>
 <script src="https://app.livechatai.com/embed.js" data-id="clyq5fuab00018bz24tj8c22x" async defer>
+{% for image in site.static_files %}
 
+  {{ image.path }}
+    {% if image.path contains 'images/slider' %}
+        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+    {% endif %}
+{% endfor %}
   abc
 {% for post in site.posts %}			
   in loop
