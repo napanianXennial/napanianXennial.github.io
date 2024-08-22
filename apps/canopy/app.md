@@ -1,5 +1,5 @@
 ---
-layout: video
+layout: default
 title:  "Canopy MLR Assistant"
 blurb: "Accelerate and navigate your way through meetings."
 ---
