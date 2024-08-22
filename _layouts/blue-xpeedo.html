@@ -330,37 +330,27 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
     <!-- End Work Process Area -->
 	
 	    <!-- Start Achivement Area -->
-    <section class="our-achievement style2 section auth-visible">
+    <section class="our-achievement style2 section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-12">
+
+<!-- Loop through pages -->
+{% for page in site.pages %}
+  {% if page.path contains 'apps/' %}
+
+
+		<div class="col-lg-3 col-md-6 col-12">
                     <div class="single-achievement wow fadeInUp" data-wow-delay=".2s">
                         <i class="lni lni-user"></i>
-                        <h3 class="counter"><span id="secondo1" class="countup" cup-end="264">{{ page.number-01 }}</span></h3>
-                        <p>{{ page.number-description-01 }} </p>
+                        <h3 class="counter"><span id="secondo1" class="countup" cup-end="264"><a href="{{ page.url }}">{{ page.title }}</a></span></h3>
+                        <p>{{ page.blurb }} </p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <div class="single-achievement wow fadeInUp" data-wow-delay=".4s">
-                        <i class="lni lni-users"></i>
-                        <h3 class="counter"><span id="secondo2" class="countup" cup-end="100">{{ page.number-02 }}</span></h3>
-                        <p>{{ page.number-description-02 }}</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
-                        <i class="lni lni-code"></i>
-                        <h3 class="counter"><span id="secondo3" class="countup" cup-end="855">{{ page.number-03 }}</span></h3>
-                        <p>{{ page.number-description-03 }}</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
-                        <i class="lni lni-coffee-cup"></i>
-                        <h3 class="counter"><span id="secondo3" class="countup" cup-end="295">{{ page.number-04 }}</span></h3>
-                        <p>{{ page.number-description-04 }}</p>
-                    </div>
-                </div>
+  {% endif %}
+{% endfor %}
+
+
+		    
             </div>
         </div>
     </section>
