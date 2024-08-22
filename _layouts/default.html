@@ -1,6 +1,7 @@
 1
 
 {% for file in site.static_files %}
+aaa
   {% if file.path contains '/apps/' %}
     <p>{{ file.path }}</p>
   {% endif %}
@@ -8,6 +9,7 @@
 2
 <!-- Loop through pages -->
 {% for page in site.pages %}
+bbb
   {% if page.path contains '/apps/' %}
     <p>{{ page.path }}</p>
   {% endif %}
@@ -15,6 +17,7 @@
 3
 <!-- Loop through posts -->
 {% for post in site.posts %}
+ccc
   {% if post.path contains '/apps/' %}
     <p>{{ post.path }}</p>
   {% endif %}
@@ -22,6 +25,7 @@
 4
 <!-- Loop through collections (optional) -->
 {% for collection in site.collections %}
+ddd
   {% for document in collection.docs %}
     {% if document.path contains '/apps/' %}
       <p>{{ document.path }}</p>
