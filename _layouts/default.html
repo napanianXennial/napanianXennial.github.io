@@ -3,9 +3,9 @@
 <!-- Loop through pages -->
 {% for page in site.pages %}
   {% if page.path contains '/apps/' %}
-    <p>{{ page.title }}</p>
-<p>{{ page.blurb }}</p>
-<p>{{ page.path }}</p>
+    <p>Title:{{ page.title }}</p>
+<p>Blurb: {{ page.blurb }}</p>
+<p>Path: {{ page.path }}</p>
   {% endif %}
   {% if page.path contains 'apps/' %}
     <p>{{ page.url }}</p>
