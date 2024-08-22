@@ -8,6 +8,21 @@ This is the footer </br>
 </br>
 This is the chatbot </br>
 <script src="https://app.livechatai.com/embed.js" data-id="clyq5fuab00018bz24tj8c22x" async defer>
+
+{% for file in site.static_files %}
+
+  {{ file.path }}
+xxx
+{% endfor %}
+
+
+{% for file in site.assets %}
+
+  {{ file.path }}
+xxx
+{% endfor %}
+
+  
 {% for image in site.static_files %}
 
   {{ image.path }}
