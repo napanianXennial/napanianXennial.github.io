@@ -1,18 +1,13 @@
 1
 
-{% for file in site.static_files %}
-aaa
-<p>{{ file.url }}</p>
-  {% if file.path contains '/apps/' %}
-    <p>{{ file.path }}</p>
-  {% endif %}
-{% endfor %}
-2
 <!-- Loop through pages -->
 {% for page in site.pages %}
 bbb
 <p>{{ page.url }}</p>
   {% if page.path contains '/apps/' %}
+    <p>{{ page.path }}</p>
+  {% endif %}
+  {% if page.path contains 'apps/' %}
     <p>{{ page.path }}</p>
   {% endif %}
 {% endfor %}
