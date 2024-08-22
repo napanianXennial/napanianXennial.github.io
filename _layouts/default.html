@@ -1,23 +1,25 @@
+1
+
 {% for file in site.static_files %}
   {% if file.path contains '/apps/' %}
     <p>{{ file.path }}</p>
   {% endif %}
 {% endfor %}
-
+2
 <!-- Loop through pages -->
 {% for page in site.pages %}
   {% if page.path contains '/apps/' %}
     <p>{{ page.path }}</p>
   {% endif %}
 {% endfor %}
-
+3
 <!-- Loop through posts -->
 {% for post in site.posts %}
   {% if post.path contains '/apps/' %}
     <p>{{ post.path }}</p>
   {% endif %}
 {% endfor %}
-
+4
 <!-- Loop through collections (optional) -->
 {% for collection in site.collections %}
   {% for document in collection.docs %}
@@ -27,7 +29,7 @@
   {% endfor %}
 {% endfor %}
 
-
+5
 
 This is a navigation bar </br>
 This is a hero image </br>
