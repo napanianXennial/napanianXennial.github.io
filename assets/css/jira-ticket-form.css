@@ -97,14 +97,14 @@ p {
   }
 
   label {
-      font-size: 0.65rem; /* Further reduced label size for small screens */
+      font-size: 0.47rem; /* Further reduced label size for small screens */
   }
 
   input[type="text"], select, textarea {
-      font-size: 0.65rem; /* Further reduced input and textarea size */
+      font-size: 0.47rem; /* Further reduced input and textarea size */
   }
 
   button {
-      font-size: 0.75rem; /* Further reduced button font size */
+      font-size: 0.47rem; /* Further reduced button font size */
   }
 }
