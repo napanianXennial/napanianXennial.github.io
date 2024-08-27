@@ -225,7 +225,8 @@
       <div class="card mt-3">
         <div class="card-header d-flex justify-content-between" ><font color="silver">Create Jira Ticket</font></div>
         <div class="card-body">
-			<font color="silver" size="2">If you find a bug, please file a Jira ticket.</font>
+            {% include jira-ticket-form.html %}
+			<!-- <font color="silver" size="2">If you find a bug, please file a Jira ticket.</font> -->
 			<!-- img src="/assets/exam-is-coming.jpg" alt="AWS Study Guide" class="img-fluid mx-auto d-block img-thumbnail rounded "-->
 
          </div>
@@ -286,6 +287,7 @@
 
 
     <!-- ========================= JS here ========================= -->
+    <script src="{{ '/assets/js/jira-form-handler.js' | relative_url }}"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/count-up.min.js"></script>
     <script src="/assets/js/wow.min.js"></script>
