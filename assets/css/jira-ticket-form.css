@@ -30,7 +30,7 @@ h1 {
 }
 
 label {
-  font-size: 0.75rem; /* Smaller label font size */
+  font-size: 0.47rem; /* Smaller label font size */
   color: #333;
   width: 40%; /* Increased label width for better alignment */
   text-align: right;
@@ -42,7 +42,7 @@ input[type="text"], select {
   padding: 5px; /* Reduced padding for smaller inputs */
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 0.75rem; /* Smaller input font size */
+  font-size: 0.47rem; /* Smaller input font size */
 }
 
 textarea {
@@ -51,7 +51,7 @@ textarea {
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 0.75rem; /* Smaller textarea font size */
+  font-size: 0.47rem; /* Smaller textarea font size */
   resize: vertical;
   min-height: 70px; /* Slightly reduced min height for smaller space */
 }
