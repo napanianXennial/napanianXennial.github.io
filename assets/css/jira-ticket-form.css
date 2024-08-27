@@ -16,33 +16,33 @@ body {
 }
 
 h1 {
-  font-size: 1.3rem;
+  font-size: 1.2rem; /* Slightly smaller to fit better */
   margin-bottom: 15px;
   text-align: center;
   color: #666;
 }
 
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 label {
-  font-size: 0.85rem;
+  font-size: 0.75rem; /* Smaller label font size */
   color: #333;
-  width: 35%;
+  width: 40%; /* Increased label width for better alignment */
   text-align: right;
   margin-right: 5px;
 }
 
 input[type="text"], select {
-  width: 60%;
-  padding: 6px;
+  width: 55%; /* Adjusted input width to match label width */
+  padding: 5px; /* Reduced padding for smaller inputs */
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 0.85rem;
+  font-size: 0.75rem; /* Smaller input font size */
 }
 
 textarea {
@@ -51,20 +51,20 @@ textarea {
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 0.85rem;
+  font-size: 0.75rem; /* Smaller textarea font size */
   resize: vertical;
-  min-height: 80px;
+  min-height: 70px; /* Slightly reduced min height for smaller space */
 }
 
 button {
-  width: calc(100% - 40px);
+  width: calc(100% - 40px); /* Consistent margin around the button */
   padding: 10px;
-  margin: 20px;
+  margin: 20px auto;
   background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 0.85rem; /* Slightly smaller button font */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -93,18 +93,18 @@ p {
   }
 
   h1 {
-      font-size: 1.1rem;
+      font-size: 1rem; /* Reduced title size for small screens */
   }
 
   label {
-      font-size: 0.75rem;
+      font-size: 0.65rem; /* Further reduced label size for small screens */
   }
 
   input[type="text"], select, textarea {
-      font-size: 0.75rem;
+      font-size: 0.65rem; /* Further reduced input and textarea size */
   }
 
   button {
-      font-size: 0.85rem;
+      font-size: 0.75rem; /* Further reduced button font size */
   }
 }
