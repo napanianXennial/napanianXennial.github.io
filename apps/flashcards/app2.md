@@ -1,9 +1,9 @@
 ---
-layout: empty
-title:  "Flashcards!"
+layout: application
+title:  "Flashcards 2!"
 blurb: "Test your knowledge of key concepts with these flashcards."
 ---
-
+123
 
 <link rel="apple-touch-icon" href="./logo192.png" />
 <link rel="manifest" href="./manifest.json" />
@@ -13,6 +13,7 @@ blurb: "Test your knowledge of key concepts with these flashcards."
 
 <div id="app" class="app"
       data-param='{ "fid" : { "$in" : [1,2,3,4,5,6,7,8,9,10,11,12,14,13,14] } }'></div>
+
 
 
 
