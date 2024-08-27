@@ -11,7 +11,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="fb:app_id" content="287616246137792" />   
-    <title>AWS Practice Exam</title>
+    <title>{{ page.companyname }}</title>
 	
 <!-- React Code -->	
 <link href="/exam/static/css/2.68a81a89.chunk.css" rel="stylesheet"><link href="/exam/static/css/main.ee56af71.chunk.css" rel="stylesheet">
@@ -99,6 +99,7 @@
 
 <body style="padding:0">
 
+{% include minimal-nav.html %} 
 
 <section id="download" class="app-download style2 section-blue3">
         <div class="container">
@@ -121,44 +122,15 @@
 			
 			
 			
-<div style="" class="main col col-12 col-sm-12 col-md-9 col-lg-8 order-1 order-sm-2 order-lg-1 mb-5 mt-1">
+<div style="" class="main col col-12 col-sm-12 col-md-12 col-lg-12 order-1 order-sm-2 order-lg-1 mb-5 mt-1">
 
-<div id="root" data-page='{page.name}' data-name='{page.examname}'
-data-param='{ "quid" : { "$in" : [{{page.questionnumbers}}] } }'></div>
+
+{{ content }}
 
 
 </div>
 
-<div style="" class="main col col-12 col-sm-12 col-md-3 col-lg-4 order-2 order-sm-2 order-lg-2 mb-5 mt-1">
-
-<div>
-  <div class="App">
-    <div class="container">
-      
-      <div class="card mt-3">
-        <div class="card-header d-flex justify-content-between" >Study Hard</div>
-        <div class="card-body">
-
-			<img src="/assets/exam-is-coming.jpg" alt="AWS Study Guide" class="img-fluid mx-auto d-block img-thumbnail rounded ">
-
-         </div>
-      </div>
-	  
-	  <div class="card mt-3">
-        <div class="card-header d-flex justify-content-between" >No Cheat Policy</div>
-
-          <div class="card-body">
-			<img src="/assets/louder-uipath-exam-dump.jpg" alt="AWS Braindump Policy" class="img-fluid mx-auto d-block img-thumbnail rounded ">
-          </div>
-
-      </div>
-      
-
-      
-    </div>
-  </div>
-</div>
-
+<div style="" class="main col col-12 col-sm-12 col-md-12 col-lg-12 order-2 order-sm-2 order-lg-2 mb-5 mt-1">
 
 </div>
 

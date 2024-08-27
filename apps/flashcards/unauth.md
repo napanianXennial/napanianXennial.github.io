@@ -1,7 +1,7 @@
 ---
-layout: minimal-app
-title:  "Flashcards!"
-blurb: "Test your knowledge of key concepts with these flashcards."
+layout: minimal
+title:  "Unauthenciated View"
+blurb: "Here's how the page looks to unauthenticated users."
 ---
 
 

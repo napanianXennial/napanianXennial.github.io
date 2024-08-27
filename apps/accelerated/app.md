@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: minimal-app
 title:  "Accelerated Learning"
 blurb: "Learn everything now and fast and good."
 ---

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: minimal-app
 title:  "OPO"
 blurb: "Online parts ordering made easy!"
 ---
