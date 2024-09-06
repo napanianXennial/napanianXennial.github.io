@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folders and app.md Front Matter in 'apps'</title>
+</head>
+<body>
+    <h1>Folders in 'apps' and app.md Front Matter</h1>
+    <div id="folders-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script>
+        async function listFolders() {
+            const response = await fetch('https://api.github.com/repos/kivensferrer/hide/contents/apps');
+            const folders = await response.json();
+
+            const foldersContainer = document.getElementById('folders-container');
+            
+            for (const folder of folders) {
+                if (folder.type === 'dir') {
+                    // Create a section for each folder
+                    const folderSection = document.createElement('div');
+                    folderSection.style.marginBottom = '20px';
+                    
+                    // Folder name
+                    const folderName = document.createElement('h2');
+                    folderName.textContent = folder.name;
+                    folderSection.appendChild(folderName);
+
+                    // Fetch app.md content
+                    const appMdResponse = await fetch(`https://api.github.com/repos/kivensferrer/hide/contents/apps/${folder.name}/app.md`);
+                    const appMdData = await appMdResponse.json();
+                    const appMdContent = atob(appMdData.content);
+
+                    // Extract Front Matter
+                    const frontMatter = appMdContent.match(/---[\s\S]*?---/);
+                    if (frontMatter) {
+                        const yamlContent = frontMatter[0].replace(/---/g, '');
+                        const jsonContent = jsyaml.load(yamlContent);
+
+                        // Display JSON content
+                        const jsonPre = document.createElement('pre');
+                        jsonPre.textContent = JSON.stringify(jsonContent, null, 2);
+                        folderSection.appendChild(jsonPre);
+                    } else {
+                        const noFrontMatter = document.createElement('p');
+                        noFrontMatter.textContent = "No Front Matter found.";
+                        folderSection.appendChild(noFrontMatter);
+                    }
+
+                    foldersContainer.appendChild(folderSection);
+                }
+            }
+        }
+
+        listFolders();
+    </script>
+</body>
+</html>

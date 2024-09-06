@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html class="h-100">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Welcome to {{ page.companyname }}.</title>
+<html class="no-js" lang="zxx">
 
+<head>
+    
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179472407-1"></script>
+<script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+   
+   gtag('config', 'UA-179472407-1');
+</script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="index, follow" />
+    
+    
+    
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Welcome to {{ page.companyname }}.</title>
+    <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.svg" />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- Web Font -->
@@ -14,177 +34,103 @@
         rel="stylesheet">
 
     <!-- ========================= CSS here ========================= -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/tiny-slider.css" />
-    <link rel="stylesheet" href="assets/css/glightbox.min.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="../assets/css/animate.css" />
+    <link rel="stylesheet" href="../assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="../assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
 
-<link rel="stylesheet" type="text/css" href="/css/main.css" />
-<link
-rel="stylesheet"
-href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
-/>
-<!-- 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    
-    <link
-      rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai-sublime.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css"
-      integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css"
-      integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+"
-      crossorigin="anonymous"
-    />
+</head>
 
+<body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
 
--->
-  </head>
-
-  <body class="h-100">
-   <div id="app" class="h-100 d-flex flex-column">
-      <div class="nav-container">
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
-          <div class="container">
-            <div class="navbar-brand logo"></div>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a href="/" class="nav-link route-link">Home</a>
-                </li>
-              </ul>
-              <ul class="navbar-nav d-none d-md-block">
-                <!-- Login button: show if NOT authenticated -->
-                <li class="nav-item auth-invisible">
-                  <button
-                    id="qsLoginBtn"
-                    onclick="login()"
-                    class="btn btn-primary btn-margin auth-invisible hidden"
-                  >
-                    Log in
-                  </button>
-                </li>
-                <!-- / Login button -->
-
-                <!-- Fullsize dropdown: show if authenticated -->
-                <li class="nav-item dropdown auth-visible hidden">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="profileDropDown"
-                    data-toggle="dropdown"
-                  >
-                    <!-- Profile image should be set to the profile picture from the id token -->
-                    <img
-                      alt="Profile picture"
-                      class="nav-user-profile profile-image rounded-circle"
-                      width="50"
-                    />
-                  </a>
-                  <div class="dropdown-menu">
-                    <!-- Show the user's full name from the id token here -->
-                    <div class="dropdown-header nav-user-name user-name"></div>
-                    <a
-                      href="/profile"
-                      class="dropdown-item dropdown-profile route-link"
-                    >
-                      <i class="fas fa-user mr-3"></i> Profile
-                    </a>
-                    <a
-                      href="#"
-                      class="dropdown-item"
-                      id="qsLogoutBtn"
-                      onclick="logout()"
-                    >
-                      <i class="fas fa-power-off mr-3"></i> Log out
-                    </a>
-                  </div>
-                </li>
-                <!-- /Fullsize dropdown -->
-              </ul>
-
-              <!-- Responsive login button: show if NOT authenticated -->
-              <ul class="navbar-nav d-md-none auth-invisible">
-                <button
-                  class="btn btn-primary btn-block auth-invisible hidden"
-                  id="qsLoginBtn"
-                  onclick="login()"
-                >
-                  Log in
-                </button>
-              </ul>
-              <!-- /Responsive login button -->
-
-              <!-- Responsive profile dropdown: show if authenticated -->
-              <ul
-                class="
-                  navbar-nav
-                  d-md-none
-                  auth-visible
-                  hidden
-                  justify-content-between
-                "
-                style="min-height: 125px"
-              >
-                <li class="nav-item">
-                  <span class="user-info">
-                    <!-- Profile image should be set to the profile picture from the id token -->
-                    <img
-                      alt="Profile picture"
-                      class="
-                        nav-user-profile
-                        d-inline-block
-                        profile-image
-                        rounded-circle
-                        mr-3
-                      "
-                      width="50"
-                    />
-                    <!-- Show the user's full name from the id token here -->
-                    <h6 class="d-inline-block nav-user-name user-name"></h6>
-                  </span>
-                </li>
-                <li>
-                  <i class="fas fa-user mr-3"></i>
-                  <a href="/profile" class="route-link">Profile</a>
-                </li>
-
-                <li>
-                  <i class="fas fa-power-off mr-3"></i>
-                  <a href="#" id="qsLogoutBtn" onclick="logout()">Log out</a>
-                </li>
-              </ul>
+    <!-- Preloader -->
+    <!-- <div class="preloader style2">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
             </div>
-          </div>
-        </nav>
-      </div>
+        </div>
+    </div> -->
+    <!-- /End Preloader -->
 
-      <div id="main-content" class="container mt-5 flex-grow-1">
-	  
+    <!-- Start Header Area -->
+    <header class="header style2">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand logo" href="index.html">
+                                <!--img class="primary-logo" src="../assets/images/logo/white-logo.svg" alt="Logo" /-->
+                                <!--img class="alt-logo" src="../assets/images/logo/logo2.svg" alt="Logo" /-->
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav me-auto">
+                                    <li class="nav-item">
+                                        <a  href="/index.html">Home</a>
+                                    </li>
+									
+									<li class="nav-item">
+                                        <a href="/templates.html" >Templates</a>
+                                    </li>
+
+									<li class="nav-item">
+                                        <a href="/applications.html" >Applications</a>
+                                    </li>
+									
+									<li class="nav-item">
+                                        <a href="/feedback" >Feedback</a>
+                                    </li>
+
+									<li class="nav-item">
+                                        <a href="/chatbot.html" >Chatbot</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="/wiki.html" >Wiki</a>
+                                    </li>
+									
+									<li class="nav-item">
+                                        <a href="/news.html" >News</a>
+                                    </li>
+									
+									<li class="nav-item">
+                                        <a href="/login.html" >Login</a>
+                                    </li>									
+                                </ul>
+                            </div>
+                            <!-- navbar collapse -->
+                            <div class="button">
+                                <a href="/applications.html" class="btn class="page-scroll"">Get Started</a>
+                            </div>
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- End Header Area -->
 
     <!-- Start Hero Area -->
     <section id="hero-area" class="hero-area style2">
@@ -208,7 +154,7 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 col-12">
                         <div class="hero-image">
-                            <img src="/assets/images/900x550.png" alt="#">
+                            <img src="../assets/images/900x550.png" alt="#">
                         </div>
                     </div>
                 </div>
@@ -217,49 +163,36 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
         <!--/ End Single Slider -->
     </section>
     <!--/ End Hero Area -->
-<section class="clients style2 section auth-invisible">
-	<div class="container">
-	<div class="row">
-        <div class="col-12">
-        <div id="content-home" class="page">
-          <div class="text-center hero">
-            <h1 class="mb-4">Please log in to see more.</h1>
-          </div>
-        </div>
-	</div>
-	</div>
-	</div>
-</section>      
 
     <!-- Start Clients Area -->
-    <section class="clients style2 section auth-visible">
+    <section class="clients style2 section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <h2>Happy Customers Using <span>{{ page.companyname }}</span></h2>
                     <!-- Start Single Clients -->
                     <div class="single-client">
-                        <img src="assets/images/230x95.png" alt="#">
+                        <img src="../assets/images/230x95.png" alt="#">
                     </div>
                     <!-- End Single Clients -->
                     <!-- Start Single Clients -->
                     <div class="single-client">
-                        <img src="assets/images/230x95.png" alt="#">
+                        <img src="../assets/images/230x95.png" alt="#">
                     </div>
                     <!-- End Single Clients -->
                     <!-- Start Single Clients -->
                     <div class="single-client">
-                        <img src="assets/images/230x95.png" alt="#">
+                        <img src="../assets/images/230x95.png" alt="#">
                     </div>
                     <!-- End Single Clients -->
                     <!-- Start Single Clients -->
                     <div class="single-client">
-                        <img src="assets/images/230x95.png" alt="#">
+                        <img src="../assets/images/230x95.png" alt="#">
                     </div>
                     <!-- End Single Clients -->
                     <!-- Start Single Clients -->
                     <div class="single-client">
-                        <img src="assets/images/230x95.png" alt="#">
+                        <img src="../assets/images/230x95.png" alt="#">
                     </div>
                     <!-- End Single Clients -->
                 </div>
@@ -270,7 +203,7 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
 
 	
 	   <!-- Work Process Area -->
-    <section class="work-process section auth-visible">
+    <section class="work-process section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -333,24 +266,34 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
     <section class="our-achievement style2 section">
         <div class="container">
             <div class="row">
-
-<!-- Loop through pages -->
-{% for page in site.pages %}
-  {% if page.path contains 'apps/' %}
-
-
-		<div class="col-lg-3 col-md-6 col-12">
+                <div class="col-lg-3 col-md-6 col-12">
                     <div class="single-achievement wow fadeInUp" data-wow-delay=".2s">
                         <i class="lni lni-user"></i>
-                        <h3 class="counter"><span id="secondo1" class="countup" cup-end="264"><a href="{{ page.url }}">{{ page.title }}</a></span></h3>
-                        <p>{{ page.blurb }} </p>
+                        <h3 class="counter"><span id="secondo1" class="countup" cup-end="264">{{ page.number-01 }}</span></h3>
+                        <p>{{ page.number-description-01 }} </p>
                     </div>
                 </div>
-  {% endif %}
-{% endfor %}
-
-
-		    
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".4s">
+                        <i class="lni lni-users"></i>
+                        <h3 class="counter"><span id="secondo2" class="countup" cup-end="100">{{ page.number-02 }}</span></h3>
+                        <p>{{ page.number-description-02 }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
+                        <i class="lni lni-code"></i>
+                        <h3 class="counter"><span id="secondo3" class="countup" cup-end="855">{{ page.number-03 }}</span></h3>
+                        <p>{{ page.number-description-03 }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-achievement wow fadeInUp" data-wow-delay=".6s">
+                        <i class="lni lni-coffee-cup"></i>
+                        <h3 class="counter"><span id="secondo3" class="countup" cup-end="295">{{ page.number-04 }}</span></h3>
+                        <p>{{ page.number-description-04 }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -359,7 +302,7 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
 
 
     <!-- Start Newsletter Area -->
-    <section class="newsletter-area style2 section auth-visible">
+    <section class="newsletter-area style2 section">
         <div class="container">
             <div class="row ">
                 <div class="col-lg-10 offset-lg-1 col-12">
@@ -399,9 +342,10 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
             </div>
         </div>
     </section>
+    -->
 
     <!-- Start Contact Area -->
-    <section id="contact" class="contact-us style2 section auth-visible">
+    <section id="contact" class="contact-us style2 section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -418,7 +362,7 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
                     <div class="row">
                         <div class="col-lg-8 col-12">
                             <div class="form-main">
-                                <form class="form" method="post" action="assets/mail/mail.php">
+                                <form class="form" method="post" action="../assets/mail/mail.php">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="form-group">
@@ -502,7 +446,7 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
                     <div class="col-lg-4 col-md-4 col-12">
                         <!-- Single Widget -->
                         <div class="f-about single-footer">
-                            <div class="logox">
+                            <div class="logo">
                                 {{ page.companyname }}
                             </div>
                             <p>{{ page.tagline }}</p>
@@ -585,7 +529,7 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
                         <div class="col-12">
                             <div class="left">
                                 <p>Designed and Developed by<a href="https://graygrids.com/" rel="nofollow"
-                                        target="_blank">Miles Ahead, &#169; 2024</a></p>
+                                        target="_blank">GrayGrids</a></p>
                             </div>
                         </div>
                     </div>
@@ -596,68 +540,30 @@ href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
     </footer>
     <!--/ End Footer Area -->
 
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top style2 btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
 
+    <!-- ========================= JS here ========================= -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/count-up.min.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/tiny-slider.js"></script>
+    <script src="../assets/js/glightbox.min.js"></script>
+    <script src="../assets/js/imagesloaded.min.js"></script>
+    <script src="../assets/js/isotope.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script type="text/javascript">
+        //========= glightbox
+        GLightbox({
+            'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
+    </script>
+</body>
 
-
-
-
-
-
-
-
-
-
-	      
-	  
-        <div id="content-home" class="page">
-          <div class="text-center hero">
-            <h1 class="mb-4">Please log in to see more.</h1>
-          </div>
-        </div>
-
-        <div class="page" id="content-profile">
-          <div class="container">
-            <div class="row align-items-center profile-header">
-              <div class="col-md-2">
-              </div>
-              <div class="col-md">
-                <h2 class="user-name"></h2>
-                <p class="lead text-muted user-email"></p>
-              </div>
-            </div>
-
-            <div class="row">
-              <pre class="rounded">
-                <code id="profile-data" class="json"></code></pre>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-    <script src="js/ui.js"></script>
-    <script src="js/app.js"></script>
-
-
-abc
-{% for page in site.pages %}
-  {% if page.path contains '/apps/' %}
-    <p>{{ page.title }}</p>
-<p>{{ page.blurb }}</p>
-<p>{{ page.path }}</p>
-  {% endif %}
-  {% if page.path contains 'apps/' %}
-    <p>{{ page.url }}</p>
-  {% endif %}
-{% endfor %}
-	  <script
-  src="https://app.livechatai.com/embed.js"
-  data-id="clyq5fuab00018bz24tj8c22x"
-  async defer>
-</script>
-  </body>
 </html>

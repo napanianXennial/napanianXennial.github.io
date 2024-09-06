@@ -1,0 +1,221 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f7f7f7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header Section */
+.header-section {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.header-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.header-section p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.header-section .btn-primary {
+    background-color: #ff4c60;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* Features Section */
+.features-section {
+    padding: 60px 20px;
+    background-color: white;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.feature-item {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-item img {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Why Choose Us Section */
+.why-choose-us-section {
+    padding: 60px 20px;
+    background-color: #f1f4f8;
+}
+
+.why-choose-us-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #ff4c60;
+}
+
+.why-choose-us-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.why-choose-us-item {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.why-choose-us-item img {
+    max-width: 60px;
+    margin-bottom: 20px;
+}
+
+.why-choose-us-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.why-choose-us-item p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Pricing Section */
+.pricing-section {
+    padding: 60px 20px;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.pricing-section h2 {
+    font-size: 2rem;
+    color: #ff4c60;
+    margin-bottom: 40px;
+}
+
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pricing-plan {
+    flex: 1;
+    background-color: #f7f7f7;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+.pricing-plan h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.pricing-plan .price {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #ff4c60;
+}
+
+.pricing-plan p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.pricing-plan .btn-primary {
+    background-color: #ff4c60;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* Team Section */
+.team-section {
+    padding: 60px 20px;
+    background-color: #f1f4f8;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #ff4c60;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-member {
+    flex: 1;
+    max-width: 200px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}

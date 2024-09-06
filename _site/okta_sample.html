@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auth0 Login Example</title>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.18/auth0-spa-js.production.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <button id="btn-login" onclick="login()">Login</button>
+      <button id="btn-logout" onclick="logout()" style="display: none;">Logout</button>
+      <div id="profile"></div>
+    </nav>
+  </header>
+
+  <script type="text/javascript">
+    var auth0 = null;
+
+    window.onload = async () => {
+      auth0 = await createAuth0Client({
+        domain: "dev-qirtwh6cktfuc8ap.us.auth0.com",
+        client_id: "CmiF5zKFREhl7eEmcL8p2z5vkU8Fbzk5",
+        cacheLocation: 'localstorage', // Optional: to persist the user's session
+        useRefreshTokens: true // Optional: to use refresh tokens
+      });
+
+      const isAuthenticated = await auth0.isAuthenticated();
+
+      if (isAuthenticated) {
+        document.getElementById("btn-logout").style.display = "block";
+        document.getElementById("btn-login").style.display = "none";
+        const user = await auth0.getUser();
+        document.getElementById("profile").innerText = `Hello, ${user.name}`;
+      } else {
+        document.getElementById("btn-login").style.display = "block";
+        document.getElementById("btn-logout").style.display = "none";
+      }
+    };
+
+    const login = async () => {
+      try {
+        await auth0.loginWithPopup();
+        const user = await auth0.getUser();
+        document.getElementById("profile").innerText = `Hello, ${user.name}`;
+        document.getElementById("btn-logout").style.display = "block";
+        document.getElementById("btn-login").style.display = "none";
+      } catch (error) {
+        console.error("Login failed", error);
+      }
+    };
+
+    const logout = () => {
+      auth0.logout({
+        localOnly: true // Ensures it logs out only locally
+      });
+      document.getElementById("btn-logout").style.display = "none";
+      document.getElementById("btn-login").style.display = "block";
+      document.getElementById("profile").innerText = "";
+    };
+  </script>
+</body>
+
+</html>

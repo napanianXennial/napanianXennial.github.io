@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Pages Gallery</title>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.18/auth0-spa-js.production.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .gallery-item {
+            flex: 1 1 calc(33.333% - 20px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+            display: none; /* Hide all items by default */
+        }
+        .gallery-item iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        .gallery-item h3 {
+            text-align: center;
+            padding: 10px;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <button id="btn-login" onclick="login()">Login</button>
+            <button id="btn-logout" onclick="logout()" style="display: none;">Logout</button>
+            <div id="profile"></div>
+        </nav>
+    </header>
+    <h1>Embedded Pages Gallery</h1>
+
+    <div class="gallery">
+        
+        <div class="gallery-item" data-show="Show everytime">
+            <h3>Site Builder X </h3>
+            <iframe src="/hide/apps/site-builder-x/index.html" title="Site Builder X "></iframe>
+        </div>
+        
+        <div class="gallery-item" data-show="Show only when Authenticated">
+            <h3>Mock Opportunities </h3>
+            <iframe src="/hide/apps/mock-opportunities/index.html" title="Mock Opportunities "></iframe>
+        </div>
+        
+        <div class="gallery-item" data-show="Show only when Authenticated">
+            <h3>Jira Ticket Creator</h3>
+            <iframe src="/hide/apps/jira-ticket-creator/index.html" title="Jira Ticket Creator"></iframe>
+        </div>
+        
+        <div class="gallery-item" data-show="Show everytime">
+            <h3>Calculator</h3>
+            <iframe src="/hide/apps/calculator/index.html" title="Calculator"></iframe>
+        </div>
+        
+        <div class="gallery-item" data-show="Show everytime">
+            <h3>Countdown Timer</h3>
+            <iframe src="/hide/apps/countdown-timer/index.html" title="Countdown Timer"></iframe>
+        </div>
+        
+        <div class="gallery-item" data-show="Show everytime">
+            <h3>Currency Converter</h3>
+            <iframe src="/hide/apps/currency-converter/index.html" title="Currency Converter"></iframe>
+        </div>
+        
+        <div class="gallery-item" data-show="Show everytime">
+            <h3>Image Carousel</h3>
+            <iframe src="/hide/apps/image-carousel/index.html" title="Image Carousel"></iframe>
+        </div>
+        
+        <div class="gallery-item" data-show="Show everytime">
+            <h3>Quiz App</h3>
+            <iframe src="/hide/apps/quiz-app/index.html" title="Quiz App"></iframe>
+        </div>
+        
+        <div class="gallery-item" data-show="Show everytime">
+            <h3>Random Quote</h3>
+            <iframe src="/hide/apps/random-quote/index.html" title="Random Quote"></iframe>
+        </div>
+        
+        <div class="gallery-item" data-show="Show everytime">
+            <h3>Todo List</h3>
+            <iframe src="/hide/apps/todo-list/index.html" title="Todo List"></iframe>
+        </div>
+        
+        <div class="gallery-item" data-show="Show everytime">
+            <h3>Weather Widget</h3>
+            <iframe src="/hide/apps/weather-widget/index.html" title="Weather Widget"></iframe>
+        </div>
+        
+    </div>
+    
+    <script type="text/javascript">
+        var auth0 = null;
+    
+        window.onload = async () => {
+          auth0 = await createAuth0Client({
+            domain: "dev-qirtwh6cktfuc8ap.us.auth0.com",
+            client_id: "CmiF5zKFREhl7eEmcL8p2z5vkU8Fbzk5",
+            cacheLocation: 'localstorage', // Optional: to persist the user's session
+            useRefreshTokens: true // Optional: to use refresh tokens
+          });
+    
+          const isAuthenticated = await auth0.isAuthenticated();
+    
+          if (isAuthenticated) {
+            document.getElementById("btn-logout").style.display = "block";
+            document.getElementById("btn-login").style.display = "none";
+            const user = await auth0.getUser();
+            document.getElementById("profile").innerText = `Hello, ${user.name}`;
+          } else {
+            document.getElementById("btn-login").style.display = "block";
+            document.getElementById("btn-logout").style.display = "none";
+          }
+
+          // Display gallery items based on authentication status
+          document.querySelectorAll('.gallery-item').forEach(item => {
+            const showAttribute = item.getAttribute('data-show');
+            
+            if (showAttribute === 'Show everytime' || 
+                (showAttribute === 'Show only when Authenticated' && isAuthenticated)) {
+              item.style.display = 'block';
+            }
+          });
+        };
+    
+        const login = async () => {
+          try {
+            await auth0.loginWithPopup();
+            const user = await auth0.getUser();
+            document.getElementById("profile").innerText = `Hello, ${user.name}`;
+            document.getElementById("btn-logout").style.display = "block";
+            document.getElementById("btn-login").style.display = "none";
+
+            // Re-check authentication and update the gallery display
+            const isAuthenticated = true;
+            document.querySelectorAll('.gallery-item').forEach(item => {
+              const showAttribute = item.getAttribute('data-show');
+
+              if (showAttribute === 'Show everytime' || 
+                  (showAttribute === 'Show only when Authenticated' && isAuthenticated)) {
+                item.style.display = 'block';
+              }
+            });
+
+          } catch (error) {
+            console.error("Login failed", error);
+          }
+        };
+    
+        const logout = () => {
+          auth0.logout({
+            localOnly: true // Ensures it logs out only locally
+          });
+          document.getElementById("btn-logout").style.display = "none";
+          document.getElementById("btn-login").style.display = "block";
+          document.getElementById("profile").innerText = "";
+
+          // Re-check authentication and update the gallery display
+          const isAuthenticated = false;
+          document.querySelectorAll('.gallery-item').forEach(item => {
+            const showAttribute = item.getAttribute('data-show');
+
+            if (showAttribute !== 'Show everytime') {
+              item.style.display = 'none';
+            }
+          });
+        };
+    </script>
+</body>
+</html>

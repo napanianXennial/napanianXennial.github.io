@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: "Main Page" }}</title>
+</head>
+<body>
+    <h1>{{ page.title | default: "Main Page" }}</h1>
+
+    <!-- Dropdown to select which embedded page to load -->
+    <select id="page-selector">
+        {% for option in page.options %}
+        <option value="{{ option.url }}">{{ option.name }}</option>
+        {% endfor %}
+    </select>
+
+    <!-- Div to load the embedded page content -->
+    <div id="embedded-content"></div>
+
+    <script>
+        const pageSelector = document.getElementById('page-selector');
+        const embeddedContent = document.getElementById('embedded-content');
+
+        function parseFrontMatter(content) {
+          const frontMatterPattern = /^---[\s\S]+?---/;
+          const match = content.match(frontMatterPattern);
+          if (match) {
+              const frontMatter = match[0];
+              const body = content.replace(frontMatter, '').trim();
+              const data = frontMatter.replace(/---/g, '').trim().split('\n').reduce((acc, line) => {
+                  const [key, ...rest] = line.split(':');
+                  acc[key.trim()] = rest.join(':').trim();
+                  return acc;
+              }, {});
+              return { data, body };
+          }
+          return { data: {}, body: content };
+        }
+
+        function loadPage(pageUrl) {
+          fetch(pageUrl)
+              .then(response => response.text())
+              .then(data => {
+                  const { data: frontMatter, body } = parseFrontMatter(data);
+                  console.log('Front Matter:', frontMatter);  // Use the front matter as needed
+                  embeddedContent.innerHTML = body;
+              })
+              .catch(error => console.error('Error loading embedded content:', error));
+          }
+          
+        // Initial load of the first page
+        loadPage(pageSelector.value);
+
+        // Load the selected page when the dropdown changes
+        pageSelector.addEventListener('change', function() {
+            loadPage(this.value);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+</head>
+<body>
+    <h1>Page 1</h1>
+
+    <!-- Dropdown to select which embedded page to load -->
+    <select id="page-selector">
+        
+        <option value="https://kivensferrer.github.io/hide/apps/jira-ticket-creator/index.html">Jira Ticket Creator</option>
+        
+        <option value="https://kivensferrer.github.io/hide/apps/calculator/index.html">Calculator</option>
+        
+        <option value="https://kivensferrer.github.io/hide/apps/countdown-timer/index.html">Countdown Timer</option>
+        
+        <option value="https://kivensferrer.github.io/hide/apps/currency-converter/index.html">Currency Converter</option>
+        
+        <option value="https://kivensferrer.github.io/hide/apps/image-carousel/index.html">Image Carousel</option>
+        
+        <option value="https://kivensferrer.github.io/hide/apps/quiz-app/index.html">Quiz App</option>
+        
+        <option value="https://kivensferrer.github.io/hide/apps/random-quote/index.html">Random Quote</option>
+        
+        <option value="https://kivensferrer.github.io/hide/apps/todo-list/index.html">Todo List</option>
+        
+        <option value="https://kivensferrer.github.io/hide/apps/weather-widget/index.html">Weather Widget</option>
+        
+    </select>
+
+    <!-- Div to load the embedded page content -->
+    <div id="embedded-content"></div>
+
+    <script>
+        const pageSelector = document.getElementById('page-selector');
+        const embeddedContent = document.getElementById('embedded-content');
+
+        function parseFrontMatter(content) {
+          const frontMatterPattern = /^---[\s\S]+?---/;
+          const match = content.match(frontMatterPattern);
+          if (match) {
+              const frontMatter = match[0];
+              const body = content.replace(frontMatter, '').trim();
+              const data = frontMatter.replace(/---/g, '').trim().split('\n').reduce((acc, line) => {
+                  const [key, ...rest] = line.split(':');
+                  acc[key.trim()] = rest.join(':').trim();
+                  return acc;
+              }, {});
+              return { data, body };
+          }
+          return { data: {}, body: content };
+        }
+
+        function loadPage(pageUrl) {
+          fetch(pageUrl)
+              .then(response => response.text())
+              .then(data => {
+                  const { data: frontMatter, body } = parseFrontMatter(data);
+                  console.log('Front Matter:', frontMatter);  // Use the front matter as needed
+                  embeddedContent.innerHTML = body;
+              })
+              .catch(error => console.error('Error loading embedded content:', error));
+          }
+          
+        // Initial load of the first page
+        loadPage(pageSelector.value);
+
+        // Load the selected page when the dropdown changes
+        pageSelector.addEventListener('change', function() {
+            loadPage(this.value);
+        });
+    </script>
+</body>
+</html>

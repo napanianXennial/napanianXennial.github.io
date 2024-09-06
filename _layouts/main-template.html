@@ -1,0 +1,1174 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>{{page.title}}</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="assets/img/favicon.png">
+
+    <!-- ***** All CSS Files ***** -->
+
+    <!-- Style css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+</head>
+
+<body>
+    <!--====== Preloader Area Start ======-->
+    <div class="preloader-main">
+        <div class="preloader-wapper">
+            <svg class="preloader" xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="200">
+                <defs>
+                    <filter id="goo" x="-40%" y="-40%" height="200%" width="400%">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -8" result="goo" />
+                    </filter>
+                </defs>
+                <g filter="url(#goo)">
+                    <circle class="dot" cx="50" cy="50" r="25" fill="#ff6f61" />
+                    <circle class="dot" cx="50" cy="50" r="25" fill="#ff6f61" />
+                </g>
+            </svg>
+            <div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="preloader">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div> -->
+    <!--====== Preloader Area End ======-->
+
+    <!--====== Scroll To Top Area Start ======-->
+    <div id="scrollUp" title="Scroll To Top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    <!--====== Scroll To Top Area End ======-->
+
+    <div class="main">
+        <!-- ***** Header Start ***** -->
+        <header class="navbar navbar-sticky navbar-expand-lg navbar-dark">
+            <div class="container position-relative">
+                <a class="navbar-brand" href="index.html">
+                    <img class="navbar-brand-regular" src="assets/img/logo/logo-white.png" alt="brand-logo">
+                    <img class="navbar-brand-sticky" src="assets/img/logo/logo.png" alt="sticky brand-logo">
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-inner">
+                    <!--  Mobile Menu Toggler -->
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="navbarToggler" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <nav>
+                        <ul class="navbar-nav" id="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#features">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#screenshots">Screenshots</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#pricing">Pricing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link scroll" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- ***** Header End ***** -->
+
+        <!-- ***** Welcome Area Start ***** -->
+        <section id="home" class="section welcome-area bg-overlay d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Welcome Intro Start -->
+                    <div class="col-12 col-md-7 col-lg-6">
+                        <div class="welcome-intro">
+                            <h1 class="text-white">{{page.welcome_title}}</h1>
+                            <p class="text-white my-4">{{page.welcome_text}}</p>
+                            <!-- Store Buttons -->
+                            <div class="button-group store-buttons d-flex">
+                                <a href="#">
+                                    <img src="assets/img/icon/google-play.png" alt="">
+                                </a>
+                                <a href="#">
+                                    <img src="assets/img/icon/app-store.png" alt="">
+                                </a>
+                            </div>
+                            <span class="d-inline-block text-white fw-3 font-italic mt-3">* Available on iPhone, iPad and all Android devices</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5 col-lg-6">
+                        <!-- Welcome Thumb -->
+                        <div class="welcome-thumb mx-auto" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
+                            <img src="assets/img/welcome/welcome-mockup.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Shape Bottom -->
+            <div class="shape-bottom">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2353.6 1112.5" style="enable-background:new 0 0 2353.6 1112.5;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0 {
+                            fill: #FFFFFF;
+                        }
+                    </style>
+                    <path class="st0" d="M2353.6,0v1112.5H0c132.1-171.4,350.7-231.4,655.9-179.9c474,79.9,637.1-23.3,882.7-262.4
+                    C1802.7,413,1870,54.1,2353.6,0z" />
+                </svg>
+            </div>
+        </section>
+        <!-- ***** Welcome Area End ***** -->
+
+        <!-- ***** Benifits Area Start ***** -->
+        <section id="benifits" class="section benifits-area style-three ptb_100">
+            <div class="container">
+                <div class="row">
+                    <!-- Benifits Item -->
+                    <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up">
+                        <div class="benifits-item p-4">
+                            <!-- Feature Icon -->
+                            <div class="feature-icon mb-3">
+                                <span><i class="fas fa-fire-alt"></i></span>
+                            </div>
+                            <!-- Benifits Text -->
+                            <div class="benifits-text">
+                                <h3 class="mb-2">Free Trail</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Benifits Item -->
+                    <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="benifits-item p-4">
+                            <!-- Feature Icon -->
+                            <div class="feature-icon mb-3">
+                                <span><i class="fas fa-fill-drip"></i></span>
+                            </div>
+                            <!-- Benifits Text -->
+                            <div class="benifits-text">
+                                <h3 class="mb-2">Easy to use</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Benifits Item -->
+                    <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="benifits-item p-4">
+                            <!-- Feature Icon -->
+                            <div class="feature-icon mb-3">
+                                <span><i class="fas fa-edit"></i></span>
+                            </div>
+                            <!-- Benifits Text -->
+                            <div class="benifits-text">
+                                <h3 class="mb-2">Customizable Code</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Benifits Area End ***** -->
+
+        <!-- ***** Features Area Start ***** -->
+        <section id="features" class="section features-area ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-6">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <h2 class="text-capitalize">{{page.features_title}}</h2>
+                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.</p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="features-slider-wrapper overflow-hidden">
+                            <!-- Work Slider -->
+                            <ul class="features-slider owl-carousel">
+                                <li class="slide-item">
+                                    <img src="assets/img/screenshots/1.png" alt="">
+                                </li>
+                                <li class="slide-item">
+                                    <img src="assets/img/screenshots/2.png" alt="">
+                                </li>
+                                <li class="slide-item">
+                                    <img src="assets/img/screenshots/3.png" alt="">
+                                </li>
+                                <li class="slide-item">
+                                    <img src="assets/img/screenshots/4.png" alt="">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 pt-4 pt-md-0">
+                        <ul class="features-item">
+                            <li>
+                                <!-- Icon Box -->
+                                <div class="icon-box media icon-1 px-1 py-3 py-md-4">
+                                    <!-- Icon -->
+                                    <div class="icon rounded-circle border mr-3">
+                                        <span><i class="fab fa-wordpress"></i></span>
+                                    </div>
+                                    <!-- Icon Text -->
+                                    <div class="icon-text media-body align-self-center align-self-md-start">
+                                        <h3 class="mb-2">Clean Code</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- Icon Box -->
+                                <div class="icon-box media icon-2 px-1 py-3 py-md-4">
+                                    <!-- Icon -->
+                                    <div class="icon rounded-circle border mr-3">
+                                        <span><i class="fas fa-palette"></i></span>
+                                    </div>
+                                    <!-- Icon Text -->
+                                    <div class="icon-text media-body align-self-center align-self-md-start">
+                                        <h3 class="mb-2">Responsive Design</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- Icon Box -->
+                                <div class="icon-box media icon-3 px-1 py-3 py-md-4">
+                                    <!-- Icon -->
+                                    <div class="icon rounded-circle border mr-3">
+                                        <span><i class="fab fa-snapchat"></i></span>
+                                    </div>
+                                    <!-- Icon Text -->
+                                    <div class="icon-text media-body align-self-center align-self-md-start">
+                                        <h3 class="mb-2">Live Chat</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <!-- Icon Box -->
+                                <div class="icon-box media icon-4 px-1 py-3 py-md-4">
+                                    <!-- Icon -->
+                                    <div class="icon rounded-circle border mr-3">
+                                        <span><i class="fab fa-github"></i></span>
+                                    </div>
+                                    <!-- Icon Text -->
+                                    <div class="icon-text media-body align-self-center align-self-md-start">
+                                        <h3 class="mb-2">Easy to Customize</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis culpa expedita dignissimos.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Features Area End ***** -->
+
+        <!-- ***** Service Area Start ***** -->
+        <section class="section service-area overflow-hidden ptb_100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <!-- Service Text -->
+                        <div class="service-text pt-4 pt-lg-0">
+                            <h2 class="mb-4"><span class="fw-4">{{page.service_title}}</h2>
+                            <!-- Check List -->
+                            <ul class="check-list">
+                                <li class="py-1 ml-3">
+                                    <!-- List Box -->
+                                    <div class="list-box media">
+                                        <span class="media-body pl-1">Fully layered dolor sit amet, consectetur adipisicing elit. Facere, nobis, id expedita dolores officiis laboriosam.</span>
+                                    </div>
+                                </li>
+                                <li class="py-1 ml-3">
+                                    <!-- List Box -->
+                                    <div class="list-box media">
+                                        <span class="media-body pl-1">Marketing chart dolor sit amet, consectetur adipisicing elit. Facere, nobis, id expedita dolores officiis laboriosam.</span>
+                                    </div>
+                                </li>
+                                <li class="py-1 ml-3">
+                                    <!-- List Box -->
+                                    <div class="list-box media">
+                                        <span class="media-body pl-1">Customizable design dolor sit amet, consectetur adipisicing elit. Facere, nobis, id expedita dolores officiis laboriosam.</span>
+                                    </div>
+                                </li>
+                                <li class="py-1 ml-3">
+                                    <!-- List Box -->
+                                    <div class="list-box media">
+                                        <span class="media-body pl-1">Email management dolor sit amet, consectetur adipisicing elit. Facere, nobis, id expedita dolores.</span>
+                                    </div>
+                                </li>
+                                <li class="py-1 ml-3">
+                                    <!-- List Box -->
+                                    <div class="list-box media">
+                                        <span class="media-body pl-1">Social marketing dolor sit amet, consectetur adipisicing elit. Facere, nobis, id expedita dolores officiis.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a href="#" class="service-btn mt-4">{{page.service_btn_text}}</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 mx-auto pt-4 pt-lg-0">
+                        <!-- Service Thumb -->
+                        <div class="service-thumb">
+                            <img src="assets/img/welcome/service-thumb.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Service Area End ***** -->
+
+        <!-- ***** Discover Area Start ***** -->
+        <section class="section discover-area overflow-hidden ptb_100">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-12 col-lg-7 order-2 order-lg-1 pt-4 pt-lg-0">
+                        <!-- Discover Thumb -->
+                        <div class="discover-thumb">
+                            <img src="assets/img/welcome/service-thumb.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-5 order-1 order-lg-2">
+                        <!-- Discover Text -->
+                        <div class="service-text discover-text pt-4 pt-lg-0">
+                            <h2>{{page.discover_title}}</h2>
+                            <p class="pt-3 pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolor ut iusto vitae autem neque eum ipsam, impedit asperiores vel cumque laborum dicta repellendus inventore voluptatibus et explicabo nobis unde.</p>
+                            <div class="discover-list">
+                                <span class="mx-1"><i class="fas fa-bullhorn"></i></span>
+                                <span class="mx-1"><i class="fas fa-comments"></i></span>
+                                <span class="mx-1"><i class="fas fa-bell"></i></span>
+                                <span class="mx-1"><i class="fas fa-chart-pie"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Discover Area End ***** -->
+
+        <!-- ***** Statistic Area Start ***** -->
+        <section class="section statistic-area bg-overlay ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <!-- Statistic Content -->
+                        <div class="statistic-content text-center">
+                            <h2 class="text-white">{{page.statistic_title}}</h2>
+                            <p class="text-white my-3 mt-sm-4 mb-sm-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae tenetur odio quaerat eum voluptatibus, tempora incidunt sed dignissimos repellendus, error suscipit, officia possimus odit perspiciatis molestias consequatur quidem nisi asperiores vitae. Quo aut voluptatum similique qui, tenetur maxime facilis dolores.</p>
+                            <!-- Counter List -->
+                            <div class="counter-list">
+                                <ul>
+                                    <li class="d-inline-block">
+                                        <!-- Single Counter -->
+                                        <div class="single-counter p-2 px-md-4 py-md-3 text-center">
+                                            <span class="counter d-inline-block text-white fw-7">23</span><span class="text-white fw-7">%</span>
+                                            <h4 class="text-white fw-4 mt-2 mt-sm-3">Users Accounts</h4>
+                                        </div>
+                                    </li>
+                                    <li class="d-inline-block">
+                                        <!-- Single Counter -->
+                                        <div class="single-counter p-2 px-md-4 py-md-3 text-center">
+                                            <span class="counter d-inline-block text-white fw-7">47</span><span class="text-white fw-7">%</span>
+                                            <h4 class="text-white fw-4 mt-2 mt-sm-3">Faster Growth</h4>
+                                        </div>
+                                    </li>
+                                    <li class="d-inline-block">
+                                        <!-- Single Counter -->
+                                        <div class="single-counter p-2 px-md-4 py-md-3 text-center">
+                                            <span class="counter d-inline-block text-white fw-7">63</span><span class="text-white fw-7">%</span>
+                                            <h4 class="text-white fw-4 mt-2 mt-sm-3">Product Activity</h4>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Statistic Area End ***** -->
+
+        <!-- ***** More Features Area Start ***** -->
+        <section class="section more-features-area ptb_100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-5">
+                        <!-- More Features Text -->
+                        <div class="service-text pt-4 pt-lg-0">
+                            <h2 class="mb-4">{{page.more_features_title}}</h2>
+                            <!-- Check List -->
+                            <ul class="check-list">
+                                <li class="py-1 ml-3">
+                                    <!-- List Box -->
+                                    <div class="list-box media">
+                                        <span class="media-body pl-1">Fully layered dolor sit amet, consectetur adipisicing elit. Facere, nobis, id expedita dolores officiis laboriosam.</span>
+                                    </div>
+                                </li>
+                                <li class="py-1 ml-3">
+                                    <!-- List Box -->
+                                    <div class="list-box media">
+                                        <span class="media-body pl-1">Marketing chart dolor sit amet, consectetur adipisicing elit. Facere, nobis, id expedita dolores officiis laboriosam.</span>
+                                    </div>
+                                </li>
+                                <li class="py-1 ml-3">
+                                    <!-- List Box -->
+                                    <div class="list-box media">
+                                        <span class="media-body pl-1">Customizable design dolor sit amet, consectetur adipisicing elit. Facere, nobis, id expedita dolores officiis laboriosam.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a class="fancyVideo service-btn mt-4" href="https://youtu.be/3t_PeiM3Voc">{{page.more_features_btn_text}}</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-7 pt-5 pt-lg-0">
+                        <!-- More Features Thumb -->
+                        <div class="more-features-thumb d-flex">
+                            <div class="thumb-one" data-aos="fade-down" data-aos-duration="700" data-aos-offset="300" data-aos-easing="ease-in-out">
+                                <img src="assets/img/welcome/thumb-one.png" alt="">
+                            </div>
+                            <div class="thumb-two" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500" data-aos-easing="ease-in-out">
+                                <img src="assets/img/welcome/thumb-two.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** More Features Area End ***** -->
+
+        <!-- ***** Screenshots Area Start ***** -->
+        <section id="screenshots" class="section screenshots-area ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-7">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <h2 class="text-capitalize">{{page.screenshots_title}}</h2>
+                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.</p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- App Screenshot Slider Area -->
+                        <div class="app-screenshots">
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="assets/img/screenshots/1.png" alt="">
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="assets/img/screenshots/2.png" alt="">
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="assets/img/screenshots/3.png" alt="">
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="assets/img/screenshots/4.png" alt="">
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="assets/img/screenshots/5.png" alt="">
+                            </div>
+                            <!-- Single Screenshot Item -->
+                            <div class="single-screenshot">
+                                <img src="assets/img/screenshots/6.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Screenshots Area End ***** -->
+
+        <!-- ***** Testimonial Area Start ***** -->
+        <section class="section testimonial-area ptb_100">
+            <div class="container text-center">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-12 col-md-8">
+                        <div class="testimonials owl-carousel">
+                            <!-- Single Testimonial -->
+                            <div class="single-testimonial p-3 p-md-5">
+                                <img src="assets/img/avatar/avatar-1.png" class="mx-auto d-block" alt="">
+                                <!-- Client Name -->
+                                <h3 class="client-name mt-4 mb-2">John Doe</h3>
+                                <!-- Client Address -->
+                                <h5 class="client-address fw-4">Los Angeles, California</h5>
+                                <!-- Client Rating -->
+                                <div class="client-rating mt-2 mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <!-- Client Description -->
+                                <div class="client-description">
+                                    <!-- Client Text -->
+                                    <div class="client-text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam rem sunt nulla ducimus expedita, incidunt laborum assumenda. Deleniti iste placeat nostrum incidunt rem laudantium, sapiente, cum, molestias unde, quidem labore.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Testimonial -->
+                            <div class="single-testimonial p-3 p-md-5">
+                                <img src="assets/img/avatar/avatar-2.png" class="mx-auto d-block" alt="">
+                                <!-- Client Name -->
+                                <h3 class="client-name mt-4 mb-2">Jassica William</h3>
+                                <!-- Client Address -->
+                                <h5 class="client-address fw-4">Los Angeles, California</h5>
+                                <!-- Client Rating -->
+                                <div class="client-rating mt-2 mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <!-- Client Description -->
+                                <div class="client-description">
+                                    <!-- Client Text -->
+                                    <div class="client-text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam rem sunt nulla ducimus expedita, incidunt laborum assumenda. Deleniti iste placeat nostrum incidunt rem laudantium, sapiente, cum, molestias unde, quidem labore.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Testimonial -->
+                            <div class="single-testimonial p-3 p-md-5">
+                                <img src="assets/img/avatar/avatar-3.png" class="mx-auto d-block" alt="">
+                                <!-- Client Name -->
+                                <h3 class="client-name mt-4 mb-2">Johnson Smith</h3>
+                                <!-- Client Address -->
+                                <h5 class="client-address fw-4">Los Angeles, California</h5>
+                                <!-- Client Rating -->
+                                <div class="client-rating mt-2 mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <!-- Client Description -->
+                                <div class="client-description">
+                                    <!-- Client Text -->
+                                    <div class="client-text">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam rem sunt nulla ducimus expedita, incidunt laborum assumenda. Deleniti iste placeat nostrum incidunt rem laudantium, sapiente, cum, molestias unde, quidem labore.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Testimonial Thumb -->
+                        <div class="single-testimonial-thumb d-none d-md-block">
+                            <!-- Thumb Prev -->
+                            <div class="thumb-prev">
+                                <span>
+                                    <img src="assets/img/avatar/avatar-3.png" alt="">
+                                </span>
+                            </div>
+                            <!-- Thumb Next -->
+                            <div class="thumb-next">
+                                <span>
+                                    <img src="assets/img/avatar/avatar-2.png" alt="">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Testimonial Area End ***** -->
+
+        <!-- ***** Price Plan Area Start ***** -->
+        <section id="pricing" class="section price-plan-area bg-gray ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-7">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <h2 class="text-capitalize">{{page.pricing_title}}</h2>
+                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.</p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div class="row price-plan-wrapper">
+                            <div class="col-12 col-sm-6">
+                                <div class="single-price-plan">
+                                    <!-- Plan Thumb -->
+                                    <div class="plan-thumb d-flex justify-content-center align-items-center my-4">
+                                        <img class="avatar-md" src="assets/img/icon/startup.png" alt="">
+                                    </div>
+                                    <!-- Price Header -->
+                                    <div class="price-header d-flex flex-column align-items-center pb-2">
+                                        <h4 class="plan-title text-uppercase pb-3">
+                                            Starter
+                                        </h4>
+                                        <div class="plan-cost">
+                                            <span class="plan-price">$29</span>
+                                            <span class="plan-type text-uppercase">/month</span>
+                                        </div>
+                                    </div>
+                                    <!-- Plan Features -->
+                                    <ul class="plan-features pb-3">
+                                        <li><i class="fas fa-check"></i>5GB Linux Web Space</li>
+                                        <li><i class="fas fa-check"></i>5 MySQL Databases</li>
+                                        <li><i class="fas fa-check"></i>24/7 Tech Support</li>
+                                        <li><i class="fas fa-times"></i>Daily Backups</li>
+                                    </ul>
+                                    <!-- Plan Select -->
+                                    <div class="plan-select">
+                                        <a class="btn apolo-btn text-uppercase" href="#">Select Plan</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                                <div class="single-price-plan">
+                                    <!-- Plan Thumb -->
+                                    <div class="plan-thumb d-flex justify-content-center align-items-center my-4">
+                                        <img class="avatar-md" src="assets/img/icon/pro.png" alt="">
+                                    </div>
+                                    <!-- Price Header -->
+                                    <div class="price-header d-flex flex-column align-items-center pb-2">
+                                        <h4 class="plan-title text-uppercase pb-3">
+                                            Pro
+                                        </h4>
+                                        <div class="plan-cost">
+                                            <span class="plan-price">$99</span>
+                                            <span class="plan-type text-uppercase">/month</span>
+                                        </div>
+                                    </div>
+                                    <!-- Plan Features -->
+                                    <ul class="plan-features pb-3">
+                                        <li><i class="fas fa-check"></i>100GB Linux Web Space</li>
+                                        <li><i class="fas fa-check"></i>Unlimited Databases</li>
+                                        <li><i class="fas fa-check"></i>24/7 Tech Support</li>
+                                        <li><i class="fas fa-check"></i>Daily Backups</li>
+                                    </ul>
+                                    <!-- Plan Select -->
+                                    <div class="plan-select">
+                                        <a class="btn apolo-btn text-uppercase" href="#">Select Plan</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- FAQ Content -->
+                        <div class="faq-content">
+                            <span class="d-block text-center mt-5">Not sure what to choose? <a href="#">Contact Us</a></span>
+                            <!-- Apolo Accordion -->
+                            <div class="accordion pt-5" id="apolo-accordion">
+                                <div class="row">
+                                    <div class="col-12 col-lg-6">
+                                        <!-- Single Accordion Item -->
+                                        <div class="card my-2">
+                                            <!-- Card Header -->
+                                            <div class="card-header">
+                                                <h2 class="mb-0">
+                                                    <button class="btn p-2" type="button" data-toggle="collapse" data-target="#collapseOne">
+                                                        How to install Apolo?
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseOne" class="collapse show" data-parent="#apolo-accordion">
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single Accordion Item -->
+                                        <div class="card my-2">
+                                            <!-- Card Header -->
+                                            <div class="card-header">
+                                                <h2 class="mb-0">
+                                                    <button class="btn collapsed p-2" type="button" data-toggle="collapse" data-target="#collapseTwo">
+                                                        Can I get support from the Author?
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" data-parent="#apolo-accordion">
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single Accordion Item -->
+                                        <div class="card my-2">
+                                            <!-- Card Header -->
+                                            <div class="card-header">
+                                                <h2 class="mb-0">
+                                                    <button class="btn collapsed p-2" type="button" data-toggle="collapse" data-target="#collapseThree">
+                                                        Contact form isn't working?
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseThree" class="collapse" data-parent="#apolo-accordion">
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <!-- Single Accordion Item -->
+                                        <div class="card my-2">
+                                            <!-- Card Header -->
+                                            <div class="card-header">
+                                                <h2 class="mb-0">
+                                                    <button class="btn collapsed p-2" type="button" data-toggle="collapse" data-target="#collapseFour">
+                                                        What about the events?
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseFour" class="collapse" data-parent="#apolo-accordion">
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single Accordion Item -->
+                                        <div class="card my-2">
+                                            <!-- Card Header -->
+                                            <div class="card-header">
+                                                <h2 class="mb-0">
+                                                    <button class="btn p-2" type="button" data-toggle="collapse" data-target="#collapseFive">
+                                                        How can I get product update?
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseFive" class="collapse show" data-parent="#apolo-accordion">
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single Accordion Item -->
+                                        <div class="card my-2">
+                                            <!-- Card Header -->
+                                            <div class="card-header">
+                                                <h2 class="mb-0">
+                                                    <button class="btn collapsed p-2" type="button" data-toggle="collapse" data-target="#collapseSix">
+                                                        Is this template support rtl?
+                                                    </button>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseSix" class="collapse" data-parent="#apolo-accordion">
+                                                <!-- Card Body -->
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Price Plan Area End ***** -->
+
+        <!-- ***** Team Area Start ***** -->
+        <section class="section team-area team-style-two ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-6">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <h2 class="text-capitalize">{{page.team_title}}</h2>
+                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.</p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <!-- Single Team -->
+                        <div class="single-team text-center m-2 m-lg-0">
+                            <!-- Team Thumb -->
+                            <div class="team-thumb d-inline-block position-relative overflow-hidden">
+                                <img src="assets/img/avatar/avatar-1.png" alt="">
+                                <!-- Team Overlay -->
+                                <div class="team-overlay">
+                                    <h4 class="team-name text-white">Junaid Hasan</h4>
+                                    <h5 class="team-post text-white mt-2 mb-3">Founder &amp; CEO</h5>
+                                    <!-- Team Icons -->
+                                    <div class="team-icons">
+                                        <a class="p-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="p-2" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="p-2" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                        <a class="p-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <!-- Single Team -->
+                        <div class="single-team text-center m-2 m-lg-0">
+                            <!-- Team Thumb -->
+                            <div class="team-thumb d-inline-block position-relative overflow-hidden">
+                                <img src="assets/img/avatar/avatar-2.png" alt="">
+                                <!-- Team Overlay -->
+                                <div class="team-overlay">
+                                    <h4 class="team-name text-white">Jassica William</h4>
+                                    <h5 class="team-post text-white mt-2 mb-3">Co-Founder</h5>
+                                    <!-- Team Icons -->
+                                    <div class="team-icons">
+                                        <a class="p-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="p-2" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="p-2" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                        <a class="p-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <!-- Single Team -->
+                        <div class="single-team text-center m-2 m-lg-0">
+                            <!-- Team Thumb -->
+                            <div class="team-thumb d-inline-block position-relative overflow-hidden">
+                                <img src="assets/img/avatar/avatar-3.png" alt="">
+                                <!-- Team Overlay -->
+                                <div class="team-overlay">
+                                    <h4 class="team-name text-white">Md. Arham</h4>
+                                    <h5 class="team-post text-white mt-2 mb-3">Web Developer</h5>
+                                    <!-- Team Icons -->
+                                    <div class="team-icons">
+                                        <a class="p-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="p-2" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="p-2" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                        <a class="p-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <!-- Single Team -->
+                        <div class="single-team text-center m-2 m-lg-0">
+                            <!-- Team Thumb -->
+                            <div class="team-thumb d-inline-block position-relative overflow-hidden">
+                                <img src="assets/img/avatar/avatar-4.png" alt="">
+                                <!-- Team Overlay -->
+                                <div class="team-overlay">
+                                    <h4 class="team-name text-white">Yasmin Akter</h4>
+                                    <h5 class="team-post text-white mt-2 mb-3">Graphic Designer</h5>
+                                    <!-- Team Icons -->
+                                    <div class="team-icons">
+                                        <a class="p-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="p-2" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="p-2" href="#"><i class="fab fa-google-plus-g"></i></a>
+                                        <a class="p-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Team Area End ***** -->
+
+        <!-- ***** Download Area Start ***** -->
+        <section class="section download-area overlay-dark ptb_100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-7 col-lg-8">
+                        <!-- Download Text -->
+                        <div class="download-text">
+                            <h2 class="text-white">{{page.download_title}}</h2>
+                            <p class="text-white my-3 d-none d-sm-block">Apolo is available for all devices, consectetur adipisicing elit. Itaque at harum quam explicabo. Aliquam optio, delectus, dolorem quod neque eos totam. Delectus quae animi tenetur voluptates doloribus commodi dicta modi aliquid deserunt, quis maiores nesciunt autem, aperiam natus.</p>
+                            <p class="text-white my-3 d-block d-sm-none">Apolo is available for all devices, consectetur adipisicing elit. Vel neque, cumque. Temporibus eligendi veniam, necessitatibus aut id labore nisi quisquam.</p>
+                            <!-- Store Buttons -->
+                            <div class="button-group store-buttons d-flex">
+                                <a href="#">
+                                    <img src="assets/img/icon/google-play.png" alt="">
+                                </a>
+                                <a href="#">
+                                    <img src="assets/img/icon/app-store.png" alt="">
+                                </a>
+                            </div>
+                            <span class="d-inline-block text-white fw-3 font-italic mt-3">* Available on iPhone, iPad and all Android devices</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Download Thumb -->
+                <div class="download-thumb d-none d-md-block" data-aos="fade-up" data-aos-offset="350" data-aos-duration="700">
+                    <img src="assets/img/welcome/download-mockup.png" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- ***** Download Area End ***** -->
+
+        <!-- ***** Subscribe Area Start ***** -->
+        <section class="section subscribe-area ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-7">
+                        <div class="subscribe-content text-center">
+                            <h2>{{page.subscribe_title}}</h2>
+                            <p class="my-4">{{page.subscribe_text}}</p>
+                            <!-- Subscribe Form -->
+                            <form class="subscribe-form">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+                                </div>
+                                <button type="submit" class="btn btn-lg btn-block">{{page.subscribe_btn_text}}</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Subscribe Area End ***** -->
+
+        <!--====== Contact Area Start ======-->
+        <section id="contact" class="contact-area bg-gray ptb_100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-6">
+                        <!-- Section Heading -->
+                        <div class="section-heading text-center">
+                            <h2 class="text-capitalize">{{page.contact_title}}</h2>
+                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.</p>
+                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-12 col-md-5">
+                        <!-- Contact Us -->
+                        <div class="contact-us">
+                            <p class="mb-3">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                            <ul>
+                                <li class="py-2">
+                                    <a class="media" href="#">
+                                        <div class="social-icon mr-3">
+                                            <i class="fas fa-home"></i>
+                                        </div>
+                                        <span class="media-body align-self-center">Vestibulum nulla libero, convallis, tincidunt suscipit diam, DC 2002</span>
+                                    </a>
+                                </li>
+                                <li class="py-2">
+                                    <a class="media" href="#">
+                                        <div class="social-icon mr-3">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <span class="media-body align-self-center">+1 230 456 789-012 345 6789</span>
+                                    </a>
+                                </li>
+                                <li class="py-2">
+                                    <a class="media" href="#">
+                                        <div class="social-icon mr-3">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <span class="media-body align-self-center">exampledomain@domain.com</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 pt-4 pt-md-0">
+                        <!-- Contact Box -->
+                        <div class="contact-box text-center">
+                            <!-- Contact Form -->
+                            <form id="contact-form" method="POST" action="assets/php/mail.php">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="name" placeholder="Name" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="subject" placeholder="Subject" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control" name="message" placeholder="Message" required="required"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-lg btn-block mt-3"><span class="text-white pr-3"><i class="fas fa-paper-plane"></i></span>{{page.contact_btn_text}}</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="form-message"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--====== Contact Area End ======-->
+
+        <!--====== Height Emulator Area Start ======-->
+        <div class="height-emulator d-none d-lg-block"></div>
+        <!--====== Height Emulator Area End ======-->
+
+        <!--====== Footer Area Start ======-->
+        <footer class="footer-area footer-fixed overflow-hidden">
+            <!-- Footer Top -->
+            <div class="footer-top ptb_100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <!-- Footer Items -->
+                            <div class="footer-items">
+                                <!-- Logo -->
+                                <a class="navbar-brand" href="#">
+                                    <img class="logo" src="assets/img/logo/logo.png" alt="">
+                                </a>
+                                <p class="mt-2 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis non, fugit totam vel laboriosam vitae.</p>
+                                <!-- Social Icons -->
+                                <div class="social-icons d-flex">
+                                    <a class="facebook" href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a class="twitter" href="#">
+                                        <i class="fab fa-twitter"></i>
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a class="google-plus" href="#">
+                                        <i class="fab fa-google-plus-g"></i>
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </a>
+                                    <a class="vine" href="#">
+                                        <i class="fab fa-vine"></i>
+                                        <i class="fab fa-vine"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <!-- Footer Items -->
+                            <div class="footer-items">
+                                <!-- Footer Title -->
+                                <h3 class="footer-title mb-2">{{page.footer_links_title}}</h3>
+                                <ul>
+                                    <li class="py-2"><a href="#">Home</a></li>
+                                    <li class="py-2"><a href="#">About Us</a></li>
+                                    <li class="py-2"><a href="#">Services</a></li>
+                                    <li class="py-2"><a href="#">Blog</a></li>
+                                    <li class="py-2"><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <!-- Footer Items -->
+                            <div class="footer-items">
+                                <!-- Footer Title -->
+                                <h3 class="footer-title mb-2">{{page.footer_help_title}}</h3>
+                                <ul>
+                                    <li class="py-2"><a href="#">FAQ</a></li>
+                                    <li class="py-2"><a href="#">Privacy Policy</a></li>
+                                    <li class="py-2"><a href="#">Support</a></li>
+                                    <li class="py-2"><a href="#">Terms &amp; Conditions</a></li>
+                                    <li class="py-2"><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <!-- Footer Items -->
+                            <div class="footer-items">
+                                <!-- Footer Title -->
+                                <h3 class="footer-title mb-2">{{page.footer_download_title}}</h3>
+                                <!-- Store Buttons -->
+                                <div class="button-group store-buttons store-black d-flex flex-wrap">
+                                    <a href="#">
+                                        <img src="assets/img/icon/google-play-black.png" alt="">
+                                    </a>
+                                    <a href="#">
+                                        <img src="assets/img/icon/app-store-black.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Copyright Area -->
+                            <div class="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4">
+                                <!-- Copyright Left -->
+                                <div class="copyright-left">{{page.footer_copyright}}</div>
+                                <!-- Copyright Right -->
+                                <div class="copyright-right">{{page.footer_made_by}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--====== Footer Area End ======-->
+    </div>
+
+
+    <!-- ***** All jQuery Plugins ***** -->
+
+    <!-- jQuery(necessary for all JavaScript plugins) -->
+    <script src="assets/js/jquery/jquery-3.3.1.min.js"></script>
+
+    <!-- Bootstrap js -->
+    <script src="assets/js/bootstrap/popper.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Plugins js -->
+    <script src="assets/js/plugins/plugins.min.js"></script>
+
+    <!-- Active js -->
+    <script src="assets/js/active.js"></script>
+</body>
+
+</html>
