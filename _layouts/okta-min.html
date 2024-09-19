@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="h-100">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Minimum Okta Example</title>
+		<link rel="stylesheet" type="text/css" href="/css/main.css" />
+		<link rel="stylesheet" href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css" />
+	</head>
+	<body class="h-100">
+		<a href="#" id="qsLoginBtn" onclick="login()" class="auth-invisible hidden">
+		Log in
+	</a>
+		<a href="#" id="qsLogoutBtn" class="auth-visible" onclick="logout()">Log out</a>
+		<div id="content-home">
+			
+			{{ content }}
+			
+		</div>
+		<script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+		<script src="js/ui.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
