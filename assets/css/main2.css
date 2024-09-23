@@ -898,14 +898,14 @@ ol {
 }
 
 .breadcrumbs .breadcrumbs-content p {
-  color: #fff;
+  color: #000;
   font-size: 14px;
   margin-top: 25px;
 }
 
 .breadcrumbs .breadcrumbs-content .page-title {
   font-size: 35px;
-  color: #fff;
+  color: #000;
   font-weight: 700;
   position: relative;
   line-height: 50px;
@@ -930,7 +930,7 @@ ol {
   bottom: 0;
   height: 4px;
   width: 10px;
-  background: #fff;
+  background: #000;
   border-radius: 5px;
 }
 
@@ -956,7 +956,7 @@ ol {
 
 .breadcrumbs .breadcrumb-nav li,
 .breadcrumbs .breadcrumb-nav li a {
-  color: #fff;
+  color: #000;
   font-size: 14px;
   font-weight: 500;
 }
@@ -975,7 +975,7 @@ ol {
   content: '';
   height: 80%;
   width: 2px;
-  background-color: #fff;
+  background-color: #000;
   position: absolute;
   top: 2px;
   right: 0;
@@ -1004,7 +1004,7 @@ ol {
 
 .section-title span {
   text-transform: capitalize;
-  color: #fff;
+  color: #000;
   background: linear-gradient(45deg, #6831e3, #f528cb);
   display: inline-block;
   margin-bottom: 10px;
@@ -1041,19 +1041,19 @@ ol {
 }
 
 .section-title.white-text h2 {
-  color: #fff;
+  color: #000;
 }
 
 .section-title.white-text h2::before {
-  background-color: #fff;
+  background-color: #000;
 }
 
 .section-title.white-text span {
-  color: #fff;
+  color: #000;
 }
 
 .section-title.white-text p {
-  color: #fff;
+  color: #000;
 }
 
 .section-title.align-right {
@@ -1250,7 +1250,7 @@ ol {
 .pagination .pagination-list li.active a,
 .pagination .pagination-list li:hover a {
   background: #6831e3;
-  color: #fff;
+  color: #000;
   border-color: transparent;
 }
 
@@ -1275,7 +1275,7 @@ ol {
   font-weight: 500;
   padding: 15px 30px;
   background: linear-gradient(45deg, #6831e3, #f528cb);
-  color: #fff;
+  color: #000;
   border: none;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
@@ -1303,7 +1303,7 @@ ol {
 }
 
 .button .btn:hover {
-  color: #fff;
+  color: #000;
 }
 
 .button.style2 .btn {
@@ -1338,7 +1338,7 @@ ol {
   z-index: 999999999;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: #000;
   overflow: hidden;
 }
 
@@ -1511,13 +1511,13 @@ ol {
   font-weight: 700;
   line-height: 55px;
   margin-bottom: 25px;
-  color: #fff;
+  color: #000;
 }
 
 .demo-area .demo-text p {
   font-size: 14px;
   line-height: 26px;
-  color: #fff;
+  color: #000;
 }
 
 .demo-area .demo-text .button {
@@ -1526,13 +1526,13 @@ ol {
 
 .demo-area .demo-text .button .btn {
   margin-right: 10px;
-  background: #fff;
+  background: #000;
   color: #081828;
   font-weight: 600;
 }
 
 .demo-area .demo-text .button .btn:hover {
-  color: #fff;
+  color: #000;
 }
 
 .demo-area .demo-text .button .btn:last-child {
@@ -1541,7 +1541,7 @@ ol {
 
 .core-features .single-feature {
   text-align: left;
-  background-color: #fff;
+  background-color: #000;
   padding: 35px 35px;
   border-radius: 5px;
   z-index: 5;
@@ -1575,7 +1575,7 @@ ol {
   width: 60px;
   line-height: 60px;
   background: linear-gradient(45deg, #6831e3, #f528cb);
-  color: #fff;
+  color: #000;
   text-align: center;
   display: inline-block;
   font-size: 20px;
@@ -1614,7 +1614,7 @@ ol {
   margin-top: 40px;
   -webkit-box-shadow: 0 20px 50px #c2c2c2;
           box-shadow: 0 20px 50px #c2c2c2;
-  background: #fff;
+  background: #000;
   padding: 10px;
   position: relative;
 }
@@ -1628,7 +1628,7 @@ ol {
   height: 50px;
   width: 150px;
   line-height: 50px;
-  background: #fff;
+  background: #000;
   color: #081828;
   position: absolute;
   left: 50%;
@@ -1645,7 +1645,7 @@ ol {
 
 .universal-demo .single-demo a .view:hover {
   background: #6831e3;
-  color: #fff;
+  color: #000;
 }
 
 .universal-demo .single-demo a:hover .view {
@@ -1698,7 +1698,7 @@ ol {
 }
 
 .blog-pages {
-  background-color: #fff;
+  background-color: #000;
 }
 
 .core-features {
@@ -1710,7 +1710,7 @@ ol {
 }
 
 .core-features .single-service {
-  background-color: #fff;
+  background-color: #000;
   -webkit-box-shadow: 0 10px 30px rgba(111, 111, 111, 0.1);
   box-shadow: 0 10px 30px rgba(111, 111, 111, 0.1);
   height: 325px;
@@ -1889,7 +1889,7 @@ ol {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: #000;
     z-index: 9;
     -webkit-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
             box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
@@ -1903,7 +1903,7 @@ ol {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: #000;
     z-index: 9;
     -webkit-box-shadow: 0px 15px 20px 0px rgba(29, 42, 93, 0.1);
             box-shadow: 0px 15px 20px 0px rgba(29, 42, 93, 0.1);
@@ -1919,7 +1919,7 @@ ol {
 .navbar-nav .nav-item a {
   font-size: 14px;
   font-weight: 600;
-  color: #fff;
+  color: #000;
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
   padding: 10px 0;
@@ -1949,7 +1949,7 @@ ol {
 
 .navbar-nav .nav-item a:hover,
 .navbar-nav .nav-item a.active {
-  color: #fff;
+  color: #000;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1990,7 +1990,7 @@ ol {
 
 .navbar-nav .nav-item .sub-menu {
   width: 200px;
-  background-color: #fff;
+  background-color: #000;
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
   position: absolute;
@@ -2091,7 +2091,7 @@ ol {
 
 /* Dropdown Menu */
 .header .navbar-nav li .sub-menu {
-  background: #fff;
+  background: #000;
   width: 220px;
   text-align: left;
   position: absolute;
@@ -2150,7 +2150,7 @@ ol {
 
 .header .navbar-nav li .sub-menu li:hover a {
   color: #6831e3;
-  background: #fff;
+  background: #000;
   padding: 10px 15px;
 }
 
@@ -2162,13 +2162,13 @@ ol {
 .header .button .btn {
   width: 150px;
   padding: 13px 10px;
-  color: #fff;
+  color: #000;
   background: transparent;
-  border: 2px solid #fff;
+  border: 2px solid #000;
 }
 
 .header .button .btn::before {
-  background-color: #fff;
+  background-color: #000;
 }
 
 .header .button .btn:hover {
@@ -2185,7 +2185,7 @@ ol {
 .header .navbar-area.sticky .button .btn {
   border-color: transparent;
   background-image: linear-gradient(45deg, #6831e3, #f528cb);
-  border-color: #fff;
+  border-color: #000;
   padding: 15px 10px;
   border-radius: 6px;
 }
@@ -2195,13 +2195,13 @@ ol {
 }
 
 .header .navbar-area.sticky .button .btn:hover {
-  color: #fff;
+  color: #000;
 }
 
 .header.style2 .navbar-area.sticky .button .btn {
   border-color: transparent;
   background: linear-gradient(45deg, #018bff, #243ec4);
-  border-color: #fff;
+  border-color: #000;
   padding: 15px 10px;
   border-radius: 6px;
 }
@@ -2211,13 +2211,13 @@ ol {
 }
 
 .header.style2 .navbar-area.sticky .button .btn:hover {
-  color: #fff;
+  color: #000;
 }
 
 .header.style3 .navbar-area.sticky .button .btn {
   border-color: transparent;
   background: linear-gradient(45deg, #4567f4, #3CD3AD);
-  border-color: #fff;
+  border-color: #000;
   padding: 15px 10px;
   border-radius: 6px;
 }
@@ -2227,13 +2227,13 @@ ol {
 }
 
 .header.style3 .navbar-area.sticky .button .btn:hover {
-  color: #fff;
+  color: #000;
 }
 
 .header.style4 .navbar-area.sticky .button .btn {
   border-color: transparent;
   background: linear-gradient(45deg, #cccccc, #eeeeee);
-  border-color: #fff;
+  border-color: #000;
   padding: 15px 10px;
   border-radius: 6px;
 }
@@ -2243,7 +2243,7 @@ ol {
 }
 
 .header.style4 .navbar-area.sticky .button .btn:hover {
-  color: #fff;
+  color: #000;
 }
 
 .header .sticky .navbar .navbar-nav .nav-item a.active,
@@ -2368,7 +2368,7 @@ ol {
   height: 45px;
   cursor: pointer;
   z-index: 2;
-  color: #fff;
+  color: #000;
   font-size: 13px;
   background: transparent;
   border: none;
@@ -2380,12 +2380,12 @@ ol {
   z-index: 99;
   top: 50%;
   margin-top: -30px;
-  border: 2px solid #fff;
+  border: 2px solid #000;
   border-radius: 10px;
 }
 
 .hero-area.style4 .tns-controls button:hover {
-  background: #fff;
+  background: #000;
   color: #081828;
   border-color: transparent;
 }
@@ -2483,7 +2483,7 @@ ol {
 }
 
 .hero-area .hero-text h5 {
-  color: #fff;
+  color: #000;
   font-size: 14px;
   font-weight: 500;
   display: block;
@@ -2496,12 +2496,12 @@ ol {
   font-size: 45px;
   line-height: 60px;
   letter-spacing: -1px;
-  color: #fff;
+  color: #000;
 }
 
 .hero-area .hero-text p {
   font-size: 14px;
-  color: #fff;
+  color: #000;
 }
 
 .hero-area .hero-text .button {
@@ -2509,7 +2509,7 @@ ol {
 }
 
 .hero-area .hero-text .button .btn {
-  background: #fff;
+  background: #000;
   color: #081828;
   margin-right: 10px;
 }
@@ -2529,18 +2529,18 @@ ol {
 }
 
 .hero-area .hero-text .button .btn:hover {
-  color: #fff;
+  color: #000;
 }
 
 .hero-area .hero-text .button .btn.primary {
-  border: 2px solid #fff;
+  border: 2px solid #000;
   background: transparent;
-  color: #fff;
+  color: #000;
   padding: 13px 30px;
 }
 
 .hero-area .hero-text .button .btn.primary::before {
-  background: #fff;
+  background: #000;
 }
 
 .hero-area .hero-text .button .btn.primary:hover {
@@ -2676,13 +2676,13 @@ ol {
 
 .features.style2 .tab-head .nav-pills .nav-link.active,
 .features.style2 .tab-head .nav-pills .show > .nav-link {
-  color: #fff;
+  color: #000;
   background: linear-gradient(45deg, #018bff, #243ec4);
 }
 
 .features.style2 .tab-head .nav-pills .nav-link.active i,
 .features.style2 .tab-head .nav-pills .show > .nav-link i {
-  color: #fff;
+  color: #000;
 }
 
 .features.style2 .tab-head .tab-content-inner {
@@ -2736,7 +2736,7 @@ ol {
   display: block;
   border-radius: 10px;
   background: linear-gradient(45deg, #018bff, #243ec4);
-  color: #fff;
+  color: #000;
   font-size: 20px;
 }
 
@@ -2756,7 +2756,7 @@ ol {
   padding: 50px 30px;
   border: 2px solid #eee;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #000;
   text-align: left;
   margin-top: 30px;
   position: relative;
@@ -2787,7 +2787,7 @@ ol {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #fff;
+  color: #000;
   font-size: 35px;
   margin-bottom: 30px;
   z-index: 1;
@@ -2893,7 +2893,7 @@ ol {
     Servicess CSS
 ========================================*/
 .services {
-  background-color: #fff;
+  background-color: #000;
 }
 
 .services .single-service {
@@ -2965,7 +2965,7 @@ ol {
 }
 
 .app-description.white-bg {
-  background-color: #fff;
+  background-color: #000;
 }
 
 .app-description .shape1 {
@@ -3011,7 +3011,7 @@ ol {
   height: 60px;
   width: 60px;
   line-height: 60px;
-  color: #fff;
+  color: #000;
   background: linear-gradient(45deg, #6831e3, #f528cb);
   border-radius: 10px;
   display: inline-block;
@@ -3039,7 +3039,7 @@ ol {
   height: 30px;
   width: 30px;
   line-height: 30px;
-  color: #fff;
+  color: #000;
   background: linear-gradient(45deg, #6831e3, #f528cb);
   border-radius: 8px;
   display: inline-block;
@@ -3061,7 +3061,7 @@ ol {
   text-align: center;
   display: block;
   background: linear-gradient(45deg, #018bff, #243ec4);
-  color: #fff;
+  color: #000;
   border-radius: 10px;
   font-size: 30px;
   margin-bottom: 30px;
@@ -3101,7 +3101,7 @@ ol {
   text-align: center;
   display: block;
   background: linear-gradient(45deg, #4567f4, #3CD3AD);
-  color: #fff;
+  color: #000;
   border-radius: 10px;
   font-size: 30px;
   margin-bottom: 30px;
@@ -3162,11 +3162,11 @@ ol {
   font-weight: 700;
   line-height: 52px;
   margin-bottom: 30px;
-  color: #fff;
+  color: #000;
 }
 
 .app-download.style2 .download-content p {
-  color: #fff;
+  color: #000;
 }
 
 .app-download.style2 .download-content .button {
@@ -3176,23 +3176,23 @@ ol {
 
 .app-download.style2 .download-content .button .btn {
   margin-right: 20px;
-  background: #fff;
+  background: #000;
   color: #018bff;
 }
 
 .app-download.style2 .download-content .button .btn:hover {
-  color: #fff;
+  color: #000;
 }
 
 .app-download.style2 .download-content .button .btn.primary {
   background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #000;
+  border: 2px solid #000;
   padding: 13px 30px;
 }
 
 .app-download.style2 .download-content .button .btn.primary::before {
-  background: #fff;
+  background: #000;
 }
 
 .app-download.style2 .download-content .button .btn.primary:hover {
@@ -3295,11 +3295,11 @@ ol {
   font-weight: 700;
   line-height: 52px;
   margin-bottom: 30px;
-  color: #fff;
+  color: #000;
 }
 
 .call-action .inner-content p {
-  color: #fff;
+  color: #000;
 }
 
 .call-action .inner-content .button {
@@ -3308,12 +3308,12 @@ ol {
 }
 
 .call-action .inner-content .button .btn {
-  background: #fff;
+  background: #000;
   color: #081828;
 }
 
 .call-action .inner-content .button .btn:hover {
-  color: #fff;
+  color: #000;
 }
 
 /*======================================
@@ -3426,7 +3426,7 @@ ol {
   line-height: 65px;
   text-align: center;
   display: inline-block;
-  background: #fff;
+  background: #000;
   color: #6831e3;
   border-radius: 10px;
 }
@@ -3436,12 +3436,12 @@ ol {
   font-weight: 700;
   display: block;
   margin-bottom: 8px;
-  color: #fff;
+  color: #000;
 }
 
 .our-achievement .single-achievement p {
   font-size: 15px;
-  color: #fff;
+  color: #000;
   font-weight: 600;
 }
 
@@ -3449,7 +3449,7 @@ ol {
     Why Choose CSS
 ========================================*/
 .why-choose {
-  background-color: #fff;
+  background-color: #000;
   position: relative;
   padding-top: 50px;
 }
@@ -3492,7 +3492,7 @@ ol {
   line-height: 70px;
   text-align: center;
   font-size: 30px;
-  color: #fff;
+  color: #000;
   position: relative;
   z-index: 1;
   display: inline-block;
@@ -3534,7 +3534,7 @@ ol {
     Portfolio CSS
 ========================================*/
 .portfolio-section {
-  background: #fff;
+  background: #000;
 }
 
 .portfolio-section .portfolio-btn-wrapper {
@@ -3577,12 +3577,12 @@ ol {
 .portfolio-section .portfolio-btn-wrapper button:hover {
   background: linear-gradient(45deg, #cccccc, #eeeeee);
   border-color: transparent;
-  color: #fff;
+  color: #000;
 }
 
 .portfolio-section .portfolio-btn-wrapper button.active {
   background: linear-gradient(45deg, #cccccc, #eeeeee) !important;
-  color: #fff;
+  color: #000;
   border-color: transparent;
 }
 
@@ -3612,7 +3612,7 @@ ol {
   overflow: hidden;
   margin-bottom: 30px;
   z-index: 2;
-  background: #fff;
+  background: #000;
   padding: 8px;
   -webkit-box-shadow: 0px 0px 20px #0000000f;
           box-shadow: 0px 0px 20px #0000000f;
@@ -3678,7 +3678,7 @@ ol {
 .portfolio-section .pf-content .link {
   padding: 15px 25px;
   border-radius: 4px;
-  background: #fff;
+  background: #000;
   color: #081828;
   font-size: 13px;
   -webkit-box-shadow: 0px 0px 20px #0000000f;
@@ -3691,7 +3691,7 @@ ol {
 }
 
 .portfolio-section .pf-content .link:hover {
-  color: #fff;
+  color: #000;
 }
 
 /*======================================
@@ -3729,12 +3729,12 @@ ol {
   display: inline-block;
   overflow: hidden;
   background: transparent;
-  background-color: #fff;
+  background-color: #000;
   border-radius: 5px;
   overflow: hidden;
   -webkit-box-shadow: 0 32px 54px 0 rgba(22, 28, 45, 0.16);
           box-shadow: 0 32px 54px 0 rgba(22, 28, 45, 0.16);
-  background-color: #fff;
+  background-color: #000;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -3809,7 +3809,7 @@ ol {
 }
 
 .single-team .image .social li a {
-  color: #fff;
+  color: #000;
   display: block;
   font-size: 15px;
 }
@@ -4092,7 +4092,7 @@ ol {
 }
 
 .pricing-table .single-table {
-  background: #fff;
+  background: #000;
   text-align: center;
   position: relative;
   -webkit-transition: all 0.4s ease-in-out;
@@ -4105,7 +4105,7 @@ ol {
 }
 
 .pricing-table .single-table .table-head {
-  background: #fff;
+  background: #000;
   padding: 40px 20px;
   border-bottom: 1px dashed #6831e3;
 }
@@ -4349,15 +4349,15 @@ ol {
 
 .intro-video-area .section-title span {
   color: #081828;
-  background: #fff;
+  background: #000;
 }
 
 .intro-video-area .section-title h2 {
-  color: #fff;
+  color: #000;
 }
 
 .intro-video-area .section-title p {
-  color: #fff;
+  color: #000;
   margin: 30px 0;
 }
 
@@ -4375,7 +4375,7 @@ ol {
   width: 80px;
   text-align: center;
   line-height: 80px;
-  background: #fff;
+  background: #000;
   border-radius: 50%;
   padding-left: 4px;
   font-size: 18px;
@@ -4393,7 +4393,7 @@ ol {
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   top: 0;
   left: 0;
   z-index: -1;
@@ -4407,7 +4407,7 @@ ol {
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   top: 0;
   left: 0;
   z-index: -1;
@@ -4469,7 +4469,7 @@ ol {
 
 .intro-video-area .intro-video-play .play-thumb a:hover {
   background: linear-gradient(45deg, #6831e3, #f528cb);
-  color: #fff;
+  color: #000;
 }
 
 /*======================================
@@ -4485,17 +4485,17 @@ ol {
 
 .faq.style2 .accordion-button:not(.collapsed) {
   background: linear-gradient(45deg, #018bff, #243ec4);
-  color: #fff;
+  color: #000;
 }
 
 .faq.style3 .accordion-button:not(.collapsed) {
   background: linear-gradient(45deg, #4567f4, #3CD3AD);
-  color: #fff;
+  color: #000;
 }
 
 .faq.style4 .accordion-button:not(.collapsed) {
   background: linear-gradient(45deg, #cccccc, #eeeeee);
-  color: #fff;
+  color: #000;
 }
 
 .accordion-item .accordion-button {
@@ -4521,7 +4521,7 @@ ol {
 }
 
 .accordion-button:not(.collapsed) {
-  color: #fff;
+  color: #000;
   background: linear-gradient(45deg, #6831e3, #f528cb);
   border: none;
   border-radius: 5px 5px 0 0;
@@ -4629,11 +4629,11 @@ ol {
 
 .newsletter-area .section-title span {
   color: #081828;
-  background: #fff;
+  background: #000;
 }
 
 .newsletter-area .section-title h2 {
-  color: #fff;
+  color: #000;
 }
 
 .newsletter-area .section-title h3.gray-bg {
@@ -4645,7 +4645,7 @@ ol {
 
 .newsletter-area .subscribe-text {
   text-align: center;
-  background: #fff;
+  background: #000;
   display: inline-block;
   padding: 30px 30px;
   border-radius: 10px;
@@ -4662,7 +4662,7 @@ ol {
   height: 55px;
   width: 100%;
   border: none;
-  background-color: #fff;
+  background-color: #000;
   color: #081828;
   border-radius: 5px;
   padding: 0px 30px;
@@ -4681,14 +4681,14 @@ ol {
 }
 
 .newsletter-area .subscribe-text .button .btn {
-  color: #fff;
+  color: #000;
   border: 1px solid #eee;
   height: 55px;
   width: auto;
   display: inline-block;
   border: none;
   background: linear-gradient(45deg, #6831e3, #f528cb);
-  color: #fff;
+  color: #000;
   margin-left: 10px;
   margin-top: -2px;
   -webkit-box-shadow: 0 1rem 28px rgba(35, 38, 45, 0.15) !important;
@@ -4734,7 +4734,7 @@ ol {
 
 .clients h2 span {
   background: linear-gradient(45deg, #6831e3, #f528cb);
-  color: #fff;
+  color: #000;
   font-size: 15px;
   padding: 5px 15px;
   border-radius: 4px;
@@ -4818,7 +4818,7 @@ ol {
   font-size: 28px;
   font-weight: 700;
   display: block;
-  color: #fff;
+  color: #000;
 }
 
 .footer .call-action .inner-content p {
@@ -4835,7 +4835,7 @@ ol {
 }
 
 .footer .call-action .inner-content .button .btn:hover {
-  background-color: #fff;
+  background-color: #000;
   color: #6831e3;
 }
 
@@ -4852,7 +4852,7 @@ ol {
 }
 
 .footer .f-about p {
-  color: #fff;
+  color: #000;
   font-size: 14px;
   line-height: 28px;
 }
@@ -4875,7 +4875,7 @@ ol {
   display: block;
   background: transparent;
   border: none;
-  color: #fff;
+  color: #000;
   position: relative;
   z-index: 3;
   display: block;
@@ -4885,7 +4885,7 @@ ol {
 
 .footer .footer-social ul li a:hover {
   color: #081828;
-  background-color: #fff;
+  background-color: #000;
   border-color: transparent;
 }
 
@@ -4899,7 +4899,7 @@ ol {
 }
 
 .footer .single-footer h3 {
-  color: #fff;
+  color: #000;
   font-size: 16px;
   font-weight: 600;
   position: relative;
@@ -4918,7 +4918,7 @@ ol {
 
 .footer .f-link ul li a {
   display: inline-block;
-  color: #fff;
+  color: #000;
   font-size: 14px;
   font-weight: 400;
   position: relative;
@@ -4937,7 +4937,7 @@ ol {
 .footer .f-contact ul li {
   display: block;
   margin-bottom: 15px;
-  color: #fff;
+  color: #000;
   position: relative;
   padding-left: 35px;
 }
@@ -4945,7 +4945,7 @@ ol {
 .footer .f-contact ul li i {
   display: inline-block;
   font-size: 18px;
-  color: #fff;
+  color: #000;
   position: absolute;
   left: 0;
   top: 0;
@@ -4966,7 +4966,7 @@ ol {
 }
 
 .footer .footer-bottom .inner p {
-  color: #fff;
+  color: #000;
   font-size: 14px;
 }
 
@@ -4974,7 +4974,7 @@ ol {
   font-weight: 400;
   display: inline-block;
   margin-left: 6px;
-  color: #fff;
+  color: #000;
 }
 
 .footer .footer-bottom .inner p a:hover {
@@ -5103,7 +5103,7 @@ ol {
     background-color: #dddddd;
   }
   .navbar-toggler {
-    background: #fff;
+    background: #000;
     padding: 5px 10px;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
@@ -5126,7 +5126,7 @@ ol {
     width: 22px;
   }
   .header .navbar-area.sticky .navbar-toggler .toggler-icon {
-    background-color: #fff;
+    background-color: #000;
   }
   .navbar-nav .nav-item {
     margin: 0;
@@ -5145,7 +5145,7 @@ ol {
     font-size: 13px;
   }
   .header .navbar-nav .nav-item a:hover {
-    color: #fff;
+    color: #000;
     background-color: #6831e3;
     border-color: transparent;
   }
@@ -5153,7 +5153,7 @@ ol {
     color: #081828;
   }
   .header .navbar-nav .nav-item a.active:hover {
-    color: #fff;
+    color: #000;
   }
   .navbar-collapse {
     padding: 12px;
@@ -5257,9 +5257,9 @@ ol {
     margin-top: 25px;
   }
   .hero-area .hero-text .button .btn.primary {
-    border: 2px solid #fff;
+    border: 2px solid #000;
     background: transparent;
-    color: #fff;
+    color: #000;
     padding: 10px 30px;
   }
   .hero-area.style3 .hero-text h1 {
@@ -5680,7 +5680,7 @@ ol {
     background-color: #dddddd;
   }
   .navbar-toggler {
-    background: #fff;
+    background: #000;
     padding: 4px 10px;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
@@ -5703,7 +5703,7 @@ ol {
     width: 20px;
   }
   .header .navbar-area.sticky .navbar-toggler .toggler-icon {
-    background-color: #fff;
+    background-color: #000;
   }
   .navbar-nav .nav-item {
     margin: 0;
@@ -5730,7 +5730,7 @@ ol {
     color: #081828;
   }
   .header .navbar-nav .nav-item a.active:hover {
-    color: #fff;
+    color: #000;
   }
   .navbar-collapse {
     padding: 12px;
@@ -5823,7 +5823,7 @@ ol {
   }
   .hero-area .hero-text p {
     font-size: 13px;
-    color: #fff;
+    color: #000;
   }
   .hero-area .hero-text .button {
     margin-top: 25px;
@@ -5837,9 +5837,9 @@ ol {
     width: 65%;
   }
   .hero-area .hero-text .button .btn.primary {
-    border: 2px solid #fff;
+    border: 2px solid #000;
     background: transparent;
-    color: #fff;
+    color: #000;
     padding: 10px 30px;
   }
   .hero-area .hero-inner.style2 .hero-text {
@@ -6266,7 +6266,7 @@ ol {
 ========================================*/
 .contact-us {
   position: relative;
-  background-color: #fff;
+  background-color: #000;
 }
 
 .contact-us img {
@@ -6334,7 +6334,7 @@ ol {
   display: block;
   text-align: center;
   background: linear-gradient(45deg, #6831e3, #f528cb);
-  color: #fff;
+  color: #000;
   line-height: 50px;
   border-radius: 5px;
 }
@@ -6379,7 +6379,7 @@ ol {
 .contact-us .single-info .title {
   margin-bottom: 10px;
   font-weight: 500;
-  color: #fff;
+  color: #000;
   font-size: 18px;
 }
 
@@ -6439,7 +6439,7 @@ ol {
 }
 
 .map-section {
-  background-color: #fff;
+  background-color: #000;
 }
 
 .map-section .map-container {
