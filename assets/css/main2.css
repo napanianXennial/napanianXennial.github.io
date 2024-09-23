@@ -1023,7 +1023,7 @@ ol {
 }
 
 .section-title.style4 span {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .section-title h2 {
@@ -1172,11 +1172,11 @@ ol {
 }
 
 .section-title.style4 span {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .section-title.style5 span {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .scroll-top:hover {
@@ -1315,7 +1315,7 @@ ol {
 }
 
 .button.style4 .btn {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .align-left {
@@ -1377,7 +1377,7 @@ ol {
 }
 
 .preloader.style4 .preloader-icon span {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .preloader-icon span:last-child {
@@ -1775,7 +1775,7 @@ ol {
 }
 
 .header.style4 .sticky .navbar .navbar-nav .nav-item a:hover {
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .sticky .navbar .navbar-toggler .toggler-icon {
@@ -2232,7 +2232,7 @@ ol {
 
 .header.style4 .navbar-area.sticky .button .btn {
   border-color: transparent;
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
   border-color: #000;
   padding: 15px 10px;
   border-radius: 6px;
@@ -2263,7 +2263,7 @@ ol {
 
 .header.style4 .sticky .navbar .navbar-nav .nav-item a.active,
 .header.style4 .sticky .navbar .navbar-nav .nav-item a:hover {
-  color: #000000 !important;
+  color: #FFFFFF !important;
 }
 
 /*======================================
@@ -2355,7 +2355,7 @@ ol {
 
 .hero-area.style4 {
   position: relative;
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
   z-index: 2;
 }
 
@@ -2767,8 +2767,8 @@ ol {
 }
 
 .features .single-feature:hover {
-  -webkit-box-shadow: 0px 20px 50px #00000017;
-          box-shadow: 0px 20px 50px #00000017;
+  -webkit-box-shadow: 0px 20px 50px #FFFFFF17;
+          box-shadow: 0px 20px 50px #FFFFFF17;
 }
 
 .features .single-feature .feature-icon {
@@ -2830,11 +2830,11 @@ ol {
 .work-process.style4 .single-process .main-icon i {
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(45deg, #000000, #000000) !important;
+  background-image: linear-gradient(45deg, #FFFFFF, #FFFFFF) !important;
 }
 
 .work-process.style4 .single-process span {
-  background: linear-gradient(45deg, #000000, #000000) !important;
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF) !important;
 }
 
 .work-process .single-process {
@@ -2901,8 +2901,8 @@ ol {
   padding: 40px;
   border: 1px solid #eee;
   border-radius: 0;
-  -webkit-box-shadow: 0px 0px 20px #0000000f;
-          box-shadow: 0px 0px 20px #0000000f;
+  -webkit-box-shadow: 0px 0px 20px #FFFFFF0f;
+          box-shadow: 0px 0px 20px #FFFFFF0f;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   margin-top: 30px;
@@ -2915,7 +2915,7 @@ ol {
   bottom: 0;
   height: 4px;
   width: 0%;
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
@@ -2925,15 +2925,15 @@ ol {
 }
 
 .services .single-service:hover {
-  -webkit-box-shadow: 0px 0px 30px #0000001f;
-          box-shadow: 0px 0px 30px #0000001f;
+  -webkit-box-shadow: 0px 0px 30px #FFFFFF1f;
+          box-shadow: 0px 0px 30px #FFFFFF1f;
 }
 
 .services .single-service .icon i {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  background-image: linear-gradient(45deg, #000000, #000000);
+  background-image: linear-gradient(45deg, #FFFFFF, #FFFFFF);
   font-size: 30px;
   position: absolute;
   left: 40px;
@@ -3218,8 +3218,8 @@ ol {
 }
 
 .app-download .single-download:hover {
-  -webkit-box-shadow: 0px 0px 30px #00000017;
-          box-shadow: 0px 0px 30px #00000017;
+  -webkit-box-shadow: 0px 0px 30px #FFFFFF17;
+          box-shadow: 0px 0px 30px #FFFFFF17;
 }
 
 .app-download .single-download h3 {
@@ -3268,7 +3268,7 @@ ol {
 }
 
 .call-action.style4 {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .call-action:before {
@@ -3327,8 +3327,8 @@ ol {
 .app-screenshorts .single-slider img {
   -webkit-transform: scale(0.93);
           transform: scale(0.93);
-  -webkit-box-shadow: 0px 0px 15px #00000017;
-          box-shadow: 0px 0px 15px #00000017;
+  -webkit-box-shadow: 0px 0px 15px #FFFFFF17;
+          box-shadow: 0px 0px 15px #FFFFFF17;
   border-radius: 10px;
   width: 100%;
 }
@@ -3405,11 +3405,11 @@ ol {
 }
 
 .our-achievement.style4 {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .our-achievement.style4 .single-achievement i {
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .our-achievement .single-achievement {
@@ -3575,13 +3575,13 @@ ol {
 }
 
 .portfolio-section .portfolio-btn-wrapper button:hover {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
   border-color: transparent;
   color: #000;
 }
 
 .portfolio-section .portfolio-btn-wrapper button.active {
-  background: linear-gradient(45deg, #000000, #000000) !important;
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF) !important;
   color: #000;
   border-color: transparent;
 }
@@ -3614,8 +3614,8 @@ ol {
   z-index: 2;
   background: #000;
   padding: 8px;
-  -webkit-box-shadow: 0px 0px 20px #0000000f;
-          box-shadow: 0px 0px 20px #0000000f;
+  -webkit-box-shadow: 0px 0px 20px #FFFFFF0f;
+          box-shadow: 0px 0px 20px #FFFFFF0f;
 }
 
 .portfolio-item-wrapper .portfolio-overlay {
@@ -3646,7 +3646,7 @@ ol {
   content: "";
   left: 0;
   top: 0;
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
   height: 100%;
   width: 100%;
   z-index: 5;
@@ -3681,8 +3681,8 @@ ol {
   background: #000;
   color: #081828;
   font-size: 13px;
-  -webkit-box-shadow: 0px 0px 20px #0000000f;
-          box-shadow: 0px 0px 20px #0000000f;
+  -webkit-box-shadow: 0px 0px 20px #FFFFFF0f;
+          box-shadow: 0px 0px 20px #FFFFFF0f;
 }
 
 .portfolio-section .pf-content .link i {
@@ -3710,7 +3710,7 @@ ol {
 }
 
 .team.style4 .single-team .image::before {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .team .title-line {
@@ -3939,7 +3939,7 @@ ol {
 }
 
 .testimonials.style4 .single-testimonial:hover {
-  border-color: #000000;
+  border-color: #FFFFFF;
 }
 
 .testimonials.style4 .single-testimonial .top-section {
@@ -3988,7 +3988,7 @@ ol {
   height: 10px;
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .testimonials .single-testimonial {
@@ -4002,8 +4002,8 @@ ol {
 }
 
 .testimonials .single-testimonial:hover {
-  -webkit-box-shadow: 0px 20px 50px #00000017;
-          box-shadow: 0px 20px 50px #00000017;
+  -webkit-box-shadow: 0px 20px 50px #FFFFFF17;
+          box-shadow: 0px 20px 50px #FFFFFF17;
   border-color: #6831e3;
 }
 
@@ -4077,18 +4077,18 @@ ol {
 }
 
 .pricing-table.style4 .single-table .table-head {
-  border-bottom-color: #000000;
+  border-bottom-color: #FFFFFF;
 }
 
 .pricing-table.style4 .single-table .amount {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .pricing-table.style4 .single-table .button .btn {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .pricing-table .single-table {
@@ -4246,7 +4246,7 @@ ol {
 }
 
 .intro-video-area.style4 {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
   text-align: center;
   position: relative;
 }
@@ -4274,11 +4274,11 @@ ol {
 }
 
 .intro-video-area.style4 .intro-video-play .play-thumb a:hover {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .intro-video-area.style4 .intro-video-play .play-thumb a {
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .intro-video-area.style4 .intro-video-play {
@@ -4381,8 +4381,8 @@ ol {
   font-size: 18px;
   color: #6831e3;
   display: inline-block;
-  -webkit-box-shadow: 0px 0px 31px #0000003b;
-          box-shadow: 0px 0px 31px #0000003b;
+  -webkit-box-shadow: 0px 0px 31px #FFFFFF3b;
+          box-shadow: 0px 0px 31px #FFFFFF3b;
   position: relative;
   /* Video Animations */
 }
@@ -4494,7 +4494,7 @@ ol {
 }
 
 .faq.style4 .accordion-button:not(.collapsed) {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
   color: #000;
 }
 
@@ -4586,11 +4586,11 @@ ol {
 }
 
 .newsletter-area.style4::before {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .newsletter-area.style4 .subscribe-text .button .btn {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .newsletter-area:before {
@@ -4788,7 +4788,7 @@ ol {
 }
 
 .footer.style4 {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .footer.style4::before {
@@ -4958,7 +4958,7 @@ ol {
 .footer .footer-bottom {
   padding: 30px 0;
   background-color: transparent;
-  border-top: 2px solid #00000069;
+  border-top: 2px solid #FFFFFF69;
 }
 
 .footer .footer-bottom .inner {
@@ -5096,11 +5096,11 @@ ol {
   }
   .header.style4 .navbar-area .navbar-nav .nav-item a:hover {
     color: #fff !important;
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
   .header.style4 .navbar-area.sticky .navbar-nav .nav-item a:hover {
     color: #fff !important;
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
   .navbar-toggler {
     background: #000;
@@ -5119,7 +5119,7 @@ ol {
     background: linear-gradient(45deg, #4567f4, #3CD3AD);
   }
   .header.style4 .navbar-area.sticky .navbar-toggler {
-    background: linear-gradient(45deg, #000000, #000000);
+    background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
   }
   .navbar-area .navbar-toggler .toggler-icon {
     background-color: #081828;
@@ -5219,7 +5219,7 @@ ol {
   .header.style4 .sticky .navbar .navbar-nav .nav-item a.active,
   .header.style4 .sticky .navbar .navbar-nav .nav-item a:hover {
     color: #fff !important;
-    background: #000000 !important;
+    background: #FFFFFF !important;
     border-color: transparent !important;
   }
   .breadcrumbs .bread-list {
@@ -5523,7 +5523,7 @@ ol {
     margin-top: 35px;
   }
   .footer .single-footer.md-custom-border {
-    border-top: 1px dashed #00000052;
+    border-top: 1px dashed #FFFFFF52;
   }
   .footer .f-about p {
     padding-right: 0;
@@ -5673,11 +5673,11 @@ ol {
   }
   .header.style4 .navbar-area .navbar-nav .nav-item a:hover {
     color: #fff !important;
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
   .header.style4 .navbar-area.sticky .navbar-nav .nav-item a:hover {
     color: #fff !important;
-    background-color: #000000;
+    background-color: #FFFFFF;
   }
   .navbar-toggler {
     background: #000;
@@ -5696,7 +5696,7 @@ ol {
     background: linear-gradient(45deg, #4567f4, #3CD3AD);
   }
   .header.style4 .navbar-area.sticky .navbar-toggler {
-    background: linear-gradient(45deg, #000000, #000000);
+    background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
   }
   .navbar-area .navbar-toggler .toggler-icon {
     background-color: #081828;
@@ -5796,7 +5796,7 @@ ol {
   .header.style4 .sticky .navbar .navbar-nav .nav-item a.active,
   .header.style4 .sticky .navbar .navbar-nav .nav-item a:hover {
     color: #fff !important;
-    background: #000000 !important;
+    background: #FFFFFF !important;
     border-color: transparent !important;
   }
   .hero-area .hero-inner {
@@ -6249,7 +6249,7 @@ ol {
     margin-top: 35px;
   }
   .footer .single-footer.sm-custom-border {
-    border-top: 1px dashed #00000052;
+    border-top: 1px dashed #FFFFFF52;
   }
   .footer .f-about p {
     padding-right: 0;
@@ -6290,11 +6290,11 @@ ol {
 }
 
 .contact-us.style4 .single-info ul li a:hover {
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .contact-us.style4 .single-info i {
-  background: linear-gradient(45deg, #000000, #000000);
+  background: linear-gradient(45deg, #FFFFFF, #FFFFFF);
 }
 
 .contact-us .inner-content {
@@ -6411,8 +6411,8 @@ ol {
   border-radius: 0px;
   font-weight: 400;
   border-radius: 0;
-  -webkit-box-shadow: 0px 0px 10px #00000014;
-          box-shadow: 0px 0px 10px #00000014;
+  -webkit-box-shadow: 0px 0px 10px #FFFFFF14;
+          box-shadow: 0px 0px 10px #FFFFFF14;
 }
 
 .contact-us .form .form-group textarea {
@@ -6425,8 +6425,8 @@ ol {
   resize: none;
   font-weight: 400;
   border-radius: 0;
-  -webkit-box-shadow: 0px 0px 10px #00000014;
-          box-shadow: 0px 0px 10px #00000014;
+  -webkit-box-shadow: 0px 0px 10px #FFFFFF14;
+          box-shadow: 0px 0px 10px #FFFFFF14;
 }
 
 .contact-us .form .button {
