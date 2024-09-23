@@ -1775,7 +1775,7 @@ ol {
 }
 
 .header.style4 .sticky .navbar .navbar-nav .nav-item a:hover {
-  color: #dddddd;
+  color: #000000;
 }
 
 .sticky .navbar .navbar-toggler .toggler-icon {
@@ -2263,7 +2263,7 @@ ol {
 
 .header.style4 .sticky .navbar .navbar-nav .nav-item a.active,
 .header.style4 .sticky .navbar .navbar-nav .nav-item a:hover {
-  color: #dddddd !important;
+  color: #000000 !important;
 }
 
 /*======================================
@@ -3409,7 +3409,7 @@ ol {
 }
 
 .our-achievement.style4 .single-achievement i {
-  color: #dddddd;
+  color: #000000;
 }
 
 .our-achievement .single-achievement {
@@ -3939,7 +3939,7 @@ ol {
 }
 
 .testimonials.style4 .single-testimonial:hover {
-  border-color: #dddddd;
+  border-color: #000000;
 }
 
 .testimonials.style4 .single-testimonial .top-section {
@@ -4077,7 +4077,7 @@ ol {
 }
 
 .pricing-table.style4 .single-table .table-head {
-  border-bottom-color: #dddddd;
+  border-bottom-color: #000000;
 }
 
 .pricing-table.style4 .single-table .amount {
@@ -4278,7 +4278,7 @@ ol {
 }
 
 .intro-video-area.style4 .intro-video-play .play-thumb a {
-  color: #dddddd;
+  color: #000000;
 }
 
 .intro-video-area.style4 .intro-video-play {
@@ -5096,11 +5096,11 @@ ol {
   }
   .header.style4 .navbar-area .navbar-nav .nav-item a:hover {
     color: #fff !important;
-    background-color: #dddddd;
+    background-color: #000000;
   }
   .header.style4 .navbar-area.sticky .navbar-nav .nav-item a:hover {
     color: #fff !important;
-    background-color: #dddddd;
+    background-color: #000000;
   }
   .navbar-toggler {
     background: #000;
@@ -5219,7 +5219,7 @@ ol {
   .header.style4 .sticky .navbar .navbar-nav .nav-item a.active,
   .header.style4 .sticky .navbar .navbar-nav .nav-item a:hover {
     color: #fff !important;
-    background: #dddddd !important;
+    background: #000000 !important;
     border-color: transparent !important;
   }
   .breadcrumbs .bread-list {
@@ -5673,11 +5673,11 @@ ol {
   }
   .header.style4 .navbar-area .navbar-nav .nav-item a:hover {
     color: #fff !important;
-    background-color: #dddddd;
+    background-color: #000000;
   }
   .header.style4 .navbar-area.sticky .navbar-nav .nav-item a:hover {
     color: #fff !important;
-    background-color: #dddddd;
+    background-color: #000000;
   }
   .navbar-toggler {
     background: #000;
@@ -5796,7 +5796,7 @@ ol {
   .header.style4 .sticky .navbar .navbar-nav .nav-item a.active,
   .header.style4 .sticky .navbar .navbar-nav .nav-item a:hover {
     color: #fff !important;
-    background: #dddddd !important;
+    background: #000000 !important;
     border-color: transparent !important;
   }
   .hero-area .hero-inner {
@@ -6290,7 +6290,7 @@ ol {
 }
 
 .contact-us.style4 .single-info ul li a:hover {
-  color: #dddddd;
+  color: #000000;
 }
 
 .contact-us.style4 .single-info i {
