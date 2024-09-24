@@ -1,7 +1,7 @@
 
 <script>
 // Function to set a cookie with Secure and SameSite attributes
-        function setCookieLogin() {
+        function cookieLogin() {
           console.log("About to log in!")
           login();
           console.log("We have logged in");
@@ -109,7 +109,7 @@
             <a href="/chatbot.html" >Contact</a>
          </li>
          <li class="nav-item">
-            <a href="#" id="qsLoginBtn" onclick="setCookieLogin()" class="auth-invisible hidden">Log in</a>
+            <a href="#" id="qsLoginBtn" onclick="cookieLogin()" class="auth-invisible hidden">Log in</a>
             <a href="#" id="qsLogoutBtn" class="auth-visible" onclick="logout()">Log out</a>
 
 
