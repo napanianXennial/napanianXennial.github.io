@@ -28,11 +28,6 @@ const login = async (targetUrl) => {
     if (targetUrl) {
       options.appState = { targetUrl };
     }
-
-    await auth0Client.loginWithRedirect(options);
-
-    const user = await auth0Client.getUser()
-    setCookie("name", user.email, 7)
   } catch (err) {
     console.log("Log in failed", err);
   }
@@ -135,6 +130,13 @@ window.onload = async () => {
       }
 
       console.log("Logged in!");
+
+      console.log("Setting Cookie!")
+      await auth0Client.loginWithRedirect(options);
+
+      const user = await auth0Client.getUser()
+      setCookie("name", user.email, 7)
+      console.log("Cookie set! name = "+user.email)
     } catch (err) {
       console.log("Error parsing redirect:", err);
     }
