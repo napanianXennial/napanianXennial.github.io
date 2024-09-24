@@ -1,7 +1,7 @@
 ---
 layout: minimal-app
-title: "Opportunities Builder"
-blurb: "We'll quickly build out opportunities for you."
+title: "Opportunities Builder 2"
+blurb: "We'll quickly build out opportunities for you, but with a new layout."
 ---
 
 <link rel="manifest" href="manifest.json"/>
