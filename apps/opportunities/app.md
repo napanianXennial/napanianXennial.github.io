@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: blank-xpeedo
 title: "Opportunities Builder"
 blurb: "We'll quickly build out opportunities for you."
 ---
