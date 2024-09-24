@@ -1,6 +1,17 @@
 // The Auth0 client, initialized in configureClient()
 let auth0Client = null;
 
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+  }
+  // Secure flag is necessary when running on HTTPS (like GitHub Pages)
+  document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax; Secure";
+}
+
 /**
  * Starts the authentication flow
  */
@@ -121,6 +132,10 @@ window.onload = async () => {
       }
 
       console.log("Logged in!");
+
+      const user = await auth0Client.getUser()
+      console.log('user pulled - ' + user)
+      setCookie("name", user.email, 7)
     } catch (err) {
       console.log("Error parsing redirect:", err);
     }
