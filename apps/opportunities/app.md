@@ -1,9 +1,8 @@
 ---
-layout: blank-xpeedo
+layout: "blank_xpeedo"
 title: "Opportunities Builder"
 blurb: "We'll quickly build out opportunities for you."
 ---
-
 
 <link rel="manifest" href="manifest.json"/>
 
