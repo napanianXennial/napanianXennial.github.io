@@ -12,12 +12,12 @@
               expires = "; expires=" + date.toUTCString();
           //}
           // Secure flag is necessary when running on HTTPS (like GitHub Pages)
-           console.log("Going to get the user");
-          const authenticatedUser = await auth0.getUser();
-           console.log("Got the user: " + authenticatedUser);
-          document.cookie = authenticatedUser.email + "=" + (value || "") + expires + "; path=/; SameSite=Lax; Secure";
-           console.log("About to set cookie");
-           setCookie("name", authenticatedUser.name, 7);
+          //  console.log("Going to get the user");
+          // const authenticatedUser = await auth0.getUser();
+          //  console.log("Got the user: " + authenticatedUser);
+          // document.cookie = authenticatedUser.email + "=" + (value || "") + expires + "; path=/; SameSite=Lax; Secure";
+          //  console.log("About to set cookie");
+          //  setCookie("name", authenticatedUser.name, 7);
         }
  
 //const user = await auth0.getUser();
