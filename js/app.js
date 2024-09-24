@@ -12,6 +12,11 @@ function setCookie(name, value, days) {
   document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax; Secure";
 }
 
+function deleteCookie(name) {
+  // Set the cookie with the same name, path, and secure flag, but with an expired date
+  document.cookie = name + "=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=Lax; Secure";
+}
+
 /**
  * Starts the authentication flow
  */
@@ -40,6 +45,7 @@ const login = async (targetUrl) => {
  */
 const logout = async () => {
   try {
+    deleteCookie('name')
     console.log("Logging out");
     await auth0Client.logout({
       logoutParams: {
@@ -134,7 +140,6 @@ window.onload = async () => {
       console.log("Logged in!");
 
       const user = await auth0Client.getUser()
-      console.log('user pulled - ' + user)
       setCookie("name", user.email, 7)
     } catch (err) {
       console.log("Error parsing redirect:", err);
