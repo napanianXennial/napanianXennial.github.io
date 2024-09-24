@@ -1,5 +1,5 @@
 ---
-layout: blank-app
+layout: blue-app
 title: "Opportunities Builder"
 blurb: "We'll quickly build out opportunities for you."
 ---
