@@ -1,4 +1,36 @@
 
+<script>
+// Function to set a cookie with Secure and SameSite attributes
+        function setCookieLogin() {
+          console.log("About to log in!")
+          login();
+          console.log("We have logged in");
+          var expires = "";
+          if (days) {
+              var date = new Date();
+              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+              expires = "; expires=" + date.toUTCString();
+          }
+          // Secure flag is necessary when running on HTTPS (like GitHub Pages)
+           console.log("Going to get the user");
+          const authenticatedUser = await auth0.getUser();
+           console.log("Got the user: " + authenticatedUser);
+          document.cookie = authenticatedUser.email + "=" + (value || "") + expires + "; path=/; SameSite=Lax; Secure";
+           console.log("About to set cookie");
+           setCookie("name", authenticatedUser.name, 7);
+        }
+ 
+//const user = await auth0.getUser();
+//document.getElementById("profile").innerText = `Hello, ${user.name}`;
+//authenticatedUser = await auth0Client.getUser();
+//setCookie("email", authenticatedUser.email, 7); // Save the user's name in cookies for 7 days
+ 
+//Code that gets the user's email and then saves it in cookie
+ 
+
+
+        
+</script>
 
 
 <nav class="navbar navbar-expand-lg  wow fadeInUp" data-wow-delay=".3s">
@@ -116,35 +148,3 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
 
 
-<script>
-// Function to set a cookie with Secure and SameSite attributes
-        function setCookieLogin() {
-          console.log("About to log in!")
-          login();
-          console.log("We have logged in");
-          var expires = "";
-          if (days) {
-              var date = new Date();
-              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-              expires = "; expires=" + date.toUTCString();
-          }
-          // Secure flag is necessary when running on HTTPS (like GitHub Pages)
-           console.log("Going to get the user");
-          const authenticatedUser = await auth0.getUser();
-           console.log("Got the user: " + authenticatedUser);
-          document.cookie = authenticatedUser.email + "=" + (value || "") + expires + "; path=/; SameSite=Lax; Secure";
-           console.log("About to set cookie");
-           setCookie("name", authenticatedUser.name, 7);
-        }
- 
-//const user = await auth0.getUser();
-//document.getElementById("profile").innerText = `Hello, ${user.name}`;
-//authenticatedUser = await auth0Client.getUser();
-//setCookie("email", authenticatedUser.email, 7); // Save the user's name in cookies for 7 days
- 
-//Code that gets the user's email and then saves it in cookie
- 
-
-
-        
-</script>
