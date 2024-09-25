@@ -36,6 +36,44 @@
    </button>
    <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
       <ul id="nav" class="navbar-nav me-auto">
+
+
+<li class="nav-item dropdown auth-visible hidden">
+  <a
+    class="nav-link dropdown-toggle"
+    href="#"
+    id="profileDropDown"
+    data-toggle="dropdown"
+  >
+    <!-- Profile image should be set to the profile picture from the id token -->
+    <img
+      alt="Profile picture"
+      class="nav-user-profile profile-image rounded-circle"
+      width="50"
+    />
+  </a>
+  <div class="dropdown-menu">
+    <!-- Show the user's full name from the id token here -->
+    <div class="dropdown-header nav-user-name user-name"></div>
+    <a
+      href="/profile"
+      class="dropdown-item dropdown-profile route-link"
+    >
+      <i class="fas fa-user mr-3"></i> Profile
+    </a>
+    <a
+      href="#"
+      class="dropdown-item"
+      id="qsLogoutBtn"
+      onclick="logout()"
+    >
+      <i class="fas fa-power-off mr-3"></i> Log out
+    </a>
+  </div>
+</li>
+
+
+	      
          <li class="nav-item wow">
             <a href="#" class="auth-invisible hidden">&nbsp;</a>
             <a href="/apps/opportunities/app3.html"  class="auth-visible">Opportunity Builder</a>
