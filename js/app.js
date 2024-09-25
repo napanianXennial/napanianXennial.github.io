@@ -95,10 +95,10 @@ window.onload = async () => {
   await configureClient();
 
   // If unable to parse the history hash, default to the root URL
-  if (!showContentFromUrl(window.location.pathname)) {
-    showContentFromUrl("/");
-    window.history.replaceState({ url: "/" }, {}, "/");
-  }
+  // if (!showContentFromUrl(window.location.pathname)) {
+  //  showContentFromUrl("/");
+  //  window.history.replaceState({ url: "/" }, {}, "/");
+  //}
 
   const bodyElement = document.getElementsByTagName("body")[0];
 
