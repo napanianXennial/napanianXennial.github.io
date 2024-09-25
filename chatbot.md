@@ -6,39 +6,39 @@ layout: "minimal"
 
 <!-- Upload Website URL Section -->
 <div class="form-section" id="url-section">
-    <p>Upload Website URL<p>
-    <form id="url-form">
-        <label for="website-url">Website URL:</label>
-        <input type="text" id="website-url" name="website-url"  required>
-        <button type="submit">Submit URL</button>
-    </form>
-    <div class="response" id="url-response"></div>
+<p>Upload Website URL<p>
+<form id="url-form">
+<label for="website-url">Website URL:</label>
+<input type="text" id="website-url" name="website-url"  required>
+<button type="submit">Submit URL</button>
+</form>
+<div class="response" id="url-response"></div>
 </div>
 
 <!-- Submit Text Section -->
 <div class="form-section" id="text-section">
-    <p>Submit Text<p>
-    <form id="text-form">
-        <label for="text-input">Text Content:</label>
-        <textarea id="text-input" name="text-input" rows="5" placeholder="Enter your text here..." required></textarea>
-        <label for="text-title">Title:</label>
-        <input type="text" id="text-title" name="text-title" placeholder="Title for the text content" required>
-        <button type="submit">Submit Text</button>
-    </form>
-    <div class="response" id="text-response"></div>
+<p>Submit Text<p>
+<form id="text-form">
+<label for="text-input">Text Content:</label>
+<textarea id="text-input" name="text-input" rows="5" placeholder="Enter your text here..." required></textarea>
+<label for="text-title">Title:</label>
+<input type="text" id="text-title" name="text-title" placeholder="Title for the text content" required>
+<button type="submit">Submit Text</button>
+</form>
+<div class="response" id="text-response"></div>
 </div>
 
 <!-- Upload PDF Section -->
 <div class="form-section" id="pdf-section">
-    <p>Upload PDF File</p>
-    <form id="pdf-form">
-        <label for="pdf-file">Select PDF:</label>
-        <input type="file" id="pdf-file" name="pdf-file" accept="application/pdf" required>
-        <label for="pdf-title">Title:</label>
-        <input type="text" id="pdf-title" name="pdf-title" placeholder="Title for the PDF content" required>
-        <button type="submit">Upload PDF</button>
-    </form>
-    <div class="response" id="pdf-response"></div>
+<p>Upload PDF File</p>
+<form id="pdf-form">
+<label for="pdf-file">Select PDF:</label>
+<input type="file" id="pdf-file" name="pdf-file" accept="application/pdf" required>
+<label for="pdf-title">Title:</label>
+<input type="text" id="pdf-title" name="pdf-title" placeholder="Title for the PDF content" required>
+<button type="submit">Upload PDF</button>
+</form>
+<div class="response" id="pdf-response"></div>
 </div>
 
 <script>
