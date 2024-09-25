@@ -1,5 +1,5 @@
 ---
-companyname: "IBM Canada"
+companyname: "Align Chatbot Training"
 layout: "minimal"
 ---
     <h1>AI Bot Training Interface</h1>
