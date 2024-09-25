@@ -3,11 +3,6 @@ companyname: "Align Chatbot Training"
 layout: "minimal"
 ---
 
----
-companyname: "Align Chatbot Training"
-layout: "minimal"
----
-
 <style>
 body {
     font-family: Arial, sans-serif;
