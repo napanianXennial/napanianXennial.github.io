@@ -13,7 +13,7 @@ layout: "minimal"
 <input type="text" id="website-url" name="website-url"  required/>
 <button type="submit">Submit URL</button>
 </form>
-<div class="response" id="url-response"></div></div>
+<div class="response" id="url-response"></div><!-- /div -->
 
 <!-- Submit Text Section -->
 <div class="form-section" id="text-section">
@@ -25,7 +25,7 @@ layout: "minimal"
 <input type="text" id="text-title" name="text-title" placeholder="Title for the text content" required/>
 <button type="submit">Submit Text</button>
 </form>
-<div class="response" id="text-response"></div></div>
+<div class="response" id="text-response"></div><!-- /div -->
 <!-- Upload PDF Section -->
 <div class="form-section" id="pdf-section">
 <p>Upload PDF File</p>
