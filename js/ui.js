@@ -70,7 +70,7 @@ const updateUI = async () => {
         2
       );
 
-      document.querySelectorAll("pre code").forEach(hljs.highlightBlock);
+      //document.querySelectorAll("pre code").forEach(hljs.highlightBlock);
 
       eachElement(".profile-image", (e) => (e.src = user.picture));
       eachElement(".user-name", (e) => (e.innerText = user.name));
