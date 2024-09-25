@@ -2,6 +2,7 @@
 companyname: "Align Chatbot Training"
 layout: "minimal"
 ---
+
 <p>AI Bot Training Interface</p>
 
 <!-- Upload Website URL Section -->
@@ -12,8 +13,7 @@ layout: "minimal"
 <input type="text" id="website-url" name="website-url"  required/>
 <button type="submit">Submit URL</button>
 </form>
-<div class="response" id="url-response"></div>
-</div>
+<div class="response" id="url-response"></div></div>
 
 <!-- Submit Text Section -->
 <div class="form-section" id="text-section">
@@ -25,9 +25,7 @@ layout: "minimal"
 <input type="text" id="text-title" name="text-title" placeholder="Title for the text content" required/>
 <button type="submit">Submit Text</button>
 </form>
-<div class="response" id="text-response"></div>
-</div>
-
+<div class="response" id="text-response"></div></div>
 <!-- Upload PDF Section -->
 <div class="form-section" id="pdf-section">
 <p>Upload PDF File</p>
@@ -38,8 +36,7 @@ layout: "minimal"
 <input type="text" id="pdf-title" name="pdf-title" placeholder="Title for the PDF content" required/>
 <button type="submit">Upload PDF</button>
 </form>
-<div class="response" id="pdf-response"></div>
-</div>
+<div class="response" id="pdf-response"></div></div>
 
 <script>
     const chatbotId = "clyq5fuab00018bz24tj8c22x";
