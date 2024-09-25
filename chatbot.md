@@ -9,7 +9,7 @@ layout: "minimal"
     <p>Upload Website URL<p>
     <form id="url-form">
         <label for="website-url">Website URL:</label>
-        <input type="text" id="website-url" name="website-url" placeholder="https://www.example.com/about-us" required>
+        <input type="text" id="website-url" name="website-url"  required>
         <button type="submit">Submit URL</button>
     </form>
     <div class="response" id="url-response"></div>
