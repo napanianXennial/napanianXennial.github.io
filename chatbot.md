@@ -2,11 +2,11 @@
 companyname: "Align Chatbot Training"
 layout: "minimal"
 ---
-<h1>AI Bot Training Interface</h1>
+<p>AI Bot Training Interface</p>
 
 <!-- Upload Website URL Section -->
 <div class="form-section" id="url-section">
-    <h2>Upload Website URL</h2>
+    <p>Upload Website URL<p>
     <form id="url-form">
         <label for="website-url">Website URL:</label>
         <input type="text" id="website-url" name="website-url" placeholder="https://www.example.com/about-us" required>
@@ -17,7 +17,7 @@ layout: "minimal"
 
 <!-- Submit Text Section -->
 <div class="form-section" id="text-section">
-    <h2>Submit Text</h2>
+    <p>Submit Text<p>
     <form id="text-form">
         <label for="text-input">Text Content:</label>
         <textarea id="text-input" name="text-input" rows="5" placeholder="Enter your text here..." required></textarea>
@@ -30,7 +30,7 @@ layout: "minimal"
 
 <!-- Upload PDF Section -->
 <div class="form-section" id="pdf-section">
-    <h2>Upload PDF File</h2>
+    <p>Upload PDF File</p>
     <form id="pdf-form">
         <label for="pdf-file">Select PDF:</label>
         <input type="file" id="pdf-file" name="pdf-file" accept="application/pdf" required>
@@ -66,7 +66,7 @@ layout: "minimal"
             })
         };
 
-        fetch('https://app.livechatai.com/api/aibot/data-source/url', options)
+        fetch('https://api.milesahead.team/api/chatbot/url', options)
             .then(response => response.json())
             .then(data => {
                 document.getElementById('url-response').textContent = JSON.stringify(data, null, 2);
@@ -101,7 +101,7 @@ layout: "minimal"
             })
         };
 
-        fetch('https://app.livechatai.com/api/aibot/data-source/text', options)
+        fetch('https://api.milesahead.team/api/chatbot/text', options)
             .then(response => response.json())
             .then(data => {
                 document.getElementById('text-response').textContent = JSON.stringify(data, null, 2);
@@ -155,7 +155,7 @@ layout: "minimal"
                 })
             };
 
-            fetch('https://app.livechatai.com/api/aibot/data-source/pdf', options)
+            fetch('https://api.milesahead.team/api/chatbot/pdf', options)
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('pdf-response').textContent = JSON.stringify(data, null, 2);
