@@ -26,7 +26,7 @@ const login = async (targetUrl) => {
 
     const options = {
       authorizationParams: {
-        redirect_uri: 'https://jheguevara.github.io'
+        redirect_uri: 'https://staging.milesahead.today'
       }
     };
 
@@ -60,7 +60,7 @@ const logout = async () => {
 /**
  * Retrieves the auth configuration from the server
  */
-const fetchAuthConfig = () => fetch("https://jheguevara.github.io/auth_config.json");
+const fetchAuthConfig = () => fetch("https://staging.milesahead.today/auth_config.json");
 
 /**
  * Initializes the Auth0 client
