@@ -88,12 +88,12 @@ layout: "minimal"
     <input type="email" id="userEmail" required placeholder="Enter your email">
 
     <!-- Ticket Description -->
-<label for="ticketDescription">Ticket Description:</label>
+<label for="ticketDescription">Description:</label>
 <textarea id="ticketDescription" required placeholder="Enter ticket description" rows="4"></textarea>
 
 
     <!-- Submit Button -->
-    <button type="submit" id="submitTicket">Submit Ticket</button>
+    <button type="submit" id="submitTicket">Submit</button>
 </div>
 
 <input type="hidden" id="ticketType" value="">
