@@ -38,7 +38,7 @@ layout: "minimal"
 }
 
 </style>
-<h1>ITSM Ticket Submission</h1>
+<h1>Innovation and Enhancement Portal</h1>
 
 <!-- Link to Google Fonts for Material Icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -47,23 +47,23 @@ layout: "minimal"
     <!-- Ticket Type Options -->
     <div class="ticket-option" data-value="Incident">
         <span class="material-icons">report_problem</span>
-        <span>Incident</span>
+        <span>Process Optimization</span>
     </div>
     <div class="ticket-option" data-value="Service Request">
         <span class="material-icons">build</span>
-        <span>Service Request</span>
+        <span>Product Enhancements</span>
     </div>
     <div class="ticket-option" data-value="Change Request">
         <span class="material-icons">autorenew</span>
-        <span>Change Request</span>
+        <span>Customer Experience</span>
     </div>
     <div class="ticket-option" data-value="Problem">
         <span class="material-icons">bug_report</span>
-        <span>Problem</span>
+        <span>Innovation and New Features</span>
     </div>
     <div class="ticket-option" data-value="Task">
         <span class="material-icons">check_circle</span>
-        <span>Task</span>
+        <span>Employee Well-being and Culture</span>
     </div>
 
     <!-- Priority Options -->
@@ -82,8 +82,9 @@ layout: "minimal"
     </div>
 
     <!-- Ticket Description -->
-    <label for="ticketDescription">Ticket Description:</label>
-    <input type="text" id="ticketDescription" required placeholder="Enter ticket description">
+<label for="ticketDescription">Ticket Description:</label>
+<textarea id="ticketDescription" required placeholder="Enter ticket description" rows="4"></textarea>
+
 
     <!-- Submit Button -->
     <button type="submit" id="submitTicket">Submit Ticket</button>
