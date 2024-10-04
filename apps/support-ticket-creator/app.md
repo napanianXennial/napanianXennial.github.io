@@ -6,7 +6,7 @@ blurb: "Train you ChatBot so it knows everything about you!"
       
 <link rel="manifest" href="manifest.json"/>
 	  
-<script defer="defer" src="static/js/main.1078f8cd.js"></script>
+<script defer="defer" src="static/js/main.22207e7b.js"></script>
 	  
 <link href="static/css/main.e6c13ad2.css" rel="stylesheet">
 	  
