@@ -2,24 +2,96 @@
 companyname: "Service Tickets"
 layout: "minimal"
 ---
+
+<style>
+
+#ticketForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: auto;
+}
+
+.ticket-option, .priority-option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ticket-option:hover, .priority-option:hover {
+    background-color: #f0f0f0;
+}
+
+.ticket-option span.material-icons, .priority-option span.material-icons {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.ticket-option.selected, .priority-option.selected {
+    background-color: #d1e7ff;
+    border-color: #007bff;
+}
+
+</style>
 <h1>ITSM Ticket Submission</h1>
 
-<form id="ticketForm">
-<label for="ticketType">Select Ticket Type:</label>
-<select id="ticketType" required>
-<option value="">--Select Ticket--</option>
-<option value="Incident">Incident</option>
-<option value="Service Request">Service Request</option>
-<option value="Change Request">Change Request</option>
-<option value="Problem">Problem</option>
-<option value="Task">Task</option>
-</select>
+<!-- Link to Google Fonts for Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<label for="ticketDescription">Ticket Description:</label>
-<input type="text" id="ticketDescription" required placeholder="Enter ticket description">
+<div id="ticketForm">
+    <!-- Ticket Type Options -->
+    <div class="ticket-option" data-value="Incident">
+        <span class="material-icons">report_problem</span>
+        <span>Incident</span>
+    </div>
+    <div class="ticket-option" data-value="Service Request">
+        <span class="material-icons">build</span>
+        <span>Service Request</span>
+    </div>
+    <div class="ticket-option" data-value="Change Request">
+        <span class="material-icons">autorenew</span>
+        <span>Change Request</span>
+    </div>
+    <div class="ticket-option" data-value="Problem">
+        <span class="material-icons">bug_report</span>
+        <span>Problem</span>
+    </div>
+    <div class="ticket-option" data-value="Task">
+        <span class="material-icons">check_circle</span>
+        <span>Task</span>
+    </div>
 
-<button type="submit">Submit Ticket</button>
-</form>
+    <!-- Priority Options -->
+    <label>Select Priority:</label>
+    <div class="priority-option" data-priority="High">
+        <span class="material-icons">arrow_upward</span>
+        <span>High</span>
+    </div>
+    <div class="priority-option" data-priority="Medium">
+        <span class="material-icons">remove</span>
+        <span>Medium</span>
+    </div>
+    <div class="priority-option" data-priority="Low">
+        <span class="material-icons">arrow_downward</span>
+        <span>Low</span>
+    </div>
+
+    <!-- Ticket Description -->
+    <label for="ticketDescription">Ticket Description:</label>
+    <input type="text" id="ticketDescription" required placeholder="Enter ticket description">
+
+    <!-- Submit Button -->
+    <button type="submit" id="submitTicket">Submit Ticket</button>
+</div>
+
+<input type="hidden" id="ticketType" value="">
+<input type="hidden" id="ticketPriority" value="">
+
 
 <script>
 document.getElementById('ticketForm').addEventListener('submit', function(event) {
@@ -56,14 +128,40 @@ fetch('https://ap.milesahead.today/ticket', {
     alert('There was an error submitting the ticket. Please try again.');
 });
 });
-</script>
-<iframe
-src="https://app.livechatai.com/aibot-iframe/clyq5fuab00018bz24tj8c22x"
-style="border:1px solid #EAEAEA"
-width="100%"
-height="680"
-frameborder="0"
-allow="microphone"
->
 
-</iframe>
+// Handle Ticket Type Selection
+document.querySelectorAll('.ticket-option').forEach(option => {
+    option.addEventListener('click', function() {
+        document.querySelectorAll('.ticket-option').forEach(opt => opt.classList.remove('selected'));
+        this.classList.add('selected');
+        document.getElementById('ticketType').value = this.getAttribute('data-value');
+    });
+});
+
+// Handle Priority Selection
+document.querySelectorAll('.priority-option').forEach(option => {
+    option.addEventListener('click', function() {
+        document.querySelectorAll('.priority-option').forEach(opt => opt.classList.remove('selected'));
+        this.classList.add('selected');
+        document.getElementById('ticketPriority').value = this.getAttribute('data-priority');
+    });
+});
+
+// Handle Form Submission
+document.getElementById('submitTicket').addEventListener('click', function(event) {
+    event.preventDefault();
+    const ticketType = document.getElementById('ticketType').value;
+    const ticketPriority = document.getElementById('ticketPriority').value;
+    const ticketDescription = document.getElementById('ticketDescription').value;
+    
+    if (ticketType && ticketPriority && ticketDescription) {
+        // Submit form logic here
+        alert(`Ticket submitted: ${ticketType}, Priority: ${ticketPriority}, Description: ${ticketDescription}`);
+    } else {
+        alert('Please select a ticket type, priority, and enter a description.');
+    }
+});
+
+    
+</script>
+
