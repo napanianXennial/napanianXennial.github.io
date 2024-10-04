@@ -4,6 +4,7 @@ layout: "minimal"
 ---
 
 <style>
+
 #ticketForm {
     display: flex;
     flex-direction: column;
@@ -35,8 +36,8 @@ layout: "minimal"
     background-color: #d1e7ff;
     border-color: #007bff;
 }
-</style>
 
+</style>
 <center><h5>Service Ticket</h5></center>
 
 <!-- Link to Google Fonts for Material Icons -->
@@ -64,7 +65,8 @@ layout: "minimal"
         <span class="material-icons">check_circle</span>
         <span>Technical issues (Login, Performance)</span>
     </div>
-    <div class="ticket-option" data-value="Other">
+
+        <div class="ticket-option" data-value="Task">
         <span class="material-icons">check_circle</span>
         <span>Other</span>
     </div>
@@ -83,10 +85,10 @@ layout: "minimal"
         <span class="material-icons">arrow_downward</span>
         <span>Low</span>
     </div>
-
     <!-- Ticket Description -->
-    <label for="ticketDescription">Description:</label>
-    <textarea id="ticketDescription" required placeholder="Enter description" rows="4"></textarea>
+<label for="ticketDescription">Description:</label>
+<textarea id="ticketDescription" required placeholder="Enter description" rows="4"></textarea>
+
 
     <!-- Submit Button -->
     <button type="submit" id="submitTicket">Submit</button>
@@ -95,8 +97,43 @@ layout: "minimal"
 <input type="hidden" id="ticketType" value="">
 <input type="hidden" id="ticketPriority" value="">
 
-<!-- Your Updated JavaScript Should Go Here -->
+
 <script>
+document.getElementById('ticketForm').addEventListener('submit', function(event) {
+event.preventDefault();
+
+const ticketType = document.getElementById('ticketType').value;
+const ticketDescription = document.getElementById('ticketDescription').value;
+
+const data = {
+    type: ticketType,
+    description: ticketDescription
+};
+
+fetch('https://ap.milesahead.today/ticket', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.json();
+})
+.then(data => {
+    alert('Ticket submitted successfully!');
+    // Optionally reset the form
+    document.getElementById('ticketForm').reset();
+})
+.catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+    alert('There was an error submitting the ticket. Please try again.');
+});
+});
+
 // Handle Ticket Type Selection
 document.querySelectorAll('.ticket-option').forEach(option => {
     option.addEventListener('click', function() {
@@ -118,52 +155,18 @@ document.querySelectorAll('.priority-option').forEach(option => {
 // Handle Form Submission
 document.getElementById('submitTicket').addEventListener('click', function(event) {
     event.preventDefault();
-
-    // Capture form values
-    const summary = document.getElementById('ticketType').value;
-    const serviceName = "Service Tickets"; // Set the static Service Name from the form
-    const userName = "Default User"; // Set a static or default User's Name
-    const userEmail = "defaultuser@example.com"; // Set a static or default User's Email
+    const ticketType = document.getElementById('ticketType').value;
     const ticketPriority = document.getElementById('ticketPriority').value;
-    const issueDescription = document.getElementById('ticketDescription').value;
-
-    // Check if all fields are filled
-    if (summary && ticketPriority && issueDescription) {
-        // Create the data object to send
-        const data = {
-            summary,
-            serviceName,
-            userName,
-            userEmail,
-            issueDescription,
-            priority: ticketPriority
-        };
-
-        // Submit the form data to the backend
-        fetch('https://your-backend-url/api/issue', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            alert('Ticket submitted successfully!');
-            // Optionally reset the form
-            document.getElementById('ticketForm').reset();
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-            alert('There was an error submitting the ticket. Please try again.');
-        });
+    const ticketDescription = document.getElementById('ticketDescription').value;
+    
+    if (ticketType && ticketPriority && ticketDescription) {
+        // Submit form logic here
+        alert(`Ticket submitted: ${ticketType}, Priority: ${ticketPriority}, Description: ${ticketDescription}`);
     } else {
         alert('Please select a ticket type, priority, and enter a description.');
     }
 });
+
+    
 </script>
+
