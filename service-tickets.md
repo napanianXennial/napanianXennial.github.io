@@ -44,7 +44,8 @@ layout: "minimal"
 <!-- SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<div id="ticketForm">
+<!-- Changed this to a form element -->
+<form id="ticketForm">
     <!-- Ticket Type Options -->
     <div class="ticket-option" data-value="Incident">
         <span class="material-icons">report_problem</span>
@@ -92,7 +93,7 @@ layout: "minimal"
 
     <!-- Submit Button -->
     <button type="submit" id="submitTicket">Submit</button>
-</div>
+</form>
 
 <input type="hidden" id="ticketType" value="">
 <input type="hidden" id="ticketPriority" value="">
@@ -178,7 +179,7 @@ document.getElementById('submitTicket').addEventListener('click', function(event
                 position: 'top-end'
             });
 
-            // Optionally reset the form
+            // Reset the form using .reset()
             document.getElementById('ticketForm').reset();
         })
         .catch(error => {
