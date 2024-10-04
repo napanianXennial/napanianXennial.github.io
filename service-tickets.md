@@ -38,7 +38,7 @@ layout: "minimal"
 }
 
 </style>
-<center><h5>What's your innovation?</h5></center>
+<center><h5>Service Ticket</h5></center>
 
 <!-- Link to Google Fonts for Material Icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -47,23 +47,28 @@ layout: "minimal"
     <!-- Ticket Type Options -->
     <div class="ticket-option" data-value="Incident">
         <span class="material-icons">report_problem</span>
-        <span>Process Optimization</span>
+        <span>Payroll Help</span>
     </div>
     <div class="ticket-option" data-value="Service Request">
         <span class="material-icons">build</span>
-        <span>Product Enhancements</span>
+        <span>Time and Attendance Issues</span>
     </div>
     <div class="ticket-option" data-value="Change Request">
         <span class="material-icons">autorenew</span>
-        <span>Customer Experience</span>
+        <span>Product Help</span>
     </div>
     <div class="ticket-option" data-value="Problem">
         <span class="material-icons">bug_report</span>
-        <span>Innovation and New Features</span>
+        <span>HR Support</span>
     </div>
     <div class="ticket-option" data-value="Task">
         <span class="material-icons">check_circle</span>
-        <span>Employee Well-being and Culture</span>
+        <span>Technical issues (Login, Performance)</span>
+    </div>
+
+        <div class="ticket-option" data-value="Task">
+        <span class="material-icons">check_circle</span>
+        <span>Other</span>
     </div>
 
     <!-- Priority Options -->
