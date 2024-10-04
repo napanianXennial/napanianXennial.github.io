@@ -175,7 +175,7 @@ document.getElementById('submitTicket').addEventListener('click', function(event
             Swal.fire({
                 icon: 'success',
                 title: 'Ticket Submitted',
-                text: `Your ticket has been successfully submitted!<br/>Please visit <a href="${browseUrl}" target="_blank">${browseUrl}</a>`,
+                html: `Your ticket has been successfully submitted!<br/>Please visit <a href="${browseUrl}" target="_blank" style="color: #3085d6;">this link</a> to view the ticket.`,
                 timer: 20000,
                 showConfirmButton: false,
                 toast: true,
