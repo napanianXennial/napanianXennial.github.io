@@ -38,7 +38,7 @@ layout: "minimal"
 }
 
 </style>
-<h1>Innovation and Enhancement Portal</h1>
+<h5>What's your innovation?</h5>
 
 <!-- Link to Google Fonts for Material Icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
