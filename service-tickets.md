@@ -80,6 +80,12 @@ layout: "minimal"
         <span class="material-icons">arrow_downward</span>
         <span>Low</span>
     </div>
+  <label for="userName">Your Name:</label>
+    <input type="text" id="userName" required placeholder="Enter your name">
+    
+    <!-- Email Field -->
+    <label for="userEmail">Your Email:</label>
+    <input type="email" id="userEmail" required placeholder="Enter your email">
 
     <!-- Ticket Description -->
 <label for="ticketDescription">Ticket Description:</label>
