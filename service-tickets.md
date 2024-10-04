@@ -121,9 +121,9 @@ document.getElementById('submitTicket').addEventListener('click', function(event
 
     // Capture form values
     const summary = document.getElementById('ticketType').value;
-    const serviceName = "Service Tickets"; // Set the static Service Name from the form
-    const userName = "Default User"; // Set a static or default User's Name
     const userEmail = "defaultuser@example.com"; // Set a static or default User's Email
+    const serviceName = `${document.getElementById('ticketType').value} - ${userEmail}`; // Set the static Service Name from the form
+    const userName = "Default User"; // Set a static or default User's Name
     const ticketPriority = document.getElementById('ticketPriority').value;
     const issueDescription = document.getElementById('ticketDescription').value;
 
@@ -140,7 +140,7 @@ document.getElementById('submitTicket').addEventListener('click', function(event
         };
 
         // Submit the form data to the backend
-        fetch('https://your-backend-url/api/issue', {
+        fetch('http://localhost:3001/api/jira/issue', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
