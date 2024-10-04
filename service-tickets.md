@@ -41,6 +41,8 @@ layout: "minimal"
 
 <!-- Link to Google Fonts for Material Icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <div id="ticketForm">
     <!-- Ticket Type Options -->
@@ -95,7 +97,6 @@ layout: "minimal"
 <input type="hidden" id="ticketType" value="">
 <input type="hidden" id="ticketPriority" value="">
 
-<!-- Your Updated JavaScript Should Go Here -->
 <script>
 // Handle Ticket Type Selection
 document.querySelectorAll('.ticket-option').forEach(option => {
@@ -130,13 +131,13 @@ document.getElementById('submitTicket').addEventListener('click', function(event
         return null;
     }
 
-    const userCookie = readCookie('user')
+    const userCookie = readCookie('user');
 
     // Capture form values
-    const userEmail = readCookie('user') ? JSON.parse(readCookie('user'))?.email || "User has no email" : "User has no email";
+    const userEmail = userCookie ? JSON.parse(userCookie)?.email || "User has no email" : "User has no email";
     const summary = `${document.getElementById('ticketType').value} - ${userEmail}`;
     const serviceName = document.getElementById('ticketType').value;
-    const userName = readCookie('user') ? JSON.parse(readCookie('user'))?.name || "Anonymous" : "Anonymous";
+    const userName = userCookie ? JSON.parse(userCookie)?.name || "Anonymous" : "Anonymous";
     const ticketPriority = document.getElementById('ticketPriority').value;
     const issueDescription = document.getElementById('ticketDescription').value;
 
@@ -167,16 +168,41 @@ document.getElementById('submitTicket').addEventListener('click', function(event
             return response.json();
         })
         .then(data => {
-            alert('Ticket submitted successfully!');
+            Swal.fire({
+                icon: 'success',
+                title: 'Ticket Submitted',
+                text: 'Your ticket has been successfully submitted!',
+                timer: 3000,
+                showConfirmButton: false,
+                toast: true,
+                position: 'top-end'
+            });
+
             // Optionally reset the form
             document.getElementById('ticketForm').reset();
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
-            alert('There was an error submitting the ticket. Please try again.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'There was an error submitting the ticket. Please try again.',
+                timer: 3000,
+                showConfirmButton: false,
+                toast: true,
+                position: 'top-end'
+            });
         });
     } else {
-        alert('Please select a ticket type, priority, and enter a description.');
+        Swal.fire({
+            icon: 'warning',
+            title: 'Incomplete Form',
+            text: 'Please select a ticket type, priority, and enter a description.',
+            timer: 3000,
+            showConfirmButton: false,
+            toast: true,
+            position: 'top-end'
+        });
     }
 });
 </script>
