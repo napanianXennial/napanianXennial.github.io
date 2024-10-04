@@ -119,10 +119,18 @@ document.querySelectorAll('.priority-option').forEach(option => {
 document.getElementById('submitTicket').addEventListener('click', function(event) {
     event.preventDefault();
 
+    const storedUser = localStorage.getItem('user');  // Or readCookie("user");
+    if (storedUser) {
+    const user = JSON.parse(storedUser);
+    console.log("User from another HTML:", user);  // You now have access to the user details
+    } else {
+    console.log("No user found");
+    }
+
     // Capture form values
-    const summary = document.getElementById('ticketType').value;
     const userEmail = "defaultuser@example.com"; // Set a static or default User's Email
-    const serviceName = `${document.getElementById('ticketType').value} - ${userEmail}`; // Set the static Service Name from the form
+    const summary = `${document.getElementById('ticketType').value} - ${userEmail}`;
+    const serviceName = document.getElementById('ticketType').value; // Set the static Service Name from the form
     const userName = "Default User"; // Set a static or default User's Name
     const ticketPriority = document.getElementById('ticketPriority').value;
     const issueDescription = document.getElementById('ticketDescription').value;

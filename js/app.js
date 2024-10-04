@@ -140,6 +140,7 @@ window.onload = async () => {
       console.log("Logged in!");
 
       const user = await auth0Client.getUser()
+      localStorage.setItem('user', JSON.stringify(user))
       setCookie("name", user.email, 7)
     } catch (err) {
       console.log("Error parsing redirect:", err);
