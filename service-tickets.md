@@ -38,7 +38,7 @@ layout: "minimal"
 }
 
 </style>
-<h5>What's your innovation?</h5>
+<center><h5>What's your innovation?</h5></center>
 
 <!-- Link to Google Fonts for Material Icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -89,7 +89,7 @@ layout: "minimal"
 
     <!-- Ticket Description -->
 <label for="ticketDescription">Description:</label>
-<textarea id="ticketDescription" required placeholder="Enter ticket description" rows="4"></textarea>
+<textarea id="ticketDescription" required placeholder="Enter description" rows="4"></textarea>
 
 
     <!-- Submit Button -->
