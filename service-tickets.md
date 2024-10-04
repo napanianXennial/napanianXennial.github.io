@@ -133,11 +133,10 @@ document.getElementById('submitTicket').addEventListener('click', function(event
     const userCookie = readCookie('user')
 
     // Capture form values
-    const userEmail = "defaultuser@example.com"; // Set a static or default User's Email
+    const userEmail = readCookie('user') ? JSON.parse(readCookie('user'))?.email || "User has no email" : "User has no email";
     const summary = `${document.getElementById('ticketType').value} - ${userEmail}`;
-    const serviceName = document.getElementById('ticketType').value; // Set the static Service Name from the form
-    // const userName = "Default User"; // Set a static or default User's Name
-    const userName = readCookie('user') ? JSON.parse(readCookie('user'))?.given_name || "Default User" : "Default User";
+    const serviceName = document.getElementById('ticketType').value;
+    const userName = readCookie('user') ? JSON.parse(readCookie('user'))?.name || "Anonymous" : "Anonymous";
     const ticketPriority = document.getElementById('ticketPriority').value;
     const issueDescription = document.getElementById('ticketDescription').value;
 
@@ -154,7 +153,7 @@ document.getElementById('submitTicket').addEventListener('click', function(event
         };
 
         // Submit the form data to the backend
-        fetch('http://localhost:3001/api/jira/issue', {
+        fetch('https://api.milesahead.team/api/jira/issue', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
