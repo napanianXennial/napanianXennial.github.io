@@ -119,19 +119,25 @@ document.querySelectorAll('.priority-option').forEach(option => {
 document.getElementById('submitTicket').addEventListener('click', function(event) {
     event.preventDefault();
 
-    const storedUser = localStorage.getItem('user');  // Or readCookie("user");
-    if (storedUser) {
-    const user = JSON.parse(storedUser);
-    console.log("User from another HTML:", user);  // You now have access to the user details
-    } else {
-    console.log("No user found");
+    function readCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for(let i=0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
     }
+
+    const userCookie = readCookie('user')
 
     // Capture form values
     const userEmail = "defaultuser@example.com"; // Set a static or default User's Email
     const summary = `${document.getElementById('ticketType').value} - ${userEmail}`;
     const serviceName = document.getElementById('ticketType').value; // Set the static Service Name from the form
-    const userName = "Default User"; // Set a static or default User's Name
+    // const userName = "Default User"; // Set a static or default User's Name
+    const userName = readCookie('user') ? JSON.parse(readCookie('user'))?.given_name || "Default User" : "Default User";
     const ticketPriority = document.getElementById('ticketPriority').value;
     const issueDescription = document.getElementById('ticketDescription').value;
 
