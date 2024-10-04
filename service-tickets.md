@@ -169,11 +169,14 @@ document.getElementById('submitTicket').addEventListener('click', function(event
             return response.json();
         })
         .then(data => {
+            console.log(data)
+            const baseUrl = data.self.split('/rest/api/2/issue/')[0]
+            const browseUrl = `${baseUrl}/browse/${data.key}`
             Swal.fire({
                 icon: 'success',
                 title: 'Ticket Submitted',
-                text: 'Your ticket has been successfully submitted!',
-                timer: 3000,
+                text: `Your ticket has been successfully submitted!<br/>Please visit <a href="${browseUrl}" target="_blank">${browseUrl}</a>`,
+                timer: 20000,
                 showConfirmButton: false,
                 toast: true,
                 position: 'top-end'
