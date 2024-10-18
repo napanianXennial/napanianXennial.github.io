@@ -187,6 +187,11 @@
                                         target="_blank">Download Now</a> | <a href="https://buy.stripe.com/test_00g8xR7Sm10k0uY8wx" rel="nofollow"
                                         target="_blank">Subscribe</a></p>
                             </div>
+			    <div class="left" data-subscription="sub_1QB2mJE1kHJTQOxY8Hy86BKM">
+                                <p><a href="https://buy.stripe.com/test_4gwcO73C6cJ2fpScMM" rel="nofollow" 
+                                        target="_blank">Download Now</a> | <a href="https://buy.stripe.com/test_00g8xR7Sm10k0uY8wx" rel="nofollow"
+                                        target="_blank">Subscribe</a></p>
+                            </div>
 
 
 				
@@ -231,6 +236,43 @@ window.onload = function() {
         }
     }
 };
+
+window.onload = function() {
+    // Get the content of the tag with the id 'profile-data'
+    const profileDataElement = document.getElementById('profile-data');
+    
+    // Check if the element exists
+    if (profileDataElement) {
+        // Parse the JSON content within the profile-data tag
+        const profileData = JSON.parse(profileDataElement.textContent);
+        
+        // Check if 'active_subscriptions' exists and contains the target subscription ID
+        if (profileData.active_subscriptions) {
+            const isSubscribed = profileData.active_subscriptions.some(subscription => 
+                subscription.id === 'sub_1QB2mJE1kHJTQOxY8Hy86BKM'
+            );
+            
+            // If the subscription ID is found
+            if (isSubscribed) {
+                // Find the div with the matching data-subscription attribute
+                const subscriptionDiv = document.querySelector('div[data-subscription="sub_1QB2mJE1kHJTQOxY8Hy86BKM"]');
+                
+                // If the div is found, change the "Subscribe" link text to "Thank you for subscribing"
+                if (subscriptionDiv) {
+                    const links = subscriptionDiv.getElementsByTagName('a');
+                    
+                    // Loop through the links in the div to find the "Subscribe" link
+                    for (let link of links) {
+                        if (link.textContent.trim() === "Subscribe") {
+                            link.textContent = "Thank you for subscribing";
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+};		
 		
 	</script>
 
