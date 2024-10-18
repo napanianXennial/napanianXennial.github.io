@@ -85,6 +85,7 @@ console.log(user.chatbot-subscription-link);
     // Check if the element exists and the user has the 'chatbot-subscription-link' property
     if (anchorElement) {
         // Set the href attribute to the value in the user object
+      console.log("Setting the anchor link tag");
         anchorElement.href = user.chatbot-subscription-link;
     }
 
