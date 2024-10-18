@@ -81,12 +81,12 @@ const updateUI = async () => {
       /*****/
 
           const anchorElement = document.getElementById('chatbot-subscription-link');
-console.log(user.chatbot-subscription-link);
+console.log(user.chatbot_subscription_link);
     // Check if the element exists and the user has the 'chatbot-subscription-link' property
     if (anchorElement) {
         // Set the href attribute to the value in the user object
       console.log("Setting the anchor link tag");
-        anchorElement.href = user.chatbot-subscription-link;
+        anchorElement.href = user.chatbot_subscription_link;
     }
 
       if (Array.isArray(user.active_subscriptions)) {
