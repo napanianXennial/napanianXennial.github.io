@@ -77,6 +77,26 @@ const updateUI = async () => {
       eachElement(".user-email", (e) => (e.innerText = user.email));
       eachElement(".auth-invisible", (e) => e.classList.add("hidden"));
       eachElement(".auth-visible", (e) => e.classList.remove("hidden"));
+
+      /*****/
+      if (Array.isArray(user.active_subscriptions)) {
+        // Check if any subscription has the specific ID
+        const hasSubscription = user.active_subscriptions.some(subscription => 
+            subscription.id === 'sub_1QB2mJE1kHJTQOxY8Hy86BKM'
+        );
+
+        // If found, show an alert
+        if (hasSubscription) {
+            alert("Subscribed!");
+        }
+    } else {
+        console.warn("No active subscriptions found.");
+    }
+
+      /*****/
+
+
+      
     } else {
       eachElement(".auth-invisible", (e) => e.classList.remove("hidden"));
       eachElement(".auth-visible", (e) => e.classList.add("hidden"));
