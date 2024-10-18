@@ -79,24 +79,33 @@ const updateUI = async () => {
       eachElement(".auth-visible", (e) => e.classList.remove("hidden"));
 
       /*****/
+
       if (Array.isArray(user.active_subscriptions)) {
         // Check if any subscription has the specific ID
         const hasSubscription = user.active_subscriptions.some(subscription => 
             subscription.id === 'sub_1QB2mJE1kHJTQOxY8Hy86BKM'
         );
 
-        // If found, show an alert
+        // If found, handle visibility of subscription fields
         if (hasSubscription) {
-            alert("Subscribed!");
+          const subscriptionFields = document.querySelectorAll('[data-subscription="sub_1QB2mJE1kHJTQOxY8Hy86BKM"]');
+          
+          subscriptionFields.forEach(field => {
+            if (field.classList.contains('subs-visible')) {
+              field.classList.remove('hidden');
+            } else if (field.classList.contains('subs-invisible')) {
+              field.classList.add('hidden');
+            }
+          });
+
+        } else {
+          console.warn("No active subscriptions found.");
         }
-    } else {
-        console.warn("No active subscriptions found.");
-    }
+
+      }
 
       /*****/
 
-
-      
     } else {
       eachElement(".auth-invisible", (e) => e.classList.remove("hidden"));
       eachElement(".auth-visible", (e) => e.classList.add("hidden"));
