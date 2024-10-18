@@ -213,32 +213,6 @@
 	
 </body>
 
-	<script>
-window.onload = function() {
-    // Get the content of the tag with the id 'profile-data'
-    const profileDataElement = document.getElementById('profile-data');
-    
-    // Check if the element exists
-    if (profileDataElement) {
-        // Parse the JSON content within the profile-data tag
-        const profileData = JSON.parse(profileDataElement.textContent);
-        
-        // Check if 'active_subscriptions' exists and contains the target subscription ID
-        if (profileData.active_subscriptions) {
-            const isSubscribed = profileData.active_subscriptions.some(subscription => 
-                subscription.id === 'sub_1QB2mJE1kHJTQOxY8Hy86BKM'
-            );
-            
-            // If the subscription ID is found, show an alert
-            if (isSubscribed) {
-                alert("Subscribed!");
-            }
-        }
-    }
-};
 
-	
-		
-	</script>
 
 </html>
