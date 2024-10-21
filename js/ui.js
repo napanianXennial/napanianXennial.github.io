@@ -49,7 +49,7 @@ const isRouteLink = (element) =>
  * @param {*} id The id of the content to show
  */
 const showContent = (id) => {
-  console.log("Printing out the id: " + id);
+  console.log("In showContent Printing out the id: " + id);
   eachElement(".page", (p) => p.classList.add("hidden"));
   document.getElementById(id).classList.remove("hidden");
 };
@@ -59,9 +59,14 @@ const showContent = (id) => {
  */
 const updateUI = async () => {
   try {
-    const isAuthenticated = await auth0Client.isAuthenticated();
 
+   
+    
+    const isAuthenticated = await auth0Client.isAuthenticated();
+    console.log("In updateUI");
+    console.log("Here is the autho0Client: " + JSON.stringify(auth0Client));
     if (isAuthenticated) {
+      console.log("User is authenticated apparently");
       const user = await auth0Client.getUser();
 
       document.getElementById("profile-data").innerText = JSON.stringify(
@@ -116,6 +121,7 @@ const updateUI = async () => {
       /*****/
 
     } else {
+      console.log("User is NOT authenticated apparently. Making tags hidden for unauth...");
       eachElement(".auth-invisible", (e) => e.classList.remove("hidden"));
       eachElement(".auth-visible", (e) => e.classList.add("hidden"));
     }
@@ -128,7 +134,9 @@ const updateUI = async () => {
 };
 
 window.onpopstate = (e) => {
+  console.log("In onpopstate");
   if (e.state && e.state.url && router[e.state.url]) {
+    console.log("Going to do showContentFromURL in onpopstate");
     showContentFromUrl(e.state.url);
   }
 };
