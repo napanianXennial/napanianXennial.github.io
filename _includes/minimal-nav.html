@@ -33,52 +33,64 @@
       <ul id="nav" class="navbar-nav me-auto">
 
 
-<li class="nav-item dropdown auth-visible hidden">
-  <a
-    class="nav-link"
-    href="#"
-    id="profileDropDown"
-    data-toggle="dropdown"
-  >
-    <!-- Profile image should be set to the profile picture from the id token -->
-    <img
-      alt="Profile picture"
-      class="nav-user-profile profile-image rounded-circle"
-      width="30"
-    />
-  </a>
-  <div class="dropdown-menu">
-    <!-- Show the user's full name from the id token here -->
-    <div class="dropdown-header nav-user-name user-name"></div>
-    <a
-      href="/profile"
-      class="dropdown-item dropdown-profile route-link"
-    >
-      <i class="fas fa-user mr-3"></i> Profile
-    </a>
-    <a
-      href="#"
-      class="dropdown-item"
-      id="qsLogoutBtn"
-      onclick="logout()"
-    >
-      <i class="fas fa-power-off mr-3"></i> Log out
-    </a>
-  </div>
-</li>    
-	      
- <li class="nav-item wow">
-    <a href="#" class="auth-invisible hidden">&nbsp;</a>
-    <a href="/apps/opportunities/app3.html"  class="auth-visible">Opportunity Builder</a>
- </li>
- <li class="nav-item wow">
-    <a href="#" class="auth-invisible hidden"></a>
-    <a href="/apps/opportunities-notifications/app2.html" class="auth-visible">Email Notifications</a>
- </li>
- <!--li class="nav-item">
-    <a href="/applications.html" class="auth-visible">Applications</a>
-    </li -->
- <li class="nav-item wow" >
+                <li class="nav-item dropdown auth-visible hidden">
+                  <a
+                    class="nav-link"
+                    href="#"
+                    id="profileDropDown"
+                    data-toggle="dropdown"
+                  >
+                    <!-- Profile image should be set to the profile picture from the id token -->
+                    <img
+                      alt="Profile picture"
+                      class="nav-user-profile profile-image rounded-circle"
+                      width="30"
+                    />
+                  </a>
+                  <div class="dropdown-menu">
+                    <!-- Show the user's full name from the id token here -->
+                    <div class="dropdown-header nav-user-name user-name"></div>
+                    <a
+                      href="/profile"
+                      class="dropdown-item dropdown-profile route-link"
+                    >
+                      <i class="fas fa-user mr-3"></i> Profile
+                    </a>
+                    <a
+                      href="#"
+                      class="dropdown-item"
+                      id="qsLogoutBtn"
+                      onclick="logout()"
+                    >
+                      <i class="fas fa-power-off mr-3"></i> Log out
+                    </a>
+                  </div>
+                </li>
+
+
+
+         
+         <li class="nav-item wow">
+            <a href="#" class="auth-invisible hidden">&nbsp;</a>
+            <a href="/apps/opportunities/app3.html"  class="auth-visible">Opportunity Builder</a>
+         </li>
+         <li class="nav-item wow">
+            <a href="#" class="auth-invisible hidden"></a>
+            <a href="/apps/opportunities-notifications/app3.html" class="auth-visible">Email Notifications</a>
+         </li>
+         <!--li class="nav-item">
+            <a href="/applications.html" class="auth-visible">Applications</a>
+            </li -->
+         <li class="nav-item wow" >
+            
+            <a href="#" class="auth-invisible hidden"></a>
+            <span class="subs-visible hidden" data-subscription="sub_1QB2mJE1kHJTQOxY8Hy86BKM">
+            
+            <a href="/apps/chatbot-training/app.html"  class="auth-visible">Chatbot training</a>
+            <!--span class="material-icons subs-visible hidden" data-subscription="sub_1QB2mJE1kHJTQOxY8Hy86BKM">lock_open</span-->
+               
+            </span>
+
             <span class="subs-invisible" data-subscription="sub_1QB2mJE1kHJTQOxY8Hy86BKM">
                
             <a id="chatbot-subscription-link" href="https://buy.stripe.com/test_00g8xR7Sm10k0uY8wx"  class="auth-visible">Chatbot training</a>
@@ -86,27 +98,48 @@
             
             </span>
 
-	 
-    <a href="#" class="auth-invisible hidden"></a>
-    <a href="/apps/chatbot-training/app.html"  class="auth-visible">Chatbot Training</a>
- </li>
- <li class="nav-item">
-    <a href="/index.html" class="auth-invisible hidden">Home</a>
-    <a href="/applications.html" class="auth-visible">Apps</a>
- </li>
-
-	               <li class="nav-item wow" >
+         </li>
+         <li class="nav-item wow" >
             <a href="#" class="auth-invisible hidden"></a>
             <a href="/apps/support-ticket-creator/app.html"  class="auth-visible">Service Tickets</a>
          </li>
- <li class="nav-item">
-    <a href="/chatbot.html?id=minimal-nav" >Chatbot</a>
- </li>
- <li class="nav-item">
-    <a href="#" id="qsLoginBtn" onclick="login()" class="auth-invisible hidden">Log in</a>
-    <a href="#" id="qsLogoutBtn" class="auth-visible" onclick="logout()">Log out</a>
- </li>
-</ul>
+         <li class="nav-item">
+            <a href="/index.html" class="auth-invisible hidden">Home</a>
+            <a href="/applications.html" class="auth-visible">Apps</a>
+         </li>
+         <li class="nav-item">
+            <a href="/chatbot.html?id=nav-tag" >Chatbot</a>
+         </li>
+         <li class="nav-item">
+            <a href="#" id="qsLoginBtn" onclick="login()" class="auth-invisible hidden">Log in</a>
+            <a href="#" id="qsLogoutBtn" class="auth-visible" onclick="logout()">Log out</a>
+
+
+        <div class="page hidden" id="content-profile">
+          <div class="container">
+            <div class="row align-items-center profile-header">
+              <div class="col-md-2">
+                <img
+                  alt="User's profile picture"
+                  class="rounded-circle img-fluid profile-image mb-3 mb-md-0"
+                />
+              </div>
+              <div class="col-md">
+                <h2 class="user-name"></h2>
+                <p class="lead text-muted user-email"></p>
+              </div>
+            </div>
+
+            <div class="row">
+              <pre class="rounded">
+                <code id="profile-data" class="json"></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+         </li>
+      </ul>
    </div>
    <!-- navbar collapse -->
 </nav>
