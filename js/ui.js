@@ -84,7 +84,7 @@ const updateUI = async () => {
 
       /*****/
 
-      console.log("Now dealing with subscriptions...);
+      console.log("Now dealing with subscriptions...");
 
           const anchorElement = document.getElementById('chatbot-subscription-link');
     console.log(user.chatbot_subscription_link);
