@@ -73,7 +73,7 @@ const updateUI = async () => {
         null,
         2
       );
-      console.log("We set the inner text and are about to toggle visibilities...);
+      console.log("We set the inner text and are about to toggle visibilities...");
       document.querySelectorAll("pre code").forEach(hljs.highlightBlock);
 
       eachElement(".profile-image", (e) => (e.src = user.picture));
