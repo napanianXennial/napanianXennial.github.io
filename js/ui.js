@@ -95,7 +95,8 @@ const updateUI = async () => {
         anchorElement.href = user.chatbot_subscription_link;
     }
 
-      if (Array.isArray(user.active_subscriptions)) {
+      
+      /*if (Array.isArray(user.active_subscriptions)) {
         // Check if any subscription has the specific ID
         const hasSubscription = user.active_subscriptions.some(subscription => 
             subscription.id === 'sub_1QB2mJE1kHJTQOxY8Hy86BKM'
@@ -117,7 +118,7 @@ const updateUI = async () => {
           console.warn("No active subscriptions found.");
         }
 
-      }
+      }*/
 
       /*****/
 
