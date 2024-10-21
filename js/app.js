@@ -2,6 +2,7 @@
 let auth0Client = null;
 
 function setCookie(name, value, days) {
+  console.log("Setting the cookie...");
   var expires = "";
   if (days) {
       var date = new Date();
@@ -14,6 +15,7 @@ function setCookie(name, value, days) {
 
 function deleteCookie(name) {
   // Set the cookie with the same name, path, and secure flag, but with an expired date
+  console.log("Deleting the cookie...");
   document.cookie = name + "=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=Lax; Secure";
 }
 
@@ -33,7 +35,7 @@ const login = async (targetUrl) => {
     if (targetUrl) {
       options.appState = { targetUrl };
     }
-
+    console.log("About to do loginWithRedirect...");
     await auth0Client.loginWithRedirect(options);
   } catch (err) {
     console.log("Log in failed", err);
@@ -46,7 +48,7 @@ const login = async (targetUrl) => {
 const logout = async () => {
   try {
     deleteCookie('name')
-    console.log("Logging out");
+    console.log("Logging out...");
     await auth0Client.logout({
       logoutParams: {
         returnTo: window.location.origin
@@ -66,9 +68,10 @@ const fetchAuthConfig = () => fetch("https://staging.milesahead.today/auth_confi
  * Initializes the Auth0 client
  */
 const configureClient = async () => {
+  console.log("Doing the configureClient...");
   const response = await fetchAuthConfig();
   const config = await response.json();
-
+  console.log("About to create Auth0Client...");
   auth0Client = await auth0.createAuth0Client({
     domain: config.domain,
     clientId: config.clientId
@@ -81,11 +84,14 @@ const configureClient = async () => {
  * @param {*} fn The function to execute if the user is logged in
  */
 const requireAuth = async (fn, targetUrl) => {
+  
   const isAuthenticated = await auth0Client.isAuthenticated();
 
   if (isAuthenticated) {
+    console.log("Decided user is authenticated in app.js...");
     return fn();
   }
+  console.log("Decided user is NOT authenticated in app.js...");
 
   return login(targetUrl);
 };
@@ -104,10 +110,12 @@ window.onload = async () => {
 
   // Listen out for clicks on any hyperlink that navigates to a #/ URL
   bodyElement.addEventListener("click", (e) => {
+    console.log("Listening out for clicks on any hyperlink that navigates to a #/ URL");
     if (isRouteLink(e.target)) {
       const url = e.target.getAttribute("href");
 
       if (showContentFromUrl(url)) {
+        console.log("In the if showContentFromURL code");
         e.preventDefault();
         window.history.pushState({ url }, {}, url);
       }
@@ -117,7 +125,7 @@ window.onload = async () => {
   const isAuthenticated = await auth0Client.isAuthenticated();
 
   if (isAuthenticated) {
-    console.log("> User is authenticated");
+    console.log("> User is authenticated so replacing title in window state for some reason...");
     window.history.replaceState({}, document.title, window.location.pathname);
     updateUI();
     return;
@@ -134,13 +142,14 @@ window.onload = async () => {
       const result = await auth0Client.handleRedirectCallback();
 
       if (result.appState && result.appState.targetUrl) {
+        console.log("In the result.appState && result.appState.targetUrl.  About to showContentFromUrl...");
         showContentFromUrl(result.appState.targetUrl);
       }
 
-      console.log("Logged in!");
+      console.log("Logged in and about to get user from auth0Client");
 
       const user = await auth0Client.getUser()
-      
+      console.log("About to set cookie");
       setCookie("name", user.email, 7)
       setCookie("user", JSON.stringify(user), 7)
     } catch (err) {
