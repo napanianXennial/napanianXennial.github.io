@@ -60,13 +60,12 @@ const showContent = (id) => {
 const updateUI = async () => {
   try {
 
-   
+   console.log("In updateUI... This is where we toggle link visibility...");
     
     const isAuthenticated = await auth0Client.isAuthenticated();
-    console.log("In updateUI");
     console.log("Here is the autho0Client: " + JSON.stringify(auth0Client));
     if (isAuthenticated) {
-      console.log("User is authenticated apparently");
+      console.log("User is authenticated apparently so we will display auth links...");
       const user = await auth0Client.getUser();
 
       document.getElementById("profile-data").innerText = JSON.stringify(
@@ -74,8 +73,8 @@ const updateUI = async () => {
         null,
         2
       );
-
-      //document.querySelectorAll("pre code").forEach(hljs.highlightBlock);
+      console.log("We set the inner text and are about to toggle visibilities...);
+      document.querySelectorAll("pre code").forEach(hljs.highlightBlock);
 
       eachElement(".profile-image", (e) => (e.src = user.picture));
       eachElement(".user-name", (e) => (e.innerText = user.name));
@@ -84,6 +83,8 @@ const updateUI = async () => {
       eachElement(".auth-visible", (e) => e.classList.remove("hidden"));
 
       /*****/
+
+      console.log("Now dealing with subscriptions...);
 
           const anchorElement = document.getElementById('chatbot-subscription-link');
     console.log(user.chatbot_subscription_link);
@@ -122,6 +123,7 @@ const updateUI = async () => {
 
     } else {
       console.log("User is NOT authenticated apparently. Making tags hidden for unauth...");
+      console.log("Can we double-check auth here?");
       eachElement(".auth-invisible", (e) => e.classList.remove("hidden"));
       eachElement(".auth-visible", (e) => e.classList.add("hidden"));
     }
@@ -130,7 +132,7 @@ const updateUI = async () => {
     return;
   }
 
-  console.log("UI updated");
+  console.log("UI updated with auth/unauth links toggled...");
 };
 
 window.onpopstate = (e) => {
