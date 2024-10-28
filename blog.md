@@ -38,7 +38,10 @@ abc
             {{ post.title }}
             {% if post.secured %}
                <span style="color: red; margin-left: 5px;">
-                  🔒 Locked
+                                    <!-- SVG lock icon -->
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 3px;">
+                     <path d="M12 2C9.243 2 7 4.243 7 7v5H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V13a1 1 0 0 0-1-1h-2V7c0-2.757-2.243-5-5-5zm-3 5c0-1.654 1.346-3 3-3s3 1.346 3 3v5H9V7zm5 9.722V18a1 1 0 0 1-2 0v-1.278a2 2 0 1 1 2 0z" fill="currentColor"/>
+                  </svg>Locked
                </span>
             {% endif %}
          </a>
