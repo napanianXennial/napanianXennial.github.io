@@ -15,6 +15,15 @@
       <ul id="nav" class="navbar-nav me-auto">
 
 
+{% for post in site.posts %}
+{% if post.top-level-link %}
+<li class="nav-item">
+<a href="{{ post.url }}" class="nav-link">{{ post.title }}</a>
+</li>
+{% endif %}
+{% endfor %}
+
+
                 <li class="nav-item dropdown auth-visible hidden">
                   <a
                     class="nav-link"
