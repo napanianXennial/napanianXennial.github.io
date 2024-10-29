@@ -99,7 +99,7 @@ const updateUI = async () => {
       if (Array.isArray(user.active_subscriptions)) {
         // Check if any subscription has the specific ID
         const hasSubscription = user.active_subscriptions.some(subscription => 
-            subscription.id === 'prod_R394grfrwqUp00'
+            subscription.product === 'prod_R394grfrwqUp00'
         );
 
         // If found, handle visibility of subscription fields
