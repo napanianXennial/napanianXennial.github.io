@@ -99,12 +99,12 @@ const updateUI = async () => {
       if (Array.isArray(user.active_subscriptions)) {
         // Check if any subscription has the specific ID
         const hasSubscription = user.active_subscriptions.some(subscription => 
-            subscription.id === 'sub_1QFJD2E1kHJTQOxYMUFeMawC'
+            subscription.id === 'prod_R394grfrwqUp00'
         );
 
         // If found, handle visibility of subscription fields
         if (hasSubscription) {
-          const subscriptionFields = document.querySelectorAll('[data-subscription="sub_1QFJD2E1kHJTQOxYMUFeMawC"]');
+          const subscriptionFields = document.querySelectorAll('[data-subscription="prod_R394grfrwqUp00"]');
           
           subscriptionFields.forEach(field => {
             if (field.classList.contains('subs-visible')) {
