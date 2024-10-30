@@ -35,24 +35,8 @@
 
 
 
-{% for post in site.posts %}
-{% if post.top-level-link %}
-<li class="nav-item">
-<a href="{{ post.url }}" class="nav-link">{{ post.title }}</a>
-</li>
-{% endif %}
-{% endfor %}
 
-{% assign app_pages = site.pages | where_exp: "page", "page.path contains 'apps/'" %}
-{% assign sorted_app_pages = app_pages | sort: "priority" %}
 
-{% for page in sorted_app_pages %}
-  {% if page.top-level-link %}
-    <li class="nav-item">
-      <a href="{{ page.url }}" class="nav-link">{{ page.title }}</a>
-    </li>
-  {% endif %}
-{% endfor %}
 
                 <li class="nav-item dropdown auth-visible hidden">
                   <a
@@ -88,48 +72,28 @@
                   </div>
                 </li>
 
+{% assign app_pages = site.pages | where_exp: "page", "page.path contains 'apps/'" %}
+{% assign sorted_app_pages = app_pages | sort: "priority" %}
 
+{% for post in site.posts %}
+  {% if post.top-level-link %}
+    {% if post.authenticated %}
+      <!-- Authenticated version of the LI -->
+      <li class="nav-item wow">
+        <a href="#" class="auth-invisible hidden">&nbsp;</a>
+        <a href="{{ post.url }}" class="auth-visible">{{ post.title }}</a>
+      </li>
+    {% else %}
+      <!-- Regular version of the LI -->
+      <li class="nav-item wow">
+        <a href="{{ post.url }}" class="nav-link">{{ post.title }}</a>
+      </li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
 
          
-         <li class="nav-item wow">
-            <a href="#" class="auth-invisible hidden">&nbsp;</a>
-            <a href="/apps/opportunities/app3.html"  class="auth-visible">Opportunity Builder</a>
-         </li>
-         <li class="nav-item wow">
-            <a href="#" class="auth-invisible hidden"></a>
-            <a href="/apps/opportunities-notifications/app3.html" class="auth-visible">Email Notifications</a>
-         </li>
-         <!--li class="nav-item">
-            <a href="/applications.html" class="auth-visible">Applications</a>
-            </li -->
-         <li class="nav-item wow" >
-            
-            <a href="#" class="auth-invisible hidden"></a>
-            <span class="subs-visible hidden" data-subscription="prod_R394grfrwqUp00">
-            
-            <a href="/apps/chatbot-training/app.html"  class="auth-visible">Chatbot training</a>
-            <!--span class="material-icons subs-visible hidden" data-subscription="prod_R394grfrwqUp00">lock_open</span-->
-               
-            </span>
 
-            <span class="subs-invisible" data-subscription="prod_R394grfrwqUp00">
-               
-            <a id="chatbot-subscription-link" href="https://buy.stripe.com/test_00g8xR7Sm10k0uY8wx"  class="auth-visible">ChatBot training</a>
-            
-            </span>
-
-         </li>
-         <li class="nav-item wow" >
-            <a href="#" class="auth-invisible hidden"></a>
-            <a href="/apps/support-ticket-creator/app.html"  class="auth-visible">Service Tickets</a>
-         </li>
-         <li class="nav-item">
-            <a href="/index.html" class="auth-invisible hidden">Home</a>
-            <a href="/applications.html" class="auth-visible">Apps</a>
-         </li>
-         <li class="nav-item">
-            <a href="/chatbot.html?id=minimal-nav-tag" >Chatbot</a>
-         </li>
          <li class="nav-item">
             <a href="#" id="qsLoginBtn" onclick="login()" class="auth-invisible hidden">Log in</a>
             <a href="#" id="qsLogoutBtn" class="auth-visible" onclick="logout()">Log out</a>

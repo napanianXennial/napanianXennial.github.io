@@ -48,13 +48,21 @@
                 </li>
 
 {% for post in site.posts %}
-{% if post.top-level-link %}
-<li class="nav-item">
-<a href="{{ post.url }}" class="nav-link">{{ post.title }}</a>
-</li>
-{% endif %}
+  {% if post.top-level-link %}
+    {% if post.authenticated %}
+      <!-- Authenticated version of the LI -->
+      <li class="nav-item wow">
+        <a href="#" class="auth-invisible hidden">&nbsp;</a>
+        <a href="{{ post.url }}" class="auth-visible">{{ post.title }}</a>
+      </li>
+    {% else %}
+      <!-- Regular version of the LI -->
+      <li class="nav-item wow">
+        <a href="{{ post.url }}" class="nav-link">{{ post.title }}</a>
+      </li>
+    {% endif %}
+  {% endif %}
 {% endfor %}
-
 
 
 
@@ -69,9 +77,7 @@
             <a href="#" class="auth-invisible hidden"></a>
             <a href="/apps/opportunities-notifications/app3.html" class="auth-visible">Email Notifications</a>
          </li>
-         <!--li class="nav-item">
-            <a href="/applications.html" class="auth-visible">Applications</a>
-            </li -->
+
          <li class="nav-item wow" >
             
             <a href="#" class="auth-invisible hidden"></a>

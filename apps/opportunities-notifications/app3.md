@@ -1,7 +1,9 @@
 ---
 layout: minimal-app-green
-title: "OB Green"
+title: "Email Notifications"
 blurb: "We'll quickly build out opportunities for you, but with a new look."
+
+authenticated: true
 
 top-level-link: true
 priority: 2

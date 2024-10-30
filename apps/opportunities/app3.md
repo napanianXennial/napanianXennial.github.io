@@ -1,7 +1,9 @@
 ---
 layout: minimal-app-green
-title: "Opportunities Builder Green"
+title: "Opportunity Builder"
 blurb: "We'll quickly build out opportunities for you, but with a new look."
+
+authenticated: true
 
 top-level-link: true
 priority: 1

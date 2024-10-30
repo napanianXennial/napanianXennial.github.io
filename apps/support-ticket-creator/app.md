@@ -1,8 +1,9 @@
 ---
 layout: minimal-app
-title:  "ChatBot Training"
+title:  "Service Tickets"
 blurb: "Train you ChatBot so it knows everything about you!"
 
+authenticated: true
 top-level-link: true
 priority: 4
 
