@@ -32,6 +32,12 @@ authenticated: true
 				<div class="top-section">
 {% assign show_default_icon = true %}
 
+{% if page.authenticated %}
+    <i class="lni lni-lock" title="Authentication Required"></i>
+    {% assign show_default_icon = false %}
+{% endif %}
+
+
 {% if page.control-panel %}
     <i class="lni lni-cog" title="Control Panel"></i>
     {% assign show_default_icon = false %}
@@ -44,11 +50,6 @@ authenticated: true
 
 {% if page.corporate-subscription %}
     <i class="lni lni-network" title="Corporate Subscription Required"></i>
-    {% assign show_default_icon = false %}
-{% endif %}
-
-{% if page.authenticated %}
-    <i class="lni lni-lock" title="Authentication Required"></i>
     {% assign show_default_icon = false %}
 {% endif %}
 
