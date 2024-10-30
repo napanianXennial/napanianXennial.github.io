@@ -209,8 +209,17 @@ background: white;
       <a href="#" class="auth-invisible hidden">&nbsp;</a>
 
       
-        <!-- Display default code without subscription-product -->
-        <a href="/apps/chatbot-training/app.html" class="auth-visible">ChatBot Training</a>
+        <!-- Display code with subscription-product -->
+        <span class="subs-visible hidden" data-subscription="prod_R394grfrwqUp00">
+          <a href="/apps/chatbot-training/app.html" class="auth-visible">ChatBot Training</a>
+          <!-- Uncomment the next line if the lock icon is needed -->
+          <!-- <span class="material-icons subs-visible hidden" data-subscription="prod_R394grfrwqUp00">lock_open</span> -->
+        </span>
+
+        <span class="subs-invisible" data-subscription="prod_R394grfrwqUp00">
+          <a id="chatbot-subscription-link" href="https://buy.stripe.com/test_00g8xR7Sm10k0uY8wx" class="auth-visible">ChatBot Training</a>
+        </span>
+
       
       </li>
     
