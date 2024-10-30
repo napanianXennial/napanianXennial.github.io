@@ -75,7 +75,7 @@
 {% assign app_pages = site.pages | where_exp: "page", "page.path contains 'apps/'" %}
 {% assign sorted_app_pages = app_pages | sort: "priority" %}
 
-{% for post in site.posts %}
+{% for post in sorted_app_pages %}
   {% if post.top-level-link %}
     {% if post.authenticated %}
       <!-- Authenticated version of the LI -->
