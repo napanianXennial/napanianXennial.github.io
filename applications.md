@@ -30,25 +30,36 @@ authenticated: true
   
 			  <div class="single-testimonial">
 				<div class="top-section">
-    {% if page.control-panel %}
-        <i class="lni lni-cog" title="Control Panel"></i>
-    {% endif %}
-    
-    {% if page.personal-subscription %}
-        <i class="lni lni-user" title="Personal Subscription Required"></i>
-    {% endif %}
-    
-    {% if page.corporate-subscription %}
-        <i class="lni lni-network" title="Corporate Subscription Required"></i>
-    {% endif %}
-    
-    {% if page.authenticated %}
-        <i class="lni lni-lock" title="Authentication Required"></i>
-    {% endif %}
+{% assign show_default_icon = true %}
 
-	{% if page.enterprise %}
-        <i class="lni lni-apartment" title="Enterprise Access Required"></i>
-    {% endif %}
+{% if page.control-panel %}
+    <i class="lni lni-cog" title="Control Panel"></i>
+    {% assign show_default_icon = false %}
+{% endif %}
+
+{% if page.personal-subscription %}
+    <i class="lni lni-user" title="Personal Subscription Required"></i>
+    {% assign show_default_icon = false %}
+{% endif %}
+
+{% if page.corporate-subscription %}
+    <i class="lni lni-network" title="Corporate Subscription Required"></i>
+    {% assign show_default_icon = false %}
+{% endif %}
+
+{% if page.authenticated %}
+    <i class="lni lni-lock" title="Authentication Required"></i>
+    {% assign show_default_icon = false %}
+{% endif %}
+
+{% if page.enterprise %}
+    <i class="lni lni-apartment" title="Enterprise Access Required"></i>
+    {% assign show_default_icon = false %}
+{% endif %}
+
+{% if show_default_icon %}
+    <i class="lni lni-world" title="All Access"></i>
+{% endif %}
 					<h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
 				</div>
 				<p>{{ page.blurb }}</p>
