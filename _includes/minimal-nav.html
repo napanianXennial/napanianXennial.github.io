@@ -43,6 +43,17 @@
 {% endif %}
 {% endfor %}
 
+{% assign app_pages = site.pages | where_exp: "page", "page.path contains 'apps/'" %}
+{% assign sorted_app_pages = app_pages | sort: "priority" %}
+
+{% for page in sorted_app_pages %}
+  {% if page.top-level-link %}
+    <li class="nav-item">
+      <a href="{{ page.url }}" class="nav-link">{{ page.title }}</a>
+    </li>
+  {% endif %}
+{% endfor %}
+
                 <li class="nav-item dropdown auth-visible hidden">
                   <a
                     class="nav-link"

@@ -1,15 +1,16 @@
 ---
 layout: minimal-app-green
-title: "Opportunities Builder Green"
+title: "OB Green"
 blurb: "We'll quickly build out opportunities for you, but with a new look."
 
 top-level-link: true
-priority: 1
+priority: 2
+
 ---
 
 <link rel="manifest" href="manifest.json"/>
 
-<script defer="defer" src="static/js/main.73198089.js"></script>
+<script defer="defer" src="static/js/main.3244afe1.js"></script>
 
 <link href="static/css/main.e6c13ad2.css" rel="stylesheet">
 
