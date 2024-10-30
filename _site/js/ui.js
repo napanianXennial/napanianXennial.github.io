@@ -49,6 +49,7 @@ const isRouteLink = (element) =>
  * @param {*} id The id of the content to show
  */
 const showContent = (id) => {
+  console.log("In showContent Printing out the id: " + id);
   eachElement(".page", (p) => p.classList.add("hidden"));
   document.getElementById(id).classList.remove("hidden");
 };
@@ -58,9 +59,13 @@ const showContent = (id) => {
  */
 const updateUI = async () => {
   try {
-    const isAuthenticated = await auth0Client.isAuthenticated();
 
+   console.log("In updateUI... This is where we toggle link visibility...");
+    
+    const isAuthenticated = await auth0Client.isAuthenticated();
+    console.log("Here is the autho0Client: " + JSON.stringify(auth0Client));
     if (isAuthenticated) {
+      console.log("User is authenticated apparently so we will display auth links...");
       const user = await auth0Client.getUser();
 
       document.getElementById("profile-data").innerText = JSON.stringify(
@@ -68,7 +73,7 @@ const updateUI = async () => {
         null,
         2
       );
-
+      console.log("We set the inner text and are about to toggle visibilities...");
       document.querySelectorAll("pre code").forEach(hljs.highlightBlock);
 
       eachElement(".profile-image", (e) => (e.src = user.picture));
@@ -76,7 +81,56 @@ const updateUI = async () => {
       eachElement(".user-email", (e) => (e.innerText = user.email));
       eachElement(".auth-invisible", (e) => e.classList.add("hidden"));
       eachElement(".auth-visible", (e) => e.classList.remove("hidden"));
+
+      /*****/
+	  
+	  // New code to print the whole user JSON in the <pre> tag
+const userProfileElement = document.getElementById("user-profile");
+if (userProfileElement) {
+    userProfileElement.innerText = JSON.stringify(user, null, 2); // Pretty-print with indentation
+}
+
+      console.log("Now dealing with subscriptions...");
+
+          const anchorElement = document.getElementById('chatbot-subscription-link');
+    console.log(user.chatbot_subscription_link);
+    // Check if the element exists and the user has the 'chatbot-subscription-link' property
+    if (anchorElement && user.chatbot_subscription_link) {
+        // Set the href attribute to the value in the user object
+      console.log("Setting the anchor link tag");
+        anchorElement.href = user.chatbot_subscription_link;
+    }
+
+      
+      if (Array.isArray(user.active_subscriptions)) {
+        // Check if any subscription has the specific ID
+        const hasSubscription = user.active_subscriptions.some(subscription => 
+            subscription.product === 'prod_R394grfrwqUp00'
+        );
+
+        // If found, handle visibility of subscription fields
+        if (hasSubscription) {
+          const subscriptionFields = document.querySelectorAll('[data-subscription="prod_R394grfrwqUp00"]');
+          
+          subscriptionFields.forEach(field => {
+            if (field.classList.contains('subs-visible')) {
+              field.classList.remove('hidden');
+            } else if (field.classList.contains('subs-invisible')) {
+              field.classList.add('hidden');
+            }
+          });
+
+        } else {
+          console.warn("No active subscriptions found.");
+        }
+
+      }
+
+      /*****/
+
     } else {
+      console.log("User is NOT authenticated apparently. Making tags hidden for unauth...");
+      console.log("Can we double-check auth here?");
       eachElement(".auth-invisible", (e) => e.classList.remove("hidden"));
       eachElement(".auth-visible", (e) => e.classList.add("hidden"));
     }
@@ -85,11 +139,13 @@ const updateUI = async () => {
     return;
   }
 
-  console.log("UI updated");
+  console.log("UI updated with auth/unauth links toggled...");
 };
 
 window.onpopstate = (e) => {
+  console.log("In onpopstate");
   if (e.state && e.state.url && router[e.state.url]) {
+    console.log("Going to do showContentFromURL in onpopstate");
     showContentFromUrl(e.state.url);
   }
 };

@@ -83,6 +83,12 @@ const updateUI = async () => {
       eachElement(".auth-visible", (e) => e.classList.remove("hidden"));
 
       /*****/
+	  
+	  // New code to print the whole user JSON in the <pre> tag
+const userProfileElement = document.getElementById("user-profile");
+if (userProfileElement) {
+    userProfileElement.innerText = JSON.stringify(user, null, 2); // Pretty-print with indentation
+}
 
       console.log("Now dealing with subscriptions...");
 

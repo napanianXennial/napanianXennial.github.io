@@ -1,7 +1,11 @@
 ---
 layout: minimal-app
-title: "Checkers"
-blurb: "This is an app the let's us play checkers"
+title: "Enterprise Feature"
+blurb: "This app requires an enterprise license."
+
+enterprise: true
+
+
 ---
 
 <link rel="manifest" href="manifest.json"/>

@@ -2,6 +2,13 @@
 layout: minimal
 title:  "Applications Dashboard"
 blurb: "Welcome to the applications dashboard."
+
+enterprise: true
+company-subscription: true
+control-panel: true
+authenticated: true
+
+
 ---
 
 <section id="testimonials" class="section testimonials style2">
@@ -23,11 +30,26 @@ blurb: "Welcome to the applications dashboard."
   
 			  <div class="single-testimonial">
 				<div class="top-section">
-					<i class="lni lni-ux"></i>
-					<h3><a href="{{ page.url }}">{{ page.title }}</a>
-						
-						<span><a href="{{ page.url }}">Get Started!</a></span>
-					</h3>
+    {% if page.control-panel %}
+        <i class="lni lni-cog" title="Control Panel"></i>
+    {% endif %}
+    
+    {% if page.personal-subscription %}
+        <i class="lni lni-user" title="Personal Subscription Required"></i>
+    {% endif %}
+    
+    {% if page.corporate-subscription %}
+        <i class="lni lni-network" title="Corporate Subscription Required"></i>
+    {% endif %}
+    
+    {% if page.authenticated %}
+        <i class="lni lni-lock" title="Authentication Required"></i>
+    {% endif %}
+
+	{% if page.enterprise %}
+        <i class="lni lni-apartment" title="Enterprise Access Required"></i>
+    {% endif %}
+					<h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
 				</div>
 				<p>{{ page.blurb }}</p>
 			</div>
