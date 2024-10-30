@@ -51,13 +51,17 @@
 {% assign sorted_app_pages = app_pages | sort: "priority" %}
 
 {% for post in site.posts %}
+<!--comment 1 -->
   {% if post.top-level-link %}
+  <!--comment 2 -->
     {% if post.authenticated %}
+	 <!--comment 3 -->
       <!-- Authenticated version of the LI -->
       <li class="nav-item wow">
       <a href="#" class="auth-invisible hidden">&nbsp;</a>
 
       {% if post.subscription-product %}
+	   <!--comment 4 -->
         <!-- Display code with subscription-product -->
         <span class="subs-visible hidden" data-subscription="{{ post.subscription-product }}">
           <a href="{{ post.url }}" class="auth-visible">{{ post.title }}</a>
