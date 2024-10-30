@@ -83,7 +83,12 @@ const updateUI = async () => {
       eachElement(".auth-visible", (e) => e.classList.remove("hidden"));
 
       /*****/
-	  
+// Add a <script> tag dynamically to set the userdata variable
+const script = document.createElement("script");
+script.type = "text/javascript";
+script.innerHTML = `var userdata = ${JSON.stringify(user)};`;
+document.head.appendChild(script);	  
+
 	  // New code to print the whole user JSON in the <pre> tag
 const userProfileElement = document.getElementById("user-profile");
 if (userProfileElement) {
