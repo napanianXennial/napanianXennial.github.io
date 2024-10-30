@@ -37,7 +37,7 @@ authenticated: true
     {% assign show_default_icon = false %}
 {% endif %}
 
-{% if page.personal-subscription %}
+{% if page.subscription-product %}
     <i class="lni lni-user" title="Personal Subscription Required"></i>
     {% assign show_default_icon = false %}
 {% endif %}
