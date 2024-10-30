@@ -4,6 +4,7 @@ title:  "ChatBot Training"
 blurb: "Train you ChatBot so it knows everything about you!"
 
 authenticated: true
+subscription-product: prod_R394grfrwqUp00
 
 top-level-link: true
 priority: 3
