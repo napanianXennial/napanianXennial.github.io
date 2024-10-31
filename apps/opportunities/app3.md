@@ -5,7 +5,7 @@ blurb: "We'll quickly build out opportunities for you, but with a new look."
 
 authenticated: true
 
-top-level-link: true
+top-level-link: false
 priority: 1
 ---
 
