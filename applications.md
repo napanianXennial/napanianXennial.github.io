@@ -25,7 +25,7 @@ authenticated: true
             <div class="row">
                 
 {% for page in site.pages %}
-  {% if page.path contains 'apps/' %}
+ {% if page.path contains 'apps/' and page.control-panel != true %}
   <div class="col-lg-4 col-md-6 col-12">
   
 			  <div class="single-testimonial">
@@ -61,12 +61,11 @@ authenticated: true
 {% if show_default_icon %}
     <i class="lni lni-world" title="All Access"></i>
 {% endif %}
-					<h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
-				</div>
-				<p>{{ page.blurb }}</p>
-			</div>
-
-				 </div>
+	<h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+	</div>
+	<p>{{ page.blurb }}</p>
+	</div>
+</div>
   {% endif %}
 {% endfor %}
                
