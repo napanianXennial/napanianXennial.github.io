@@ -97,14 +97,19 @@ if (userProfileElement) {
 
       console.log("Now dealing with subscriptions...");
 
-          const anchorElement = document.getElementById('chatbot-subscription-link');
-    console.log(user.chatbot_subscription_link);
-    // Check if the element exists and the user has the 'chatbot-subscription-link' property
-    if (anchorElement && user.chatbot_subscription_link) {
+// Select all elements with the class 'chatbot-subscription-link'
+const anchorElements = document.getElementsByClassName('chatbot-subscription-link');
+
+// Check if the user has the 'chatbot_subscription_link' property
+if (user.chatbot_subscription_link) {
+    console.log("Setting the anchor link tags");
+
+    // Iterate over each element with the class 'chatbot-subscription-link'
+    Array.from(anchorElements).forEach((anchorElement) => {
         // Set the href attribute to the value in the user object
-      console.log("Setting the anchor link tag");
         anchorElement.href = user.chatbot_subscription_link;
-    }
+    });
+}
 
 const isAdmin = user.role === 'admin';
 if (isAdmin) {

@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg  wow fadeInUp" data-wow-delay=".3s">
    <a class="navbar-brand logo" href="index.html">
       <!--img class="primary-logo" src="../assets/images/logo/white-logo.svg" alt="Logo" /-->
@@ -71,7 +70,7 @@
         </span>
 
         <span class="subs-invisible" data-subscription="{{ post.subscription-product }}">
-          <a id="{{post.subscription-link-name}}" href="https://buy.stripe.com/test_00g8xR7Sm10k0uY8wx" class="auth-visible">{{ post.title }}</a>
+          <a  href="/products/{{ post.subscription-product }}" class="auth-visible chatbot-subscription-link">{{ post.title }}</a>
         </span>
 
       {% else %}
@@ -129,7 +128,7 @@
             <a href="/applications.html" class="auth-visible">Apps</a>
          </li>
          <li class="nav-item">
-            <a href="/chatbot.html?id=nav-tag" >Chatbot</a>
+            <a href="/chatbot.html?id=min-tag" >Chatbot</a>
          </li>
 	
 
