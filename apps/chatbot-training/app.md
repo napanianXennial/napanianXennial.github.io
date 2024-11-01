@@ -6,6 +6,8 @@ blurb: "Train you ChatBot so it knows everything about you!"
 authenticated: true
 subscription-product: prod_R394grfrwqUp00
 
+subscription-link-name: chatbot-subscription-link
+
 top-level-link: true
 priority: 3
 

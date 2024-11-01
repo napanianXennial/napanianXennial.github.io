@@ -106,6 +106,21 @@ if (userProfileElement) {
         anchorElement.href = user.chatbot_subscription_link;
     }
 
+const isAdmin = user.role === 'admin';
+if (isAdmin) {
+  const adminFields = document.querySelectorAll('[data-role="admin"]');
+  
+  adminFields.forEach(field => {
+    if (field.classList.contains('admin-visible')) {
+      field.classList.remove('hidden');
+    } else if (field.classList.contains('admin-invisible')) {
+      field.classList.add('hidden');
+    }
+  });
+
+} else {
+  console.warn("User is not an admin.");
+}
       
       if (Array.isArray(user.active_subscriptions)) {
         // Check if any subscription has the specific ID

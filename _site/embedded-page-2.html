@@ -176,6 +176,15 @@ background: white;
 
 <!--comment 1 -->
   
+
+<!--comment 1 -->
+  
+
+<!--comment 1 -->
+  
+
+<!--comment 1 -->
+  
   <!--comment 2 -->
     
 	 <!--comment 3 -->
@@ -246,8 +255,19 @@ background: white;
       <a href="#" class="auth-invisible hidden">&nbsp;</a>
 
       
-        <!-- Display default code without subscription-product -->
-        <a href="/apps/support-ticket-creator/app.html" class="auth-visible">Service Tickets</a>
+	   <!--comment 4 -->
+        <!-- Display code with subscription-product -->
+        <span class="subs-visible hidden" data-subscription="enterprise">
+          <a href="/apps/support-ticket-creator/app.html" class="auth-visible">Service Tickets</a>
+		  <i class="lni lni-user" title="Personal Subscription Required"></i>
+          <!-- Uncomment the next line if the lock icon is needed -->
+          <!-- <span class="material-icons subs-visible hidden" data-subscription="enterprise">lock_open</span> -->
+        </span>
+
+        <span class="subs-invisible" data-subscription="enterprise">
+          <a id="enterprise-subscription-link" href="https://buy.stripe.com/test_00g8xR7Sm10k0uY8wx" class="auth-visible">Service Tickets</a>
+        </span>
+
       
       </li>
     
@@ -297,9 +317,11 @@ background: white;
          <li class="nav-item">
             <a href="/chatbot.html?id=nav-tag" >Chatbot</a>
          </li>
-		 
-		 <li class="nav-item">
-            <a href="/control-panel.html?id=nav-tag" ><i class="lni lni-cog" title="Control Panel"></i></a>
+	
+
+	<li class="nav-item">
+            <a href="/index.html" class="admin-invisible hidden"><i class="lni lni-information auth-invisible hidden" title="Control Panel"></i></a>
+            <a href="/control-panel.html?id=nav-tag" class="admin-visible"><i class="lni lni-cog" title="Control Panel"></i></a>
          </li>
 		 
 		 

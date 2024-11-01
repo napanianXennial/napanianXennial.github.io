@@ -4,6 +4,8 @@ title:  "Service Tickets"
 blurb: "Train you ChatBot so it knows everything about you!"
 
 authenticated: true
+subscription-product: enterprise
+subscription-link-name: enterprise-subscription-link
 top-level-link: true
 priority: 4
 
