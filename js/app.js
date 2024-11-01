@@ -26,11 +26,18 @@ const login = async (targetUrl) => {
   try {
     console.log("Logging in", targetUrl);
 
-    const options = {
-      authorizationParams: {
-        redirect_uri: 'https://staging.milesahead.today'
-      }
-    };
+    //const options = {
+      //authorizationParams: {
+        //redirect_uri: 'https://staging.milesahead.today'
+		//redirect_uri: '/'
+      //}
+    //};
+	
+	const options = {
+		authorizationParams: {
+		redirect_uri: window.location.href
+		}
+	};
 
     if (targetUrl) {
       options.appState = { targetUrl };
@@ -62,7 +69,8 @@ const logout = async () => {
 /**
  * Retrieves the auth configuration from the server
  */
-const fetchAuthConfig = () => fetch("https://staging.milesahead.today/auth_config.json");
+//const fetchAuthConfig = () => fetch("https://staging.milesahead.today/auth_config.json");
+const fetchAuthConfig = () => fetch("/auth_config.json");
 
 /**
  * Initializes the Auth0 client
@@ -126,7 +134,7 @@ window.onload = async () => {
 
   if (isAuthenticated) {
     console.log("> User is authenticated so replacing title in window state for some reason...");
-    window.history.replaceState({}, document.title, window.location.pathname);
+    //window.history.replaceState({}, document.title, window.location.pathname);
     updateUI();
     return;
   }
