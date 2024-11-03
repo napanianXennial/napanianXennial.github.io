@@ -10,78 +10,97 @@ enterprise: true
 ---
 
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 20px;
+    }
+    .containerx {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2 {
+      color: #333;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .info {
+      background-color: #e7f3fe;
+      border-left: 4px solid #2196F3;
+      padding: 10px;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<style>
-body { font-family: Arial, sans-serif; text-align: center; }
-.chart-container { width: 45%; display: inline-block; padding: 20px; }
-</style>
+  <div class="containerx">
+    <h2>Google Analytics Settings</h2>
+    
+    <div class="info">
+      <p><strong>Note:</strong> Your Google Analytics ID is a unique identifier that helps Google Analytics collect data for your website. </p><p>When updating your GA ID, ensure it's correct so you don't lose access to analytics data. The ID typically starts with <code>UA-</code> or <code>G-</code> followed by numbers.</p>
+    </div>
+    
+    <h3>Update Your Google Analytics ID</h3>
+    <label for="ga-id">Google Analytics ID:</label>
+    <input type="text" id="ga-id" placeholder="Enter your Google Analytics ID">
+    
+    <button onclick="updateGAId()">Update GA ID</button>
+    
+    <div class="info">
+      <h4>Additional Information:</h4>
+      <p>
+        If you're using Google Analytics 4 (GA4), your ID will begin with <code>G-</code> (e.g., <code>G-12345ABC</code>).
+        </p><p>For older Universal Analytics, the ID will start with <code>UA-</code> (e.g., <code>UA-12345678-1</code>).
+      </p>
+      <p>
+        To find your Google Analytics ID, log in to your Google Analytics account, go to <strong>Admin &gt; Property Settings</strong> in your GA4 or Universal Analytics property.
+      </p>
+    </div>
+  </div>
 
-<h1>Analytics Dashboard</h1>
-<div class="chart-container">
-<canvas id="visitorsChart"></canvas>
-</div>
-<div class="chart-container">
-<canvas id="timeOnPageChart"></canvas>
-</div>
-<div class="chart-container">
-<canvas id="bounceRateChart"></canvas>
-</div>
-<div class="chart-container">
-<canvas id="newVsReturningChart"></canvas>
-</div>
+  <script>
+    // Check if there's a saved GA ID in localStorage; if not, generate a random number as placeholder
+    const gaInput = document.getElementById('ga-id');
+    const savedGAId = localStorage.getItem('ga_id');
+    if (savedGAId) {
+      gaInput.value = savedGAId;
+    } else {
+      gaInput.value = 'UA-' + Math.floor(100000 + Math.random() * 900000); // Placeholder random GA ID
+    }
 
-<script>
-// Chart for Returning Visitors
-const visitorsChart = new Chart(document.getElementById('visitorsChart'), {
-type: 'line',
-data: {
-labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-datasets: [{
-label: 'Returning Visitors',
-data: [30, 45, 60, 55, 70, 85, 100],
-borderColor: 'rgba(75, 192, 192, 1)',
-fill: false,
-}]
-}
-});
-
-// Chart for Time on Page
-const timeOnPageChart = new Chart(document.getElementById('timeOnPageChart'), {
-type: 'bar',
-data: {
-labels: ["Page 1", "Page 2", "Page 3", "Page 4"],
-datasets: [{
-label: 'Time on Page (seconds)',
-data: [120, 90, 60, 80],
-backgroundColor: 'rgba(153, 102, 255, 0.6)',
-}]
-}
-});
-
-// Chart for Bounce Rate
-const bounceRateChart = new Chart(document.getElementById('bounceRateChart'), {
-type: 'pie',
-data: {
-labels: ["Bounced", "Stayed"],
-datasets: [{
-data: [30, 70],
-backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)']
-}]
-}
-});
-
-// Chart for New vs Returning Visitors
-const newVsReturningChart = new Chart(document.getElementById('newVsReturningChart'), {
-type: 'doughnut',
-data: {
-labels: ["New Visitors", "Returning Visitors"],
-datasets: [{
-data: [40, 60],
-backgroundColor: ['rgba(255, 206, 86, 0.6)', 'rgba(75, 192, 192, 0.6)']
-}]
-}
-});
-</script>
-
+    // Function to update GA ID and store it in localStorage
+    function updateGAId() {
+      const newGAId = gaInput.value.trim();
+      if (newGAId) {
+        localStorage.setItem('ga_id', newGAId);
+        alert('Google Analytics ID updated successfully!');
+      } else {
+        alert('Please enter a valid Google Analytics ID.');
+      }
+    }
+  </script>
 
