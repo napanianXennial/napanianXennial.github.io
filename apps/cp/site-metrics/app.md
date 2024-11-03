@@ -1,7 +1,7 @@
 ---
 layout: minimal-app
-title: "Google Analytics"
-blurb: "Use this app to manage your GA status."
+title: "Site Metrics"
+blurb: "Use this app to view your website performance."
 
 control-panel: true
 enterprise: true
