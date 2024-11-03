@@ -60,44 +60,53 @@ enterprise: false
     </div>
   </div>
 
-  <script>
-
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    console.log("Checking for userdata...");
 
     const profileContent = document.getElementById('profile-content');
 
-    if (typeof userdata !== 'undefined' && userdata !== null) {
-      profileContent.innerHTML = `
-        <div class="profile-header">
-          <img src="${userdata.picture}" alt="Profile Picture" class="profile-photo">
-          <div class="profile-info">
-            <h2>${userdata.name}</h2>
-            <p>Role: ${userdata.role}</p>
-            <p>Email: ${userdata.email}</p>
-            <p>Nickname: ${userdata.nickname}</p>
-          </div>
-        </div>
-        
-        <div class="profile-section">
-          <h3>Subscriptions</h3>
-          <ul>
-            ${userdata.active_subscriptions.map(sub => `
-              <li>${sub.product.charAt(0).toUpperCase() + sub.product.slice(1)} - Status: ${sub.status}</li>
-            `).join('')}
-          </ul>
-        </div>
+    const checkForUserdata = setInterval(function() {
+      if (typeof userdata !== 'undefined' && userdata !== null) {
+        console.log("userdata is now defined");
 
-        <div class="profile-section">
-          <h3>Additional Information</h3>
-          <ul>
-            <li><strong>Goodbye:</strong> ${userdata.goodbye}</li>
-            <li><strong>Chatbot Subscription Link:</strong> <a href="${userdata.chatbot_subscription_link}" target="_blank">Manage Subscription</a></li>
-            <li><strong>Email Verified:</strong> ${userdata.email_verified ? 'Yes' : 'No'}</li>
-            <li><strong>Last Updated:</strong> ${new Date(userdata.updated_at).toLocaleString()}</li>
-          </ul>
-        </div>
-      `;
-    } else {
-      profileContent.innerHTML = `<p class="empty-message">User data is not available.</p>`;
-    }
-  </script>
+        profileContent.innerHTML = `
+          <div class="profile-header">
+            <img src="${userdata.picture}" alt="Profile Picture" class="profile-photo">
+            <div class="profile-info">
+              <h2>${userdata.name}</h2>
+              <p>Role: ${userdata.role}</p>
+              <p>Email: ${userdata.email}</p>
+              <p>Nickname: ${userdata.nickname}</p>
+            </div>
+          </div>
+          
+          <div class="profile-section">
+            <h3>Subscriptions</h3>
+            <ul>
+              ${userdata.active_subscriptions.map(sub => `
+                <li>${sub.product.charAt(0).toUpperCase() + sub.product.slice(1)} - Status: ${sub.status}</li>
+              `).join('')}
+            </ul>
+          </div>
+
+          <div class="profile-section">
+            <h3>Additional Information</h3>
+            <ul>
+              <li><strong>Goodbye:</strong> ${userdata.goodbye}</li>
+              <li><strong>Chatbot Subscription Link:</strong> <a href="${userdata.chatbot_subscription_link}" target="_blank">Manage Subscription</a></li>
+              <li><strong>Email Verified:</strong> ${userdata.email_verified ? 'Yes' : 'No'}</li>
+              <li><strong>Last Updated:</strong> ${new Date(userdata.updated_at).toLocaleString()}</li>
+            </ul>
+          </div>
+        `;
+
+        // Stop the interval once userdata is loaded
+        clearInterval(checkForUserdata);
+        console.log("Stopped checking for userdata.");
+      }
+    }, 100); // Check every 100 milliseconds
+  });
+</script>
+
 
