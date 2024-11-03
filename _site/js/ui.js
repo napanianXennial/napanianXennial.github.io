@@ -175,7 +175,8 @@ if (isAuthenticated) {
     });
 
   } else {
-displayNonAdminFields();
+	console.log("Run this if the user is authenticated but not admin.");
+	displayNonAdminFields();
   }
 } else {
   console.log("Run this if the user is not authenticated");
