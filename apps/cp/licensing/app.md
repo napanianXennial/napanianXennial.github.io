@@ -60,20 +60,20 @@ If you would like to change your license level, please <a href="mailto:sales@exa
     }
     
     // Determine the user's license, defaulting to "unlicensed" if userdata or subscription is not available
-    const license = (typeof userdata !== 'undefined' && userdata && userdata.active_subscriptions)
+    var license = (typeof userdata !== 'undefined' && userdata && userdata.active_subscriptions)
       ? userdata.active_subscriptions.find(sub => sub.id === "001")?.product || "unlicensed"
       : "unlicensed";
 
     console.log(license);
 
     // Set the current license display
-    const licenseDisplay = document.getElementById('current-license');
+    var licenseDisplay = document.getElementById('current-license');
     if (licenseDisplay) {
       licenseDisplay.innerText = `Current License: ${license.charAt(0).toUpperCase() + license.slice(1)}`;
     }
 
     // Highlight the current license option
-    const licenseOption = document.getElementById(license);
+    var licenseOption = document.getElementById(license);
     if (licenseOption) {
       licenseOption.classList.add('current-license');
     }
