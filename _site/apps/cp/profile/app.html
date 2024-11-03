@@ -419,15 +419,126 @@ background: white;
 	<div class="container">
             <div class="row">
 		<div style="" class="main col col-12 col-sm-12 col-md-12 col-lg-12 order-1 order-sm-2 order-lg-1 mb-5 mt-1">
-		<link rel="manifest" href="manifest.json" />
+		<style>
+    /* Profile-specific styling */
+    .profile-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+    .profile-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .profile-photo {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      margin-right: 20px;
+    }
+    .profile-info h2 {
+      margin: 0;
+      font-size: 1.4em;
+      color: #4CAF50;
+    }
+    .profile-info p {
+      margin: 5px 0;
+      color: #777;
+    }
+    .profile-section h3 {
+      margin-bottom: 10px;
+      color: #555;
+      font-size: 1.2em;
+      border-bottom: 2px solid #4CAF50;
+      padding-bottom: 5px;
+    }
+    .empty-message {
+      text-align: center;
+      font-style: italic;
+      color: #999;
+    }
+  </style>
 
-<script defer="defer" src="static/js/main.3d3e8fc9.js"></script>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 profile-container">
+        <div id="profile-content"></div>
+      </div>
+    </div>
+  </div>
 
-<link href="static/css/main.e6c13ad2.css" rel="stylesheet" />
+<script>
+    // Simulated data structure (set to null for testing purposes)
+    const userdata = {
+      role: "admin",
+      tpp: [],
+      goodbye: "ABC123",
+      chatbot_subscription_link: "https://checkout.stripe.com/c/pay/cs_test_a1Bf6wqbMDu2KiKeOre8RpprepfqOUirDAzIw5DaaTcuCPDRShaS46LtFG#fidkdWxOYHwnPyd1blpxYHZxWjA0VD02cTFANG5NT1FUSn1cYndrVWd0TGNhd2ZsdENRd2c9aGNcQjVuUUdLN1Bjb3RhZmpRMVNdaGpqVEl%2FYlJMT0hzU1xpR1JwNmE2MVBgTjBhZjBEYW1PNTU0TGFQY21nfScpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl",
+      purchased_products: [],
+      active_subscriptions: [
+        {
+          id: "001",
+          product: "enterprise",
+          status: "active"
+        },
+        {
+          id: "sub_1QFhAdE1kHJTQOxY2fs9ylBx",
+          product: "prod_R394grfrwqUp00",
+          status: "active"
+        }
+      ],
+      given_name: "C.",
+      family_name: "McKenzie",
+      nickname: "potemcam",
+      name: "C. McKenzie",
+      picture: "https://lh3.googleusercontent.com/a/ACg8ocJsLNwEAgAzwV0tLHS6MmAsTzYHqqBWFC2WDoAmFov-G1YafG48=s96-c",
+      updated_at: "2024-11-03T12:43:28.016Z",
+      email: "potemcam@gmail.com",
+      email_verified: true,
+      sub: "google-oauth2|104426374208622504117"
+    };
 
-<noscript>You need to enable JavaScript to run this app.</noscript>
+    const profileContent = document.getElementById('profile-content');
 
-<div id="root"></div>
+    if (typeof userdata !== 'undefined' && userdata !== null) {
+      profileContent.innerHTML = `
+        <div class="profile-header">
+          <img src="${userdata.picture}" alt="Profile Picture" class="profile-photo">
+          <div class="profile-info">
+            <h2>${userdata.name}</h2>
+            <p>Role: ${userdata.role}</p>
+            <p>Email: ${userdata.email}</p>
+            <p>Nickname: ${userdata.nickname}</p>
+          </div>
+        </div>
+        
+        <div class="profile-section">
+          <h3>Subscriptions</h3>
+          <ul>
+            ${userdata.active_subscriptions.map(sub => `
+              <li>${sub.product.charAt(0).toUpperCase() + sub.product.slice(1)} - Status: ${sub.status}</li>
+            `).join('')}
+          </ul>
+        </div>
+
+        <div class="profile-section">
+          <h3>Additional Information</h3>
+          <ul>
+            <li><strong>Goodbye:</strong> ${userdata.goodbye}</li>
+            <li><strong>Chatbot Subscription Link:</strong> <a href="${userdata.chatbot_subscription_link}" target="_blank">Manage Subscription</a></li>
+            <li><strong>Email Verified:</strong> ${userdata.email_verified ? 'Yes' : 'No'}</li>
+            <li><strong>Last Updated:</strong> ${new Date(userdata.updated_at).toLocaleString()}</li>
+          </ul>
+        </div>
+      `;
+    } else {
+      profileContent.innerHTML = `<p class="empty-message">User data is not available.</p>`;
+    }
+  </script>
+
 
 		</div>
 	    </div>
