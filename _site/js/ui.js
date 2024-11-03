@@ -60,7 +60,7 @@ const showContent = (id) => {
 const updateUI = async () => {
   try {
 
-   console.log("In updateUI... This is where we toggle link visibility...");
+   console.log("In the updateUI... This is where we toggle link visibility...");
     
     const isAuthenticated = await auth0Client.isAuthenticated();
     console.log("Here is the autho0Client: " + JSON.stringify(auth0Client));
@@ -111,21 +111,7 @@ if (user.chatbot_subscription_link) {
     });
 }
 
-const isAdmin = user.role === 'admin';
-if (isAdmin) {
-  const adminFields = document.querySelectorAll('[data-role="admin"]');
-  
-  adminFields.forEach(field => {
-    if (field.classList.contains('admin-visible')) {
-      field.classList.remove('hidden');
-    } else if (field.classList.contains('admin-invisible')) {
-      field.classList.add('hidden');
-    }
-  });
 
-} else {
-  console.warn("User is not an admin.");
-}
       
       if (Array.isArray(user.active_subscriptions)) {
         // Check if any subscription has the specific ID
@@ -158,14 +144,68 @@ if (isAdmin) {
       console.log("Can we double-check auth here?");
       eachElement(".auth-invisible", (e) => e.classList.remove("hidden"));
       eachElement(".auth-visible", (e) => e.classList.add("hidden"));
+	  
+	  
+	    const nonAdminFields = document.querySelectorAll('[data-role="admin"]');
+  
+		  nonAdminFields.forEach(field => {
+			field.classList.toggle('hidden', !field.classList.contains('admin-invisible'));
+			field.classList.toggle('hidden', field.classList.contains('admin-visible'));
+		  });
     }
+	
+	console.log("Doing the admin checks!");
+if (isAuthenticated) {
+  const user = await auth0Client.getUser();
+  const isAdmin = user.role === 'admin';
+  
+  console.log("Checking to see if admin");
+
+  if (isAdmin) {
+    console.log("User is admin");
+
+    // Add 'hidden' class to elements with 'admin-invisible' class
+    document.querySelectorAll('.admin-invisible').forEach(field => {
+      field.classList.add('hidden');
+    });
+
+    // Remove 'hidden' class from elements with 'admin-visible' class
+    document.querySelectorAll('.admin-visible').forEach(field => {
+      field.classList.remove('hidden');
+    });
+
+  } else {
+displayNonAdminFields();
+  }
+} else {
+  console.log("Run this if the user is not authenticated");
+  displayNonAdminFields();
+}
+
+	
+	
+	
   } catch (err) {
     console.log("Error updating UI!", err);
     return;
   }
 
+
   console.log("UI updated with auth/unauth links toggled...");
 };
+
+// Function to handle non-admin field visibility
+function displayNonAdminFields() {
+    // Add 'hidden' class to elements with 'admin-invisible' class
+    document.querySelectorAll('.admin-invisible').forEach(field => {
+      field.classList.remove('hidden');
+    });
+
+    // Remove 'hidden' class from elements with 'admin-visible' class
+    document.querySelectorAll('.admin-visible').forEach(field => {
+      field.classList.add('hidden');
+    });
+}
 
 window.onpopstate = (e) => {
   console.log("In onpopstate");
