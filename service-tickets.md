@@ -155,11 +155,13 @@ document.getElementById('submitTicket').addEventListener('click', function(event
         };
 
         // Submit the form data to the backend
-        fetch('https://api.milesahead.team/api/jira/issue', {
+        console.log(JSON.stringify(data));
+        fetch('https://staging.milesahead.today/api/jira/issue', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
+            
             body: JSON.stringify(data)
         })
         .then(response => {
