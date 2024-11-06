@@ -102,7 +102,7 @@
           <div class="pricingTable" data-plan="Gold Level">
             <div class="price">
               <h3 class="heading">Gold</h3>
-              <span class="price-valuex">$100</span>
+              <span class="price-value">$100</span>
               <span class="month">monthly</span>
             </div>
             <div class="pricingContent">
@@ -120,7 +120,7 @@
           <div class="pricingTable" data-plan="Silver Level">
             <div class="price">
               <h3 class="heading">Silver</h3>
-              <span class="price-valuex">$150</span>
+              <span class="price-value">$150</span>
               <span class="month">monthly</span>
             </div>
             <div class="pricingContent">
@@ -138,7 +138,7 @@
           <div class="pricingTable" data-plan="Diamond Level">
             <div class="price">
               <h3 class="heading">Diamond</h3>
-              <span class="price-valuex">$200</span>
+              <span class="price-value">$200</span>
               <span class="month">monthly</span>
             </div>
             <div class="pricingContent">
@@ -156,7 +156,7 @@
           <div class="pricingTable" data-plan="Platinum Level">
             <div class="price">
               <h3 class="heading">Platinum</h3>
-              <span class="price-valuex">$300</span>
+              <span class="price-value">$300</span>
               <span class="month">monthly</span>
             </div>
             <div class="pricingContent">
@@ -304,7 +304,7 @@ const pricingTable = document.querySelector(`.pricingTable[data-plan="${product.
 
 if (pricingTable) {
 // Update price (assuming price is retrieved from default_price or set statically for simplicity)
-pricingTable.querySelector('.price-value').textContent = "$" + product.default_price.replace("price_", ""); // Modify as needed to extract the price
+//pricingTable.querySelector('.price-value').textContent = "$" + product.default_price.replace("price_", ""); // Modify as needed to extract the price
 
 // Update features
 const featuresList = pricingTable.querySelector('.pricingContent ul');
