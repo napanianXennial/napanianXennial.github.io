@@ -48,44 +48,10 @@ layout: "minimal"
 <form id="ticketForm">
     <!-- Ticket Type Options -->
     <div class="ticket-option" data-value="Incident">
-        <span class="material-icons">report_problem</span>
-        <span>Payroll Help</span>
+        <span class="{{page.url}}">report_problem</span>
+        <span>{{page.url}}</span>
     </div>
-    <div class="ticket-option" data-value="Service Request">
-        <span class="material-icons">build</span>
-        <span>Time and Attendance Issues</span>
-    </div>
-    <div class="ticket-option" data-value="Change Request">
-        <span class="material-icons">autorenew</span>
-        <span>Product Help</span>
-    </div>
-    <div class="ticket-option" data-value="Problem">
-        <span class="material-icons">bug_report</span>
-        <span>HR Support</span>
-    </div>
-    <div class="ticket-option" data-value="Task">
-        <span class="material-icons">check_circle</span>
-        <span>Technical issues (Login, Performance)</span>
-    </div>
-    <div class="ticket-option" data-value="Other">
-        <span class="material-icons">check_circle</span>
-        <span>Other</span>
-    </div>
-
-    <!-- Priority Options -->
-    <label>Select Priority:</label>
-    <div class="priority-option" data-priority="High">
-        <span class="material-icons">arrow_upward</span>
-        <span>High</span>
-    </div>
-    <div class="priority-option" data-priority="Medium">
-        <span class="material-icons">remove</span>
-        <span>Medium</span>
-    </div>
-    <div class="priority-option" data-priority="Low">
-        <span class="material-icons">arrow_downward</span>
-        <span>Low</span>
-    </div>
+    
 
     <!-- Ticket Description -->
     <label for="ticketDescription">Description:</label>
