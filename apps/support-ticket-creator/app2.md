@@ -103,10 +103,8 @@ priority: 4
 
         <label for="category">Support Ticket Category *</label>
         <select id="category" name="category" required>
-            <option value="" disabled selected>Select the category of your issue</option>
-            <option value="Incident">Incident</option>
-            <option value="Request">Request</option>
-            <option value="Problem">Problem</option>
+           
+            <option value="{{page.url}}">{{page.title}}</option>
         </select>
 
         <label for="description">Description of Issue *</label>
