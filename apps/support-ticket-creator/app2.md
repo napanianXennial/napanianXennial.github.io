@@ -167,8 +167,7 @@ priority: 4
 
 // Function to check if userdata is loaded
 let checkInterval;
-let maxCount = 0
-setTimeout(() => {
+// let maxCount = 0
 function checkAndLoadUserData() {
     if (typeof userdata !== 'undefined' && userdata.email) {
         // set for user value to form
@@ -179,14 +178,14 @@ function checkAndLoadUserData() {
         document.getElementById("feedback-useremail").value = userdata.email
 
         clearInterval(checkInterval);
-        maxCount = 0
+        // maxCount = 0
     }
 
-    if (maxCount >= 60) {
-        clearInterval(checkInterval);
-    } else {
-        maxCount++
-    }
+    // if (maxCount >= 60) {
+    //     clearInterval(checkInterval);
+    // } else {
+    //     maxCount++
+    // }
 }
 
 // Wait for the page to fully load
