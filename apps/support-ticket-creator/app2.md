@@ -85,13 +85,19 @@ priority: 4
       border-radius: 4px;
       cursor: pointer;
   }
+  .hidden {
+    display: none;
+  }
 </style>
 
-<div class="container">
+<div>
+<div id="form-container" class="container hidden">
     <h1>Create New Ticket</h1>
-    <form id="ticketForm" action="https://api.milesahead.team/api/jira/issue" method="POST">
+    <form id="ticketForm" 
+    action="https://api.milesahead.team/api/jira/issue"
+    method="POST">
         <label for="title">Support Ticket Title *</label>
-        <input type="text" id="title" name="title" placeholder="Enter a brief title for the issue (e.g., Payroll processing error, Login failure)" required>
+        <input type="text" id="title" name="summary" placeholder="Enter a brief title for the issue (e.g., Payroll processing error, Login failure)" required>
 
         <label>Priority Level *</label>
         <div class="priority-container">
@@ -101,20 +107,20 @@ priority: 4
         </div>
         <input type="hidden" id="priority" name="priority" value="">
 
-        <label for="category">Support Ticket Category *</label>
-        <select id="category" name="category" required>
-           
+        <input id="feedback-username" name="userName" disabled type="hidden" />
+        <input id="feedback-useremail" name="userEmail" disabled type="hidden" />
+        <input name="issueType" disabled type="hidden" value="Feedback"/>
+        <select id="category" name="serviceName" required disabled type="hidden" hidden>
             <option value="{{page.url}}">{{page.title}}</option>
         </select>
 
         <label for="description">Description of Issue *</label>
-        <textarea id="description" name="description" placeholder="Enter the description of the issue" rows="5" required></textarea>
-
-        <input type="hidden" id="userName" name="userName" value="C. McKenzie">
-        <input type="hidden" id="userEmail" name="userEmail" value="potemcam@gmail.com">
+        <textarea id="description" name="issueDescription" placeholder="Enter the description of the issue" rows="5" required></textarea>
 
         <button type="submit" class="submit-button">SUBMIT</button>
     </form>
+</div>
+    <span id="feedback-loading">Loading</span>
 </div>
 
 <script>
@@ -131,12 +137,13 @@ priority: 4
 
         // Gather form data from form fields
         const formData = {
-            summary: `${document.getElementById('title').value} - ${document.getElementById('userEmail').value}`,
+            summary: document.getElementById('title').value,
             serviceName: document.getElementById('category').value,
-            userName: document.getElementById('userName').value,
-            userEmail: document.getElementById('userEmail').value,
+            userName: document.getElementById('feedback-username').value,
+            userEmail: document.getElementById('feedback-useremail').value,
             issueDescription: document.getElementById('description').value,
-            priority: document.getElementById('priority').value
+            priority: document.getElementById('priority').value,
+            issueType: "Feedback" 
         };
 
         // Send the JSON data to the API endpoint
@@ -156,6 +163,38 @@ priority: 4
     });
 </script>
 
+<script>
+
+// Function to check if userdata is loaded
+let checkInterval;
+let maxCount = 0
+setTimeout(() => {
+function checkAndLoadUserData() {
+    if (typeof userdata !== 'undefined' && userdata.email) {
+        // set for user value to form
+        document.getElementById("feedback-loading").classList.add("hidden")
+        document.getElementById("form-container").classList.remove("hidden")
+
+        document.getElementById("feedback-username").value = userdata.nickname || userdata.name
+        document.getElementById("feedback-useremail").value = userdata.email
+
+        clearInterval(checkInterval);
+        maxCount = 0
+    }
+
+    if (maxCount >= 60) {
+        clearInterval(checkInterval);
+    } else {
+        maxCount++
+    }
+}
+
+// Wait for the page to fully load
+window.addEventListener('load', () => {
+// Start checking every 500ms if userdata is loaded
+checkInterval = setInterval(checkAndLoadUserData, 500);
+});
+</script>
 
 
 
