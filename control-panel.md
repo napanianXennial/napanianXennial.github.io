@@ -33,13 +33,7 @@ authenticated: true
       <canvas id="countryOfOrigin" width="300" height="250"></canvas>
     </div>
   </div>
-</div>
-        
-</section>
 
-
-<section id="testimonials" class="section testimonials style2">
-        <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="section-title style2">
