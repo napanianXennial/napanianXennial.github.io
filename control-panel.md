@@ -193,24 +193,32 @@ authenticated: true
   });
 
   // 6. Country of Origin (Pie Chart)
-  new Chart(document.getElementById('countryOfOrigin'), {
-    type: 'pie',
-    data: {
-      labels: ['USA', 'Canada', 'UK', 'Germany', 'India'],
-      datasets: [{
-        label: 'Country of Origin',
-        data: getRandomData(5, 10, 300),
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.6)',
-          'rgba(54, 162, 235, 0.6)',
-          'rgba(255, 206, 86, 0.6)',
-          'rgba(75, 192, 192, 0.6)',
-          'rgba(153, 102, 255, 0.6)'
-        ]
-      }]
-    },
-    options: { responsive: true }
-  });
+new Chart(document.getElementById('countryOfOrigin'), {
+  type: 'bar',
+  data: {
+    labels: ['USA', 'Canada', 'UK', 'Germany', 'India'],
+    datasets: [{
+      label: 'Country of Origin',
+      data: getRandomData(5, 10, 300),
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(153, 102, 255, 0.6)'
+      ]
+    }]
+  },
+  options: {
+    indexAxis: 'y',  // Makes the bar chart horizontal
+    responsive: true,
+    scales: {
+      x: {
+        beginAtZero: true
+      }
+    }
+  }
+});
 </script>
 
 
