@@ -12,10 +12,8 @@ priority: 4
 ---
       
 <style>
-  body {
-      font-family: Arial, sans-serif;
-  }
-  .container {
+
+  .containerx {
       width: 100%;
       max-width: 600px;
       margin: 0 auto;
@@ -24,7 +22,7 @@ priority: 4
       border-radius: 8px;
       font-size: 16px;
   }
-  h1 {
+  .h1x {
       font-size: 24px;
       color: #333;
       text-align: center;
