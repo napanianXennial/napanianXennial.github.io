@@ -10,6 +10,40 @@ authenticated: true
 
 
 ---
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<section id="testimonials" class="section testimonials style2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title style2">
+                        <span class="wow fadeInDown" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">Dashboard</span>
+                    </div>
+                </div>
+            </div>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <canvas id="dailySignups" width="300" height="250"></canvas>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <canvas id="opportunityNotifications" width="300" height="250"></canvas>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <canvas id="opportunityMatches" width="300" height="250"></canvas>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <canvas id="timeOnPage" width="300" height="250"></canvas>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <canvas id="siteVisitors" width="300" height="250"></canvas>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <canvas id="countryOfOrigin" width="300" height="250"></canvas>
+    </div>
+  </div>
+</div>
+        
+</section>
+
 
 <section id="testimonials" class="section testimonials style2">
         <div class="container">
@@ -76,6 +110,107 @@ authenticated: true
         </div>
     </section>
 
+<script>
+  // Helper function to generate random data within a range
+  function getRandomData(num, min, max) {
+    return Array.from({ length: num }, () => Math.floor(Math.random() * (max - min + 1)) + min);
+  }
 
+  // 1. Daily Sign-ups Chart
+  new Chart(document.getElementById('dailySignups'), {
+    type: 'line',
+    data: {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      datasets: [{
+        label: 'Daily Sign-ups',
+        data: getRandomData(7, 10, 50),
+        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        fill: true
+      }]
+    },
+    options: { responsive: true }
+  });
+
+  // 2. Opportunity Notifications Per Day
+  new Chart(document.getElementById('opportunityNotifications'), {
+    type: 'bar',
+    data: {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      datasets: [{
+        label: 'Opportunity Notifications',
+        data: getRandomData(7, 20, 100),
+        backgroundColor: 'rgba(153, 102, 255, 0.6)',
+      }]
+    },
+    options: { responsive: true }
+  });
+
+  // 3. Opportunity Matches Found
+  new Chart(document.getElementById('opportunityMatches'), {
+    type: 'bar',
+    data: {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      datasets: [{
+        label: 'Opportunity Matches',
+        data: getRandomData(7, 10, 50),
+        backgroundColor: 'rgba(255, 159, 64, 0.6)',
+      }]
+    },
+    options: { responsive: true }
+  });
+
+  // 4. Time on Page (in seconds)
+  new Chart(document.getElementById('timeOnPage'), {
+    type: 'line',
+    data: {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      datasets: [{
+        label: 'Time on Page (seconds)',
+        data: getRandomData(7, 30, 300),
+        borderColor: 'rgba(54, 162, 235, 1)',
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        fill: true
+      }]
+    },
+    options: { responsive: true }
+  });
+
+  // 5. Site Visitors
+  new Chart(document.getElementById('siteVisitors'), {
+    type: 'line',
+    data: {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      datasets: [{
+        label: 'Site Visitors',
+        data: getRandomData(7, 100, 1000),
+        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        fill: true
+      }]
+    },
+    options: { responsive: true }
+  });
+
+  // 6. Country of Origin (Pie Chart)
+  new Chart(document.getElementById('countryOfOrigin'), {
+    type: 'pie',
+    data: {
+      labels: ['USA', 'Canada', 'UK', 'Germany', 'India'],
+      datasets: [{
+        label: 'Country of Origin',
+        data: getRandomData(5, 10, 300),
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+          'rgba(255, 206, 86, 0.6)',
+          'rgba(75, 192, 192, 0.6)',
+          'rgba(153, 102, 255, 0.6)'
+        ]
+      }]
+    },
+    options: { responsive: true }
+  });
+</script>
 
 
