@@ -48,10 +48,10 @@ width: 45%;
   </div>
 
 <div class="row">
-    <!-- Service Tickets Table -->
+    <!-- Feedback By App Table -->
     <div class="col-lg-6 mb-4">
-      <h4>Service Tickets</h4>
-      <table id="serviceTickets" class="display table table-striped table-bordered">
+      <h4>Feedback By App</h4>
+      <table id="feedbackByApp" class="display table table-striped table-bordered">
         <thead>
           <tr>
             <th>App Name</th>
@@ -76,10 +76,10 @@ width: 45%;
       </table>
     </div>
 
-    <!-- Feedback Tickets Table -->
+    <!-- Feedback Status Table -->
     <div class="col-lg-6 mb-4">
-      <h4>Feedback Tickets</h4>
-      <table id="feedbackTickets" class="display table table-striped table-bordered">
+      <h4>Feedback Status</h4>
+      <table id="feedbackStatus" class="display table table-striped table-bordered">
         <thead>
           <tr>
             <th>App Name</th>
