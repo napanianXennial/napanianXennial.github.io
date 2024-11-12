@@ -4,8 +4,8 @@ title:  "Service Ticket"
 blurb: "File a service ticket."
 
 authenticated: true
-subscription-product: enterprise
-subscription-link-name: enterprise-subscription-link
+# subscription-product: enterprise
+# subscription-link-name: enterprise-subscription-link
 top-level-link: true
 priority: 4
 
