@@ -360,7 +360,7 @@ const pricingTable = document.querySelector(`.pricingTable[data-plan="${product.
 
 if (pricingTable) {
 // Update price (assuming price is retrieved from default_price or set statically for simplicity)
-//pricingTable.querySelector('.price-value').textContent = "$" + product.default_price.replace("price_", ""); // Modify as needed to extract the price
+pricingTable.querySelector('.price-value').textContent = "$" + product.defaultPrice; // Modify as needed to extract the price
 
 // Update features
 const featuresList = pricingTable.querySelector('.pricingContent ul');
