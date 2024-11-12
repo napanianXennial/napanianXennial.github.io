@@ -73,7 +73,7 @@ width: 45%;
 
 
 
-<section id="testimonials" class="section testimonials style2">
+<section id="testimonials" class="section testimonials style2 admin-visible">
         <div class="container">
   <div class="row">
     <div class="col-lg-4 col-md-6 mb-4">
