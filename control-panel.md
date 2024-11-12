@@ -10,6 +10,19 @@ authenticated: true
 
 
 ---
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<style>
+.table-container {
+display: flex;
+justify-content: space-around;
+width: 100%;
+margin-top: 20px;
+}
+.data-table {
+width: 45%;
+}
+</style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <section id="testimonials" class="section testimonials style2">
         <div class="container">
@@ -31,6 +44,64 @@ authenticated: true
     </div>
     <div class="col-lg-4 col-md-6 mb-4">
       <canvas id="countryOfOrigin" width="300" height="250"></canvas>
+    </div>
+  </div>
+
+<div class="row">
+    <!-- Service Tickets Table -->
+    <div class="col-lg-6 mb-4">
+      <h4>Service Tickets</h4>
+      <table id="serviceTickets" class="display table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>App Name</th>
+            <th>Submitter</th>
+            <th>Ranking</th>
+            <th>Received Date</th>
+            <th>Completion Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Notifications</td><td>J. Doe</td><td>7</td><td>01/10</td><td style="color: green;">Complete</td></tr>
+          <tr><td>Opportunities</td><td>M. Lee</td><td>5</td><td>02/15</td><td style="color: orange;">In Progress</td></tr>
+          <tr><td>Website</td><td>A. Fox</td><td>9</td><td>03/01</td><td style="color: green;">Complete</td></tr>
+          <tr><td>General</td><td>K. Roe</td><td>3</td><td>04/05</td><td style="color: red;">Pending</td></tr>
+          <tr><td>Notifications</td><td>S. Kay</td><td>6</td><td>05/18</td><td style="color: orange;">In Progress</td></tr>
+          <tr><td>Opportunities</td><td>R. Poe</td><td>8</td><td>06/22</td><td style="color: green;">Complete</td></tr>
+          <tr><td>Website</td><td>B. Jae</td><td>4</td><td>07/09</td><td style="color: red;">Pending</td></tr>
+          <tr><td>General</td><td>H. Doe</td><td>2</td><td>08/12</td><td style="color: orange;">In Progress</td></tr>
+          <tr><td>Notifications</td><td>T. Fox</td><td>10</td><td>09/21</td><td style="color: green;">Complete</td></tr>
+          <tr><td>Opportunities</td><td>Y. Poe</td><td>1</td><td>10/30</td><td style="color: red;">Pending</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Feedback Tickets Table -->
+    <div class="col-lg-6 mb-4">
+      <h4>Feedback Tickets</h4>
+      <table id="feedbackTickets" class="display table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>App Name</th>
+            <th>Submitter</th>
+            <th>Ranking</th>
+            <th>Received Date</th>
+            <th>Completion Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Website</td><td>P. Kay</td><td>7</td><td>01/02</td><td style="color: green;">Complete</td></tr>
+          <tr><td>General</td><td>D. Roe</td><td>5</td><td>02/07</td><td style="color: orange;">In Progress</td></tr>
+          <tr><td>Notifications</td><td>G. Poe</td><td>9</td><td>03/14</td><td style="color: green;">Complete</td></tr>
+          <tr><td>Opportunities</td><td>L. Fox</td><td>3</td><td>04/18</td><td style="color: red;">Pending</td></tr>
+          <tr><td>General</td><td>C. Doe</td><td>6</td><td>05/20</td><td style="color: orange;">In Progress</td></tr>
+          <tr><td>Notifications</td><td>N. Lee</td><td>8</td><td>06/25</td><td style="color: green;">Complete</td></tr>
+          <tr><td>Opportunities</td><td>Q. Jae</td><td>4</td><td>07/11</td><td style="color: red;">Pending</td></tr>
+          <tr><td>Website</td><td>V. Poe</td><td>2</td><td>08/13</td><td style="color: orange;">In Progress</td></tr>
+          <tr><td>General</td><td>U. Doe</td><td>10</td><td>09/19</td><td style="color: green;">Complete</td></tr>
+          <tr><td>Notifications</td><td>Z. Kay</td><td>1</td><td>10/28</td><td style="color: red;">Pending</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -207,5 +278,19 @@ new Chart(document.getElementById('countryOfOrigin'), {
   }
 });
 </script>
-
+<script>
+  // Initialize DataTables for both tables
+  $(document).ready(function() {
+    $('#serviceTickets').DataTable({
+      paging: false,
+      searching: false,
+      info: false
+    });
+    $('#feedbackTickets').DataTable({
+      paging: false,
+      searching: false,
+      info: false
+    });
+  });
+</script>
 
