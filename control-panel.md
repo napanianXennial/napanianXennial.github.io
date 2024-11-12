@@ -132,13 +132,13 @@ authenticated: true
     options: { responsive: true }
   });
 
-  // 2. Opportunity Notifications Per Day
+  // 2.  Notifications Per Day
   new Chart(document.getElementById('opportunityNotifications'), {
     type: 'bar',
     data: {
       labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       datasets: [{
-        label: 'Opportunity Notifications',
+        label: 'Opportunity Notifications Sent',
         data: getRandomData(7, 20, 100),
         backgroundColor: 'rgba(153, 102, 255, 0.6)',
       }]
@@ -152,7 +152,7 @@ authenticated: true
     data: {
       labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       datasets: [{
-        label: 'Opportunity Matches',
+        label: 'Opportunity Matches Found',
         data: getRandomData(7, 10, 50),
         backgroundColor: 'rgba(255, 159, 64, 0.6)',
       }]
