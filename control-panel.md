@@ -13,13 +13,6 @@ authenticated: true
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <section id="testimonials" class="section testimonials style2">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title style2">
-                        <span class="wow fadeInDown" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">Dashboard</span>
-                    </div>
-                </div>
-            </div>
   <div class="row">
     <div class="col-lg-4 col-md-6 mb-4">
       <canvas id="dailySignups" width="300" height="250"></canvas>
