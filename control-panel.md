@@ -50,9 +50,9 @@ authenticated: true
             <div class="row">
                 <div class="col-12">
                     <div class="section-title style2">
-                        <span class="wow fadeInDown" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">Applications Dashboard</span>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Control Panel </h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">Welcome to your control panel.</p>
+                        <span>Applications Dashboard</span>
+                        <h2>Control Panel</h2>
+                        <p>Welcome to your control panel.</p>
                     </div>
                 </div>
             </div>
