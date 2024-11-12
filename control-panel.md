@@ -27,7 +27,7 @@ width: 45%;
 
 
 <!-- Start Hero Area -->
-<section id="hero-area" class="hero-area">
+<section id="hero-area" class="hero-area admin-invisible hidden">
 <!-- Single Slider -->
 <div class="hero-inner">
     <div class="container">
