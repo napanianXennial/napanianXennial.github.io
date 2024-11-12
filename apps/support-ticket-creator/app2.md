@@ -1,7 +1,7 @@
 ---
 layout: minimal-app
-title:  "Service Tickets"
-blurb: "Train you ChatBot so it knows everything about you!"
+title:  "Service Ticket"
+blurb: "File a service ticket."
 
 authenticated: true
 subscription-product: enterprise
