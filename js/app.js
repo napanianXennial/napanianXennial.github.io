@@ -36,20 +36,13 @@ const login = async (targetUrl) => {
       options.appState = { targetUrl };
     }
 
-    await auth0Client.loginWithRedirect(options).then(() => {
-    // Logged in. Retrieve the user profile.
-    auth0.getUser().then(user => {
-      console.log('User is admin?' + user.role);
-      
-      // Determine the appropriate redirect URI based on user role
-      const redirectUrl = user.role === 'admin' 
-        ? 'https://staging.milesahead.today/dashboard.html' 
-        : 'https://staging.milesahead.today/applications.html';
-      console.log(redirectUrl);
-      // Redirect to the determined URL
-      window.location.href = redirectUrl;
-    });
-  });
+    await auth0Client.loginWithRedirect(options);
+      // Only redirect if the user is NOT an admin
+  if (user.role === 'admin') {
+    const redirectUrl = 'https://staging.milesahead.today/dashboard.html';
+    console.log('Redirecting to:', redirectUrl);
+    window.location.href = redirectUrl;
+  }
   } catch (err) {
     console.log("Log in failed", err);
   }
