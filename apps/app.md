@@ -6,7 +6,7 @@ blurb: "How can we help you?"
 authenticated: true
 # subscription-product: enterprise
 # subscription-link-name: enterprise-subscription-link
-top-level-link: true
+top-level-link: false
 priority: 4
 
 ---
