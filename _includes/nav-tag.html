@@ -46,14 +46,13 @@
                   </div>
                 </li>
 
-	<li class="nav-item">
+	<li class="nav-item">	
+            <a href="/control-panel.html" class="admin-visible">Dashboard</a>	
+        </li>
 
-			
-            <a href="/control-panel.html?id=nav-tag" class="admin-visible">
-			Admin
-			</a>
-			
-         </li>
+	<li class="nav-item">	
+            <a href="/applications.html" class="admin-visible">Dashboard</a>	
+        </li>
 
 	      
 {% assign app_pages = site.pages | where_exp: "page", "page.path contains 'apps/'" %}
