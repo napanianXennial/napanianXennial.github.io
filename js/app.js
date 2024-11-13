@@ -19,33 +19,53 @@ function deleteCookie(name) {
   document.cookie = name + "=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=Lax; Secure";
 }
 
-/**
- * Starts the authentication flow
- */
 const login = async (targetUrl) => {
   try {
     console.log("Logging in", targetUrl);
 
-    //const options = {
-      //authorizationParams: {
-        //redirect_uri: 'https://staging.milesahead.today'
-		//redirect_uri: '/'
-      //}
-    //};
-	
-	const options = {
-		authorizationParams: {
-		redirect_uri: window.location.href
-		}
-	};
+    // Fetch the user profile to check their role
+    const user = await auth0Client.getUser();
+
+    // Set the redirect URI based on the role
+    const redirectUrl = user?.role === 'admin'
+      ? 'https://get.milesahead.today/control-panel.html'
+      : 'https://get.milesahead.today';
+
+    const options = {
+      authorizationParams: {
+        redirect_uri: redirectUrl
+      }
+    };
 
     if (targetUrl) {
       options.appState = { targetUrl };
     }
-    console.log("About to do loginWithRedirect...");
+
     await auth0Client.loginWithRedirect(options);
   } catch (err) {
     console.log("Log in failed", err);
+  }
+};
+
+
+const register = async (targetUrl) => {
+  try {
+    console.log("Registering", targetUrl);
+
+    const options = {
+      authorizationParams: {
+        screen_hint: 'signup',  // Directs to the registration page
+        redirect_uri: 'https://get.milesahead.today'
+      }
+    };
+
+    if (targetUrl) {
+      options.appState = { targetUrl };
+    }
+
+    await auth0Client.loginWithRedirect(options);
+  } catch (err) {
+    console.log("Registration failed", err);
   }
 };
 
