@@ -28,7 +28,7 @@ const login = async (targetUrl) => {
 
     const options = {
       authorizationParams: {
-        redirect_uri: 'https://staging.milesahead.today/apps.html'
+        redirect_uri: 'https://get.milesahead.today/apps.html'
       }
     };
 
@@ -40,7 +40,7 @@ const login = async (targetUrl) => {
       // Only redirect if the user is NOT an admin
     console.log('About to check for admin redirect');
   if (auth0Client.getUser().role === 'admin') {
-    const redirectUrl = 'https://staging.milesahead.today/dashboard.html';
+    const redirectUrl = 'https://get.milesahead.today/dashboard.html';
     console.log('Redirecting to:', redirectUrl);
     window.location.href = redirectUrl;
   }
@@ -57,7 +57,7 @@ const register = async (targetUrl) => {
     const options = {
       authorizationParams: {
         screen_hint: 'signup',  // Directs to the registration page
-        redirect_uri: 'https://staging.milesahead.today'
+        redirect_uri: 'https://get.milesahead.today'
       }
     };
 
@@ -91,7 +91,7 @@ const logout = async () => {
 /**
  * Retrieves the auth configuration from the server
  */
-//const fetchAuthConfig = () => fetch("https://staging.milesahead.today/auth_config.json");
+//const fetchAuthConfig = () => fetch("https://get.milesahead.today/auth_config.json");
 const fetchAuthConfig = () => fetch("/auth_config.json");
 
 /**
