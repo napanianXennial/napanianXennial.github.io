@@ -38,7 +38,8 @@ const login = async (targetUrl) => {
 
     await auth0Client.loginWithRedirect(options);
       // Only redirect if the user is NOT an admin
-  if (user.role === 'admin') {
+    console.log('About to check for admin redirect');
+  if (auth0Client.getUser().role === 'admin') {
     const redirectUrl = 'https://staging.milesahead.today/dashboard.html';
     console.log('Redirecting to:', redirectUrl);
     window.location.href = redirectUrl;
