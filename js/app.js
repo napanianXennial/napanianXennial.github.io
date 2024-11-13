@@ -39,13 +39,13 @@ const login = async (targetUrl) => {
     await auth0Client.loginWithRedirect(options).then(() => {
     // Logged in. Retrieve the user profile.
     auth0.getUser().then(user => {
-      console.log(user);
+      console.log('User is admin?' + user.role);
       
       // Determine the appropriate redirect URI based on user role
       const redirectUrl = user.role === 'admin' 
         ? 'https://staging.milesahead.today/dashboard.html' 
         : 'https://staging.milesahead.today/applications.html';
-
+      console.log(redirectUrl);
       // Redirect to the determined URL
       window.location.href = redirectUrl;
     });
