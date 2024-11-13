@@ -1,7 +1,7 @@
 ---
 layout: minimal-app
-title:  "Feedback"
-blurb: "Please provide your feedback on the app."
+title:  "Service Ticket"
+blurb: "How can we help you?"
 
 authenticated: true
 # subscription-product: enterprise
@@ -90,7 +90,7 @@ priority: 4
 
 <div>
 <div id="form-container" class="container hidden">
-    <h1>Please Provide Feedback</h1>
+    <h1>Please Create Your Service Ticket</h1>
     <form id="ticketForm" 
     action="https://api.milesahead.team/api/jira/issue"
     method="POST">
