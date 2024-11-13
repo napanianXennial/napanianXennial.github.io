@@ -8,7 +8,7 @@ subscription-product: prod_R394grfrwqUp00
 
 subscription-link-name: chatbot-subscription-link
 
-top-level-link: false
+top-level-link: true
 priority: 3
 
 ---
