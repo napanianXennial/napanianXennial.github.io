@@ -5,7 +5,7 @@ blurb: "We will notify you when new applicants arise."
 
 authenticated: true
 
-top-level-link: true
+top-level-link: false
 priority: 2
 
 ---
