@@ -19,22 +19,16 @@ function deleteCookie(name) {
   document.cookie = name + "=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; SameSite=Lax; Secure";
 }
 
+/**
+ * Starts the authentication flow
+ */
 const login = async (targetUrl) => {
   try {
     console.log("Logging in", targetUrl);
 
-    // Fetch the user profile to check their role
-    const user = await auth0Client.getUser();
-
-    // Set the redirect URI based on the role
-    console.log(user.role);
-    const redirectUrl = user?.role === 'admin'
-      ? 'https://staging.milesahead.today/control-panel.html'
-      : 'https://staging.milesahead.today/index.html';
-
     const options = {
       authorizationParams: {
-        redirect_uri: redirectUrl
+        redirect_uri: 'https://get.milesahead.today'
       }
     };
 
