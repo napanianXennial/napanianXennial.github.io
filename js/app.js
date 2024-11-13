@@ -27,9 +27,10 @@ const login = async (targetUrl) => {
     const user = await auth0Client.getUser();
 
     // Set the redirect URI based on the role
+    console.log(user.role);
     const redirectUrl = user?.role === 'admin'
-      ? '/control-panel.html'
-      : '/index.html';
+      ? 'https://staging.milesahead.today/control-panel.html'
+      : 'https://staging.milesahead.today/index.html';
 
     const options = {
       authorizationParams: {
@@ -55,7 +56,7 @@ const register = async (targetUrl) => {
     const options = {
       authorizationParams: {
         screen_hint: 'signup',  // Directs to the registration page
-        redirect_uri: 'https://get.milesahead.today'
+        redirect_uri: 'https://staging.milesahead.today'
       }
     };
 
