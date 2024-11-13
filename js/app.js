@@ -28,7 +28,7 @@ const login = async (targetUrl) => {
 
     const options = {
       authorizationParams: {
-        redirect_uri: 'https://get.milesahead.today'
+        redirect_uri: 'https://staging.milesahead.today'
       }
     };
 
