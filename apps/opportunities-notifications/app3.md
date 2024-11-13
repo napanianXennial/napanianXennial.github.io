@@ -1,7 +1,7 @@
 ---
 layout: minimal-app-green
-title: "Email Notifications"
-blurb: "We'll quickly build out opportunities for you, but with a new look."
+title: "Opportunity Notifications"
+blurb: "We will notify you when new applicants arise."
 
 authenticated: true
 
