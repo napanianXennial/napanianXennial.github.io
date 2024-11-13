@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="no-js h-100" lang="zxx">
+
+<head>
+    
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="index, follow" />
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Welcome to {{ page.companyname }}.</title>
+
+<link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+<!-- ========================= CSS here ========================= -->
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../assets/css/LineIcons.2.0.css" />
+<link rel="stylesheet" href="../assets/css/animate.css" />
+<link rel="stylesheet" href="../assets/css/tiny-slider.css" />
+<link rel="stylesheet" href="../assets/css/glightbox.min.css" />
+<link rel="stylesheet" href="../assets/css/main-gold.css" />
+
+<!-- okta -->
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<!-- link rel="stylesheet" href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css" /-->
+	
+</head>
+
+<body class="h-100">
+	<div id="content-home"></div>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <!-- div class="preloader style2">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+</div -->
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header style2">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+<!-- navbar -->
+{% include nav-tag.html %} 	
+<!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- End Header Area -->
+
+
+    <!-- Start Hero Area -->
+    <section id="hero-areax" class="hero-area">
+        <!-- Single Slider -->
+        <div class="hero-inner">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-6 co-12">
+                        <div class="home-slider">
+                            <div class="hero-text">
+                                <h3 class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Stay Connected</h3>
+                                <h1 class="wow fadeInUp" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">Opportunity<br>Applicant<br>Notifications</h1>
+                                <p class="wow fadeInUp" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">Click to get started.</p>
+
+
+
+                   <div class="auth-invisible button wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
+                                    <span onClick="login()" class="btn primary"><i class="lni lni-alarm"></i> Login </span>
+				    <span onClick="register()" class="btn"><i class="lni lni-wallet"></i> Register </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="col-lg-6 co-12">
+                        <div class="home-slider">
+                            <div class="hero-text">
+                                <h3 class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">GetHelp</h3>
+                                <h1 class="wow fadeInUp" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">Service Tickets</h1>
+                                <p class="wow fadeInUp" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">Register your tickets.</p>
+				<p class="wow fadeInUp" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">24 hour SLA.</p>
+
+
+
+                   <div class="auth-invisible button wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
+                                    <span onClick="login()" class="btn primary"><i class="lni lni-alarm"></i> Login </span>
+				    <span onClick="register()" class="btn"><i class="lni lni-wallet"></i> Register </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Single Slider -->
+    </section>
+    <!--/ End Hero Area -->
+
+
+
+
+    <!-- Start Footer Area -->
+    <footer class="footer">
+        
+        <!--/ End Footer Middle -->
+        <!-- Start Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="left">
+                                Copyright 2024 © All Rights Reserved
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Middle -->
+    </footer>
+    <!--/ End Footer Area -->	
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+{% include /sub/javascript.html %} 
+
+
+<script>
+let checkInterval;
+// Function to update pricing tables
+function updatePricingTables(products) {
+products.forEach(product => {
+// Find the corresponding pricing table based on the product name
+const pricingTable = document.querySelector(`.pricingTable[data-plan="${product.name}"]`);
+
+if (pricingTable) {
+// Update price (assuming price is retrieved from default_price or set statically for simplicity)
+pricingTable.querySelector('.price-value').textContent = "$" + product.defaultPrice; // Modify as needed to extract the price
+
+// Update features
+const featuresList = pricingTable.querySelector('.pricingContent ul');
+featuresList.innerHTML = ''; // Clear existing features
+
+product.marketing_features.forEach(feature => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `<i class="ti-check"></i> ${feature.name}`;
+    featuresList.appendChild(listItem);
+});
+}
+});
+}
+
+// Function to check if userdata is loaded
+function checkAndLoadUserData() {
+if (typeof userdata !== 'undefined' && userdata.allproducts && userdata.allproducts.data) {
+// Data is available, update pricing tables and clear the interval
+updatePricingTables(userdata.allproducts.data);
+clearInterval(checkInterval);
+}
+}
+
+// Wait for the page to fully load
+window.addEventListener('load', () => {
+// Start checking every 500ms if userdata is loaded
+const checkInterval = setInterval(checkAndLoadUserData, 500);
+});
+</script>
