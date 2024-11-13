@@ -28,8 +28,8 @@ const login = async (targetUrl) => {
 
     // Set the redirect URI based on the role
     const redirectUrl = user?.role === 'admin'
-      ? 'https://get.milesahead.today/control-panel.html'
-      : 'https://get.milesahead.today';
+      ? '/control-panel.html'
+      : '/index.html';
 
     const options = {
       authorizationParams: {
