@@ -1,0 +1,59 @@
+<div class="floating-button">
+  <button class="feedback-button" onclick="openModal()">Feedback</button>
+</div>
+
+<div class="modal hidden" id="feedback-modal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Feedback Title</h4>
+        <button class="modal-close-button" onclick="closeModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-description">Please rate your experience on this page:</p>
+        <div id="rating" class="rating">
+          <!-- Placeholder for rating icons -->
+          <span class="material-icons-outlined modal-radio-buttons" onclick="selectRating(this)">
+            sentiment_very_dissatisfied
+          </span>
+          <span class="material-icons-outlined modal-radio-buttons text-primary" onclick="selectRating(this)">
+            sentiment_dissatisfied
+          </span>
+          <span class="material-icons-outlined modal-radio-buttons" onclick="selectRating(this)">
+            sentiment_neutral
+          </span>
+          <span class="material-icons-outlined modal-radio-buttons" onclick="selectRating(this)">
+            sentiment_satisfied
+          </span>
+          <span class="material-icons-outlined modal-radio-buttons" onclick="selectRating(this)">
+            sentiment_very_satisfied
+          </span>
+        </div>
+        <form class="column">
+
+          <label for="subject">Subject</label>
+          <input type=text id="subject" placeholder="Enter subject" />
+
+          <label for="select-job">What is the nature of your feedback?</label>
+          <select id="select-job">
+            <option value="">Choose a subject</option>
+            <!-- Add options here -->
+            <option value="general">General Feedback</option>
+            <option value="opportunity-creator">Opportunity Creator</option>
+            <option value="opportunity-notifications">Opportunity Notifications</option>
+          </select>
+
+          <label for="feedback-text">What would you like to share with us?</label>
+          <textarea id="feedback-text" placeholder="Placeholder" rows="3"></textarea>
+
+          <label for="email">Please leave your email if you would like to be contacted</label>
+          <input type="email" id="email" placeholder="Enter email" />
+
+          <button id="submit" type="submit" class="submit-button center"><i id="feedback-loading"
+              class="fa fa-spinner fa-spin mv5 hidden"></i>
+            Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

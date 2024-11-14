@@ -145,7 +145,7 @@
         <i class="lni lni-chevron-up"></i>
     </a>
     {% include /sub/javascript.html %}
-
+    {% include feedback.html %}
 
     <script>
         let checkInterval;
@@ -180,6 +180,73 @@
                 clearInterval(checkInterval);
             }
         }
+        function closeModal() {
+            const element = document.getElementById('feedback-modal');
+            element.classList.remove("visible");
+            element.classList.add("hidden");
+            hideFeedbackLoading();
+        }
+        function openModal() {
+            const element = document.getElementById('feedback-modal');
+            element.classList.remove("hidden");
+            element.classList.add("visible");
+        }
+        function showFeedbackLoading() {
+            const element = document.getElementById('feedback-loading');
+            element.classList.remove("hidden");
+            element.classList.add("visible");
+        }
+        function hideFeedbackLoading() {
+            const element = document.getElementById('feedback-loading');
+            element.classList.remove("visible");
+            element.classList.add("hidden");
+        }
+
+        function selectRating(selected) {
+            // Remove 'text-primary' class from all spans
+            const spans = document.querySelectorAll('.modal-radio-buttons');
+            spans.forEach(span => {
+                span.classList.remove('text-primary');
+            });
+            // Add 'text-primary' class to the selected span
+            selected.classList.add('text-primary');
+        }
+
+
+        async function submit() {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', async event => {
+                event.preventDefault();
+                let stars = document.getElementsByClassName("modal-radio-buttons");
+                let i = 0;
+                var rating = 0;
+                while (i < stars.length) {
+                    if (stars[i].classList.contains('text-primary')) {
+                        rating = i + 1;
+                        break;
+                    }
+                    i++;
+                }
+                const summary = document.querySelector('#subject').value;
+                const serviceName = document.querySelector('#select-job').value;
+                const issueDescription = document.querySelector('#feedback-text').value;
+
+                const data = {
+                    summary: summary,
+                    serviceName: serviceName,
+                    issueDescription: issueDescription,
+                    rating: rating
+                };
+                showFeedbackLoading();
+                const response = await submitFeedback(data);
+                closeModal();
+                console.log('RESPONSE:  ' + JSON.stringify(response));
+                // updateTodoList(submitTodoItem);
+            });
+        }
+
+        submit();
 
         // Wait for the page to fully load
         window.addEventListener('load', () => {

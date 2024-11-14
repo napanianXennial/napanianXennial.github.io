@@ -5,9 +5,9 @@ function setCookie(name, value, days) {
   console.log("Setting the cookie...");
   var expires = "";
   if (days) {
-      var date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      expires = "; expires=" + date.toUTCString();
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
   }
   // Secure flag is necessary when running on HTTPS (like GitHub Pages)
   document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax; Secure";
@@ -37,13 +37,13 @@ const login = async (targetUrl) => {
     }
 
     await auth0Client.loginWithRedirect(options);
-      // Only redirect if the user is NOT an admin
+    // Only redirect if the user is NOT an admin
     console.log('About to check for admin redirect');
-  if (auth0Client.getUser().role === 'admin') {
-    const redirectUrl = 'https://staging.milesahead.today/dashboard.html';
-    console.log('Redirecting to:', redirectUrl);
-    window.location.href = redirectUrl;
-  }
+    if (auth0Client.getUser().role === 'admin') {
+      const redirectUrl = 'https://staging.milesahead.today/dashboard.html';
+      console.log('Redirecting to:', redirectUrl);
+      window.location.href = redirectUrl;
+    }
   } catch (err) {
     console.log("Log in failed", err);
   }
@@ -114,7 +114,7 @@ const configureClient = async () => {
  * @param {*} fn The function to execute if the user is logged in
  */
 const requireAuth = async (fn, targetUrl) => {
-  
+
   const isAuthenticated = await auth0Client.isAuthenticated();
 
   if (isAuthenticated) {
@@ -139,18 +139,18 @@ window.onload = async () => {
   const bodyElement = document.getElementsByTagName("body")[0];
 
   // Listen out for clicks on any hyperlink that navigates to a #/ URL
-  bodyElement.addEventListener("click", (e) => {
-    console.log("Listening out for clicks on any hyperlink that navigates to a #/ URL");
-    if (isRouteLink(e.target)) {
-      const url = e.target.getAttribute("href");
+  // bodyElement.addEventListener("click", (e) => {
+  //   console.log("Listening out for clicks on any hyperlink that navigates to a #/ URL");
+  //   if (isRouteLink(e.target)) {
+  //     const url = e.target.getAttribute("href");
 
-      if (showContentFromUrl(url)) {
-        console.log("In the if showContentFromURL code");
-        e.preventDefault();
-        window.history.pushState({ url }, {}, url);
-      }
-    }
-  });
+  //     if (showContentFromUrl(url)) {
+  //       console.log("In the if showContentFromURL code");
+  //       e.preventDefault();
+  //       window.history.pushState({ url }, {}, url);
+  //     }
+  //   }
+  // });
 
   const isAuthenticated = await auth0Client.isAuthenticated();
 
