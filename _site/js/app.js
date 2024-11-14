@@ -26,26 +26,48 @@ const login = async (targetUrl) => {
   try {
     console.log("Logging in", targetUrl);
 
-    //const options = {
-      //authorizationParams: {
-        //redirect_uri: 'https://staging.milesahead.today'
-		//redirect_uri: '/'
-      //}
-    //};
-	
-	const options = {
-		authorizationParams: {
-		redirect_uri: window.location.href
-		}
-	};
+    const options = {
+      authorizationParams: {
+        redirect_uri: 'https://staging.milesahead.today/apps.html'
+      }
+    };
 
     if (targetUrl) {
       options.appState = { targetUrl };
     }
-    console.log("About to do loginWithRedirect...");
+
     await auth0Client.loginWithRedirect(options);
+      // Only redirect if the user is NOT an admin
+    console.log('About to check for admin redirect');
+  if (auth0Client.getUser().role === 'admin') {
+    const redirectUrl = 'https://staging.milesahead.today/dashboard.html';
+    console.log('Redirecting to:', redirectUrl);
+    window.location.href = redirectUrl;
+  }
   } catch (err) {
     console.log("Log in failed", err);
+  }
+};
+
+
+const register = async (targetUrl) => {
+  try {
+    console.log("Registering", targetUrl);
+
+    const options = {
+      authorizationParams: {
+        screen_hint: 'signup',  // Directs to the registration page
+        redirect_uri: 'https://staging.milesahead.today'
+      }
+    };
+
+    if (targetUrl) {
+      options.appState = { targetUrl };
+    }
+
+    await auth0Client.loginWithRedirect(options);
+  } catch (err) {
+    console.log("Registration failed", err);
   }
 };
 

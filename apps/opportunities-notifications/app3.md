@@ -4,6 +4,7 @@ title: "Opportunity Notifications"
 blurb: "We will notify you when new applicants arise."
 
 authenticated: true
+access: "external-user"
 
 top-level-link: false
 priority: 2

@@ -1,6 +1,7 @@
 .hidden {
   display: none;
 }
+
 label {
   margin-bottom: 10px;
   display: block;
@@ -8,4 +9,68 @@ label {
 
 .navbar {
   min-height: 115px;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.card-app {
+  width: 300px;
+  height: 160px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ffffff;
+  margin-top: 16px;
+  margin-right: 25px;
+  background-color: white;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header-app {
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  justify-content: space-between;
+}
+
+.avatar img {
+  width: 24px;
+  /* Adjust size as needed */
+  height: 24px;
+  /* Adjust size as needed */
+}
+
+.settings {
+  color: grey;
+}
+
+.settings-icon {
+  width: 20px;
+  /* Adjust size as needed */
+  height: 20px;
+  /* Adjust size as needed */
+}
+
+
+.description-app {
+  margin: 4px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 3.6em;
+  line-height: 1.8em;
+  /* Limit to 2 lines */
+}
+
+.card-actions {
+  padding: 16px;
+}
+
+.test-app-button {
+  font-size: 14px;
 }

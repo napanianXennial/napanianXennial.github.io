@@ -4,6 +4,8 @@ title:  "Service Ticket"
 blurb: "File a service ticket."
 
 authenticated: true
+access: "external-user"
+
 # subscription-product: enterprise
 # subscription-link-name: enterprise-subscription-link
 top-level-link: false
