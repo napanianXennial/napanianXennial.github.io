@@ -139,18 +139,18 @@ window.onload = async () => {
   const bodyElement = document.getElementsByTagName("body")[0];
 
   // Listen out for clicks on any hyperlink that navigates to a #/ URL
-  // bodyElement.addEventListener("click", (e) => {
-  //   console.log("Listening out for clicks on any hyperlink that navigates to a #/ URL");
-  //   if (isRouteLink(e.target)) {
-  //     const url = e.target.getAttribute("href");
+  bodyElement.addEventListener("click", (e) => {
+    console.log("Listening out for clicks on any hyperlink that navigates to a #/ URL");
+    if (isRouteLink(e.target)) {
+      const url = e.target.getAttribute("href");
 
-  //     if (showContentFromUrl(url)) {
-  //       console.log("In the if showContentFromURL code");
-  //       e.preventDefault();
-  //       window.history.pushState({ url }, {}, url);
-  //     }
-  //   }
-  // });
+      if (showContentFromUrl(url)) {
+        console.log("In the if showContentFromURL code");
+        e.preventDefault();
+        window.history.pushState({ url }, {}, url);
+      }
+    }
+  });
 
   const isAuthenticated = await auth0Client.isAuthenticated();
 
