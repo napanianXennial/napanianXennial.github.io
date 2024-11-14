@@ -2,14 +2,14 @@ const BASE_URL = 'https://api.milesahead.team/api';
 
 const jiraUrl = BASE_URL + '/jira/issue';
 
-const currentUser = JSON.parse(sessionStorage.getItem('user'));
-
 function timeout(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 const submitFeedback = async formData => {
   try {
+    const currentUser = JSON.parse(sessionStorage.getItem('user'));
+    console.log('Name:  ' + currentUser.name);
     const data = {
       userName: currentUser.name,
       userEmail: currentUser.email,

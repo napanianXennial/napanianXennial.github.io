@@ -39,11 +39,11 @@ const login = async (targetUrl) => {
     await auth0Client.loginWithRedirect(options);
     // Only redirect if the user is NOT an admin
     console.log('About to check for admin redirect');
-  if (auth0Client.getUser().role === 'admin') {
-    const redirectUrl = 'https://align.milesahead.today/dashboard.html';
-    console.log('Redirecting to:', redirectUrl);
-    window.location.href = redirectUrl;
-  }
+    if (auth0Client.getUser().role === 'admin') {
+      const redirectUrl = 'https://align.milesahead.today/dashboard.html';
+      console.log('Redirecting to:', redirectUrl);
+      window.location.href = redirectUrl;
+    }
   } catch (err) {
     console.log("Log in failed", err);
   }

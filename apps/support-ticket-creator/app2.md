@@ -2,7 +2,7 @@
 layout: minimal-app
 title:  "Service Ticket"
 blurb: "File a service ticket."
-
+access: "external-user"
 authenticated: true
 # subscription-product: enterprise
 # subscription-link-name: enterprise-subscription-link
