@@ -4,11 +4,9 @@ title:  "Service Ticket"
 blurb: "File a service ticket."
 
 authenticated: true
-access: "external-user"
-
 # subscription-product: enterprise
 # subscription-link-name: enterprise-subscription-link
-top-level-link: false
+top-level-link: true
 priority: 4
 
 ---
@@ -96,8 +94,17 @@ priority: 4
     <form id="ticketForm" 
     action="https://api.milesahead.team/api/jira/issue"
     method="POST">
-        <label for="title">Support Ticket Title *</label>
-        <input type="text" id="title" name="summary" placeholder="Enter a brief title for the issue (e.g., Payroll processing error, Login failure)" required>
+        <input type="text" id="title" value="Support Ticket (Payroll)" name="summary" placeholder="Enter a brief title for the issue (e.g., Payroll processing error, Login failure)" required type="hidden">
+        <label for="serviceName">Support Ticket Service *</label>
+        <select id="service-name" name="serviceName" required type="select" onchange="setServiceName()">
+            <option value="payroll">Payroll</option>
+            <option value="time-attendance">Time and Attendance</option>
+            <option value="hr">Human Resources (HR)</option>
+            <option value="workforce-management">Workforce Management</option>
+            <option value="technical-support-troubleshooting">Technical Support and Troubleshooting</option>
+            <option value="system-customization-configuration">System Customization or Configuration</option>
+            <option value="compliance-tax-services">Compliance and Tax Services</option>
+        </select>
 
         <label>Priority Level *</label>
         <div class="priority-container">
@@ -132,6 +139,11 @@ priority: 4
         document.querySelector(`.${priority.toLowerCase()}`).classList.add('active');
     }
 
+    function setServiceName() {
+        const serviceNameValue = document.getElementById('service-name').value
+        document.getElementById('title').value = `Support Ticket (${serviceNameValue})`
+    }
+
     document.getElementById('ticketForm').addEventListener('submit', function(event) {
         event.preventDefault(); // prevent default form submission
 
@@ -143,7 +155,7 @@ priority: 4
             userEmail: document.getElementById('feedback-useremail').value,
             issueDescription: document.getElementById('description').value,
             priority: document.getElementById('priority').value,
-            issueType: "Feedback" 
+            issueType: "Task" 
         };
 
         // Send the JSON data to the API endpoint
@@ -167,7 +179,6 @@ priority: 4
 
 // Function to check if userdata is loaded
 let checkInterval;
-// let maxCount = 0
 function checkAndLoadUserData() {
     if (typeof userdata !== 'undefined' && userdata.email) {
         // set for user value to form
@@ -178,14 +189,7 @@ function checkAndLoadUserData() {
         document.getElementById("feedback-useremail").value = userdata.email
 
         clearInterval(checkInterval);
-        // maxCount = 0
     }
-
-    // if (maxCount >= 60) {
-    //     clearInterval(checkInterval);
-    // } else {
-    //     maxCount++
-    // }
 }
 
 // Wait for the page to fully load
