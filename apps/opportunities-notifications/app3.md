@@ -1,6 +1,7 @@
 ---
 layout: minimal-app-green
 title: "Opportunity Notifications"
+icon: "notifications_active"
 blurb: "We will notify you when new applicants arise."
 
 authenticated: true

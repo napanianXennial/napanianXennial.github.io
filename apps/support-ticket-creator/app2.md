@@ -1,6 +1,7 @@
 ---
 layout: minimal-app
 title:  "Service Ticket"
+icon: "sell"
 blurb: "File a service ticket."
 access: "external-user"
 authenticated: true

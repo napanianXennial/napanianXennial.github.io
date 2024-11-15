@@ -1,105 +1,88 @@
 <nav class="navbar navbar-expand-lg  wow fadeInUp" data-wow-delay=".3s">
-   <a class="navbar-brand logo" href="index.html">
-      <!--img class="primary-logo" src="../assets/images/logo/white-logo.svg" alt="Logo" /-->
-      <!--img class="alt-logo" src="../assets/images/logo/logo2.svg" alt="Logo" /-->
-   </a>
-   <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-   <span class="toggler-icon"></span>
-   <span class="toggler-icon"></span>
-   <span class="toggler-icon"></span>
-   </button>
-   <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-      <ul id="nav" class="navbar-nav me-auto">
-                <li class="nav-item dropdown auth-visible hidden">
-                  <a
-                    class="nav-link"
-                    href="#"
-                    id="profileDropDown"
-                    data-toggle="dropdown"
-                  >
-                    <!-- Profile image should be set to the profile picture from the id token -->
-                    <img
-                      alt="Profile picture"
-                      class="nav-user-profile profile-image rounded-circle"
-                      width="30"
-                    />
-                  </a>
-                  <div class="dropdown-menu">
-                    <!-- Show the user's full name from the id token here -->
-                    <div class="dropdown-header nav-user-name user-name"></div>
-                    <a
-                      href="/profile"
-                      class="dropdown-item dropdown-profile route-link"
-                    >
-                      <i class="fas fa-user mr-3"></i> Profile
-                    </a>
-                    <a
-                      href="#"
-                      class="dropdown-item"
-                      id="qsLogoutBtn"
-                      onclick="logout()"
-                    >
-                      <i class="fas fa-power-off mr-3"></i> Log out
-                    </a>
-                  </div>
-                </li>
+  <a class="navbar-brand logo" href="index.html">
+    <img src="/assets/images/align-hcm-logo.png" alt="Logo" />
+    <!--img class="alt-logo" src="../assets/images/logo/logo2.svg" alt="Logo" /-->
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="toggler-icon"></span>
+    <span class="toggler-icon"></span>
+    <span class="toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+    <ul id="nav" class="navbar-nav me-auto">
+      <li class="nav-item dropdown auth-visible hidden">
+        <a class="nav-link" href="#" id="profileDropDown" data-toggle="dropdown">
+          <!-- Profile image should be set to the profile picture from the id token -->
+          <img alt="Profile picture" class="nav-user-profile profile-image rounded-circle" width="30" />
+        </a>
+        <div class="dropdown-menu">
+          <!-- Show the user's full name from the id token here -->
+          <div class="dropdown-header nav-user-name user-name"></div>
+          <a href="/profile" class="dropdown-item dropdown-profile route-link">
+            <i class="fas fa-user mr-3"></i> Profile
+          </a>
+          <a href="#" class="dropdown-item" id="qsLogoutBtn" onclick="logout()">
+            <i class="fas fa-power-off mr-3"></i> Log out
+          </a>
+        </div>
+      </li>
 
-	<li class="nav-item">	
-            <a href="/control-panel.html" class="admin-visible">Dashboard</a>	
-        </li>
+      <li class="nav-item">
+        <a href="/control-panel.html" class="admin-visible">Dashboard</a>
+      </li>
 
-	<li class="nav-item">	
-            <a href="/apps.html" class="auth-visible">Apps</a>	
-        </li>
+      <li class="nav-item">
+        <a href="/apps.html" class="auth-visible">Apps</a>
+      </li>
 
-	      
-{% assign app_pages = site.pages | where_exp: "page", "page.path contains 'apps/'" %}
-{% assign sorted_app_pages = app_pages | sort: "priority" %}
 
-{% for post in sorted_app_pages %}
-<!--comment 1 -->
-  {% if post.top-level-link %}
-  <!--comment 2 -->
-    {% if post.authenticated %}
-	 <!--comment 3 -->
+      {% assign app_pages = site.pages | where_exp: "page", "page.path contains 'apps/'" %}
+      {% assign sorted_app_pages = app_pages | sort: "priority" %}
+
+      {% for post in sorted_app_pages %}
+      <!--comment 1 -->
+      {% if post.top-level-link %}
+      <!--comment 2 -->
+      {% if post.authenticated %}
+      <!--comment 3 -->
       <!-- Authenticated version of the LI -->
       <li class="nav-item wow">
-      <a href="#" class="auth-invisible hidden">&nbsp;</a>
+        <a href="#" class="auth-invisible hidden">&nbsp;</a>
 
-      {% if post.subscription-product %}
-	   <!--comment 4 -->
+        {% if post.subscription-product %}
+        <!--comment 4 -->
         <!-- Display code with subscription-product -->
         <span class="subs-visible hidden" data-subscription="{{ post.subscription-product }}">
           <a href="{{ post.url }}" class="auth-visible">{{ post.title }}</a>
-		  <i class="lni lni-user" title="Personal Subscription Required"></i>
+          <i class="lni lni-user" title="Personal Subscription Required"></i>
           <!-- Uncomment the next line if the lock icon is needed -->
           <!-- <span class="material-icons subs-visible hidden" data-subscription="{{ post.subscription-product }}">lock_open</span> -->
         </span>
 
         <span class="subs-invisible" data-subscription="{{ post.subscription-product }}">
-          <a  href="/products/{{ post.subscription-product }}" class="auth-visible chatbot-subscription-link">{{ post.title }}</a>
+          <a href="/products/{{ post.subscription-product }}" class="auth-visible chatbot-subscription-link">{{
+            post.title }}</a>
         </span>
 
-      {% else %}
+        {% else %}
         <!-- Display default code without subscription-product -->
         <a href="{{ post.url }}" class="auth-visible">{{ post.title }}</a>
-      {% endif %}
+        {% endif %}
       </li>
-    {% else %}
+      {% else %}
       <!-- Regular version of the LI -->
       <li class="nav-item wow">
         <a href="{{ post.url }}" class="nav-link">{{ post.title }}</a>
       </li>
-    {% endif %}
-  {% endif %}
-{% endfor %}
+      {% endif %}
+      {% endif %}
+      {% endfor %}
 
 
 
 
-<!--
+      <!--
          
          <li class="nav-item wow">
             <a href="#" class="auth-invisible hidden">&nbsp;</a>
@@ -130,9 +113,9 @@
             <a href="/apps/support-ticket-creator/app.html"  class="auth-visible">Service Tickets</a>
          </li>
 		 
--->		 
+-->
 
-<!--	      
+      <!--	      
          <li class="nav-item">
             <a href="/index.html" class="auth-invisible hidden">Home</a>
             <a href="/applications.html" class="auth-visible">Apps</a>
@@ -140,25 +123,22 @@
          <li class="nav-item">
             <a href="/chatbot.html?id=min-tag" >Chatbot</a>
          </li>
--->	
+-->
 
 
-		 
-		 
-    {% assign show_default_icon = false %}
-         <li class="nav-item">
-            <a href="#" id="qsLoginBtn" onclick="login()" class="auth-invisible hidden">Log in</a>
-            <a href="#" id="qsLogoutBtn" class="auth-visible" onclick="logout()">Log out</a>
+
+
+      {% assign show_default_icon = false %}
+      <li class="nav-item">
+        <a href="#" id="qsLoginBtn" onclick="login()" class="auth-invisible hidden">Log in</a>
+        <a href="#" id="qsLogoutBtn" class="auth-visible" onclick="logout()">Log out</a>
 
 
         <div class="page hidden" id="content-profile">
           <div class="container">
             <div class="row align-items-center profile-header">
               <div class="col-md-2">
-                <img
-                  alt="User's profile picture"
-                  class="rounded-circle img-fluid profile-image mb-3 mb-md-0"
-                />
+                <img alt="User's profile picture" class="rounded-circle img-fluid profile-image mb-3 mb-md-0" />
               </div>
               <div class="col-md">
                 <h2 class="user-name"></h2>
@@ -172,10 +152,10 @@
             </div>
           </div>
         </div>
-      </div>
- 
-         </li>
-      </ul>
-   </div>
-   <!-- navbar collapse -->
+  </div>
+
+  </li>
+  </ul>
+  </div>
+  <!-- navbar collapse -->
 </nav>

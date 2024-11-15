@@ -1793,10 +1793,9 @@ ol {
 }
 
 .header .logo img {
-  width: 150px;
-  position: absolute;
-  left: 0;
-  top: 0;
+  /* width: 150px; */
+  /* position: absolute; */
+  width: 120px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -1946,7 +1945,7 @@ ol {
 
 .navbar-nav .nav-item a:hover,
 .navbar-nav .nav-item a.active {
-  color: #fff;
+  color: #656565;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

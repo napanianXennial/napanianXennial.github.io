@@ -16,7 +16,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
     <!-- ========================= CSS here ========================= -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/LineIcons.2.0.css" />
@@ -69,55 +71,7 @@
         </div>
         <!-- navbar area -->
     </header>
-    <!-- End Header Area -->
-<style>
-.card-app {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 16px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-}
 
-.card-header-app {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 8px;
-}
-
-.align-center {
-    display: flex;
-    align-items: center;
-}
-
-.description-app {
-    font-size: 14px;
-    color: #4a4a4a;
-    margin-top: 0;
-    margin-bottom: 16px;
-    line-height: 1.4;
-}
-
-.test-app-button a {
-    text-decoration: none;
-    color: #fff;
-    background-color: #10b981;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.test-app-button a:hover {
-    background-color: #059669;
-}
-
-
-
-    
-</style>
 
     <!-- Start Hero Area -->
     <section id="hero-area" class="hero-area">
@@ -135,19 +89,27 @@
                     {% for page in site.pages %}
                     {% if page.path contains 'apps/' %}
                     {% if page.access == "external-user" %}
-<div class="card-app">
-    <div class="card-header-app">
-        <div class="align-center">
-            <span class="lni lni-cog" style="margin-right: 10px; color: #F59E0B; font-size: 24px;"></span>
-            <h4 style="margin: 0; font-size: 18px;">Support Ticket Creator</h4>
-        </div>
-    </div>
-    <p class="description-app">Having an issue and need help? Create a support ticket and our team will work to solve the problem.</p>
-    <div class="test-app-button">
-        <a href={{page.url}}>Open</a>
-    </div>
-</div>
-
+                    <div class="card-app">
+                        <div class="card-header-app">
+                            <div class="align-center">
+                                <span class="material-icons text-primary" style="margin-right: 10px;">
+                                    {{ page.icon }}
+                                </span>
+                                <h4 style="color: #000;margin: 5px; font-size:15px">{{ page.title }}</h4>
+                            </div>
+                            <span class="material-icons-outlined">
+                                settings
+                            </span>
+                        </div>
+                        <p class="description-app text-dark"> {{ page.blurb }}</p>
+                        <hr style="border-top: 2px solid #010101;">
+                        <div class="test-app-button">
+                            <a href={{page.url}} class="test-app">Open <span class="material-icons-outlined"
+                                    style="margin-left: 5px;">
+                                    open_in_new
+                                </span></a>
+                        </div>
+                    </div>
                     {% endif %}
                     {% endif %}
                     {% endfor %}
@@ -188,7 +150,7 @@
     </a>
     {% include /sub/javascript.html %}
     {% include feedback.html %}
-
+    {% include /sub/footer.html %}
     <script>
         let checkInterval;
         // Function to update pricing tables
