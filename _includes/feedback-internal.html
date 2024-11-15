@@ -1,0 +1,67 @@
+<div id="rating-container" class="feedback-container">
+  <span class="close-icon" id="closeIcon">&times;</span>
+
+  <div class="title">How Likely are you to recommend this app to a friend or colleague?</div>
+  <div class="rating-scale">
+    <div class="rating" data-value="0">0</div>
+    <div class="rating" data-value="1">1</div>
+    <div class="rating" data-value="2">2</div>
+    <div class="rating" data-value="3">3</div>
+    <div class="rating" data-value="4">4</div>
+    <div class="rating" data-value="5">5</div>
+    <div class="rating selected" data-value="6">6</div>
+    <div class="rating" data-value="7">7</div>
+    <div class="rating" data-value="8">8</div>
+    <div class="rating" data-value="9">9</div>
+    <div class="rating" data-value="10">10</div>
+  </div>
+  <div class="labels">
+    <span>Not Likely</span>
+    <span>Very Likely</span>
+  </div>
+
+</div>
+<div class="feedback-form" id="feedbackForm">
+  <span class="close-icon" id="closeIcon">&times;</span>
+  <p id="feedback-title" style="color: black;">We're sorry to hear this. Please share how we can improve?</p>
+  <textarea placeholder="Placeholder text"></textarea>
+  <button type="button">Submit Feedback</button>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all rating elements
+    const ratings = document.querySelectorAll(".rating");
+    const feedbackForm = document.getElementById("feedbackForm");
+    const ratingContainer = document.getElementById("rating-container");
+    const closeIcon = document.getElementById("closeIcon");
+
+    ratings.forEach(rating => {
+      rating.addEventListener("click", function () {
+        // Remove "selected" class from any previously selected rating
+        ratings.forEach(r => r.classList.remove("selected"));
+
+        // Add "selected" class to the clicked rating
+        rating.classList.add("selected");
+
+        // Optionally, store the selected rating value
+        const selectedValue = rating.getAttribute("data-value");
+        console.log("Selected rating:", selectedValue);
+        feedbackForm.style.display = "block";
+        ratingContainer.style.display = "none";
+
+        if (selectedValue >= 6) {
+          document.getElementById('feedback-title').innerText = "Thanks for your feedback! Let us know how we can make your experience even better."
+        } else {
+          document.getElementById('feedback-title').innerText = `We're sorry to hear this. Please share how we can improve?`;
+        }
+
+      });
+    });
+
+    // Hide feedback form when "X" icon is clicked
+    closeIcon.addEventListener("click", function () {
+      feedbackForm.style.display = "none";
+      ratingContainer.style.display = "none";
+    });
+  });
+</script>
