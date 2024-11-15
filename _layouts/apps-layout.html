@@ -70,7 +70,54 @@
         <!-- navbar area -->
     </header>
     <!-- End Header Area -->
+<style>
+.card-app {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
 
+.card-header-app {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.description-app {
+    font-size: 14px;
+    color: #4a4a4a;
+    margin-top: 0;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.test-app-button a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #10b981;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.test-app-button a:hover {
+    background-color: #059669;
+}
+
+
+
+    
+</style>
 
     <!-- Start Hero Area -->
     <section id="hero-area" class="hero-area">
@@ -78,34 +125,28 @@
         <div class="hero-inner">
             <div class="container" style="padding-top: 100px;">
                 <div>
-                    <h4 class="header-title">Hello, External Customer!</h4>
+                    <h4 class="header-title">Applications Dashboard</h4>
 
                 </div>
                 <p style="margin: 20px 0px; color:black">
-                    We got your feedback and have been building a solution. Try out the following apps and give us your
-                    feedback!
+                    Select the application you'd like to use by clicking on its link below.
                 </p>
                 <div style="display: flex; flex-wrap: wrap; padding-bottom: 60px; ">
                     {% for page in site.pages %}
                     {% if page.path contains 'apps/' %}
                     {% if page.access == "external-user" %}
-                    <div class="card-app">
-                        <div class="card-header-app">
-                            <div class="align-center">
-                                <span class="material-icons-outlined" style="margin-right: 10px;">
-                                    dashboard
-                                </span>
-                                <h4 style="margin: 5px; font-size:18px">{{ page.title }}</h4>
-                            </div>
-                            <span class="material-icons-outlined">
-                                settings
-                            </span>
-                        </div>
-                        <p class="description-app"> {{ page.blurb }}</p>
-                        <div class="test-app-button">
-                            <a href={{page.url}}>Open App</a>
-                        </div>
-                    </div>
+<div class="card-app">
+    <div class="card-header-app">
+        <div class="align-center">
+            <span class="lni lni-cog" style="margin-right: 10px; color: #F59E0B; font-size: 24px;"></span>
+            <h4 style="margin: 0; font-size: 18px;">Support Ticket Creator</h4>
+        </div>
+    </div>
+    <p class="description-app">Having an issue and need help? Create a support ticket and our team will work to solve the problem.</p>
+    <div class="test-app-button">
+        <a href={{page.url}}>Open</a>
+    </div>
+</div>
                     {% endif %}
                     {% endif %}
                     {% endfor %}
