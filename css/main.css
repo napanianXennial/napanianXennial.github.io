@@ -348,7 +348,7 @@ textarea {
 /* X icon styling */
 .close-icon {
   position: absolute;
-  top: 2px;
+  bottom: 14%;
   right: 20px;
   font-size: 18px;
   color: #777;
@@ -357,4 +357,27 @@ textarea {
 
 .close-icon:hover {
   color: #333;
+}
+
+.floating-button-internal {
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+  z-index: 1000;
+  /* Ensure it appears above other elements */
+}
+
+.feedback-button-internal {
+  background-color: #5aa4a4;
+  /* Replace with your primary color */
+  color: white;
+  /* Text color */
+  border: none;
+  padding: 8px;
+  /* Adjust padding */
+  border-radius: 5px;
+  /* Rounded corners */
+  cursor: pointer;
+  font-size: 16px;
+  /* Font size */
 }

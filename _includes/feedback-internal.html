@@ -1,4 +1,7 @@
-<div id="rating-container" class="feedback-container">
+<div id="internal-button" class="floating-button-internal">
+  <button class="feedback-button-internal" id="open-feedback">Give Feedback</button>
+</div>
+<div id="rating-container" class="feedback-container" style="display: none;">
   <span class="close-icon" id="closeIcon">&times;</span>
 
   <div class="title">How Likely are you to recommend this app to a friend or colleague?</div>
@@ -35,6 +38,7 @@
     const ratingContainer = document.getElementById("rating-container");
     const closeIcon = document.getElementById("closeIcon");
     const closeIconF = document.getElementById("closeIcon-f");
+    const openFeedback = document.getElementById("open-feedback")
 
     ratings.forEach(rating => {
       rating.addEventListener("click", function () {
@@ -60,11 +64,19 @@
     });
 
     // Hide feedback form when "X" icon is clicked
+    openFeedback.addEventListener("click", function () {
+      ratingContainer.style.display = "block";
+      document.getElementById('internal-button').style.display = "none";
+
+    });
+    // Hide feedback form when "X" icon is clicked
     closeIcon.addEventListener("click", function () {
       ratingContainer.style.display = "none";
+      document.getElementById('internal-button').style.display = "block";
     });
     closeIconF.addEventListener("click", function () {
       feedbackForm.style.display = "none";
+      document.getElementById('internal-button').style.display = "block";
     });
   });
 </script>
