@@ -3,13 +3,13 @@
 
   <div class="title">How Likely are you to recommend this app to a friend or colleague?</div>
   <div class="rating-scale">
-    <div class="rating" data-value="0">0</div>
+    <div class="rating " data-value="0">0</div>
     <div class="rating" data-value="1">1</div>
     <div class="rating" data-value="2">2</div>
     <div class="rating" data-value="3">3</div>
     <div class="rating" data-value="4">4</div>
-    <div class="rating" data-value="5">5</div>
-    <div class="rating selected" data-value="6">6</div>
+    <div class="rating selected" data-value="5">5</div>
+    <div class="rating" data-value="6">6</div>
     <div class="rating" data-value="7">7</div>
     <div class="rating" data-value="8">8</div>
     <div class="rating" data-value="9">9</div>
@@ -22,7 +22,7 @@
 
 </div>
 <div class="feedback-form" id="feedbackForm">
-  <span class="close-icon" id="closeIcon">&times;</span>
+  <span class="close-icon" id="closeIcon-f">&times;</span>
   <p id="feedback-title" style="color: black;">We're sorry to hear this. Please share how we can improve?</p>
   <textarea placeholder="Placeholder text"></textarea>
   <button type="button">Submit Feedback</button>
@@ -34,6 +34,7 @@
     const feedbackForm = document.getElementById("feedbackForm");
     const ratingContainer = document.getElementById("rating-container");
     const closeIcon = document.getElementById("closeIcon");
+    const closeIconF = document.getElementById("closeIcon-f");
 
     ratings.forEach(rating => {
       rating.addEventListener("click", function () {
@@ -60,8 +61,10 @@
 
     // Hide feedback form when "X" icon is clicked
     closeIcon.addEventListener("click", function () {
-      feedbackForm.style.display = "none";
       ratingContainer.style.display = "none";
+    });
+    closeIconF.addEventListener("click", function () {
+      feedbackForm.style.display = "none";
     });
   });
 </script>
