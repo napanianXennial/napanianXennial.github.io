@@ -127,7 +127,7 @@ width: 45%;
 
     <!-- Feedback Status Table -->
     <div class="col-lg-6 mb-4">
-      <h4>Feedback Status</h4>
+      <h4>Service Tickets by Date</h4>
       <table id="feedbackStatus" class="display table table-striped table-bordered">
         <thead>
           <tr>
@@ -153,6 +153,110 @@ width: 45%;
       </table>
     </div>
   </div>
+
+
+<div class="row">
+  <!-- Feedback By App Table -->
+  <div class="col-lg-6 mb-4">
+    <h4>Feedback By App</h4>
+    <table id="feedbackByApp" class="display table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>App Name</th>
+          <th>Submitter</th>
+          <th>Ranking</th>
+          <th>Received Date</th>
+          <th>Completion Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be dynamically populated -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Service Tickets by Date Table -->
+  <div class="col-lg-6 mb-4">
+    <h4>Service Tickets by Date</h4>
+    <table id="serviceTickets" class="display table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>App Name</th>
+          <th>Submitter</th>
+          <th>Ranking</th>
+          <th>Received Date</th>
+          <th>Completion Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be dynamically populated -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+<script>
+  $(document).ready(function () {
+    // Data for Feedback By App table
+    const feedbackByAppData = [
+      {
+        appName: "opportunity-notifications",
+        submitter: "aman1@example.com",
+        ranking: "Medium",
+        receivedDate: "11/14",
+        completionStatus: '<span style="color: red;">Pending</span>',
+      },
+    ];
+
+    // Data for Service Tickets by Date table
+    const serviceTicketsData = [
+      {
+        appName: "HR",
+        submitter: "Anonymous",
+        ranking: "High",
+        receivedDate: "10/04",
+        completionStatus: '<span style="color: green;">Complete</span>',
+      },
+      {
+        appName: "General",
+        submitter: "Aman",
+        ranking: "Medium",
+        receivedDate: "10/07",
+        completionStatus: '<span style="color: orange;">In Progress</span>',
+      },
+    ];
+
+    // Populate Feedback By App table
+    $('#feedbackByApp').DataTable({
+      data: feedbackByAppData,
+      columns: [
+        { data: 'appName' },
+        { data: 'submitter' },
+        { data: 'ranking' },
+        { data: 'receivedDate' },
+        { data: 'completionStatus' },
+      ],
+    });
+
+    // Populate Service Tickets by Date table
+    $('#serviceTickets').DataTable({
+      data: serviceTicketsData,
+      columns: [
+        { data: 'appName' },
+        { data: 'submitter' },
+        { data: 'ranking' },
+        { data: 'receivedDate' },
+        { data: 'completionStatus' },
+      ],
+    });
+  });
+</script>
+
+  
 
             <div class="row">
                 <div class="col-12">
