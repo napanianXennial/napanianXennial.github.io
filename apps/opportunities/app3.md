@@ -2,7 +2,7 @@
 layout: minimal-app-green
 title: "Opportunity Builder"
 blurb: "We'll quickly build out opportunities for you, but with a new look."
-
+access: "internal-user"
 authenticated: true
 
 top-level-link: false
