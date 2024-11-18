@@ -30,11 +30,11 @@
       </li>
 
       <li class="nav-item">
-        <a href="/control-panel.html" class="admin-visible">Dashboard</a>
+        <a href="/control-panel.html" class="admin-visible auth-visible hidden">Dashboard</a>
       </li>
 
       <li class="nav-item">
-        <a href="/apps.html" class="auth-visible">Apps</a>
+        <a href="/apps.html" class="auth-visible hidden">Apps</a>
       </li>
 
 
@@ -131,8 +131,8 @@
 
       {% assign show_default_icon = false %}
       <li class="nav-item">
-        <a href="#" id="qsLoginBtn" onclick="login()" class="auth-invisible hidden">Log in</a>
-        <a href="#" id="qsLogoutBtn" class="auth-visible" onclick="logout()">Log out</a>
+        <a href="#" id="qsLoginBtn" onclick="login()" class="auth-invisible">Log in</a>
+        <a href="#" id="qsLogoutBtn" class="auth-visible hidden" onclick="logout()">Log out</a>
 
 
         <div class="page hidden" id="content-profile">

@@ -37,10 +37,15 @@ const login = async (targetUrl) => {
     }
 
     await auth0Client.loginWithRedirect(options);
+    //await auth0Client.loginWithPopup();
 
   } catch (err) {
     console.log("Log in failed", err);
   }
+
+  // const isAuthenticated = await auth0Client.isAuthenticated();
+
+
 };
 
 
@@ -70,6 +75,7 @@ const register = async (targetUrl) => {
  */
 const logout = async () => {
   try {
+    await configureClient();
     deleteCookie('name')
     console.log("Logging out...");
     await auth0Client.logout({
@@ -96,6 +102,11 @@ const configureClient = async () => {
   const response = await fetchAuthConfig();
   const config = await response.json();
   console.log("About to create Auth0Client...");
+  //LOCAL
+  // auth0Client = await auth0.createAuth0Client({
+  //   domain: 'dev-qirtwh6cktfuc8ap.us.auth0.com', // Your Auth0 domain
+  //   clientId: 'if0RVNLLCc8jKwyxxaFXEL3vqDC9Svim', // Your Auth0 client I
+  // });
   auth0Client = await auth0.createAuth0Client({
     domain: config.domain,
     clientId: config.clientId
@@ -120,15 +131,12 @@ const requireAuth = async (fn, targetUrl) => {
   return login(targetUrl);
 };
 
-// Will run when page finishes loading
-window.onload = async () => {
-  await configureClient();
 
-  // If unable to parse the history hash, default to the root URL
-  // if (!showContentFromUrl(window.location.pathname)) {
-  //  showContentFromUrl("/");
-  //  window.history.replaceState({ url: "/" }, {}, "/");
-  //}
+
+// // Will run when page finishes loading
+window.onload = async () => {
+  console.log("APP  >>> ON LOAD");
+  await configureClient();
 
   const bodyElement = document.getElementsByTagName("body")[0];
 
@@ -151,37 +159,50 @@ window.onload = async () => {
   if (isAuthenticated) {
     console.log("> User is authenticated so replacing title in window state for some reason...");
     //window.history.replaceState({}, document.title, window.location.pathname);
-    updateUI();
-    return;
-  }
+    //  updateUI();
+    const user = await auth0Client.getUser();
+    setCookie("name", user.email, 7)
+    setCookie("user", JSON.stringify(user), 7)
+    sessionStorage.setItem('user', JSON.stringify(user))
+    console.log('USER:  ' + JSON.stringify(user.name));
 
-  console.log("> User not authenticated");
 
-  const query = window.location.search;
-  const shouldParseResult = query.includes("code=") && query.includes("state=");
 
-  if (shouldParseResult) {
-    console.log("> Parsing redirect");
-    try {
-      const result = await auth0Client.handleRedirectCallback();
+    const query = window.location.search;
+    const shouldParseResult = query.includes("code=") && query.includes("state=");
 
-      if (result.appState && result.appState.targetUrl) {
-        console.log("In the result.appState && result.appState.targetUrl.  About to showContentFromUrl...");
-        showContentFromUrl(result.appState.targetUrl);
+    if (shouldParseResult) {
+      console.log("> Parsing redirect");
+      try {
+        const result = await auth0Client.handleRedirectCallback();
+
+        if (result.appState && result.appState.targetUrl) {
+          console.log("In the result.appState && result.appState.targetUrl.  About to showContentFromUrl...");
+          showContentFromUrl(result.appState.targetUrl);
+        }
+
+        console.log("Logged in and about to get user from auth0Client");
+
+        const user = await auth0Client.getUser()
+        console.log("About to set cookie");
+        setCookie("name", user.email, 7)
+        setCookie("user", JSON.stringify(user), 7)
+      } catch (err) {
+        console.log("Error parsing redirect:", err);
       }
 
-      console.log("Logged in and about to get user from auth0Client");
 
-      const user = await auth0Client.getUser()
-      console.log("About to set cookie");
-      setCookie("name", user.email, 7)
-      setCookie("user", JSON.stringify(user), 7)
-    } catch (err) {
-      console.log("Error parsing redirect:", err);
+
+      window.history.replaceState({}, document.title, "/");
     }
-
-    window.history.replaceState({}, document.title, "/");
+    // window.location.replace('/apps.html')
   }
-
-  updateUI();
+  else {
+    // Add 'hidden' class to elements with 'admin-invisible' class
+    document.querySelectorAll('.auth-visible').forEach(field => {
+      field.classList.add('hidden');
+    });
+    console.log("> User not authenticated");
+  }
+  // updateUI();
 };
