@@ -77,5 +77,8 @@ async function logout() {
 window.onload = () => {
 
   console.log('OKTA >>  onLOAD');
+  document.querySelectorAll('.auth-invisible').forEach(field => {
+    field.classList.remove('hidden');
+  });
 }
 
