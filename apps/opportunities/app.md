@@ -1,7 +1,7 @@
 ---
 layout: minimal-app
 icon: "notifications_active"
-
+title: "Opportunities Builder"
 blurb: "We'll quickly build out opportunities for you, but with a new look."
 access: "internal-user"
 authenticated: true
