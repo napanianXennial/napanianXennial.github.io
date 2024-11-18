@@ -23,14 +23,14 @@ const configureClient = async () => {
   const response = await fetchAuthConfig();
   const config = await response.json();
   //Local
-  auth0Client = await auth0.createAuth0Client({
-    domain: 'dev-qirtwh6cktfuc8ap.us.auth0.com', // Your Auth0 domain
-    clientId: 'if0RVNLLCc8jKwyxxaFXEL3vqDC9Svim', // Your Auth0 client I
-  });
   // auth0Client = await auth0.createAuth0Client({
-  //   domain: config.domain,
-  //   clientId: config.clientId
+  //   domain: 'dev-qirtwh6cktfuc8ap.us.auth0.com', // Your Auth0 domain
+  //   clientId: 'if0RVNLLCc8jKwyxxaFXEL3vqDC9Svim', // Your Auth0 client I
   // });
+  auth0Client = await auth0.createAuth0Client({
+    domain: config.domain,
+    clientId: config.clientId
+  });
   // GIHUB.IO
   // auth0Client = await createAuth0Client({
   //   domain: 'dev-qirtwh6cktfuc8ap.us.auth0.com', // Your Auth0 domain
