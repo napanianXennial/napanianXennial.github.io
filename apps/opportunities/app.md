@@ -1,7 +1,14 @@
 ---
-layout: blue-app
-title: "Opportunities Builder"
-blurb: "We'll quickly build out opportunities for you."
+layout: minimal-app-green
+title: "Opportunity Builder"
+icon: "notifications_active"
+
+blurb: "We'll quickly build out opportunities for you, but with a new look."
+access: "internal-user"
+authenticated: true
+
+top-level-link: false
+priority: 1
 ---
 
 <link rel="manifest" href="manifest.json"/>
