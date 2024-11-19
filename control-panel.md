@@ -92,25 +92,25 @@ width: 45%;
         <div class="row gy-4">
             <!-- Visitors Over Time -->
             <div class="col-lg-6 col-12">
-                <h2 class="text-center">Visitors Over Time</h2>
+                <p class="text-center">Visitors Over Time</p>
                 <canvas id="visitorsChart"></canvas>
             </div>
 
             <!-- Top Pages by Views -->
             <div class="col-lg-6 col-12">
-                <h2 class="text-center">Top Pages by Views</h2>
+                <p class="text-center">Top Pages by Views</p>
                 <canvas id="topPagesChart"></canvas>
             </div>
 
             <!-- Geographic Distribution of Visitors -->
             <div class="col-lg-6 col-12">
-                <h2 class="text-center">Geographic Distribution of Visitors</h2>
+                <p class="text-center">Geographic Distribution of Visitors</p>
                 <canvas id="geoChart"></canvas>
             </div>
 
             <!-- Bounce Rate by Day -->
             <div class="col-lg-6 col-12">
-                <h2 class="text-center">Bounce Rate by Day</h2>
+                <p class="text-center">Bounce Rate by Day</p>
                 <canvas id="bounceRateChart"></canvas>
             </div>
         </div>
