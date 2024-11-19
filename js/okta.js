@@ -57,7 +57,7 @@ async function login() {
     setCookie("user", JSON.stringify(user), 7)
     sessionStorage.setItem('user', JSON.stringify(user))
     console.log('USER:  ' + JSON.stringify(user.name));
-    window.location.replace('/apps.html')
+    window.location.replace('/pages/apps.html')
 
     return;
   }
