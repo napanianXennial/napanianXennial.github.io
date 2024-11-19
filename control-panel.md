@@ -32,6 +32,58 @@ width: 45%;
 <div class="hero-inner">
     <div class="container">
 
+
+
+
+
+
+
+     
+	<div class="row ">
+	    <div class="col-lg-6 co-12">
+		<div class="home-slider">
+		    <div class="hero-text">
+			<h3 class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Admin Console</h3>
+			<h1 class="wow fadeInUp" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">Please Log In</h1>
+			<p class="wow fadeInUp" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">Never miss a match.</p>
+
+
+
+<div class="button wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
+			    <span href="http://www.twitter.com/scrumtuous" class="btn primary"><i class="lni lni-alarm"></i> Metrics Dashboard</span>
+								<span href="https://github.com/scrumtuous" class="btn"><i class="lni lni-wallet"></i>Admin Panel</span>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	    <div class="col-lg-6 col-12">
+		<div class="hero-image">
+		    <div class="waves-block">
+			<div class="waves wave-1"></div>
+			<div class="waves wave-2"></div>
+		    </div>
+		    <img src="assets/images/phone.png" alt="#">
+		</div>
+	    </div>
+	</div>
+    </div>
+</div>
+<!--/ End Single Slider -->
+</section>
+<!--/ End Hero Area -->
+
+
+
+
+
+
+
+
+
+
+<section id="testimonials" class="section testimonials style2 admin-visible">
+        <div class="container">
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo"></script>
     <script src="https://cdn.jsdelivr.net/npm/world-atlas/countries-50m.json"></script>
@@ -223,51 +275,11 @@ width: 45%;
 
 
 
-     
-	<div class="row ">
-	    <div class="col-lg-6 co-12">
-		<div class="home-slider">
-		    <div class="hero-text">
-			<h3 class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Admin Console</h3>
-			<h1 class="wow fadeInUp" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">Please Log In</h1>
-			<p class="wow fadeInUp" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">Never miss a match.</p>
-
-
-
-<div class="button wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-			    <span href="http://www.twitter.com/scrumtuous" class="btn primary"><i class="lni lni-alarm"></i> Metrics Dashboard</span>
-								<span href="https://github.com/scrumtuous" class="btn"><i class="lni lni-wallet"></i>Admin Panel</span>
-			</div>
-		    </div>
-		</div>
-	    </div>
-	    <div class="col-lg-6 col-12">
-		<div class="hero-image">
-		    <div class="waves-block">
-			<div class="waves wave-1"></div>
-			<div class="waves wave-2"></div>
-		    </div>
-		    <img src="assets/images/phone.png" alt="#">
-		</div>
-	    </div>
-	</div>
-    </div>
-</div>
-<!--/ End Single Slider -->
-</section>
-<!--/ End Hero Area -->
 
 
 
 
-
-
-
-
-
-
-<section id="testimonials" class="section testimonials style2 admin-visible">
-        <div class="container">
+  
   <div class="row">
     <div class="col-lg-4 col-md-6 mb-4">
       <canvas id="dailySignups" width="300" height="250"></canvas>
