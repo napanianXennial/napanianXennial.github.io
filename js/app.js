@@ -28,7 +28,7 @@ const login = async (targetUrl) => {
 
     const options = {
       authorizationParams: {
-        redirect_uri: 'https://align.milesahead.today/apps.html'
+        redirect_uri: 'https://align.milesahead.today/pages/apps.html'
       }
     };
 
