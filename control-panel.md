@@ -31,6 +31,199 @@ width: 45%;
 <!-- Single Slider -->
 <div class="hero-inner">
     <div class="container">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo"></script>
+    <script src="https://cdn.jsdelivr.net/npm/world-atlas/countries-50m.json"></script>
+
+
+        <div class="row gy-4">
+            <!-- Visitors Over Time -->
+            <div class="col-lg-6 col-12">
+                <h2 class="text-center">Visitors Over Time</h2>
+                <canvas id="visitorsChart"></canvas>
+            </div>
+
+            <!-- Top Pages by Views -->
+            <div class="col-lg-6 col-12">
+                <h2 class="text-center">Top Pages by Views</h2>
+                <canvas id="topPagesChart"></canvas>
+            </div>
+
+            <!-- Geographic Distribution of Visitors -->
+            <div class="col-lg-6 col-12">
+                <h2 class="text-center">Geographic Distribution of Visitors</h2>
+                <canvas id="geoChart"></canvas>
+            </div>
+
+            <!-- Bounce Rate by Day -->
+            <div class="col-lg-6 col-12">
+                <h2 class="text-center">Bounce Rate by Day</h2>
+                <canvas id="bounceRateChart"></canvas>
+            </div>
+        </div>
+
+    <script>
+        const apiBaseUrl = "https://ga.milesahead.team/api";
+
+        // Visitors Over Time Chart
+        async function fetchVisitorsOverTime() {
+            try {
+                const response = await fetch(`${apiBaseUrl}/visitors-over-time`);
+                const data = await response.json();
+
+                const labels = Object.keys(data);
+                const values = Object.values(data).map(value => parseInt(value));
+
+                const ctx = document.getElementById('visitorsChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Visitors',
+                            data: values,
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 2,
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: { title: { display: true, text: 'Date' } },
+                            y: { title: { display: true, text: 'Visitors' }, beginAtZero: true }
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error("Error fetching Visitors Over Time data:", error);
+            }
+        }
+
+        // Top Pages by Views Chart
+        async function fetchTopPages() {
+            try {
+                const response = await fetch(`${apiBaseUrl}/top-pages`);
+                const data = await response.json();
+
+                const labels = Object.keys(data);
+                const values = Object.values(data).map(value => parseInt(value));
+
+                const ctx = document.getElementById('topPagesChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Page Views',
+                            data: values,
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: { title: { display: true, text: 'Page' } },
+                            y: { title: { display: true, text: 'Views' }, beginAtZero: true }
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error("Error fetching Top Pages data:", error);
+            }
+        }
+
+        // Geographic Distribution of Visitors Chart
+        async function fetchGeographicDistribution() {
+            try {
+                const response = await fetch(`${apiBaseUrl}/geo-distribution`);
+                const data = await response.json();
+
+                const mapData = await fetch("https://cdn.jsdelivr.net/npm/world-atlas/countries-50m.json")
+                    .then(res => res.json());
+
+                const chartData = ChartGeo.topojson.feature(mapData, mapData.objects.countries).features.map((country) => {
+                    const countryName = country.properties.name;
+                    const visitors = data[countryName] || 0;
+                    const color = visitors > 0 ? `rgba(54, 162, 235, ${0.2 + (visitors / 100)})` : 'rgba(211, 211, 211, 0.8)';
+
+                    return { feature: country, value: visitors, color: color };
+                });
+
+                const ctx = document.getElementById('geoChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'choropleth',
+                    data: {
+                        labels: Object.keys(data),
+                        datasets: [{
+                            label: 'Visitors by Country',
+                            data: chartData,
+                            outline: ChartGeo.topojson.mesh(mapData, mapData.objects.countries),
+                            backgroundColor: chartData.map(d => d.color)
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            projection: { axis: 'x', projection: 'equalEarth' }
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error("Error fetching Geographic Distribution data:", error);
+            }
+        }
+
+        // Bounce Rate by Day Chart
+        async function fetchBounceRate() {
+            try {
+                const response = await fetch(`${apiBaseUrl}/bounce-rate`);
+                const data = await response.json();
+
+                const labels = Object.keys(data);
+                const values = Object.values(data).map(value => parseFloat(value));
+
+                const ctx = document.getElementById('bounceRateChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Bounce Rate (%)',
+                            data: values,
+                            backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: { title: { display: true, text: 'Date' } },
+                            y: { title: { display: true, text: 'Bounce Rate (%)' }, beginAtZero: true }
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error("Error fetching Bounce Rate data:", error);
+            }
+        }
+
+        // Initialize all charts
+        fetchVisitorsOverTime();
+        fetchTopPages();
+        fetchGeographicDistribution();
+        fetchBounceRate();
+    </script>
+
+
+
+
+
+     
 	<div class="row ">
 	    <div class="col-lg-6 co-12">
 		<div class="home-slider">
