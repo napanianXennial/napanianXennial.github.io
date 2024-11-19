@@ -84,6 +84,30 @@ width: 45%;
 <section id="testimonials" class="section testimonials style2 admin-visible">
         <div class="container">
 
+
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <canvas id="dailySignups" width="300" height="250"></canvas>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <canvas id="opportunityNotifications" width="300" height="250"></canvas>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <canvas id="opportunityMatches" width="300" height="250"></canvas>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+ 
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo"></script>
     <script src="https://cdn.jsdelivr.net/npm/world-atlas/countries-50m.json"></script>
@@ -280,26 +304,7 @@ width: 45%;
 
 
   
-  <div class="row">
-    <div class="col-lg-4 col-md-6 mb-4">
-      <canvas id="dailySignups" width="300" height="250"></canvas>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-      <canvas id="opportunityNotifications" width="300" height="250"></canvas>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-      <canvas id="opportunityMatches" width="300" height="250"></canvas>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-      <canvas id="timeOnPage" width="300" height="250"></canvas>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-      <canvas id="siteVisitors" width="300" height="250"></canvas>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-      <canvas id="countryOfOrigin" width="300" height="250"></canvas>
-    </div>
-  </div>
+
 
 <div class="row">
     <!-- Feedback By App Table -->
