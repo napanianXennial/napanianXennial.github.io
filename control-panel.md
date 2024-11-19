@@ -305,11 +305,11 @@ width: 45%;
 
   
 
-
+<div class="row "></div>
 <div class="row">
     <!-- Feedback By App Table -->
     <div class="col-lg-6 mb-4">
-      <h4>Feedback By App</h4>
+      <h5>Feedback By App</h5>
       <table id="feedbackByApp" class="display table table-striped table-bordered">
         <thead>
           <tr>
@@ -337,7 +337,7 @@ width: 45%;
 
     <!-- Feedback Status Table -->
     <div class="col-lg-6 mb-4">
-      <h4>Service Tickets by Date</h4>
+      <h5>Service Tickets by Date</h5>
       <table id="feedbackStatus" class="display table table-striped table-bordered">
         <thead>
           <tr>
