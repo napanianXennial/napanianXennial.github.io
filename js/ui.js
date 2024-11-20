@@ -63,31 +63,33 @@ const updateUI = async () => {
     console.log("In the updateUI... This is where we toggle link visibility...");
 
     const user = await JSON.parse(sessionStorage.getItem('user'));
-    document.getElementById("profile-data").innerText = JSON.stringify(
-      user,
-      null,
-      2
-    );
-    console.log("User:  " + JSON.stringify(user.role));
-    document.querySelectorAll("pre code").forEach(hljs.highlightBlock);
+    if (user) {
+      document.getElementById("profile-data").innerText = JSON.stringify(
+        user,
+        null,
+        2
+      );
+      console.log("User:  " + JSON.stringify(user.role));
+      document.querySelectorAll("pre code").forEach(hljs.highlightBlock);
 
-    eachElement(".profile-image", (e) => (e.src = user.picture));
-    eachElement(".user-name", (e) => (e.innerText = user.name));
-    eachElement(".user-email", (e) => (e.innerText = user.email));
-    eachElement(".auth-invisible", (e) => e.classList.add("hidden"));
-    eachElement(".auth-visible", (e) => e.classList.remove("hidden"));
+      eachElement(".profile-image", (e) => (e.src = user.picture));
+      eachElement(".user-name", (e) => (e.innerText = user.name));
+      eachElement(".user-email", (e) => (e.innerText = user.email));
+      eachElement(".auth-invisible", (e) => e.classList.add("hidden"));
+      eachElement(".auth-visible", (e) => e.classList.remove("hidden"));
 
-    /*****/
-    // Add a <script> tag dynamically to set the userdata variable
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.innerHTML = `var userdata = ${JSON.stringify(user)};`;
-    document.head.appendChild(script);
+      /*****/
+      // Add a <script> tag dynamically to set the userdata variable
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.innerHTML = `var userdata = ${JSON.stringify(user)};`;
+      document.head.appendChild(script);
 
-    // New code to print the whole user JSON in the <pre> tag
-    const userProfileElement = document.getElementById("user-profile");
-    if (userProfileElement) {
-      userProfileElement.innerText = JSON.stringify(user, null, 2); // Pretty-print with indentation
+      // New code to print the whole user JSON in the <pre> tag
+      const userProfileElement = document.getElementById("user-profile");
+      if (userProfileElement) {
+        userProfileElement.innerText = JSON.stringify(user, null, 2); // Pretty-print with indentation
+      }
     }
 
     console.log("Now dealing with subscriptions...");

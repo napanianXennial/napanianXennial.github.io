@@ -1,5 +1,74 @@
 .text-primary {
-  color: #F8921D !important;
+  color: #f8921d !important;
+}
+
+/* Loading */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000095;
+  z-index: 9999;
+}
+
+.spinner {
+  height: 50px;
+  left: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+  position: relative;
+  top: 50%;
+  width: 50px;
+}
+
+.spinner .double-bounce1,
+.spinner .double-bounce2 {
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: #f8921d;
+  opacity: .6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: bounce 2s infinite ease-in-out;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.spinner .double-bounce2 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+@-webkit-keyframes bounce {
+
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
 }
 
 .hidden {

@@ -72,13 +72,35 @@ async function logout() {
     }
   });
   deleteCookie('name')
+  sessionStorage.clear();
+  localStorage.clear();
 }
 
-window.onload = () => {
+window.onload = async () => {
+  try {
+    console.log('OKTA >>  onLOAD');
+    document.getElementById('preloader').style.display = 'block';
+    await configureClient();
+    const isAuthenticated = await auth0Client.isAuthenticated();
+    document.getElementById('preloader').style.display = 'none';
+    if (isAuthenticated) {
+      console.log('LOGGING IN   ');
 
-  console.log('OKTA >>  onLOAD');
-  document.querySelectorAll('.auth-invisible').forEach(field => {
-    field.classList.remove('hidden');
-  });
+      const user = await auth0Client.getUser();
+      setCookie("name", user.email, 7)
+      setCookie("user", JSON.stringify(user), 7)
+      sessionStorage.setItem('user', JSON.stringify(user))
+      console.log('USER:  ' + JSON.stringify(user.name));
+      window.location.replace('/pages/apps.html')
+
+      return;
+    } else {
+      document.querySelectorAll('.auth-invisible').forEach(field => {
+        field.classList.remove('hidden');
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 

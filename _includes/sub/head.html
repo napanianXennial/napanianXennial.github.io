@@ -13,6 +13,14 @@
 
   gtag('config', 'G-NEM2H5W3LZ');
 </script>
+<script>
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        if (!user) {
+                console.log('User is unAuthenticated');
+
+            window.location.replace(window.location.origin)
+        }
+    </script>
 
         <style>
                 html {
