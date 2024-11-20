@@ -58,6 +58,7 @@ document.getElementById(elementId).innerText = Math.floor(currentValue);
 // Fetch data from the API
 async function fetchStats() {
 try {
+  console.log("Going to fetch the URL!");
 const response = await fetch("https://counts.milesahead.team/api/opportunities/stats");
 const data = await response.json();
 countUp("totalJobsCount", data.totalJobsCount, 2000); // Animate over 2 seconds
