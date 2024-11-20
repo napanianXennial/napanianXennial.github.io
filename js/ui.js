@@ -193,6 +193,12 @@ function displayNonAdminFields() {
   });
 }
 
+function onNavClick(path) {
+  if (window.location.pathname !== path) {
+    window.location.replace(path)
+  }
+}
+
 window.onpopstate = (e) => {
   console.log("In onpopstate");
   if (e.state && e.state.url && router[e.state.url]) {

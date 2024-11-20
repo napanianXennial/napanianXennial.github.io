@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg  wow fadeInUp" data-wow-delay=".3s">
+<nav class="navbar navbar-expand-lg  " data-wow-delay=".3s">
   <a class="navbar-brand logo" href="javascript:void(0);"
-    onclick="window.location.href = window.location.origin+ '/apps.html';">
+    onclick="window.location.href = window.location.origin+ '/pages/apps.html';">
     <img src="/assets/images/align-hcm-logo.png" alt="Logo" />
     <!--img class="alt-logo" src="../assets/images/logo/logo2.svg" alt="Logo" /-->
   </a>
@@ -30,11 +30,11 @@
       </li>
 
       <li class="nav-item">
-        <a href="/pages/control-panel.html" class="hidden admin-visible auth-visible">Dashboard</a>
+        <a onclick="onNavClick('/pages/control-panel.html')" class="hidden admin-visible auth-visible">Dashboard</a>
       </li>
 
       <li class="nav-item">
-        <a href="/pages/apps.html" class="auth-visible hidden">Apps</a>
+        <a onclick="onNavClick('/pages/apps.html')" class="auth-visible hidden">Apps</a>
       </li>
 
 

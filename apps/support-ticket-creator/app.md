@@ -71,18 +71,22 @@ priority: 4
   .priority-button.active {
       outline: 2px solid #333;
   }
+   .center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
   .submit-button {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      margin-top: 20px;
-      background-color: #ff9f42;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+       background-color: #F8921D;
+  /* Replace with your primary color */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width:30%;
+  align-self: center;
   }
   .hidden {
     display: none;
@@ -91,10 +95,12 @@ priority: 4
 
 <div>
 <div id="form-container" class="container hidden">
-    <h1>Create New Ticket</h1>
+    <h4>Create New Ticket</h4>
     <form id="ticketForm" 
     action="https://api.milesahead.team/api/jira/issue"
-    method="POST">
+    method="POST"
+    class="column"
+    >
         <input type="text" id="title" value="Support Ticket (Payroll)" name="summary" placeholder="Enter a brief title for the issue (e.g., Payroll processing error, Login failure)" required type="hidden">
         <label for="serviceName">Support Ticket Service *</label>
         <select id="service-name" name="serviceName" required type="select" onchange="setServiceName()">
@@ -125,7 +131,7 @@ priority: 4
         <label for="description">Description of Issue *</label>
         <textarea id="description" name="issueDescription" placeholder="Enter the description of the issue" rows="5" required></textarea>
 
-        <button type="submit" class="submit-button">SUBMIT</button>
+        <button type="submit" class="submit-button center">SUBMIT</button>
     </form>
 </div>
     <span id="feedback-loading">Loading</span>
