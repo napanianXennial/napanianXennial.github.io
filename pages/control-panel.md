@@ -62,7 +62,7 @@ width: 45%;
 			<div class="waves wave-1"></div>
 			<div class="waves wave-2"></div>
 		    </div>
-		    <img src="assets/images/phone.png" alt="#">
+		    <img src="../assets/images/phone.png" alt="#">
 		</div>
 	    </div>
 	</div>
