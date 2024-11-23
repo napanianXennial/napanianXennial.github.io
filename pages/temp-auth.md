@@ -1,5 +1,5 @@
 ---
-layout: auth-minimal-app
+layout: auth-minimal
 title:  "Applications Dashboard"
 blurb: "Welcome to the applications dashboard."
 

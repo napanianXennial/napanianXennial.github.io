@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title:  "NDA Agreement"
 blurb: "The following is information about non-disclosure on this app and website."
 ---
