@@ -44,13 +44,13 @@ width: 45%;
 		<div class="home-slider">
 		    <div class="hero-text">
 			<h3 class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Admin Console</h3>
-			<h1 class="wow fadeInUp" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">Please Log In</h1>
-			<p class="wow fadeInUp" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">Never miss a match.</p>
+			<h3 class="wow fadeInUp" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">Please Log In</h3>
+			<h6 class="wow fadeInUp" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">This page requires admin access.</h6>
 
 
 
 <div class="button wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-			    <span href="http://www.twitter.com/scrumtuous" class="btn primary"><i class="lni lni-alarm"></i> Metrics Dashboard</span>
+			    <span href="http://www.twitter.com/scrumtuous" class="btn"><i class="lni lni-alarm"></i> Metrics Dashboard</span>
 								<span href="https://github.com/scrumtuous" class="btn"><i class="lni lni-wallet"></i>Admin Panel</span>
 			</div>
 		    </div>
