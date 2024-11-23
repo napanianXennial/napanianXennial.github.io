@@ -45,12 +45,6 @@ width: 45%;
 
 
 
-
-
-
-
- 
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo"></script>
 <script src="https://cdn.jsdelivr.net/npm/world-atlas/countries-50m.json"></script>
