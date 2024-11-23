@@ -2,6 +2,8 @@
 layout: minimal-app
 title:  "Rapid Deploy"
 blurb: "Provide a zip file. We'll do the rest."
+control-panel: true
+enterprise: true
 ---
       
 <link rel="manifest" href="manifest.json"/>
