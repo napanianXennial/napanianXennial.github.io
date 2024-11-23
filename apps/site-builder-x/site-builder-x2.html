@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miles Creative Nexus Zone: Website or Brand Analyzer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#090825] text-white h-dvh">
+    <div class="flex flex-col h-full">
+        <header class="flex justify-between items-center mx-9 p-6 pt-9 border-b overflow-hidden shadow-lg bg-[#090825]">
+            <div class="flex items-center">
+                <div class="flex flex-col border-r border-white">
+                    <img style="height: 30px; width: 150px;"
+                        src="file:///Users/mylesgrant/Documents/projects/miles-ahead/images/miles-logo.png"
+                        alt="MilesAhead Logo">
+                    <span class="w-full tracking-[23.4px] mt-[3px]">AHEAD</span>
+                </div>
+                <h1 class="text-2xl slef-end ml-6">AI Website Builder</h1>
+            </div>
+            <nav>
+                <ul class="flex gap-x-6">
+                    <li>
+                        <a class="focus:border-b focus:border-white" href="#" onclick="showWebsites()">My Websites</a>
+                    </li>
+                    <li>
+                        <a class="focus:border-b focus:border-white" href="#" onclick="showGenerateWebsites()">Generate
+                            New
+                            Website</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="flex justify-center h-full overflow-y-scroll">
+            <div id="websites" class="hidden">
+                <span>Websites</span>
+            </div>
+            <div id="generate-websites" class="flex items-center justify-center">
+                <div class="flex gap-x-6">
+                    <ul class="flex flex-col gap-y-3 border-r pr-6 border-white items-end">
+                        <li id="step-1" class="flex gap-x-3 mt-9 opacity-25">
+                            <span id="step-1-label">Generating HTML files...</span>
+                            <svg id="step-1-loading" class="hidden animate-spin h-5 w-5 text-white"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                            <i id="step-1-complete" class="hidden bi bi-check-circle-fill"></i>
+                            <i id="step-1-error" class="hidden bi bi-x-circle-fill text-red-500"></i>
+                        </li>
+                        <li id="step-2" class="flex gap-x-3 opacity-25">
+                            <span id="step-2-label">Select Website Template</span>
+                            <span id="step-2-loading" class="hidden relative self-center flex h-3 w-3">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                            </span>
+                            <i id="step-2-complete" class="hidden bi bi-check-circle-fill"></i>
+                            <i id="step-2-error" class="hidden bi bi-x-circle-fill text-red-500"></i>
+                        </li>
+                        <li id="step-3" class="flex gap-x-3 opacity-25">
+                            <span id="step-3-label">Uploading Files...</span>
+                            <svg id="step-3-loading" class="hidden animate-spin h-5 w-5 text-white"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                            <i id="step-3-complete" class="hidden bi bi-check-circle-fill"></i>
+                            <i id="step-3-error" class="hidden bi bi-x-circle-fill text-red-500"></i>
+                        </li>
+                        <li id="step-4" class="flex gap-x-3 mb-9 opacity-25">
+                            <span id="step-4-label">Creating Custom Subdomain...</span>
+                            <svg id="step-4-loading" class="hidden animate-spin h-5 w-5 text-white"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                            <i id="step-4-complete" class="hidden bi bi-check-circle-fill"></i>
+                            <i id="step-4-error" class="hidden bi bi-x-circle-fill text-red-500"></i>
+                        </li>
+                    </ul>
+                    <div id="generate-website-input-container" class="flex flex-col my-9">
+                        <div class="flex flex-col mb-6">
+                            <label for="generate-website-input-name" class="text-2xl">Website Name<br />or
+                                Brand</label>
+                            <span id="generate-website-input-label-error" class="text-red-500 hidden">Input is
+                                required</span>
+                        </div>
+                        <div class="flex items-center gap-x-3">
+                            <input class="w-[210px] p-2 rounded text-black" type="text" id="generate-website-input"
+                                name="generate-website-input-name" placeholder="name here..." required />
+                            <button id="generate-website-button" class="disabled:opacity-25"
+                                onclick="generateWebsite()">
+                                <i class="bi bi-arrow-right text-2xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="generate-website-templates-container" class="hidden flex flex-col my-9">
+                        <h1 class="text-2xl mb-3">Templates</h1>
+                        <ul id="generate-website-templates" class="grid grid-cols-4 gap-4">
+                        </ul>
+                    </div>
+                    <div id="subdomain-completed-container"
+                        class="hidden flex flex-col justify-center items-center my-9">
+                        <i class="bi bi-check-circle text-4xl mb-9 text-green-300"></i>
+                        <div>ITS FINISHED</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function el(id) {
+            return document.getElementById(id)
+        }
+
+        function showWebsites() {
+            addClass("generate-websites", "hidden")
+            el("websites").classList.remove("hidden")
+        }
+
+        function showGenerateWebsites() {
+            addClass("websites", "hidden")
+            el("generate-websites").classList.remove("hidden")
+        }
+
+        function addClass(id, _class) {
+            const element = el(id)
+            if (!element.classList.contains(_class)) {
+                element.classList.add(_class)
+            }
+        }
+
+        function gotToStep(step, state) {
+            console.log("Step: ", step, state)
+            const { error, isComplete, isLoading, reset } = state || {}
+            if (error) {
+                el(`step-${step}`).classList.remove("opacity-25")
+                addClass(`step-${step}-complete`, "hidden")
+                addClass(`step-${step}-loading`, "hidden")
+                addClass(`step-${step}-label`, "text-red-500")
+                el(`step-${step}-error`).classList.remove("hidden")
+            } else if (reset) {
+                addClass(`step-${step}`, "opacity-25")
+                el(`step-${step}-label`).classList.remove("text-red-500")
+                addClass(`step-${step}-complete`, "hidden")
+                addClass(`step-${step}-loading`, "hidden")
+                addClass(`step-${step}-error`, "hidden")
+            } else if (isLoading) {
+                el(`step-${step}`).classList.remove("opacity-25")
+                el(`step-${step}-label`).classList.remove("text-red-500")
+                el(`step-${step}-loading`).classList.remove("hidden")
+                addClass(`step-${step}-complete`, "hidden")
+                addClass(`step-${step}-error`, "hidden")
+            } else if (isComplete) {
+                el(`step-${step}`).classList.remove("opacity-25")
+                el(`step-${step}-label`).classList.remove("text-red-500")
+                el(`step-${step}-complete`).classList.remove("hidden")
+                addClass(`step-${step}-loading`, "hidden")
+                addClass(`step-${step}-error`, "hidden")
+            }
+
+            if (step === "2") {
+                addClass("generate-website-input-container", "hidden")
+                el("generate-website-templates-container").classList.remove("hidden")
+                addClass("subdomain-completed-container", "hidden")
+            } else if (step === "1") {
+                addClass("generate-website-templates-container", "hidden")
+                el("generate-website-input-container").classList.remove("hidden")
+                addClass("subdomain-completed-container", "hidden")
+            } else if (step === "4" && isComplete) {
+                addClass("generate-website-input-container", "hidden")
+                addClass("generate-website-templates-container", "hidden")
+                el("subdomain-completed-container", "hidden").classList.remove("hidden")
+            }
+
+            addClass("generate-website-input-label-error", "hidden")
+        }
+
+        function resetSteps() {
+            for (let i = 1; i < 5; i++) {
+                gotToStep(`${i}`, { reset: true })
+            }
+        }
+
+        async function generateWebsite() {
+            const generateWebsiteBtn = el("generate-website-button")
+            generateWebsiteBtn.disabled = true
+
+            try {
+                resetSteps()
+                gotToStep("1", { isLoading: true })
+
+                const websiteNameOrBrand = el("generate-website-input").value
+                if (websiteNameOrBrand) {
+                    const response = await fetch('http://localhost:3001/api/generate-html-links', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ websiteNameOrBrand })
+                    });
+
+                    const data = await response.json();
+                    if (data && data.filePaths) {
+                        const statusPromiseAll = await Promise.all(Object.keys(data.filePaths).map((key) => {
+                            return checkLinkStatus(key, data.filePaths[key])
+                        }))
+
+                        if (statusPromiseAll && statusPromiseAll.length > 0 && statusPromiseAll.every((req) => req === true)) {
+                            gotToStep("1", { isComplete: true })
+                            gotToStep("2", { isLoading: true })
+                            el("generate-website-templates").innerHTML = Object.keys(data.filePaths).map((key) => {
+                                return `
+								   <li id="template-${key}-item">
+									<a href="${data.filePaths[key]}" target="_blank">
+										<img 
+											class="rounded"
+											style="width: 250px; height: 200px;"
+											src="/Users/mylesgrant/Documents/projects/miles-ahead/images/${key}.png" />
+									</a>
+									<button id="template-${key}-button" class="flex rounded-full border border-2 border-white p-3 mt-3 gap-x-1 disabled:opacity-25" onclick='selectedGeneratedTemplate("${key}", ${JSON.stringify(data.filePaths)})'>
+										<span id="template-${key}-deselect">Select</span>
+										<i id="template-${key}-select" class="hidden bi bi-check2-all text-2xl"></i>
+									</button>
+								</li>`;
+                            }).join('')
+                        } else {
+                            resetSteps()
+                            gotToStep("1", { error: true })
+                            generateWebsiteBtn.disable = false
+                        }
+                    } else {
+                        resetSteps()
+                        gotToStep("1", { error: true })
+                        generateWebsiteBtn.disable = false
+                    }
+                } else {
+                    resetSteps()
+                    gotToStep("1")
+                    el("generate-website-input-label-error").classList.remove("hidden")
+                }
+            } catch (error) {
+                console.error(error)
+                generateWebsiteBtn.disabled = false
+                resetSteps()
+                gotToStep("1", { error: true })
+            }
+        }
+
+        function checkLinkStatus(key, url) {
+            return new Promise(async (resolve, reject) => {
+                try {
+                    const checkStatus = async () => {
+                        try {
+                            console.log(`Checking status for ${url}`);
+                            const response = await fetch(url, { method: 'GET' });
+                            if (response.ok) {
+                                console.log(`${url} is accessible`);
+
+                                // Stop checking if the URL is accessible
+                                clearInterval(interval);
+
+                                // await processGithubLink(url)
+                                resolve(true)
+                            }
+                        } catch (error) {
+                            console.error(`Error checking ${url}: `, error);
+                            reject(error)
+                        }
+                    };
+
+                    // Set an interval to check the status periodically
+                    const interval = setInterval(checkStatus, 5000);
+
+                    // Run the check immediately as well
+                    await checkStatus();
+                } catch (error) {
+                    reject(error)
+                }
+            })
+        }
+
+        async function selectedGeneratedTemplate(key, data) {
+            Object.keys(data).forEach((_key) => {
+                if (key !== _key) {
+                    addClass(`template-${_key}-item`, "hidden")
+                }
+            })
+            addClass(`template-${key}-deselect`, "hidden")
+            el(`template-${key}-select`).classList.remove("hidden")
+            el("generate-website-templates").className = "flex"
+
+            await uploadToS3Bucket(key, data[key], el("generate-website-input").value)
+        }
+
+        async function uploadToS3Bucket(key, githubLink, bucketName) {
+            const selectedTemplateButton = el(`template-${key}-button`)
+            selectedTemplateButton.disabled = true
+
+            try {
+                gotToStep("2", { isComplete: true })
+                gotToStep("3", { isLoading: true })
+
+                const response = await fetch('http://localhost:3001/api/process-github-link', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ githubLink, bucketName })
+                });
+
+                const data = await response.json();
+                if (data && data.bucketName && data.publicUrl) {
+                    await processRoute53Link(data.bucketName)
+                } else {
+                    selectedTemplateButton.disabled = false
+                    gotToStep("3", { error: true })
+                }
+            } catch (error) {
+                console.error(error);
+                selectedTemplateButton.disabled = false
+                gotToStep("3", { error: true })
+            }
+        }
+
+        async function processRoute53Link(bucketName) {
+            try {
+                gotToStep("3", { isComplete: true })
+                gotToStep("4", { isLoading: true })
+
+                const response = await fetch('http://localhost:3001/api/process-route53-link', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ bucketName: bucketName.toLowerCase() })
+                });
+
+                const data = await response.json();
+                if (data && data.subdomainResult) {
+                    gotToStep("4", { isComplete: true })
+                } else {
+                    gotToStep("4", { error: true })
+                }
+            } catch (error) {
+                gotToStep("4", { error: true })
+            }
+        }
+    </script>
+</body>
+
+</html>

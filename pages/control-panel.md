@@ -1,5 +1,5 @@
 ---
-layout: minimal
+layout: auth-minimal
 title:  "Applications Dashboard"
 blurb: "Welcome to the applications dashboard."
 
@@ -26,274 +26,211 @@ width: 45%;
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
-<!-- Start Hero Area -->
-<section id="hero-area" class="hero-area admin-invisible hidden">
-<!-- Single Slider -->
-<div class="hero-inner">
-    <div class="container">
 
 
-
-
-
-
-
-     
-	<div class="row ">
-	    <div class="col-lg-6 co-12">
-		<div class="home-slider">
-		    <div class="hero-text">
-			<h3 class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">Admin Console</h3>
-			<h3 class="wow fadeInUp" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">Please Log In</h3>
-			<h6 class="wow fadeInUp" data-wow-delay=".7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">This page requires admin access.</h6>
-
-
-
-<div class="button wow fadeInUp" data-wow-delay=".9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-			    <span href="http://www.twitter.com/scrumtuous" class="btn"><i class="lni lni-alarm"></i> Metrics Dashboard</span>
-								<span href="https://github.com/scrumtuous" class="btn"><i class="lni lni-wallet"></i>Admin Panel</span>
-			</div>
-		    </div>
-		</div>
-	    </div>
-	    <div class="col-lg-6 col-12">
-		<div class="hero-image">
-		    <div class="waves-block">
-			<div class="waves wave-1"></div>
-			<div class="waves wave-2"></div>
-		    </div>
-		    <img src="../assets/images/phone.png" alt="#">
-		</div>
-	    </div>
-	</div>
-    </div>
+<div class="row">
+<div class="col-lg-4 col-md-6 mb-4">
+  <canvas id="dailySignups" width="300" height="250"></canvas>
 </div>
-<!--/ End Single Slider -->
-</section>
-<!--/ End Hero Area -->
+<div class="col-lg-4 col-md-6 mb-4">
+  <canvas id="opportunityNotifications" width="300" height="250"></canvas>
+</div>
+<div class="col-lg-4 col-md-6 mb-4">
+  <canvas id="opportunityMatches" width="300" height="250"></canvas>
+</div>
+</div>
 
 
 
 
 
-
-
-
-
-
-<section id="testimonials" class="section testimonials style2 admin-visible">
-        <div class="container">
-
-
-  <div class="row">
-    <div class="col-lg-4 col-md-6 mb-4">
-      <canvas id="dailySignups" width="300" height="250"></canvas>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-      <canvas id="opportunityNotifications" width="300" height="250"></canvas>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-      <canvas id="opportunityMatches" width="300" height="250"></canvas>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
- 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo"></script>
-    <script src="https://cdn.jsdelivr.net/npm/world-atlas/countries-50m.json"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo"></script>
+<script src="https://cdn.jsdelivr.net/npm/world-atlas/countries-50m.json"></script>
 
 
-        <div class="row gy-4">
-            <!-- Visitors Over Time -->
-            <div class="col-lg-6 col-12">
-                <p class="text-center">Visitors Over Time</p>
-                <canvas id="visitorsChart"></canvas>
-            </div>
+<div class="row gy-4">
+	<!-- Visitors Over Time -->
+	<div class="col-lg-6 col-12">
+		<p class="text-center">Visitors Over Time</p>
+		<canvas id="visitorsChart"></canvas>
+	</div>
 
-            <!-- Top Pages by Views -->
-            <div class="col-lg-6 col-12">
-                <p class="text-center">Top Pages by Views</p>
-                <canvas id="topPagesChart"></canvas>
-            </div>
+	<!-- Top Pages by Views -->
+	<div class="col-lg-6 col-12">
+		<p class="text-center">Top Pages by Views</p>
+		<canvas id="topPagesChart"></canvas>
+	</div>
 
-            <!-- Geographic Distribution of Visitors -->
-            <div class="col-lg-6 col-12">
-                <p class="text-center">Geographic Distribution of Visitors</p>
-                <canvas id="geoChart"></canvas>
-            </div>
+	<!-- Geographic Distribution of Visitors -->
+	<div class="col-lg-6 col-12">
+		<p class="text-center">Geographic Distribution of Visitors</p>
+		<canvas id="geoChart"></canvas>
+	</div>
 
-            <!-- Bounce Rate by Day -->
-            <div class="col-lg-6 col-12">
-                <p class="text-center">Bounce Rate by Day</p>
-                <canvas id="bounceRateChart"></canvas>
-            </div>
-        </div>
+	<!-- Bounce Rate by Day -->
+	<div class="col-lg-6 col-12">
+		<p class="text-center">Bounce Rate by Day</p>
+		<canvas id="bounceRateChart"></canvas>
+	</div>
+</div>
 
-    <script>
-        const apiBaseUrl = "https://ga.milesahead.team/api";
+<script>
+const apiBaseUrl = "https://ga.milesahead.team/api";
 
-        // Visitors Over Time Chart
-        async function fetchVisitorsOverTime() {
-            try {
-                const response = await fetch(`${apiBaseUrl}/visitors-over-time`);
-                const data = await response.json();
+// Visitors Over Time Chart
+async function fetchVisitorsOverTime() {
+	try {
+		const response = await fetch(`${apiBaseUrl}/visitors-over-time`);
+		const data = await response.json();
 
-                const labels = Object.keys(data);
-                const values = Object.values(data).map(value => parseInt(value));
+		const labels = Object.keys(data);
+		const values = Object.values(data).map(value => parseInt(value));
 
-                const ctx = document.getElementById('visitorsChart').getContext('2d');
-                new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Visitors',
-                            data: values,
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            borderWidth: 2,
-                            fill: false
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            x: { title: { display: true, text: 'Date' } },
-                            y: { title: { display: true, text: 'Visitors' }, beginAtZero: true }
-                        }
-                    }
-                });
-            } catch (error) {
-                console.error("Error fetching Visitors Over Time data:", error);
-            }
-        }
+		const ctx = document.getElementById('visitorsChart').getContext('2d');
+		new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: labels,
+				datasets: [{
+					label: 'Visitors',
+					data: values,
+					borderColor: 'rgba(75, 192, 192, 1)',
+					borderWidth: 2,
+					fill: false
+				}]
+			},
+			options: {
+				responsive: true,
+				scales: {
+					x: { title: { display: true, text: 'Date' } },
+					y: { title: { display: true, text: 'Visitors' }, beginAtZero: true }
+				}
+			}
+		});
+	} catch (error) {
+		console.error("Error fetching Visitors Over Time data:", error);
+	}
+}
 
-        // Top Pages by Views Chart
-        async function fetchTopPages() {
-            try {
-                const response = await fetch(`${apiBaseUrl}/top-pages`);
-                const data = await response.json();
+// Top Pages by Views Chart
+async function fetchTopPages() {
+	try {
+		const response = await fetch(`${apiBaseUrl}/top-pages`);
+		const data = await response.json();
 
-                const labels = Object.keys(data);
-                const values = Object.values(data).map(value => parseInt(value));
+		const labels = Object.keys(data);
+		const values = Object.values(data).map(value => parseInt(value));
 
-                const ctx = document.getElementById('topPagesChart').getContext('2d');
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Page Views',
-                            data: values,
-                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            x: { title: { display: true, text: 'Page' } },
-                            y: { title: { display: true, text: 'Views' }, beginAtZero: true }
-                        }
-                    }
-                });
-            } catch (error) {
-                console.error("Error fetching Top Pages data:", error);
-            }
-        }
+		const ctx = document.getElementById('topPagesChart').getContext('2d');
+		new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: labels,
+				datasets: [{
+					label: 'Page Views',
+					data: values,
+					backgroundColor: 'rgba(54, 162, 235, 0.6)',
+					borderColor: 'rgba(54, 162, 235, 1)',
+					borderWidth: 1
+				}]
+			},
+			options: {
+				responsive: true,
+				scales: {
+					x: { title: { display: true, text: 'Page' } },
+					y: { title: { display: true, text: 'Views' }, beginAtZero: true }
+				}
+			}
+		});
+	} catch (error) {
+		console.error("Error fetching Top Pages data:", error);
+	}
+}
 
-        // Geographic Distribution of Visitors Chart
-        async function fetchGeographicDistribution() {
-            try {
-                const response = await fetch(`${apiBaseUrl}/geo-distribution`);
-                const data = await response.json();
+// Geographic Distribution of Visitors Chart
+async function fetchGeographicDistribution() {
+	try {
+		const response = await fetch(`${apiBaseUrl}/geo-distribution`);
+		const data = await response.json();
 
-                const mapData = await fetch("https://cdn.jsdelivr.net/npm/world-atlas/countries-50m.json")
-                    .then(res => res.json());
+		const mapData = await fetch("https://cdn.jsdelivr.net/npm/world-atlas/countries-50m.json")
+			.then(res => res.json());
 
-                const chartData = ChartGeo.topojson.feature(mapData, mapData.objects.countries).features.map((country) => {
-                    const countryName = country.properties.name;
-                    const visitors = data[countryName] || 0;
-                    const color = visitors > 0 ? `rgba(54, 162, 235, ${0.2 + (visitors / 100)})` : 'rgba(211, 211, 211, 0.8)';
+		const chartData = ChartGeo.topojson.feature(mapData, mapData.objects.countries).features.map((country) => {
+			const countryName = country.properties.name;
+			const visitors = data[countryName] || 0;
+			const color = visitors > 0 ? `rgba(54, 162, 235, ${0.2 + (visitors / 100)})` : 'rgba(211, 211, 211, 0.8)';
 
-                    return { feature: country, value: visitors, color: color };
-                });
+			return { feature: country, value: visitors, color: color };
+		});
 
-                const ctx = document.getElementById('geoChart').getContext('2d');
-                new Chart(ctx, {
-                    type: 'choropleth',
-                    data: {
-                        labels: Object.keys(data),
-                        datasets: [{
-                            label: 'Visitors by Country',
-                            data: chartData,
-                            outline: ChartGeo.topojson.mesh(mapData, mapData.objects.countries),
-                            backgroundColor: chartData.map(d => d.color)
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            projection: { axis: 'x', projection: 'equalEarth' }
-                        }
-                    }
-                });
-            } catch (error) {
-                console.error("Error fetching Geographic Distribution data:", error);
-            }
-        }
+		const ctx = document.getElementById('geoChart').getContext('2d');
+		new Chart(ctx, {
+			type: 'choropleth',
+			data: {
+				labels: Object.keys(data),
+				datasets: [{
+					label: 'Visitors by Country',
+					data: chartData,
+					outline: ChartGeo.topojson.mesh(mapData, mapData.objects.countries),
+					backgroundColor: chartData.map(d => d.color)
+				}]
+			},
+			options: {
+				responsive: true,
+				scales: {
+					projection: { axis: 'x', projection: 'equalEarth' }
+				}
+			}
+		});
+	} catch (error) {
+		console.error("Error fetching Geographic Distribution data:", error);
+	}
+}
 
-        // Bounce Rate by Day Chart
-        async function fetchBounceRate() {
-            try {
-                const response = await fetch(`${apiBaseUrl}/bounce-rate`);
-                const data = await response.json();
+// Bounce Rate by Day Chart
+async function fetchBounceRate() {
+	try {
+		const response = await fetch(`${apiBaseUrl}/bounce-rate`);
+		const data = await response.json();
 
-                const labels = Object.keys(data);
-                const values = Object.values(data).map(value => parseFloat(value));
+		const labels = Object.keys(data);
+		const values = Object.values(data).map(value => parseFloat(value));
 
-                const ctx = document.getElementById('bounceRateChart').getContext('2d');
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Bounce Rate (%)',
-                            data: values,
-                            backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            x: { title: { display: true, text: 'Date' } },
-                            y: { title: { display: true, text: 'Bounce Rate (%)' }, beginAtZero: true }
-                        }
-                    }
-                });
-            } catch (error) {
-                console.error("Error fetching Bounce Rate data:", error);
-            }
-        }
+		const ctx = document.getElementById('bounceRateChart').getContext('2d');
+		new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: labels,
+				datasets: [{
+					label: 'Bounce Rate (%)',
+					data: values,
+					backgroundColor: 'rgba(255, 99, 132, 0.6)',
+					borderColor: 'rgba(255, 99, 132, 1)',
+					borderWidth: 1
+				}]
+			},
+			options: {
+				responsive: true,
+				scales: {
+					x: { title: { display: true, text: 'Date' } },
+					y: { title: { display: true, text: 'Bounce Rate (%)' }, beginAtZero: true }
+				}
+			}
+		});
+	} catch (error) {
+		console.error("Error fetching Bounce Rate data:", error);
+	}
+}
 
-        // Initialize all charts
-        fetchVisitorsOverTime();
-        fetchTopPages();
-        fetchGeographicDistribution();
-        fetchBounceRate();
-    </script>
+// Initialize all charts
+fetchVisitorsOverTime();
+fetchTopPages();
+fetchGeographicDistribution();
+fetchBounceRate();
+</script>
 
 
 
@@ -307,77 +244,77 @@ width: 45%;
 
 <div class="row "></div>
 <div class="row">
-    <!-- Feedback By App Table -->
-    <div class="col-lg-6 mb-4">
-      <h5>Feedback By App</h5>
-      <table id="feedbackByApp" class="display table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>App Name</th>
-            <th>Submitter</th>
-            <th>Ranking</th>
-            <th>Received Date</th>
-            <th>Completion Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Notifications</td><td>J. Doe</td><td>7</td><td>01/10</td><td style="color: green;">Complete</td></tr>
-          <tr><td>Opportunities</td><td>M. Lee</td><td>5</td><td>02/15</td><td style="color: orange;">In Progress</td></tr>
-          <tr><td>Website</td><td>A. Fox</td><td>9</td><td>03/01</td><td style="color: green;">Complete</td></tr>
-          <tr><td>General</td><td>K. Roe</td><td>3</td><td>04/05</td><td style="color: red;">Pending</td></tr>
-          <tr><td>Notifications</td><td>S. Kay</td><td>6</td><td>05/18</td><td style="color: orange;">In Progress</td></tr>
-          <tr><td>Opportunities</td><td>R. Poe</td><td>8</td><td>06/22</td><td style="color: green;">Complete</td></tr>
-          <tr><td>Website</td><td>B. Jae</td><td>4</td><td>07/09</td><td style="color: red;">Pending</td></tr>
-          <tr><td>General</td><td>H. Doe</td><td>2</td><td>08/12</td><td style="color: orange;">In Progress</td></tr>
-          <tr><td>Notifications</td><td>T. Fox</td><td>10</td><td>09/21</td><td style="color: green;">Complete</td></tr>
-          <tr><td>Opportunities</td><td>Y. Poe</td><td>1</td><td>10/30</td><td style="color: red;">Pending</td></tr>
-        </tbody>
-      </table>
-    </div>
+<!-- Feedback By App Table -->
+<div class="col-lg-6 mb-4">
+  <h5>Feedback By App</h5>
+  <table id="feedbackByApp" class="display table table-striped table-bordered">
+	<thead>
+	  <tr>
+		<th>App Name</th>
+		<th>Submitter</th>
+		<th>Ranking</th>
+		<th>Received Date</th>
+		<th>Completion Status</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr><td>Notifications</td><td>J. Doe</td><td>7</td><td>01/10</td><td style="color: green;">Complete</td></tr>
+	  <tr><td>Opportunities</td><td>M. Lee</td><td>5</td><td>02/15</td><td style="color: orange;">In Progress</td></tr>
+	  <tr><td>Website</td><td>A. Fox</td><td>9</td><td>03/01</td><td style="color: green;">Complete</td></tr>
+	  <tr><td>General</td><td>K. Roe</td><td>3</td><td>04/05</td><td style="color: red;">Pending</td></tr>
+	  <tr><td>Notifications</td><td>S. Kay</td><td>6</td><td>05/18</td><td style="color: orange;">In Progress</td></tr>
+	  <tr><td>Opportunities</td><td>R. Poe</td><td>8</td><td>06/22</td><td style="color: green;">Complete</td></tr>
+	  <tr><td>Website</td><td>B. Jae</td><td>4</td><td>07/09</td><td style="color: red;">Pending</td></tr>
+	  <tr><td>General</td><td>H. Doe</td><td>2</td><td>08/12</td><td style="color: orange;">In Progress</td></tr>
+	  <tr><td>Notifications</td><td>T. Fox</td><td>10</td><td>09/21</td><td style="color: green;">Complete</td></tr>
+	  <tr><td>Opportunities</td><td>Y. Poe</td><td>1</td><td>10/30</td><td style="color: red;">Pending</td></tr>
+	</tbody>
+  </table>
+</div>
 
-    <!-- Feedback Status Table -->
-    <div class="col-lg-6 mb-4">
-      <h5>Service Tickets by Date</h5>
-      <table id="feedbackStatus" class="display table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>App Name</th>
-            <th>Submitter</th>
-            <th>Ranking</th>
-            <th>Received Date</th>
-            <th>Completion Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Website</td><td>P. Kay</td><td>7</td><td>01/02</td><td style="color: green;">Complete</td></tr>
-          <tr><td>General</td><td>D. Roe</td><td>5</td><td>02/07</td><td style="color: orange;">In Progress</td></tr>
-          <tr><td>Notifications</td><td>G. Poe</td><td>9</td><td>03/14</td><td style="color: green;">Complete</td></tr>
-          <tr><td>Opportunities</td><td>L. Fox</td><td>3</td><td>04/18</td><td style="color: red;">Pending</td></tr>
-          <tr><td>General</td><td>C. Doe</td><td>6</td><td>05/20</td><td style="color: orange;">In Progress</td></tr>
-          <tr><td>Notifications</td><td>N. Lee</td><td>8</td><td>06/25</td><td style="color: green;">Complete</td></tr>
-          <tr><td>Opportunities</td><td>Q. Jae</td><td>4</td><td>07/11</td><td style="color: red;">Pending</td></tr>
-          <tr><td>Website</td><td>V. Poe</td><td>2</td><td>08/13</td><td style="color: orange;">In Progress</td></tr>
-          <tr><td>General</td><td>U. Doe</td><td>10</td><td>09/19</td><td style="color: green;">Complete</td></tr>
-          <tr><td>Notifications</td><td>Z. Kay</td><td>1</td><td>10/28</td><td style="color: red;">Pending</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+<!-- Feedback Status Table -->
+<div class="col-lg-6 mb-4">
+  <h5>Service Tickets by Date</h5>
+  <table id="feedbackStatus" class="display table table-striped table-bordered">
+	<thead>
+	  <tr>
+		<th>App Name</th>
+		<th>Submitter</th>
+		<th>Ranking</th>
+		<th>Received Date</th>
+		<th>Completion Status</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr><td>Website</td><td>P. Kay</td><td>7</td><td>01/02</td><td style="color: green;">Complete</td></tr>
+	  <tr><td>General</td><td>D. Roe</td><td>5</td><td>02/07</td><td style="color: orange;">In Progress</td></tr>
+	  <tr><td>Notifications</td><td>G. Poe</td><td>9</td><td>03/14</td><td style="color: green;">Complete</td></tr>
+	  <tr><td>Opportunities</td><td>L. Fox</td><td>3</td><td>04/18</td><td style="color: red;">Pending</td></tr>
+	  <tr><td>General</td><td>C. Doe</td><td>6</td><td>05/20</td><td style="color: orange;">In Progress</td></tr>
+	  <tr><td>Notifications</td><td>N. Lee</td><td>8</td><td>06/25</td><td style="color: green;">Complete</td></tr>
+	  <tr><td>Opportunities</td><td>Q. Jae</td><td>4</td><td>07/11</td><td style="color: red;">Pending</td></tr>
+	  <tr><td>Website</td><td>V. Poe</td><td>2</td><td>08/13</td><td style="color: orange;">In Progress</td></tr>
+	  <tr><td>General</td><td>U. Doe</td><td>10</td><td>09/19</td><td style="color: green;">Complete</td></tr>
+	  <tr><td>Notifications</td><td>Z. Kay</td><td>1</td><td>10/28</td><td style="color: red;">Pending</td></tr>
+	</tbody>
+  </table>
+</div>
+</div>
 
 
 
   
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title style2">
-                        <span>Applications Dashboard</span>
-                        <h2>Control Panel</h2>
-                        <p>Welcome to your control panel.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
+<div class="row">
+	<div class="col-12">
+		<div class="section-title style2">
+			<span>Applications Dashboard</span>
+			<h2>Control Panel</h2>
+			<p>Welcome to your control panel.</p>
+		</div>
+	</div>
+</div>
+<div class="row">
                 
 {% for page in site.pages %}
   {% if page.path contains 'apps/' and page.control-panel %}
@@ -428,8 +365,7 @@ width: 45%;
                
                 
             </div>
-        </div>
-    </section>
+
 
 <script>
   // Helper function to generate random data within a range
