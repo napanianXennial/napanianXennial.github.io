@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="no-js h-100" lang="zxx">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NEM2H5W3LZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NEM2H5W3LZ');
+    </script>
+    <script>
+        const user = JSON.parse(sessionStorage.getItem('user'));
+        if (!user) {
+            console.log('User is unAuthenticated');
+            window.location.replace(window.location.origin)
+        }
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to {{ page.companyname }}.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="../assets/css/animate.css" />
+    <link rel="stylesheet" href="../assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="../assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="../assets/css/main-gray.css" />
+
+    <!-- okta -->
+    <link rel="stylesheet" type="text/css" href=../css/main.css />
+    <!-- link rel="stylesheet" href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css" /-->
+
+</head>
+
+<body class="h-100">
+    <div id="content-home"></div>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Preloader -->
+    <!-- div class="preloader style2">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+</div -->
+    <!-- /End Preloader -->
+
+    <!-- Start Header Area -->
+    <header class="header style2">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <!-- navbar -->
+                        {% include nav-tag.html %}
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+
+
+    <!-- Start Hero Area -->
+    <section id="hero-area" class="hero-area">
+        <!-- Single Slider -->
+        <div class="hero-inner">
+            <div class="container" style="padding-top: 100px;">
+                <div>
+                    <h4 class="header-title">Applications Dashboard</h4>
+
+                </div>
+                <p style="margin: 20px 0px; color:black">
+                    Select the application you'd like to use by clicking on its link below.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; padding-bottom: 60px; ">
+                    {% for page in site.pages %}
+                    {% if page.path contains 'apps/' %}
+                    {% if page.access == "internal-user" %}
+                    <div class="card-app">
+                        <div class="card-header-app">
+                            <div class="align-center">
+                                <span class="material-icons text-primary" style="margin-right: 10px;">
+                                    {{ page.icon }}
+                                </span>
+                                <h4 style="color: #000;margin: 5px; font-size:15px">{{ page.title }}</h4>
+                            </div>
+                            <span class="material-icons-outlined">
+                                settings
+                            </span>
+                        </div>
+                        <p class="description-app text-dark"> {{ page.blurb }}</p>
+                        <hr style="border-top: 2px solid #010101;">
+                        <div class="test-app-button">
+                            <a href={{page.url}} class="test-app">Open <span class="material-icons-outlined"
+                                    style="margin-left: 5px;">
+                                    open_in_new
+                                </span></a>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <!-- <div class="row ">
+                    <div class="col-lg-6 col-12">
+                        <div class="hero-image">
+                            <div class="waves-block">
+                                <div class="waves wave-1"></div>
+                                <div class="waves wave-2"></div>
+                            </div>
+                            <a href="/apps/opportunities-notifications/app3.html"><img
+                                    src="assets/images/notifications.png" alt="#"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="hero-image">
+                            <div class="waves-block">
+                                <div class="waves wave-1"></div>
+                                <div class="waves wave-2"></div>
+                            </div>
+                            <a href="/apps/support-ticket-creator/app2.html"><img
+                                    src="assets/images/service-tickets.png" alt="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            </div>
+            <!--/ End Single Slider -->
+    </section>
+    <!--/ End Hero Area -->
+
+
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    {% include /sub/javascript.html %}
+    {% include feedback.html %}
+    {% include /sub/footer.html %}
+    <script>
+        let checkInterval;
+        // Function to update pricing tables
+        function updatePricingTables(products) {
+            products.forEach(product => {
+                // Find the corresponding pricing table based on the product name
+                const pricingTable = document.querySelector(`.pricingTable[data-plan="${product.name}"]`);
+
+                if (pricingTable) {
+                    // Update price (assuming price is retrieved from default_price or set statically for simplicity)
+                    pricingTable.querySelector('.price-value').textContent = "$" + product.defaultPrice; // Modify as needed to extract the price
+
+                    // Update features
+                    const featuresList = pricingTable.querySelector('.pricingContent ul');
+                    featuresList.innerHTML = ''; // Clear existing features
+
+                    product.marketing_features.forEach(feature => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `<i class="ti-check"></i> ${feature.name}`;
+                        featuresList.appendChild(listItem);
+                    });
+                }
+            });
+        }
+
+        // Function to check if userdata is loaded
+        function checkAndLoadUserData() {
+            if (typeof userdata !== 'undefined' && userdata.allproducts && userdata.allproducts.data) {
+                // Data is available, update pricing tables and clear the interval
+                updatePricingTables(userdata.allproducts.data);
+                clearInterval(checkInterval);
+            }
+        }
+        function closeModal() {
+            const element = document.getElementById('feedback-modal');
+            element.classList.remove("visible");
+            element.classList.add("hidden");
+            hideFeedbackLoading();
+        }
+        function openModal() {
+            const element = document.getElementById('feedback-modal');
+            element.classList.remove("hidden");
+            element.classList.add("visible");
+        }
+        function showFeedbackLoading() {
+            const element = document.getElementById('feedback-loading');
+            element.classList.remove("hidden");
+            element.classList.add("visible");
+        }
+        function hideFeedbackLoading() {
+            const element = document.getElementById('feedback-loading');
+            element.classList.remove("visible");
+            element.classList.add("hidden");
+        }
+
+        function selectRating(selected) {
+            // Remove 'text-primary' class from all spans
+            const spans = document.querySelectorAll('.modal-radio-buttons');
+            spans.forEach(span => {
+                span.classList.remove('text-primary');
+            });
+            // Add 'text-primary' class to the selected span
+            selected.classList.add('text-primary');
+        }
+
+
+        async function submit() {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', async event => {
+                event.preventDefault();
+                let stars = document.getElementsByClassName("modal-radio-buttons");
+                let i = 0;
+                var rating = 0;
+                while (i < stars.length) {
+                    if (stars[i].classList.contains('text-primary')) {
+                        rating = i + 1;
+                        break;
+                    }
+                    i++;
+                }
+                const summary = document.querySelector('#subject').value;
+                const serviceName = document.querySelector('#select-job').value;
+                const issueDescription = document.querySelector('#feedback-text').value;
+
+                const data = {
+                    summary: summary,
+                    serviceName: serviceName,
+                    issueDescription: issueDescription,
+                    rating: rating
+                };
+                showFeedbackLoading();
+                const response = await submitFeedback(data);
+                closeModal();
+                console.log('RESPONSE:  ' + JSON.stringify(response));
+                // updateTodoList(submitTodoItem);
+            });
+        }
+
+        submit();
+
+        // Wait for the page to fully load
+        window.addEventListener('load', () => {
+            // Start checking every 500ms if userdata is loaded
+            const checkInterval = setInterval(checkAndLoadUserData, 500);
+        });
+    </script>

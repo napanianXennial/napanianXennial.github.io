@@ -1,3 +1,3 @@
 ---
-layout: apps-layout
+layout: all-apps
 ---
