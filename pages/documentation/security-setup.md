@@ -1,10 +1,33 @@
 ---
 layout: minimal-app
-title: Setting Up The Portal
-blurb: Here are the basic requirements to run the Miles Ahead Portal in a local data center or server in the cloud.
+title: Security Setup
+blurb: Here's how to configure security for your Miles Ahead Portal.
 ---
 
-Once an enterprise subscription to the portal is purchased, the client will be given a software suite to install on a server that supports Node.js and basic Jekyll builds.
+By default, athorization and authentication is provided through Okta, although you can integrate the Miles Ahead Portal with any 3rd-party authentication service.
 
-A CI/CD server that rebuilds and deploys the application when changes are pushed to the dev server will allow updatest to typically go live in less than a minute.
+Initially, your portal will be tied to the Xennial Okta user registry. 
+
+To switch to your own Okta account, create an Okta application of your own and replace the *auth_config.json* file in the root of the portal's file system with your applications auth_config.json file.
+
+After the auth_config.json file is replaced, be sure to update the application in Okta with:
+
+- Allowed web origins
+- Allowed callback URLs
+- Allowed Logout URLs
+
+You must have your domain name, both http and https in the list of web origins.
+
+Allowed callback URLs should include links to files like:
+
+- https://<url>/pages/apps.html
+- https://<url>/pages/dashboard.html
+- https://<url>/index.html
+- https://<url>
+
+
+
+
+
+
 

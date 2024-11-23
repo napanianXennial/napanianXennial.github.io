@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+{% include /sub/head.html %} 
+
+<body class="h-100"><div id="content-home"></div>
+
+{% include minimal-nav.html %} 
+
+<section id="download" class="app-download style2 section-blue3">
+
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="download-content">
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">&nbsp;
+                        </h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>	
+
+    <!-- Start App Content Area -->
+    <section class="app-screenshorts style2 section-blue mt-3 mb-0">
+	<div class="container">
+            <div class="row">
+		<div style="" class="main col col-12 col-sm-12 col-md-12 col-lg-12 order-1 order-sm-2 order-lg-1 mb-5 mt-1">
+		
+		<span class="auth-invisible hidden">You must log in to see this page</span>
+        <span class="auth-visible hidden" onclick="logout()">{{ content }}</span>
+
+        <div style="display: flex;justify-content: center;background-color: white;">
+            {% include feedback-internal.html %}
+        </div>
+		</div>
+	    </div>
+        </div>
+    </section>
+    <!-- End App Content Area -->
+	
+	
+<section id="download" class="app-download style2 section-blue3">
+<div class="container">
+<div class="row ">
+<div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+{% include /sub/content-profile.html %} 	
+</div>
+</div>
+</div>
+</section>	
+
+{% include /sub/javascript.html %} 		
+
+
+</body></html>
