@@ -1,5 +1,5 @@
 ---
-layout: minimal
+layout: all-news
 title:  "News"
 blurb: "Here is the latest news from the site."
 date:   2022-01-01 01:11:00 -0500
