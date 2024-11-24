@@ -33,9 +33,7 @@
         <a onclick="onNavClick('/pages/control-panel.html')" class="hidden admin-visible auth-visible">Dashboard</a>
       </li>
 
-      <li class="nav-item">
-        <a onclick="onNavClick('/pages/apps.html')" class="auth-visible hidden">Apps</a>
-      </li>
+
 
 
       {% assign app_pages = site.pages | where_exp: "page", "page.path contains 'apps/'" %}
@@ -80,7 +78,9 @@
       {% endif %}
       {% endfor %}
 
-
+      <li class="nav-item">
+        <a onclick="onNavClick('/pages/apps.html')" class="auth-visible hidden">Apps</a>
+      </li>
 
 
       <!--
