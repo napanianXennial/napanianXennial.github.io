@@ -31,5 +31,8 @@ service01: "Application Devleopment"
 service02: "Machine Learning Assistants"
 service03: "AI Training & RAG Apps"
 service04: "Continuous Feedback & Improvement"
-layout: "landing-page"
+layout: "minimal"
 ---
+
+
+{% include pricing.html %} 
