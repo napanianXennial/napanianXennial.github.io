@@ -1,6 +1,6 @@
 ---
 layout: minimal-app
-title: Landing Page Edits - Logo, Text, Hero
+title: Landing Page Edits
 blurb: Here's how to make some quick changes to your landing page.
 ---
 
