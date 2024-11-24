@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: "System Info"
 blurb: "View the resource utilization of your portal."
 

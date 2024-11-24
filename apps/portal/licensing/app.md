@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: "Licensing"
 blurb: "Use this app to manage your licensing status."
 

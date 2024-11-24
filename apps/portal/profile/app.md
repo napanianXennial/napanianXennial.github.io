@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: "User Profile"
 blurb: "View your user profile data."
 

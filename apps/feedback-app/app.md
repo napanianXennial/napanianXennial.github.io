@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title:  "Feedback"
 blurb: "Please provide your feedback on the app."
 

@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: "Branding"
 blurb: "Use this app to configure colors, themes and layouts."
 

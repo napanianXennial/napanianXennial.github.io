@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: "Internationalization"
 blurb: "Update global time, currency and language settings."
 

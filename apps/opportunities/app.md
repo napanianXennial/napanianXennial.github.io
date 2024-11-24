@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 icon: "notifications_active"
 title: "Opportunities Builder"
 blurb: "We'll quickly build out opportunities for you, but with a new look."

@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: "Google Analytics"
 blurb: "Use this app to manage your GA status."
 

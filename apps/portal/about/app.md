@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: "About"
 blurb: "About the Miles Ahead portal."
 

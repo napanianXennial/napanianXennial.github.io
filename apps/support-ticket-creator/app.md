@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title:  "Service Ticket"
 icon: "sell"
 blurb: "File a service ticket."

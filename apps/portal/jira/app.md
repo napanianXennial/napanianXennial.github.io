@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: "Jira Admin"
 blurb: "Configure your Jira instance for service tickets and feedback forms."
 

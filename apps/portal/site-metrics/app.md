@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: "Site Metrics"
 blurb: "Use this app to view your website performance."
 

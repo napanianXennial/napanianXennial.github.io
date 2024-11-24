@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title:  "ChatBot Training"
 blurb: "Train you ChatBot so it knows everything about you!"
 

@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title:  "Rapid Deploy"
 blurb: "Provide a zip file. We'll do the rest."
 control-panel: true
