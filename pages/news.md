@@ -1,13 +1,12 @@
 ---
 layout: minimal
-title:  "Scrumtuous Blog on Agile, Scrum & DevOps"
-blurb: "Here are all of our tasty blog posts."
+title:  "News"
+blurb: "Here is the latest news from the site."
 date:   2022-01-01 01:11:00 -0500
-categories: 
-canonical: http://www.scrumtuous.com/blog.html
-keywords: Scrumtuous Blog Agile DevOps AWS Certification Scrum
+top-level-link: true
+priority: 3
 ---
-abc
+
 {% for post in site.posts %}			
 <div style="border: 1px solid #DEDEDE;" class=" col-12 col-sm-12  col-md-6 col-lg-4 mb-1 mt-1">
 
