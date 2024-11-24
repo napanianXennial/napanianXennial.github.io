@@ -35,4 +35,4 @@ layout: "minimal"
 ---
 
 
-{% include /pricing.html %} 
+{% include /pricing-table.html %} 
