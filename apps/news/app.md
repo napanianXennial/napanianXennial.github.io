@@ -13,7 +13,7 @@ priority: 1
 <div class="hero-inner">
 	<div class="container" style="padding-top: 100px;">
 		<div>
-			<h4 class="header-title">News</h4>
+			<h4 class="header-title">NEWS</h4>
 
 		</div>
 		<p style="margin: 20px 0px; color:black">
@@ -37,10 +37,9 @@ priority: 1
 				<p class="description-app text-dark"> {{ page.blurb }}</p>
 				<hr style="border-top: 2px solid #010101;">
 				<div class="test-app-button">
-					<a href={{page.url}} class="test-app">Open <span class="material-icons-outlined"
-							style="margin-left: 5px;">
-							open_in_new
-						</span></a>
+					<a href={{page.url}} class="test-app">Open 
+					<span class="material-icons-outlined" style="margin-left: 5px;">open_in_new</span>
+					</a>
 				</div>
 			</div>
 			{% endfor %}
