@@ -11,9 +11,9 @@ priority: 1
 ---
 
 <div class="hero-inner">
-	<div class="container" style="padding-top: 100px;">
+	<div class="container" style="padding-top: 10px;">
 		<div>
-			<h4 class="header-title">New NEWS</h4>
+			<h4 class="header-title">News</h4>
 
 		</div>
 		<p style="margin: 20px 0px; color:black">
