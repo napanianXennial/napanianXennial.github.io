@@ -6,6 +6,10 @@ blurb: Use this app to look for matching CSS styles.
 
 
 <style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
 #search-container {
 margin-bottom: 20px;
 }
@@ -158,22 +162,23 @@ suggestionsDiv.innerHTML = '';
 exactMatchDiv.textContent = '';
 
 if (query) {
-const matches = styles.filter(style => style.toLowerCase().includes(query));
+const regex = new RegExp(query.split('').join('.*?'), 'i');
+const matches = styles.filter(style => regex.test(style));
 
 if (matches.length >= 10) {
-suggestionsDiv.style.display = 'block';
-matches.slice(0, 10).forEach(match => {
-const suggestion = document.createElement('div');
-suggestion.textContent = match;
-suggestion.className = 'suggestion';
-suggestionsDiv.appendChild(suggestion);
-});
+	suggestionsDiv.style.display = 'block';
+	matches.slice(0, 10).forEach(match => {
+		const suggestion = document.createElement('div');
+		suggestion.textContent = match;
+		suggestion.className = 'suggestion';
+		suggestionsDiv.appendChild(suggestion);
+	});
 } else {
-suggestionsDiv.style.display = 'none';
+	suggestionsDiv.style.display = 'none';
 }
 
-if (matches.includes(query)) {
-exactMatchDiv.textContent = 'There is a matching style in the existing CSS';
+if (matches.some(style => style.toLowerCase() === query)) {
+	exactMatchDiv.textContent = 'There is a matching style in the existing CSS';
 }
 } else {
 suggestionsDiv.style.display = 'none';
@@ -188,10 +193,5 @@ exactMatchDiv.textContent = 'There is a matching style in the existing CSS';
 }
 });
 </script>
-
-
-
-
-
 
 
