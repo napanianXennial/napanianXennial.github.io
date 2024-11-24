@@ -1,0 +1,357 @@
+0::: Template URI: http://theme-land.com/apolo  
+0::: Template Author URI: hridoy1272@gmail.com  
+0::: Version: 1.0.0  
+0::: 1.0 WEB FONTS  
+0::: 2.0 IMPORT ALL CSS  
+0::: 3.0 GLOBAL CSS  
+0::: 4.0 COMMON CSS  
+0::: 5.0 PRELOADER CSS  
+0::: 6.0 SCROLL TO TOP AREA CSS  
+0::: 7.0 HEADER AREA CSS  
+0::: 8.0 WELCOME AREA CSS  
+0::: 9.0 BENIFITS AREA CSS  
+0::: 10.0 FEATURES AREA CSS  
+0::: 11.0 SERVICE AREA CSS  
+0::: 12.0 DISCOVER AREA CSS  
+0::: 13.0 STATISTIC AREA CSS  
+0::: 14.0 MORE FEATURES AREA CSS  
+0::: 15.0 SCREENSHOTS AREA CSS  
+0::: 16.0 TESTIMONIAL AREA CSS  
+0::: 17.0 PRICE PLAN AREA CSS  
+0::: 18.0 TEAM AREA CSS  
+0::: 19.0 DOWNLOAD AREA CSS  
+0::: 20.0 SUBSCRIBE AREA CSS  
+0::: 21.0 CONTACT AREA CSS  
+0::: 22.0 FOOTER AREA CSS  
+0::: 1.0 WEB FONTS  
+0:@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700 
+0::: 2.0 IMPORT ALL CSS  
+0:@import url(bootstrap.min.css);  
+0:@import url(all.min.css);  
+0:@import url(animate.min.css);  
+0:@import url(aos.css);  
+0:@import url(owl.carousel.min.css);  
+0:@import url(slick.css);  
+0:@import url(jquery.fancybox.min.css);  
+0::: 3.0 GLOBAL CSS  
+0:.main  
+0:.section  
+0:.container  
+0:    line-height: 1.2;  
+0:    line-height: 1.3;  
+0:    line-height: 1.2;  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0:.btn:focus  
+0::: 4.0 COMMON CSS  
+0:.fw-3  
+0:.fw-4  
+0:.fw-5  
+0:.fw-6  
+0:.fw-7  
+0:.op-5  
+0:    opacity: 0.5;  
+0:.avatar-sm  
+0:.avatar-md  
+0:.avatar-lg  
+0:.h-100vh  
+0:.owl-carousel .owl-item img  
+0:.owl-prev:focus,  
+0:.owl-next:focus  
+0:.section-heading  
+0:.pt_0  
+0:.ptb_50  
+0:.ptb_100  
+0:.ptb_150  
+0:.ptb_180  
+0:.btn  
+0:.btn:hover,  
+0:.btn:focus,  
+0:.btn:active  
+0:    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);  
+0:    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);  
+0:.btn.apolo-btn  
+0:.btn.apolo-btn:hover,  
+0:.btn.apolo-btn:focus  
+0:.btn.apolo-btn:before  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0:.btn.apolo-btn:after  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0:.btn.apolo-btn:focus:after  
+0:    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";  
+0:.service-btn  
+0:.service-btn::after  
+0:    -webkit-transition: transform 0.3s;  
+0:    transition: transform 0.3s;  
+0:.service-btn:hover,  
+0:.service-btn:focus  
+0:.service-btn:focus::after  
+0:.button-group  
+0:.button-group a  
+0:.button-group a:last-child  
+0:.store-buttons a  
+0:.store-buttons img  
+0:.store-buttons.store-black img  
+0:.shape-bottom  
+0:.bg-overlay,  
+0:.overlay-dark  
+0:.bg-overlay::after,  
+0:.overlay-dark:after  
+0:.bg-overlay::after  
+0:    opacity: 0.9;  
+0:.overlay-dark::after  
+0:    opacity: 0.80;  
+0:    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";  
+0:.bg-gray  
+0:.btn,  
+0:.btn:active,  
+0:.btn.apolo-btn:before,  
+0:.bg-overlay::after,  
+0:.benifits-item:after  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0:.social-icons svg  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0:.welcome-area  
+0:    background: rgba(0, 0, 0, 0) url("../img/bg/welcome-bg.jpg") no-repeat scroll center center / cover;  
+0:.features-slider-wrapper  
+0:    background: rgba(0, 0, 0, 0) url("../img/mobile-slider.png") no-repeat scroll top center / cover;  
+0:.service-area  
+0:    background: rgba(0, 0, 0, 0) url("../img/bg/service-bg.png") no-repeat scroll top left / contain;  
+0:.statistic-area  
+0:    background: rgba(0, 0, 0, 0) url("../img/bg/pattern-bg.png") repeat scroll center center / cover;  
+0:.screenshots-area  
+0:    background: rgba(0, 0, 0, 0) url("../img/bg/screenshots-bg.png") no-repeat scroll right center / contain;  
+0:.download-area  
+0:    background: rgba(0, 0, 0, 0) url("../img/bg/download-bg.jpg") no-repeat fixed center center / cover;  
+0:.subscribe-area  
+0:    background: rgba(0, 0, 0, 0) url("../img/bg/map.png") no-repeat scroll center center / cover;  
+0::: 5.0 PRELOADER AREA CSS  
+0:.preloader-main  
+0:.preloader-main .preloader-wapper  
+0:.preloader-main .loader-section  
+0:.preloader-main .loader-section.section-left  
+0:.preloader-main .loader-section.section-right  
+0:.preloader-main .preloader  
+0:.preloader-main .loaded .section-right  
+0:    -webkit-transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);  
+0:    transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);  
+0:.preloader-main .loaded .section-left  
+0:    -webkit-transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);  
+0:    transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);  
+0:.preloader-main .loaded .preloader  
+0:    -webkit-transition: 0.3s ease-out;  
+0:    transition: 0.3s ease-out;  
+0:.preloader-main circle.dot:nth-of-type(1)  
+0:.preloader-main circle.dot:nth-of-type(2)  
+0::: 6.0 SCROLL TO TOP AREA CSS  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0::: 7.0 HEADER AREA CSS  
+0:.navbar  
+0:    -webkit-transition: .3s;  
+0:    transition: .3s;  
+0:.navbar .navbar-nav .nav-link  
+0:    padding-right: 1.25rem;  
+0:    padding-left: 1.25rem;  
+0:    -webkit-transition: .3s;  
+0:    transition: .3s;  
+0:.navbar .navbar-brand-sticky  
+0:.navbar-sticky  
+0:.navbar-sticky-transitioned  
+0:    -webkit-transition: .3s;  
+0:    transition: .3s;  
+0:.navbar-sticky-moved-up  
+0:[data-theme=dark] .navbar-sticky-moved-up  
+0:    -webkit-box-shadow: 0 4px 25px rgba(30, 39, 69, 0.3), 0 1px 0px rgba(30, 39, 69, 0.4);  
+0:    box-shadow: 0 4px 25px rgba(30, 39, 69, 0.3), 0 1px 0px rgba(30, 39, 69, 0.4);  
+0:.navbar-sticky-on  
+0:    -webkit-transition: .3s;  
+0:    transition: .3s;  
+0:    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;  
+0:    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;  
+0:.navbar-sticky-on .navbar-brand-regular  
+0:.navbar-sticky-on .navbar-brand-sticky  
+0:.navbar-dark .navbar-nav .nav-link  
+0:.navbar-dark .btn-outline  
+0:.navbar-dark.navbar-sticky-on .navbar-nav .nav-link  
+0:[data-theme=dark] .navbar-dark.navbar-sticky-on .navbar-nav .nav-link  
+0:.navbar-dark.navbar-sticky-on .navbar-nav .nav-link:hover,  
+0:.navbar-dark.navbar-sticky-on .navbar-nav .nav-link:focus,  
+0:.navbar-dark.navbar-sticky-on .navbar-nav .nav-link.active,  
+0:.navbar-dark.navbar-sticky-on .navbar-nav .nav-link.current-menu-item  
+0:[data-theme=dark] .navbar-dark.navbar-sticky-on .navbar-nav .nav-link:hover,  
+0:[data-theme=dark] .navbar-dark.navbar-sticky-on .navbar-nav .nav-link:focus,  
+0:[data-theme=dark] .navbar-dark.navbar-sticky-on .navbar-nav .nav-link.active,  
+0:[data-theme=dark] .navbar-dark.navbar-sticky-on .navbar-nav .nav-link.current-menu-item  
+0::: 8.0 WELCOME AREA CSS  
+0:.welcome-area  
+0:.welcome-area .shape-bottom  
+0:.welcome-area.bg-overlay::after  
+0:.welcome-thumb  
+0::: 9.0 BENIFITS AREA CSS  
+0:.benifits-item  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0:.benifits-item:after  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0:.benifits-item .feature-icon  
+0:    -webkit-transition: all 0.7s ease 0s;  
+0:    transition: all 0.7s ease 0s;  
+0:.benifits-item:hover  
+0:    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);  
+0:    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);  
+0:.benifits-item .feature-icon span  
+0::: 10.0 FEATURES AREA CSS  
+0:.features-slider-wrapper  
+0:.icon  
+0:    -webkit-transition: all 0.5s ease 0s;  
+0:    transition: all 0.5s ease 0s;  
+0:.icon span  
+0:.icon-box.icon-1  
+0:.icon-box.icon-1:hover .icon  
+0:.icon-box.icon-2  
+0:.icon-box.icon-2:hover .icon  
+0:.icon-box.icon-3  
+0:.icon-box.icon-3:hover .icon  
+0:.icon-box.icon-4  
+0:.icon-box.icon-4:hover .icon  
+0::: 11.0 SERVICE AREA CSS  
+0::: 12.0 DISCOVER AREA CSS  
+0:.discover-list span  
+0:    border: 1px solid rgba(0, 0, 0, 0.1);  
+0:    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  
+0:    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0::: 13.0 STATISTIC AREA CSS  
+0:.single-counter span  
+0:    font-size: 4.5em;  
+0::: 14.0 MORE FEATURES AREA CSS  
+0:.more-features-thumb .thumb-one  
+0:.more-features-thumb .thumb-two  
+0::: 15.0 SCREENSHOTS AREA CSS  
+0:.single-screenshot  
+0:    -webkit-transform: scale(0.9);  
+0:    transform: scale(0.9);  
+0:.slick-dots  
+0:.slick-dots li button  
+0:    background-color: rgba(0, 0, 0, 0.1);  
+0:    -webkit-transition: all 0.4s ease 0s;  
+0:    transition: all 0.4s ease 0s;  
+0:.slick-dots .slick-active button,  
+0:.testimonial-area .owl-carousel button.owl-dot.active  
+0::: 16.0 TESTIMONIAL AREA CSS  
+0:.testimonial-area .owl-item img  
+0:    border: 2px solid rgba(0, 0, 0, 0.1);  
+0:.client-rating  
+0:.thumb-prev,  
+0:.thumb-next  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0:.thumb-next  
+0:.single-testimonial-thumb img  
+0:    border: 2px solid rgba(0, 0, 0, 0.1);  
+0:.testimonial-area .owl-dots  
+0:.testimonial-area .owl-carousel button.owl-dot  
+0:    background-color: rgba(0, 0, 0, 0.1);  
+0:    -webkit-transition: all 0.4s ease 0s;  
+0:    transition: all 0.4s ease 0s;  
+0::: 17.0 PRICE PLAN AREA CSS  
+0:.price-plan-area  
+0:.price-plan-wrapper  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0:.single-price-plan  
+0:    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);  
+0:    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);  
+0:.price-header .plan-title  
+0:.plan-cost .plan-price  
+0:.plan-cost .plan-type  
+0:    font-size: 0.7em;  
+0:    opacity: 0.8;  
+0:.single-price-plan .plan-features  
+0:.single-price-plan .plan-features li  
+0:.single-price-plan .plan-features svg  
+0:.single-price-plan .plan-select  
+0:    border-top: 1px solid rgba(0, 0, 0, 0.2);  
+0:.card-header .btn  
+0:.card-header .btn.collapsed  
+0:.card-header .btn:hover,  
+0:.card-header .btn:focus,  
+0:.card-header .btn:active  
+0:.card-header .btn::after,  
+0:.card-header .btn.collapsed::after  
+0:    left: calc(100% - 1.25rem);  
+0:.card-header .btn::after  
+0:.card-header .btn.collapsed::after  
+0::: 18.0 TEAM AREA CSS  
+0:.single-team  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0:    -webkit-transform: scale(1.0);  
+0:    transform: scale(1.0);  
+0:    -webkit-transition: all 0.3s ease-in-out 0s;  
+0:    transition: all 0.3s ease-in-out 0s;  
+0:.team-overlay  
+0:    -webkit-transition: all 0.3s ease 0s;  
+0:    transition: all 0.3s ease 0s;  
+0:.team-overlay::after  
+0:    opacity: 0.9;  
+0:.team-name  
+0:.team-post  
+0:.team-icons svg  
+0:    -webkit-transition: -webkit-transform 0.3s ease 0s;  
+0:    transition: -webkit-transform 0.3s ease 0s;  
+0:    transition: transform 0.3s ease 0s;  
+0:    transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;  
+0:.team-icons a:hover svg  
+0:    -webkit-transform: scale(1.2);  
+0:    transform: scale(1.2);  
+0:.single-team:hover .team-overlay  
+0:    -webkit-transform: scale(1.2);  
+0:    transform: scale(1.2);  
+0::: 19.0 DOWNLOAD AREA CSS  
+0:.download-thumb  
+0::: 20.0 SUBSCRIBE AREA CSS  
+0:.form-control  
+0:    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);  
+0:    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);  
+0:.form-control:focus  
+0:    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);  
+0:    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);  
+0:.subscribe-form .form-group input  
+0:.subscribe-form .form-group input::-webkit-input-placeholder  
+0:.subscribe-form .form-group input:-ms-input-placeholder  
+0:.subscribe-form .form-group input::placeholder  
+0:.subscribe-form button  
+0::: 21.0 CONTACT AREA CSS  
+0:.contact-us .social-icon  
+0:.contact-box .form-group input,  
+0:.contact-box .form-group textarea  
+0:    -webkit-transition: 0.5s;  
+0:    transition: 0.5s;  
+0:.contact-box .form-group textarea  
+0:.contact-box .form-group input::-webkit-input-placeholder,  
+0:.contact-box .form-group textarea::-webkit-input-placeholder  
+0:    color: rgba(68, 68, 68, 0.6);  
+0:.contact-box .form-group input:-ms-input-placeholder,  
+0:.contact-box .form-group textarea:-ms-input-placeholder  
+0:    color: rgba(68, 68, 68, 0.6);  
+0:.contact-box .form-group input::placeholder,  
+0:.contact-box .form-group textarea::placeholder  
+0:    color: rgba(68, 68, 68, 0.6);  
+0:.contact-box input:focus,  
+0:.contact-box textarea:focus,  
+0:.contact-box select:focus  
+0:    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);  
+0:    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);  
+0:.contact-box button  
+0::: 22.0 FOOTER AREA CSS  
+0:.height-emulator  
+0:.copyright-area  
+0:    border-top: 1px solid rgba(0, 0, 0, 0.2);  
