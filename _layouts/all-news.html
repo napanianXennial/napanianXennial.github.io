@@ -103,8 +103,8 @@
                     Here are a set of 'how tos' and insights on how to get the most out of the Miles Ahead Portal.
                 </p>
                 <div style="display: flex; flex-wrap: wrap; padding-bottom: 60px; ">
-                    {% for page in site.pages %}
-                    {% if page.path contains 'documentation/' %}
+                    {% for page in site.posts %}
+
                     <div class="card-app">
                         <div class="card-header-app">
                             <div class="align-center">
@@ -126,7 +126,7 @@
                                 </span></a>
                         </div>
                     </div>
-                    {% endif %}
+
                     {% endfor %}
                 </div>
                 <!-- <div class="row ">
