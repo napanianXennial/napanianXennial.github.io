@@ -7,7 +7,15 @@ blurb: These styles are uses in main.css and should not be overridden.
 
 Along with the standard styles associated with Bootstrap, the main.css file uses the following styles in the rendering of the page.
 
+To find all of the styles used on a specific page or layout, simply find a page that uses the layout of interest and paste the following code into the console of the broswer tools:
+
+[...[...$$("[class]")].reduce((s, e) =>
+  (e.classList.forEach(c => s.add(c)), s), new Set())].sort()
+
+
 Developers are encouraged to use these styles to keep the overall look and feel of the portal consistent. Developers should not redefine these styles as the impact on the overall portal would be unpredictable.
+
+
 
 .avatar-lg  
 .avatar-md  
@@ -115,6 +123,111 @@ Developers are encouraged to use these styles to keep the overall look and feel 
 .welcome-area.bg-overlayafter  
 .welcome-thumb  
 
+Specifically on the minimal template used for react and HTML/JavaScript apps, the list of styles in use includes:
+
+[
+    "admin-visible",
+    "align-items-center",
+    "animated",
+    "app-download",
+    "app-screenshorts",
+    "auth-invisible",
+    "auth-visible",
+    "center",
+    "close-icon",
+    "col",
+    "col-12",
+    "col-lg-12",
+    "col-lg-8",
+    "col-md",
+    "col-md-12",
+    "col-md-2",
+    "col-sm-12",
+    "collapse",
+    "column",
+    "container",
+    "download-content",
+    "dropdown",
+    "dropdown-header",
+    "dropdown-item",
+    "dropdown-menu",
+    "dropdown-profile",
+    "fa-power-off",
+    "fa-user",
+    "fadeInUp",
+    "fas",
+    "feedback-button-internal",
+    "feedback-container",
+    "feedback-form",
+    "floating-button-internal",
+    "h-100",
+    "header",
+    "hidden",
+    "high",
+    "hljs",
+    "hljs-attr",
+    "hljs-literal",
+    "hljs-number",
+    "hljs-string",
+    "img-fluid",
+    "json",
+    "labels",
+    "lead",
+    "logo",
+    "low",
+    "main",
+    "mb-0",
+    "mb-3",
+    "mb-5",
+    "mb-md-0",
+    "me-auto",
+    "medium",
+    "mr-3",
+    "mt-1",
+    "mt-3",
+    "nav-item",
+    "nav-link",
+    "nav-user-name",
+    "nav-user-profile",
+    "navbar",
+    "navbar-area",
+    "navbar-brand",
+    "navbar-collapse",
+    "navbar-expand-lg",
+    "navbar-nav",
+    "navbar-toggler",
+    "no-js",
+    "offset-lg-2",
+    "order-1",
+    "order-lg-1",
+    "order-sm-2",
+    "page",
+    "preloader",
+    "preloader-icon",
+    "preloader-inner",
+    "priority-button",
+    "priority-container",
+    "profile-header",
+    "profile-image",
+    "rating",
+    "rating-scale",
+    "rounded",
+    "rounded-circle",
+    "route-link",
+    "row",
+    "section-blue",
+    "section-blue3",
+    "selected",
+    "style2",
+    "sub-menu-bar",
+    "submit-button",
+    "text-muted",
+    "title",
+    "toggler-icon",
+    "user-email",
+    "user-name",
+    "wow"
+]
 
 
 
