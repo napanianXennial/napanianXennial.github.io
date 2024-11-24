@@ -35,14 +35,13 @@ priority: 1
 					</span>
 				</div>
 				<p class="description-app text-dark"> {{ page.blurb }}</p>
-				<hr style="border-top: 2px solid #010101;">
+				<hr style="border-top: 2px solid #010101;"/>
 				
-					<div class="test-app-button">
-					<a href='{{page.url}}' class="test-app">Open <span class="material-icons-outlined"
+				<div class="test-app-button">
+					<a href="{{page.url}}" class="test-app">Open <span class="material-icons-outlined"
 					style="margin-left: 5px;">
-					open_in_new
 					</span></a>
-					</div>
+				</div>
 					
 			</div>
 			{% endfor %}
