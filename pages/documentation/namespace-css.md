@@ -163,6 +163,88 @@ By namespacing the CSS variables, you can safely use both your platform's and th
 
 ---
 
+Here's an example of CSS namespaces and an HTML page that uses them.
+
+---
+
+##### Example: Using Namespaced CSS Variables in HTML Tags
+
+In this section, we'll demonstrate how to use namespaced CSS variables in HTML tags, especially when a single page contains multiple namespaces.
+
+1. **Platform's CSS Variables (Namespace: `#platform`)**
+
+```css
+/* Platform's variables */
+#platform {
+  --platform-primary-color: #ff5733;
+  --platform-background-color: #f0f0f0;
+  --platform-font-size: 16px;
+}
+```
+
+2. **Third-party App's CSS Variables (Namespace: `.thirdPartyApp`)**
+
+```css
+/* Third-party app's variables */
+.thirdPartyApp {
+  --thirdParty-primary-color: #33c1ff;
+  --thirdParty-background-color: #333;
+  --thirdParty-font-size: 18px;
+}
+```
+
+3. **Using the Variables in HTML Tags**
+
+Here's a simple HTML page that uses both the platform's and the third-party app's namespaces. The page includes elements styled with each set of variables.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Variable Namespacing Example</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Platform Section using #platform namespace -->
+  <div id="platform">
+    <header>
+      <h1 style="font-size: var(--platform-font-size); color: var(--platform-primary-color);">
+        Welcome to My Platform
+      </h1>
+      <p style="font-size: var(--platform-font-size); color: var(--platform-primary-color);">
+        This is a platform's content, styled using platform's CSS variables.
+      </p>
+    </header>
+  </div>
+
+  <!-- Third-Party App Section using .thirdPartyApp namespace -->
+  <div class="thirdPartyApp">
+    <header>
+      <h1 style="font-size: var(--thirdParty-font-size); color: var(--thirdParty-primary-color);">
+        Welcome to Third-Party App
+      </h1>
+      <p style="font-size: var(--thirdParty-font-size); color: var(--thirdParty-primary-color);">
+        This is content from a third-party app, styled using the app's own CSS variables.
+      </p>
+    </header>
+  </div>
+
+</body>
+</html>
+```
+
+
+- **Platform Section**: The `#platform` section uses the platform's namespaced CSS variables, like `--platform-primary-color`, `--platform-background-color`, and `--platform-font-size`.
+- **Third-party App Section**: The `.thirdPartyApp` section uses its own set of namespaced variables, such as `--thirdParty-primary-color`, `--thirdParty-background-color`, and `--thirdParty-font-size`.
+
+Both sections are on the same page, but thanks to namespacing, the variables don't conflict with each other. The platform's section uses one color and font size, while the third-party app section uses a completely different set of styles without any issues.
+
+---
+
+
 
 Using namespacing for CSS variables helps you avoid conflicts when multiple stylesheets or embedded applications are loaded on the same page. 
 
@@ -172,7 +254,6 @@ This approach is especially helpful when building platforms or applications that
 
 By encouraging developers to use namespaced variables, you can prevent accidental overrides and ensure a smooth user experience.
 
-Now you're ready to implement namespacing for your CSS variables and prevent conflicts across different stylesheets and components!
 
 
 
