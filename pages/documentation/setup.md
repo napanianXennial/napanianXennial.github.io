@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: Setting Up The Portal
 blurb: Here are the basic requirements to run the Miles Ahead Portal in a local data center or server in the cloud.
 ---

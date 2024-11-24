@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: Landing Page Edits
 blurb: Here's how to make some quick changes to your landing page.
 ---

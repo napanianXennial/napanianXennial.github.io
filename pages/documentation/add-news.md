@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: Add news
 blurb: Here's how to create a new news story.
 ---

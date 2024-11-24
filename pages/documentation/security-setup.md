@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: Security Setup
 blurb: Here's how to configure security for your Miles Ahead Portal.
 ---

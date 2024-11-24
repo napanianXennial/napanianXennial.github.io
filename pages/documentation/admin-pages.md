@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: Admin Pages
 blurb: Here's how administrative pages work.
 ---

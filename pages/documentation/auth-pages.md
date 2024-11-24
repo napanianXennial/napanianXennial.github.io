@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: Authorized Pages
 blurb: Here's how authenticated pages work.
 ---

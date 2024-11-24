@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title: Doman Name Mapping
 blurb: How to configure a custom domain name on your GitHub hosted server.
 ---
