@@ -3,7 +3,6 @@ layout: minimal
 icon: "notifications_active"
 title: "News"
 blurb: "All of the published news."
-access: "internal-user"
 authenticated: false
 
 top-level-link: true
