@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bluesky Comments</title>
+
+---
+title: "Miles Ahead Portal"
+layout: "minimal"
+---
+
   <style>
     .comment-section {
       font-family: Arial, sans-serif;
@@ -23,8 +23,7 @@
       text-decoration: underline;
     }
   </style>
-</head>
-<body>
+
   <div class="comment-section">
     <h2>Comments</h2>
     <p id="status">Loading comments...</p>
@@ -95,5 +94,4 @@
     document.getElementById("show-more").addEventListener("click", renderComments);
     fetchComments(uri);
   </script>
-</body>
-</html>
+
