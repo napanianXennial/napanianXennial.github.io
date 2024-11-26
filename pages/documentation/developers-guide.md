@@ -106,31 +106,24 @@ blurb: Short Description
 
 When the file is next pushed to the server, the webpage will be listed on the pages/documentation.html page.
 
-# Tutorial: Preventing JavaScript Method Name Conflicts in Embedded Applications
+## JavaScript and the Portal
 
 When building applications that embed other JavaScript or React programs, one of the most important concerns is preventing **name conflicts** between the different JavaScript methods. This can lead to unpredictable behavior, such as one JavaScript function overriding another, or certain methods not executing as expected. For example, if multiple scripts are loaded on the same page, and each script defines a `login()` method, one method might accidentally overwrite another, leading to bugs or unexpected functionality.
 
-In this tutorial, we will explain the problem of method name conflicts in embedded JavaScript apps and provide solutions to avoid them by **namespacing** methods.
+---
+
+# Tutorial: Preventing JavaScript Method Name Conflicts
+
+When building applications that embed other JavaScript or React programs, one of the most important concerns is preventing name conflicts between the different JavaScript methods. This can lead to unpredictable behavior, such as one JavaScript function overriding another, or certain methods not executing as expected. For example, if multiple scripts are loaded on the same page, and each script defines a `login()` method, one method might accidentally overwrite another, leading to bugs or unexpected functionality.
 
 ---
 
-Apologies for the misunderstanding! Below is the entire tutorial written in a **code block** inside Markdown format, including all the content in a single block as you requested.
-
-```markdown
-# Tutorial: Preventing JavaScript Method Name Conflicts in Embedded Applications
-
-When building applications that embed other JavaScript or React programs, one of the most important concerns is preventing **name conflicts** between the different JavaScript methods. This can lead to unpredictable behavior, such as one JavaScript function overriding another, or certain methods not executing as expected. For example, if multiple scripts are loaded on the same page, and each script defines a `login()` method, one method might accidentally overwrite another, leading to bugs or unexpected functionality.
-
-In this tutorial, we will explain the problem of method name conflicts in embedded JavaScript apps and provide solutions to avoid them by **namespacing** methods.
-
----
-
-## The Problem of JavaScript Method Name Conflicts
+## JavaScript Method Name Clashes
 
 When you have multiple scripts running in the same global scope, they all share the same set of variable and function names. This can lead to:
 
-- **Overwritten Functions**: If two scripts define a method with the same name, the last script to load will overwrite the previous one.
-- **Unpredictable Behavior**: When one script is unintentionally overwritten, it may cause errors or unexpected results in your application.
+- Overwritten Functions: If two scripts define a method with the same name, the last script to load will overwrite the previous one.
+- Unpredictable Behavior: When one script is unintentionally overwritten, it may cause errors or unexpected results in your application.
 
 Consider the following example:
 
