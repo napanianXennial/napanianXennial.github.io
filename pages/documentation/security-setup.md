@@ -4,6 +4,8 @@ title: Security Setup
 blurb: Here's how to configure security for your Miles Ahead Portal.
 ---
 
+# Security 
+
 By default, athorization and authentication is provided through Okta, although you can integrate the Miles Ahead Portal with any 3rd-party authentication service.
 
 Initially, your portal will be tied to the Xennial Okta user registry. 
