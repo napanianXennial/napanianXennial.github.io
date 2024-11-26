@@ -34,7 +34,7 @@
 
   <script>
     const apiEndpoint = "https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread";
-    const uri = "https://bsky.app/profile/cameronmcnz.bsky.social/post/3lbuf4okwts2f"; // Replace with the actual URI
+    const uri = "at://did:plc:jce4vozgv2bmbljefdpdcnq5/app.bsky.feed.post/3lbuf4okwts2f"; // Replace with the actual URI
     const visibleCount = 3;
     let allComments = [];
     let currentVisible = 0;
