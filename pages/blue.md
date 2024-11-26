@@ -33,7 +33,7 @@ layout: "minimal"
 
   <script>
     const apiEndpoint = "https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread";
-    const uri = "at://did:plc:jce4vozgv2bmbljefdpdcnq5/app.bsky.feed.post/3lbuf4okwts2f"; // Replace with the actual URI
+    const uri = "at://did:plc:ul6qc363uauj4hr432fy5gcb/app.bsky.feed.post/3lbsus3qgh22k"; // Replace with the actual URI
     const visibleCount = 3;
     let allComments = [];
     let currentVisible = 0;
