@@ -4,9 +4,9 @@ title: "Opportunities Builder 2"
 blurb: "We'll quickly build out opportunities for you, but with a new layout."
 ---
 
-<link href="/static/css/main.86d29117.css" rel="stylesheet" />
+<link href="./static/css/main.86d29117.css" rel="stylesheet" />
 <noscript>You need to enable JavaScript to run this app.</noscript>
-<script defer="defer" src="/static/js/main.9f45f52c.js"></script>
+<script defer="defer" src="./static/js/main.9f45f52c.js"></script>
 
 <div
   id="app"
