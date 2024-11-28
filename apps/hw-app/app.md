@@ -1,5 +1,5 @@
 ---
-layout: minimal-app
+layout: minimal
 title:  "Hello World"
 blurb: "Hello World App"
 
