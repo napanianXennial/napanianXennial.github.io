@@ -2,6 +2,8 @@
 layout: minimal
 title: "Opportunities Builder 2"
 blurb: "We'll quickly build out opportunities for you, but with a new layout."
+top-level-link: true
+priority: 1
 ---
 
 <link href="./static/css/main.86d29117.css" rel="stylesheet" />
