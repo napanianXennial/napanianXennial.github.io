@@ -1,6 +1,6 @@
 ---
 layout: minimal
-title: "Opportunities Builder 2"
+title: "Flashcards!"
 blurb: "We'll quickly build out opportunities for you, but with a new layout."
 top-level-link: true
 priority: 1
